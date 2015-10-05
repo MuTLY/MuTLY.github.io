@@ -5,6 +5,39 @@
 </head>
 <body>
 <script>
+var rev = "fwd";
+function titlebar(val){
+    var msg  = "console.log(Leandro);";
+    var res = " ";
+    var speed = 50;
+    var pos = val;
+    msg = "> "+msg;    
+    var le = msg.length;
+    if(rev == "fwd"){ 
+        if(pos < le){ 
+            pos = pos+1; 
+            scroll = msg.substr(0,pos); 
+            document.title = scroll; 
+            timer = window.setTimeout("titlebar("+pos+")",speed); 
+        } else { 
+            rev = "bwd"; 
+            timer = window.setTimeout("titlebar("+pos+")",speed); 
+        }
+    } else { 
+        if(pos > 0) {
+            pos = pos-1; 
+            var ale = le-pos; 
+            scrol = msg.substr(ale,le); 
+            document.title = scrol; 
+            timer = window.setTimeout("titlebar("+pos+")",speed); 
+        } else { 
+            rev = "fwd"; 
+            timer = window.setTimeout("titlebar("+pos+")",speed); 
+        }
+    }
+}
+titlebar(0);
+
 var css = "background-image: linear-gradient(to top,transparent,transparent), url('https://media.licdn.com/mpr/mpr/shrinknp_400_400/p/8/005/041/2cd/06c6ffa.jpg'); background-repeat: no-repeat; background-size: 205px 205px; border:1px #ccc solid; margin: 0 0 0 300px; padding: 0 205px 205px 0; font-size: 0px;";
 console.log("%c", css);
 
