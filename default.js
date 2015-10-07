@@ -30,10 +30,14 @@
 
     var str = '';
     if (navigator.userAgent.indexOf('Mac OS X') !== -1) {
-        str = "cmd + ctrl + j";
+        str = "⌘ + ⌥ + J";
     } else {
-        str = "F12";
+        str = "Ctrl + Shift + J";
     }
+
     document.title = str;
+
+    str = str.replace(/ \+ /g, '</span> + <span>');
+    str = '<span>' + str + '</span>';
     document.querySelector('.command').innerHTML = str;
 })();
