@@ -1,4 +1,6 @@
 (function() {
+	'use strict';
+
     var css = "background-image: linear-gradient(to top,transparent,transparent), url('https://media.licdn.com/mpr/mpr/shrinknp_400_400/p/8/005/041/2cd/06c6ffa.jpg'); background-repeat: no-repeat; background-size: 205px 205px; border:1px #ccc solid; margin: 0 0 0 300px; padding: 0 205px 205px 0; font-size: 0px;";
     console.log("%c", css);
 
