@@ -23,6 +23,12 @@
         iOS: function() {
             return navigator.userAgent.match(/iPhone|iPad|iPod/i);
         },
+        iPad: function() {
+            return navigator.userAgent.match(/iPad/i);
+        },
+        iPhone: function() {
+            return navigator.userAgent.match(/iPhone/i);
+        },
         Opera: function() {
             return navigator.userAgent.match(/Opera Mini/i);
         },
@@ -40,13 +46,23 @@
 
     var str = 'Leandro Rabello Barbosa';
 
+    if (navigator.userAgent.indexOf('Mac OS X') !== -1 && !isMobile.iOS()) {
+        str = "⌘ + ⌥ + J";
+    }
+
     if (!isMobile.any()) {
         str = "Ctrl + Shift + J";
     }
+	
+	var d = document.querySelector('html');
+	
+	if (isMobile.iPad()) {
+		d.className = d.className + ' ipad';
+	}
 
-    if (navigator.userAgent.indexOf('Mac OS X') !== -1) {
-        str = "⌘ + ⌥ + J";
-    }
+	if (isMobile.Android()) {
+		d.className = d.className + ' android';
+	}
 
     document.title = str;
 

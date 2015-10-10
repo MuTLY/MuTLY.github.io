@@ -142,4 +142,12 @@ li {
         overflow: visible;
         display: block;
     }
+	
+    .ipad body img,
+    .ipad body section {
+        position: static;
+    }
+    .ipad body .command {
+        display: none;
+    }
 }
