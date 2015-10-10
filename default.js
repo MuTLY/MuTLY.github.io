@@ -60,7 +60,7 @@
 		d.className = d.className + ' ipad';
 	}
 
-    if (navigator.userAgent.indexOf('Nexus 10') !== -1 && navigator.userAgent.indexOf('Nexus 7') !== -1 && isMobile.Android()) {
+    if ((navigator.userAgent.indexOf('Nexus 10') !== -1 || navigator.userAgent.indexOf('Nexus 7') !== -1) && isMobile.Android()) {
 		d.className = d.className + ' nexus';
     }
 
