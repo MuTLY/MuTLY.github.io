@@ -57,11 +57,15 @@
 	var d = document.querySelector('html');
 	
 	if (isMobile.iPad()) {
-		d.className = d.className + ' ipad';
+		d.className = d.className + ' tablet';
 	}
 
     if ((navigator.userAgent.indexOf('Nexus 10') !== -1 || navigator.userAgent.indexOf('Nexus 7') !== -1) && isMobile.Android()) {
-		d.className = d.className + ' nexus';
+		d.className = d.className + ' tablet';
+    }
+
+    if ((navigator.userAgent.indexOf('KFAPWI') !== -1) {
+		d.className = d.className + ' tablet';
     }
 
     document.title = str;

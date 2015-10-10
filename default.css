@@ -143,15 +143,12 @@ li {
         display: block;
     }
 	
-    .ipad body img,
-    .ipad body section,	
-    .nexus body img,
-    .nexus body section {
+    .tablet body img,
+    .tablet body section {
         position: static !important;
 		clip: auto;
     }
-    .ipad body .command,
-    .nexus body .command {
+    .tablet body .command {
         display: none;
     }
 }
