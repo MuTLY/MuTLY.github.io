@@ -145,7 +145,8 @@ li {
 	
     .ipad body img,
     .ipad body section {
-        position: static;
+        position: static !important;
+		clip: auto;
     }
     .ipad body .command {
         display: none;
