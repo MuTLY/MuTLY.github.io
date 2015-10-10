@@ -64,7 +64,7 @@
 		d.className = d.className + ' tablet';
     }
 
-    if ((navigator.userAgent.indexOf('KFAPWI') !== -1) {
+    if (navigator.userAgent.indexOf('KFAPWI') !== -1) {
 		d.className = d.className + ' tablet';
     }
 
