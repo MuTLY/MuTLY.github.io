@@ -144,11 +144,14 @@ li {
     }
 	
     .ipad body img,
-    .ipad body section {
+    .ipad body section,	
+    .nexus body img,
+    .nexus body section {
         position: static !important;
 		clip: auto;
     }
-    .ipad body .command {
+    .ipad body .command,
+    .nexus body .command {
         display: none;
     }
 }

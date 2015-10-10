@@ -60,9 +60,9 @@
 		d.className = d.className + ' ipad';
 	}
 
-	if (isMobile.Android()) {
-		d.className = d.className + ' android';
-	}
+    if (navigator.userAgent.indexOf('Nexus 10') !== -1 && navigator.userAgent.indexOf('Nexus 7') !== -1 && isMobile.Android()) {
+		d.className = d.className + ' nexus';
+    }
 
     document.title = str;
 
