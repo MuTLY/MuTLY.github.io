@@ -10,6 +10,13 @@
         }
     })();
 
+    // navigator.browserVersion = function() {
+    //  var i,
+    //      e = navigator.userAgent,
+    //      s = e.match(/(opera|chrome|safari|firefox|msie|trident(?=\/))\/?\s*(\d+)/i) || [];
+    //      return /trident/i.test(s[1]) ? (i = /\brv[ :]+(\d+)/g.exec(e) || [], "ie" + (" ie" + i[1] || "")) : "Chrome" === s[1] && (i = e.match(/\b(OPR|Edge)\/(\d+)/), null !== i) ? i.slice(1).join(" ").replace("OPR", "Opera") : (s = s[2] ? [s[1], s[2]] : [navigator.appName, navigator.appVersion, "-?"], null !== (i = e.match(/version\/(\d+)/i)) && s.splice(1, 1, i[1]), s[0].toLowerCase() + (" " + (s[0] + s[1]).toLowerCase() || ""));
+    // };
+
     var isMobile = {
         Windows: function() {
             return navigator.userAgent.match(/IEMobile/i);
@@ -37,12 +44,7 @@
         }
     };
 
-    // navigator.browserVersion = function() {
-    //  var i,
-    //      e = navigator.userAgent,
-    //      s = e.match(/(opera|chrome|safari|firefox|msie|trident(?=\/))\/?\s*(\d+)/i) || [];
-    //      return /trident/i.test(s[1]) ? (i = /\brv[ :]+(\d+)/g.exec(e) || [], "ie" + (" ie" + i[1] || "")) : "Chrome" === s[1] && (i = e.match(/\b(OPR|Edge)\/(\d+)/), null !== i) ? i.slice(1).join(" ").replace("OPR", "Opera") : (s = s[2] ? [s[1], s[2]] : [navigator.appName, navigator.appVersion, "-?"], null !== (i = e.match(/version\/(\d+)/i)) && s.splice(1, 1, i[1]), s[0].toLowerCase() + (" " + (s[0] + s[1]).toLowerCase() || ""));
-    // };
+    var vWidth = window.innerWidth;
 
     var str = 'Leandro Rabello Barbosa';
 
@@ -53,20 +55,12 @@
     if (!isMobile.any()) {
         str = "Ctrl + Shift + J";
     }
-	
+
 	var d = document.querySelector('html');
-	
-	if (isMobile.iPad()) {
+
+	if (vWidth <= 1024 && isMobile.any()) {
 		d.className = d.className + ' tablet';
 	}
-
-    if ((navigator.userAgent.indexOf('Nexus 10') !== -1 || navigator.userAgent.indexOf('Nexus 7') !== -1) && isMobile.Android()) {
-		d.className = d.className + ' tablet';
-    }
-
-    if (navigator.userAgent.indexOf('KFAPWI') !== -1) {
-		d.className = d.className + ' tablet';
-    }
 
     document.title = str;
 
@@ -76,6 +70,12 @@
     document.querySelector('.command').innerHTML = str;
 
     // magic starts here
+    var weekday = function() {
+        var dayNames = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'],
+            now = new Date();
+        return dayNames[now.getDay()];
+    };
+
     var css = "background-image: linear-gradient(to top,transparent,transparent), url('https://media.licdn.com/mpr/mpr/shrinknp_400_400/p/8/005/041/2cd/06c6ffa.jpg'); background-repeat: no-repeat; background-size: 205px 205px; border:1px #ccc solid; margin: 0 0 0 300px; padding: 0 205px 205px 0; font-size: 0px;";
     console.log("%c", css);
 
@@ -100,6 +100,11 @@
     console.log('%c@ twitter.com/MuTLY', css);
     console.log('%c@ fb.com/MuTLY', css);
     console.log('%c@ leandro.barbosa@live.com', css);
+
+    console.log('');
+
+    css = "color: #FF0000";
+    console.log('Have a nice '+ weekday() +'!\n\n%c\u2764', css, 'Leandro');
 
     console.log('');
 

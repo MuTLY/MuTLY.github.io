@@ -133,7 +133,6 @@ li {
     body img,
     body section {
         position: absolute !important;
-        clip: rect(1px 1px 1px 1px); /* IE6, IE7 */
         clip: rect(1px, 1px, 1px, 1px);
         overflow: hidden;
     }
@@ -142,7 +141,7 @@ li {
         overflow: visible;
         display: block;
     }
-	
+
     .tablet body img,
     .tablet body section {
         position: static !important;
