@@ -1,10 +1,10 @@
 * {
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
     line-height: 1.2;
     font-family: Arial, Helvetica, sans-serif;
     font-size: 16px;
+    box-sizing: border-box;
 }
 
 html,
@@ -41,9 +41,6 @@ section {
 h1,
 p {
     margin: 0 0 10%;
-}
-
-h1 {
     font-size: 5vw;
 }
 
@@ -119,7 +116,7 @@ li {
     border-radius: 3px;
 }
 
-@media all and (min-width: 0) and (max-width: 480px) {
+@media all and (min-width: 0) and (max-width: 568px) {
     body img,
     body section {
         position: static;
@@ -129,25 +126,25 @@ li {
     }
 }
 
-@media all and (min-width: 481px) and (max-width: 1920px) {
+@media all and (min-width: 569px) {
     body img,
     body section {
-        position: absolute !important;
+        position: absolute;
         clip: rect(1px, 1px, 1px, 1px);
         overflow: hidden;
     }
     body .command {
-        clip: auto;
+        clip: initial;
         overflow: visible;
         display: block;
     }
 
-    .tablet body img,
-    .tablet body section {
-        position: static !important;
-		clip: auto;
+    body.tablet img,
+    body.tablet section {
+        position: static;
+        clip: initial;
     }
-    .tablet body .command {
+    body.tablet .command {
         display: none;
     }
 }
