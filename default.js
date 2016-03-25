@@ -47,9 +47,8 @@
         }
     };
 
-    var vWidth = window.innerWidth;
-
-    var str = 'Leandro Rabello Barbosa';
+    var vWidth = window.innerWidth,
+        str = 'Leandro Rabello Barbosa';
 
     if (navigator.userAgent.indexOf('Mac OS X') !== -1 && !isMobile.iOS()) {
         str = "⌘ + ⌥ + J";
@@ -61,7 +60,7 @@
 
     var d = document.querySelector('body');
 
-    if (vWidth <= 1024 && isMobile.any()) {
+    if (vWidth <= 1024 && isMobile.any() || isMobile.Kindle()) {
         d.className = d.className + ' tablet';
     }
 

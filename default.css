@@ -66,14 +66,14 @@ li {
     min-width: 60%;
 }
 
-.where {
-    float: right;
-    max-width: 40%;
-}
-
 .what p {
     float: left;
     margin-right: 2%;
+}
+
+.where {
+    float: right;
+    max-width: 40%;
 }
 
 .where p {
