@@ -39,8 +39,11 @@
         Opera: function() {
             return navigator.userAgent.match(/Opera Mini/i);
         },
+        Kindle: function() {
+            return navigator.userAgent.match(/Silk/i);
+        },
         any: function() {
-            return isMobile.Windows() || isMobile.Android() || isMobile.BlackBerry() || isMobile.iOS() || isMobile.Opera();
+            return isMobile.Windows() || isMobile.Android() || isMobile.BlackBerry() || isMobile.iOS() || isMobile.Opera() || isMobile.Kindle();
         }
     };
 
