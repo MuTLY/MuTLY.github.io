@@ -55,7 +55,8 @@
     }
 
     if (navigator.userAgent.indexOf('Mac OS X') !== -1 && !isMobile.iOS()) {
-        str = "⌘ + ⌥ + J";
+        //str = "⌘ + ⌥ + J";
+        str = "Command + Option + J";
     }
 
     var d = document.querySelector('body');
