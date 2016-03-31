@@ -58,6 +58,10 @@
         //str = "⌘ + ⌥ + J";
         str = "Command + Option + J";
     }
+    
+    if (navigator.userAgent.indexOf('Safari') !== -1 && navigator.userAgent.indexOf('Chrome') === -1 && !isMobile.iOS()) {
+        str = "Command + Option + I";
+    }
 
     var d = document.querySelector('body');
 
