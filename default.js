@@ -50,12 +50,12 @@
     var vWidth = window.innerWidth,
         str = 'Leandro Rabello Barbosa';
 
-    if (navigator.userAgent.indexOf('Mac OS X') !== -1 && !isMobile.iOS()) {
-        str = "⌘ + ⌥ + J";
-    }
-
     if (!isMobile.any()) {
         str = "Ctrl + Shift + J";
+    }
+
+    if (navigator.userAgent.indexOf('Mac OS X') !== -1 && !isMobile.iOS()) {
+        str = "⌘ + ⌥ + J";
     }
 
     var d = document.querySelector('body');
