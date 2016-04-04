@@ -10,13 +10,6 @@
         }
     })();
 
-    // navigator.browserVersion = function() {
-    //  var i,
-    //      e = navigator.userAgent,
-    //      s = e.match(/(opera|chrome|safari|firefox|msie|trident(?=\/))\/?\s*(\d+)/i) || [];
-    //      return /trident/i.test(s[1]) ? (i = /\brv[ :]+(\d+)/g.exec(e) || [], "ie" + (" ie" + i[1] || "")) : "Chrome" === s[1] && (i = e.match(/\b(OPR|Edge)\/(\d+)/), null !== i) ? i.slice(1).join(" ").replace("OPR", "Opera") : (s = s[2] ? [s[1], s[2]] : [navigator.appName, navigator.appVersion, "-?"], null !== (i = e.match(/version\/(\d+)/i)) && s.splice(1, 1, i[1]), s[0].toLowerCase() + (" " + (s[0] + s[1]).toLowerCase() || ""));
-    // };
-
     var isMobile = {
         Windows: function() {
             return navigator.userAgent.match(/IEMobile/i);
@@ -59,7 +52,7 @@
         str = "Command + Option + J";
     }
     
-    if (navigator.userAgent.indexOf('Safari') !== -1 && navigator.userAgent.indexOf('Chrome') === -1 && !isMobile.iOS()) {
+    if (navigator.userAgent.indexOf('Mac OS X') !== -1 && navigator.userAgent.indexOf('Safari') !== -1 && navigator.userAgent.indexOf('Chrome') === -1 && !isMobile.iOS()) {
         str = "Command + Option + I";
     }
 
