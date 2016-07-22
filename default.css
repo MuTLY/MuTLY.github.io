@@ -100,22 +100,20 @@ li {
     text-align: center;
 }
 
-.command span {
+.command button {
     display: inline-block;
     color: #666;
-    font-family: Arial,Helvetica,sans-serif;
+    font-family: Consolas,Arial,Helvetica,sans-serif;
     font-size: 14px;
     white-space: nowrap;
     background-color: #e5e5e5;
     margin: 0 5px;
-    padding: 2px 8px 3px;
+    padding: 4px 8px;
     border: 1px solid #c5c5c5;
     border-radius: 3px;
-    line-height: 1.2;
+    line-height: 1;
     text-shadow: 0 1px 0 #fff;
-    box-shadow: 0 2px 0 -1px #fff,0 2px 0 #c5c5c5;
-    -webkit-transition: .6s background-color;
-    transition: .6s background-color;
+    box-shadow: 0 3px 0 #999, 0 0 0 1px #ccc inset;
 }
 
 @media all and (min-width: 0) and (max-width: 568px) {
