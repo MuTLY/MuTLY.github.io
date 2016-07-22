@@ -13,7 +13,7 @@ body {
 }
 
 body {
-    padding: 5%;
+    padding: 2.5%;
     font-size: 100%;
     background: #1E4558;
     color: #fff;
@@ -31,7 +31,7 @@ img {
 a {
     color: #E0E0E0;
     text-decoration: none;
-    font-size: 2.8vw;
+    font-size: 2.5vw;
 }
 
 section {
@@ -46,7 +46,7 @@ p {
 
 p,
 li {
-    font-size: 3vw;
+    font-size: 2.5vw;
 }
 
 ul {
@@ -145,6 +145,34 @@ li {
         clip: initial;
     }
     body.tablet .command {
+        display: none;
+    }
+}
+
+@media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+	html,
+	body {
+		height: initial;
+	}
+    body img,
+    body section {
+        position: static;
+    }
+    body .command {
+        display: none;
+    }
+}
+
+@supports (-ms-ime-align: auto) {
+	html,
+	body {
+		height: auto;
+	}
+    body img,
+    body section {
+        position: static;
+    }
+    body .command {
         display: none;
     }
 }
