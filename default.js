@@ -80,7 +80,7 @@
         return dayNames[now.getDay()];
     };
 
-    var css = "background-image: linear-gradient(to top,transparent,transparent), url('https://media.licdn.com/mpr/mpr/shrinknp_400_400/p/8/005/041/2cd/06c6ffa.jpg'); background-repeat: no-repeat; background-size: 205px 205px; border:1px #ccc solid; margin: 0 0 0 300px; padding: 0 205px 205px 0; font-size: 0px;";
+    var css = "background-image: linear-gradient(to top,transparent,transparent), url('https://mutly.github.io/images/Leandro-MuTLY-Barbosa.jpg'); background-repeat: no-repeat; background-size: 205px 205px; border:1px #ccc solid; margin: 0 0 0 300px; padding: 0 205px 205px 0; font-size: 0px;";
     console.log("%c", css);
 
     css = "font-size: 28px; color: #0066FF; background: -webkit-linear-gradient(#0066ff, #ddd); -webkit-background-clip: text; -webkit-text-fill-color: transparent;";
