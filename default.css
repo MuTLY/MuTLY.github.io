@@ -19,6 +19,7 @@ body {
     background: #1E4558;
     color: #fff;
     position: relative;
+    touch-action: auto;
 }
 
 img {
