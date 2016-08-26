@@ -1,3 +1,2 @@
 # MuTLY.github.io
-My personal GitHub page.
-Check the log.
+My personal GitHub page. Check the logs.
