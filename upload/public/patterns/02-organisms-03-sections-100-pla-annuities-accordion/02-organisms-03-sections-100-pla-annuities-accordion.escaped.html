@@ -1,0 +1,74 @@
+	
+					
+&lt;div class=&quot;panel-group&quot; id=&quot;accordion&quot;&gt;
+	&lt;div class=&quot;panel panel-default pla-corners mobileborders&quot;&gt;
+          &lt;div class=&quot;panel-heading pla-panel-heading white pla-accordion-heading accordion-toggle no-clicks&quot; data-toggle=&quot;collapse&quot; data-parent=&quot;#accordion&quot; href=&quot;#collapseOne&quot;&gt;
+					&lt;h3 class=&quot;pull-left&quot;&gt;ANNUTIES&lt;/h3&gt;&lt;span class=&quot;glyphicon glyphicon-minus-sign pla-accordian-icon&quot; aria-hidden=&quot;true&quot;&gt; &lt;/span&gt;     &lt;/div&gt;
+            &lt;/div&gt;  			
+			&lt;div id=&quot;collapseOne&quot; class=&quot;panel-collapse pla-panel-collapse hidemobile collapse in&quot;&gt;               
+                 &lt;div class=&quot;pull-right pla-as-of-date hidden-xs&quot; &gt;&lt;small&gt;&lt;i&gt;As of 7/9/2015&lt;/i&gt;&lt;/small&gt;&lt;/div&gt;
+
+
+ &lt;div class=&quot;panel pla-panel&quot; style=&quot;clear:both&quot;&gt;
+                &lt;div class=&quot;panel-heading pla-panel-heading&quot;&gt;
+                    &lt;div class=&quot;pla-title-align&quot;&gt;
+                        &lt;h3&gt;Policy Number 1234567890&lt;/h3&gt;
+                    &lt;/div&gt;
+                    &lt;div class=&quot;pull-right&quot;&gt;
+                      	  	&lt;button type=&quot;button&quot; class=&quot;btn btn-primary  pla-panel-btn hide-panel-btn&quot;&gt;View Details&lt;/button&gt;
+                       	 	&lt;button type=&quot;button&quot; class=&quot;btn btn-secondary solid pla-panel-btn hide-panel-btn&quot;&gt;Manage E-Delivery&lt;/button&gt;
+                        &lt;/div&gt;
+                &lt;/div&gt;                 
+                &lt;div class=&quot;panel-body pla-panel-body&quot;&gt;
+                    &lt;div class=&quot;row&quot;&gt;
+                        &lt;div class=&quot;col-md-2 col-md-offset-1 col-xs-6 col-sm-2 col-sm-offset-1 pla-flip-header&quot;&gt;
+                            &lt;div id=&quot;header-div&quot;&gt;&lt;p&gt;&lt;b&gt;Product&lt;/b&gt;&lt;/p&gt;&lt;/div&gt; 
+                            &lt;div id=&quot;data-div&quot;&gt;&lt;p&gt;ABC Product&lt;/p&gt;&lt;/div&gt;
+                        &lt;/div&gt;
+                        &lt;div class=&quot;col-md-2 col-xs-6 col-sm-2  pla-div-align  pla-flip-header&quot;&gt;
+                             &lt;div id=&quot;header-div&quot;&gt;&lt;p&gt;&lt;b&gt;Annuitant Name&lt;/b&gt;&lt;/p&gt;&lt;/div&gt;  
+                           &lt;div id=&quot;data-div&quot;&gt;&lt;p&gt;John Smith&lt;/p&gt;&lt;/div&gt; 
+                        &lt;/div&gt;
+                        &lt;div class=&quot;col-md-2 col-xs-6 col-sm-2  pla-flip-header&quot;&gt;
+                             &lt;div id=&quot;header-div&quot;&gt;&lt;p&gt;&lt;b&gt;Status&lt;/b&gt;&lt;/p&gt;&lt;/div&gt;   
+                            &lt;div id=&quot;data-div&quot;&gt;&lt;p&gt;Active&lt;/p&gt;&lt;/div&gt; 
+                        &lt;/div&gt;
+                        &lt;div class=&quot;col-md-2 col-xs-6 col-sm-2 pla-div-align  pla-flip-header&quot;&gt;
+                             &lt;div id=&quot;header-div&quot;&gt;&lt;p&gt;&lt;b&gt;Current Value&lt;/b&gt;&lt;/p&gt;&lt;div class=&quot;hidden-md hidden-lg hidden-sm&quot;&gt;&lt;p&gt;&lt;b&gt;As of 7/9/2015&lt;/b&gt;&lt;/p&gt;&lt;/div&gt;&lt;/div&gt;   
+                            &lt;div id=&quot;data-div&quot;&gt;&lt;p&gt;$100,000,000&lt;/p&gt;&lt;/div&gt; 
+							
+                        &lt;/div&gt;
+                        &lt;div class=&quot;col-md-2 col-xs-6 col-sm-2  pla-flip-header&quot;&gt;
+                             &lt;div id=&quot;header-div&quot;&gt;&lt;p&gt;&lt;b&gt;Payment Sequence&lt;/b&gt;&lt;/p&gt;&lt;/div&gt;   
+                            &lt;div id=&quot;data-div&quot;&gt;&lt;p&gt; $100,000,000&lt;/medium&gt; &lt;/p&gt;&lt;/div&gt; 
+                        &lt;/div&gt;
+                    &lt;/div&gt;
+                    &lt;div class=&quot;text-center&quot; style=&quot;padding: 5px;&quot;&gt;
+                        &lt;button type=&quot;button&quot; class=&quot;btn btn-primary  hide-body-btn&quot;&gt;View Details&lt;/button&gt;
+                   &lt;/div&gt;
+                   &lt;div class=&quot;text-center&quot; style=&quot;padding: 5px;&quot;&gt; 
+                        &lt;button type=&quot;button&quot; class=&quot;btn btn-secondary solid text-center  hide-body-btn&quot;&gt;Manage E-Delivery&lt;/button&gt;
+                   &lt;/div&gt;
+                &lt;/div&gt;                 
+&lt;/div&gt;                
+           &lt;/div&gt;
+		&lt;/div&gt;
+	&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;script&gt;
+mq.addListener(function(changed) {
+    if(changed.matches) {
+        // the width of browser is more then 700px
+		var oldurl = '#collapseOne';
+		var newurl = '#collapseOneDisable';
+		$('div [href=&quot;' + oldurl + '&quot;]').attr('href', newurl);
+    } else {
+        // the width of browser is less then 700px
+		var oldurl = '#collapseOneDisable';
+		var newurl = '#collapseOne';
+		$('div [href=&quot;' + oldurl + '&quot;]').attr('href', newurl);
+    }
+});
+
+&lt;/script&gt;	

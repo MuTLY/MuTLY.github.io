@@ -1,0 +1,20 @@
+.icon {
+	display: inline-block;
+	background-repeat: no-repeat;
+	background-image: url(sprite.svg);
+}
+.icon-facebook {
+	width: 24px;
+	height: 24px;
+	background-position: 0 0;
+}
+.icon-twitter {
+	width: 24px;
+	height: 24px;
+	background-position: -40px 0;
+}
+.icon-youtube3 {
+	width: 24px;
+	height: 24px;
+	background-position: -80px 0;
+}

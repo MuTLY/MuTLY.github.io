@@ -1,0 +1,100 @@
+&lt;p&gt;Expenses (e.g. Household Budget)&lt;/p&gt;
+
+{{# data }}
+{{# .}}
+
+&lt;p&gt;&lt;a href=&quot;#&quot; data-toggle=&quot;modal&quot; data-target=&quot;#modal-{{id}}&quot;&gt;&lt;em&gt;OnTrack&lt;/em&gt;&lt;sup&gt;&amp;reg;&lt;/sup&gt; Modal - SLIDE #{{id}}: {{name}}&lt;/a&gt;&lt;/p&gt;
+
+&lt;!-- slide {{id}} --&gt;
+&lt;div class=&quot;modal fade&quot; id=&quot;modal-{{id}}&quot; tabindex=&quot;-1&quot; role=&quot;dialog&quot; aria-labelledby=&quot;section-title-{{id}}&quot;&gt;
+    &lt;div class=&quot;modal-dialog&quot; role=&quot;document&quot;&gt;{{! optional modal-lg or modal-sm can be added here }}
+        &lt;div class=&quot;modal-content&quot;&gt;
+            &lt;div class=&quot;modal-header&quot;&gt;
+                &lt;a href=&quot;#&quot; type=&quot;button&quot; class=&quot;close&quot; data-dismiss=&quot;modal&quot; aria-label=&quot;Close&quot;&gt;&lt;span aria-hidden=&quot;true&quot; class=&quot;trs-icons-close-btn&quot;&gt;&lt;/span&gt;&lt;/a&gt;
+                &lt;h3 id=&quot;section-title-{{id}}&quot; class=&quot;modal-title section-title&quot;&gt;{{name}}&lt;/h3&gt;
+            &lt;/div&gt;
+
+            &lt;div class=&quot;modal-body&quot;&gt;
+                &lt;p class=&quot;text-center-xs&quot;&gt;{{intro_para}}&lt;/p&gt;
+
+                &lt;form role=&quot;form&quot; class=&quot;form-inline ontrack__form ontrack__form--expenses&quot;&gt;
+                    &lt;fieldset&gt;
+                        &lt;!-- header --&gt;
+                        &lt;div class=&quot;row row__mobile row__mobile--bg no-vertical-padding padding-bottom-sm hidden-xs&quot;&gt;
+                            &lt;div class=&quot;col-xs-4 col-xs-offset-4&quot;&gt;&lt;span class=&quot;margin-left&quot;&gt;Monthly&lt;/span&gt;&lt;/div&gt;
+                            &lt;div class=&quot;col-xs-4&quot;&gt;&lt;span class=&quot;margin-left&quot;&gt;Annual&lt;/span&gt;&lt;/div&gt;
+                        &lt;/div&gt;
+
+                        &lt;!-- body --&gt;
+                        {{# expenses }}
+                        &lt;div class=&quot;row row__mobile row__mobile--bg&quot;&gt;
+                            &lt;hr class=&quot;visible-xs hr--mobile__separator&quot;&gt;
+                            &lt;div class=&quot;visible-xs clear&quot;&gt;&lt;/div&gt;
+
+                            &lt;div class=&quot;col-xs-12 col-sm-4&quot;&gt;
+                                &lt;label class=&quot;aligner aligner--mobile full-width&quot; for=&quot;miscellaneous_item_{{id}}&quot;&gt;
+                                	{{#expense_name}}
+                                    &lt;span class=&quot;semi-bold&quot;&gt;{{expense_name}}:&lt;/span&gt;
+                                	{{/expense_name}}
+
+									{{#blank}}
+									&lt;input type=&quot;text&quot; id=&quot;miscellaneous_item_{{id}}&quot; class=&quot;form-control full-width&quot; pattern=&quot;.*&quot; novalidate autocorrect=&quot;off&quot; autocapitalize=&quot;on&quot; autocomplete=&quot;on&quot; aria-label=&quot;Type a name for your miscellaneous item&quot; placeholder=&quot;{{placeholder}}&quot;&gt;
+									{{/blank}}
+                                &lt;/label&gt;
+                            &lt;/div&gt;
+                            &lt;div class=&quot;col-xs-12 col-sm-4&quot;&gt;
+                                &lt;label class=&quot;aligner expense-period&quot; for=&quot;expense_monthly_{{id}}&quot;&gt;
+                                    &lt;span class=&quot;visible-xs-inline&quot;&gt;Monthly&lt;/span&gt;
+                                    &lt;span class=&quot;dollar-sign&quot; aria-role=&quot;presentation&quot;&gt;$&lt;/span&gt;
+                                &lt;/label&gt;&lt;!-- do not remove this
+                                --&gt;&lt;input type=&quot;text&quot; id=&quot;expense_monthly_{{id}}&quot; class=&quot;form-control currency expense-amount&quot; pattern=&quot;.*&quot; novalidate autocorrect=&quot;off&quot; autocapitalize=&quot;off&quot; autocomplete=&quot;on&quot; aria-label=&quot;Type an amount for your monthly {{expense_name}} expenses&quot;&gt;
+                            &lt;/div&gt;
+                            &lt;div class=&quot;col-xs-12 col-sm-4&quot;&gt;
+                                &lt;label class=&quot;aligner expense-period&quot; for=&quot;expense_annual_{{id}}&quot;&gt;
+                                    &lt;span class=&quot;visible-xs-inline&quot;&gt;Annual&lt;/span&gt;
+                                    &lt;span class=&quot;dollar-sign&quot; aria-role=&quot;presentation&quot;&gt;$&lt;/span&gt;
+                                &lt;/label&gt;&lt;!-- do not remove this
+                                --&gt;&lt;input type=&quot;text&quot; id=&quot;expense_annual_{{id}}&quot; class=&quot;form-control currency expense-amount&quot; pattern=&quot;.*&quot; novalidate autocorrect=&quot;off&quot; autocapitalize=&quot;off&quot; autocomplete=&quot;on&quot; aria-label=&quot;Type an ammount for your annual {{expense_name}} expenses&quot;&gt;
+                            &lt;/div&gt;
+                        &lt;/div&gt;
+                        {{/ expenses }}
+
+                        &lt;!-- footer --&gt;
+                        &lt;div class=&quot;row row__mobile row__mobile--bg total-expense&quot;&gt;
+                            &lt;hr class=&quot;visible-xs hr--mobile__separator&quot;&gt;
+                            &lt;div class=&quot;visible-xs clear&quot;&gt;&lt;/div&gt;
+
+                            &lt;div class=&quot;col-xs-12 col-sm-4&quot;&gt;
+                                &lt;span class=&quot;aligner aligner--mobile&quot;&gt;Total&lt;/span&gt;
+                            &lt;/div&gt;
+                            &lt;div class=&quot;col-xs-12 col-sm-4&quot;&gt;
+                                &lt;label class=&quot;aligner bold expense-period&quot;&gt;
+                                    &lt;span class=&quot;visible-xs pull-left&quot;&gt;Monthly&lt;/span&gt;
+                                    &lt;span class=&quot;dollar-sign&quot; aria-role=&quot;presentation&quot;&gt;$&lt;/span&gt;
+                                &lt;/label&gt;&lt;!-- do not remove this
+                                --&gt;&lt;span class=&quot;aligner bold expense-amount&quot;&gt;{{total.monthly}}&lt;/span&gt;
+                            &lt;/div&gt;
+                            &lt;div class=&quot;col-xs-12 col-sm-4&quot;&gt;
+                                &lt;label class=&quot;aligner bold expense-period&quot;&gt;
+                                    &lt;span class=&quot;visible-xs pull-left&quot;&gt;Annual&lt;/span&gt;
+                                    &lt;span class=&quot;dollar-sign&quot; aria-role=&quot;presentation&quot;&gt;$&lt;/span&gt;
+                                &lt;/label&gt;&lt;!-- do not remove this
+                                --&gt;&lt;span class=&quot;aligner bold expense-amount&quot;&gt;{{total.annual}}&lt;/span&gt;
+                            &lt;/div&gt;
+                        &lt;/div&gt;
+                    &lt;/fieldset&gt;
+                &lt;/form&gt;
+            &lt;/div&gt;
+
+            &lt;div class=&quot;modal-footer&quot;&gt;
+                &lt;a href=&quot;#&quot; class=&quot;btn btn-secondary pull-left&quot; data-dismiss=&quot;modal&quot;&gt;Cancel&lt;/a&gt;
+                &lt;a href=&quot;javascript:void(0);&quot; onclick=&quot;return false;&quot; class=&quot;btn btn-primary&quot;&gt;Save&lt;/a&gt;
+            &lt;/div&gt;
+
+        &lt;/div&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
+&lt;!-- slide {{id}} --&gt;
+
+{{/ .}}
+{{/ data }}

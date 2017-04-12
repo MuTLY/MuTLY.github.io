@@ -1,0 +1,537 @@
+<!DOCTYPE HTML>
+		<!-- never cache patterns -->
+		<meta http-equiv="cache-control" content="max-age=0" />
+		<meta http-equiv="cache-control" content="no-cache" />
+		<meta http-equiv="expires" content="0" />
+		<meta http-equiv="expires" content="Tue, 01 Jan 1980 1:00:00 GMT" />
+		<meta http-equiv="pragma" content="no-cache" />
+		
+		<link rel="stylesheet" href="../../styleguide/css/styleguide.css?1491944073" media="all">
+		<link rel="stylesheet" href="../../styleguide/css/styleguide-specific.css?1491944073" media="all" />
+		
+
+
+<html class="pl" lang="en-us">
+
+<head>
+    <title>Pattern Lab</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=0">
+
+    <!-- Browser Elements Colors -->
+    <meta name="theme-color" content="#3e7cab"><!-- Chrome -->
+    <meta name="msapplication-navbutton-color" content="#3e7cab"><!-- Windows -->
+    <!-- iOS -->
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+
+    <!-- console.log polyfill - do not remove, it needs to load before any scripts -->
+    <script>
+    // Console-polyfill. MIT license.
+    // https://github.com/paulmillr/console-polyfill
+    // Make it safe to do console.log() always.
+    (function(global) {
+        'use strict';
+        if (!global.console) {
+            global.console = {};
+        }
+        var con = global.console;
+        var prop, method;
+        var dummy = function() {};
+        var properties = ['memory'];
+        var methods = ('assert,clear,count,debug,dir,dirxml,error,exception,group,' +
+            'groupCollapsed,groupEnd,info,log,markTimeline,profile,profiles,profileEnd,' +
+            'show,table,time,timeEnd,timeline,timelineEnd,timeStamp,trace,warn').split(',');
+        while ( (prop = properties.pop()) ) {
+            if (!con[prop]) {
+                con[prop] = {};
+            }
+        }
+        while ( (method = methods.pop()) ) {
+            if (typeof con[method] !== 'function') {
+                con[method] = dummy;
+            }
+        }
+        // Using `this` for web workers & supports Browserify / Webpack.
+    })(typeof window === 'undefined' ? this : window);
+    </script>
+
+    <!-- Custom Modernizr -->
+    <script src="../../js/plugins/modernizr.custom.js"></script>
+
+    <!-- Fonts -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,800,300italic,400italic,600italic,700italic,800italic" type="text/css">
+    <link rel="stylesheet" media="all" href="../../css/fonts.css">
+    <link rel="stylesheet" media="all" href="../../css/trs-icon-font.css">
+
+    <!-- Latest jQuery compatible -->
+    <script src="../../js/plugins/jquery-1.12.4.min.js"></script>
+    <script src="../../js/plugins/jquery-migrate-1.3.0.min.js"></script>
+
+    <!-- jquery UI -->
+    <link rel="stylesheet" href="../../css/plugins/jquery-ui.min.css">
+    <script src="../../js/plugins/jquery-ui.min.js"></script>
+
+    <!-- jquery UI range pips -->
+    <link rel="stylesheet" href="../../css/plugins/jquery-ui-slider-pips.min.css">
+    <script src="../../js/plugins/jquery-ui-slider-pips.min.js"></script>
+
+    <!-- jquery UI touch capable -->
+    <script src="../../js/plugins/jquery.ui.touch-punch.min.js"></script>
+
+    <!-- jquery.Actual -->
+    <script src="../../js/plugins/jquery.actual.min.js"></script>
+
+    <!-- response.JS -->
+    <script src="../../js/plugins/response.min.js"></script>
+
+     <!-- Latest Bootstrap -->
+    <link rel="stylesheet" href="../../css/plugins/bootstrap.min.css">
+    <link rel="stylesheet" href="../../css/plugins/bootstrap-theme.min.css">
+    <script src="../../js/plugins/bootstrap.min.js"></script>
+
+    <!-- Primary Nav JS -->
+    <script src="../../js/primary-nav.js"></script>
+
+    <!-- HighChart JS -->
+    <script src="../../js/plugins/highcharts.js"></script>
+    <script src="../../js/plugins/data.js"></script>
+
+    <!-- DataTables JS -->
+    <link rel="stylesheet" href="../../css/plugins/jquery.dataTables.min.css">
+    <link rel="stylesheet" href="../../css/plugins/dataTables.bootstrap.min.css">
+    <script src="../../js/plugins/jquery.dataTables.min.js"></script>
+    <script src="../../js/plugins/dataTables.bootstrap.min.js"></script>
+
+    <!-- jquery mask input -->
+    <script src="../../js/plugins/jquery.mask.min.js"></script>
+
+    <!-- parser helper used with bootstrap-datepicker -->
+    <script src="../../js/plugins/date.min.js"></script>
+    <script src="../../js/plugins/moment.min.js"></script>
+
+    <!-- bootstrap-datepicker - github.com/eternicode/bootstrap-datepicker -->
+    <link rel="stylesheet" href="../../css/plugins/bootstrap-datepicker3.min.css"></link>
+    <script src="../../js/plugins/bootstrap-datepicker.min.js"></script>
+    <script src="../../js/plugins/bootstrap-datepicker.wrapper.js"></script>
+
+    <!-- bootstrap typeahead autocomplete - https://twitter.github.io/typeahead.js/examples/ -->
+    <script src="../../js/plugins/typeahead.bundle.min.js"></script>
+
+    <!-- jquery.validate -->
+    <script src="../../js/plugins/jquery.validate.min.js"></script>
+    <script src="../../js/plugins/additional-methods.min.js"></script>
+
+    <!-- jQuery Equal Height -->
+    <script src="../../js/plugins/jquery.matchHeight-min.js"></script>
+
+    <!-- Password Meter -->
+    <script src="../../js/plugins/jquery.password.js"></script>
+
+    <!-- TableSaw - tables on mobile -->
+    <link rel="stylesheet" href="../../css/plugins/tablesaw.bare.min.css">
+    <script src="../../js/plugins/tablesaw.min.js"></script>
+
+    <!-- Compiled css from style.scss for components -->
+    <link rel="stylesheet" media="all" href="../../css/style.css?1491944073">
+
+
+    <!-- Responsive tables require AngularJS - see atoms/tables/angular-mobile-table... -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.8/angular.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.8/angular-animate.min.js"></script>
+    <script src="/js/trs-angular/responsive-table.js"></script>
+</head>
+<body class="body" data-ui-compat="responsive">
+		
+		<!-- View All Patterns in a Pattern Sub-Type -->
+		<div class="sg-main" role="main">
+			
+			<!-- Patterns -->
+			<div id="sg-patterns">
+					<div id="pages-tu-questions" class="sg-pattern">
+						<h2 class="sg-pattern-head" ><a href="../../patterns/04-pages-TransUnion-200-tu-questions/04-pages-TransUnion-200-tu-questions.html" class="patternLink" data-patternpartial="pages-tu-questions">Tu Questions</a></h2>
+						<div class="sg-pattern-body">
+							<div class="page-container">
+    <div class="container-fluid">
+        <div class="row">
+            <!-- main area & col-xs-12 -->
+            <div class="non-responsive-swipe">
+                <div class="col-xs-12">
+                    <main class="row"
+                          id="main_content">
+                        <!-- Begin "body" -->
+                        <div class="col-xs-12 ">
+
+                            <!-- YOUR CODE STARTS HERE. REMOVE THIS COMMENT AFTERWARDS. -->
+
+                                <h1>Secure Authentication</h1>
+        <div class="transunion">
+            <p class="text-larger__p margin-bottom-lg">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis pharetra
+                commodo erat id vestibulum. Ut elementum sollicitudin sollicitudin. Nam nec diam ex. Fusce eleifend a metus in
+                condimentum. Cras molestie lectus in tristique consequat. Aenean eu molestie erat, eget blandit neque. Aliquam
+                erat volutpat.</p>
+
+            <!-- START QUESTION 1 -->
+            <h3 class="section-title margin-bottom">What is the year of your Honda Accord?</h3>
+            <div class="row">
+                <div class="col-xs-12">
+                    <div class="form-group margin-left">
+                        <input type="radio" id="option_a" name="year" value="2016" checked>
+                        <label class="aligner" for="option_a"><span role="radio"></span>2016</label>
+
+                        <input type="radio" id="option_b" name="year" value="2012">
+                        <label class="aligner" for="option_b"><span role="radio"></span>2012</label>
+
+                        <input type="radio" id="option_c" name="year" value="2005">
+                        <label class="aligner" for="option_c"><span role="radio"></span>2005</label>
+
+                        <input type="radio" id="option_d" name="year" value="2003">
+                        <label class="aligner" for="option_d"><span role="radio"></span>2003</label>
+
+                        <input type="radio" id="option_e" name="year" value="none">
+                        <label class="aligner" for="option_e"><span role="radio"></span>None of the above</label>
+                    </div>
+                </div>
+            </div>
+            <!-- / QUESTION 1 -->
+
+            <!-- START QUESTION 2 -->
+            <h3 class="section-title margin-bottom margin-top-lg">Which of the businesses are you associated with?</h3>
+            <div class="row">
+                <div class="col-xs-12">
+                    <div class="form-group margin-left">
+                        <input type="radio" id="option_a2" name="business" value="Target" checked>
+                        <label class="aligner" for="option_a2"><span role="radio"></span>Target</label>
+
+                        <input type="radio" id="option_b2" name="business" value="Walmart">
+                        <label class="aligner" for="option_b2"><span role="radio"></span>Walmart</label>
+
+                        <input type="radio" id="option_c2" name="business" value="bofa">
+                        <label class="aligner" for="option_c2"><span role="radio"></span>Bank of America</label>
+
+                        <input type="radio" id="option_d2" name="business" value="none">
+                        <label class="aligner" for="option_d2"><span role="radio"></span>None of These</label>
+
+                        <input type="radio" id="option_e2" name="business" value="none">
+                        <label class="aligner" for="option_e2"><span role="radio"></span>None of the above</label>
+                    </div>
+                </div>
+            </div>
+            <!-- / QUESTION 2 -->
+
+            <!-- START QUESTION 3 -->
+            <h3 class="section-title margin-bottom margin-top-lg">What country do you live?</h3>
+            <div class="row">
+                <div class="col-xs-12">
+                    <div class="form-group margin-left">
+                        <input type="radio" id="option_a3" name="country" value="argentina" checked>
+                        <label class="aligner" for="option_a3"><span role="radio"></span>Argentina</label>
+
+                        <input type="radio" id="option_b3" name="country" value="canada">
+                        <label class="aligner" for="option_b3"><span role="radio"></span>Canada</label>
+
+                        <input type="radio" id="option_c3" name="country" value="spain">
+                        <label class="aligner" for="option_c3"><span role="radio"></span>Spain</label>
+
+                        <input type="radio" id="option_d3" name="country" value="us">
+                        <label class="aligner" for="option_d3"><span role="radio"></span>United States</label>
+
+                        <input type="radio" id="option_e3" name="country" value="none">
+                        <label class="aligner" for="option_e3"><span role="radio"></span>None of the above</label>
+                    </div>
+                </div>
+            </div>
+            <!-- / QUESTION 3 -->
+
+            <!-- START QUESTION 4 -->
+            <h3 class="section-title margin-bottom margin-top-lg">What year did you graduate high school?</h3>
+            <div class="row">
+                <div class="col-xs-12">
+                    <div class="form-group margin-left">
+                        <input type="radio" id="option_a4" name="school" value="1982" checked>
+                        <label class="aligner" for="option_a4"><span role="radio"></span>1982</label>
+
+                        <input type="radio" id="option_b4" name="school" value="1980">
+                        <label class="aligner" for="option_b4"><span role="radio"></span>1980</label>
+
+                        <input type="radio" id="option_c4" name="school" value="1976">
+                        <label class="aligner" for="option_c4"><span role="radio"></span>1976</label>
+
+                        <input type="radio" id="option_d4" name="school" value="1972">
+                        <label class="aligner" for="option_d4"><span role="radio"></span>1972</label>
+
+                        <input type="radio" id="option_e4" name="school" value="none">
+                        <label class="aligner" for="option_e4"><span role="radio"></span>None of the above</label>
+                    </div>
+                </div>
+            </div>
+            <!-- / QUESTION 4 -->
+
+            <div class="row">
+                <div class="col-xs-12 padding-top padding-bottom">
+                    <div class="btn-unit btn-unit-primary-action">
+                        <button type="button" class="btn btn-primary" disabled>SUBMIT</button>
+                    </div>
+                </div>
+            </div>
+
+            <script>
+                window.onbeforeunload = function () {
+                    return 'Are you sure you want to navigate away from this page?';
+                };
+            </script>                            <!-- /YOUR CODE ENDS HERE. REMOVE THIS COMMENT AFTERWARDS. -->
+
+                        </div>
+                        <!-- End "body" -->
+                    </main>
+                </div>
+            </div>
+            <!-- /main area & col-xs-12 -->
+        </div>
+        <!--/.row-->
+    </div>
+    <!--/.container-->
+</div>
+<!--/.page-container-->
+							<div class="sg-code" style="display: none">
+									<div class="sg-code-contains">
+										This pattern contains: 
+											<a href="../../patterns/03-templates-200-blank-layout/03-templates-200-blank-layout.html"><code>templates-blank-layout</code></a>
+									</div>
+								<h3 class="sg-code-head">HTML</h3>
+								<pre class="sg-code-html">
+									<code>
+										&lt;div class=&quot;page-container&quot;&gt;
+    &lt;div class=&quot;container-fluid&quot;&gt;
+        &lt;div class=&quot;row&quot;&gt;
+            &lt;!-- main area &amp; col-xs-12 --&gt;
+            &lt;div class=&quot;non-responsive-swipe&quot;&gt;
+                &lt;div class=&quot;col-xs-12&quot;&gt;
+                    &lt;main class=&quot;row&quot;
+                          id=&quot;main_content&quot;&gt;
+                        &lt;!-- Begin &quot;body&quot; --&gt;
+                        &lt;div class=&quot;col-xs-12 &quot;&gt;
+
+                            &lt;!-- YOUR CODE STARTS HERE. REMOVE THIS COMMENT AFTERWARDS. --&gt;
+
+                                &lt;h1&gt;Secure Authentication&lt;/h1&gt;
+        &lt;div class=&quot;transunion&quot;&gt;
+            &lt;p class=&quot;text-larger__p margin-bottom-lg&quot;&gt;Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis pharetra
+                commodo erat id vestibulum. Ut elementum sollicitudin sollicitudin. Nam nec diam ex. Fusce eleifend a metus in
+                condimentum. Cras molestie lectus in tristique consequat. Aenean eu molestie erat, eget blandit neque. Aliquam
+                erat volutpat.&lt;/p&gt;
+
+            &lt;!-- START QUESTION 1 --&gt;
+            &lt;h3 class=&quot;section-title margin-bottom&quot;&gt;What is the year of your Honda Accord?&lt;/h3&gt;
+            &lt;div class=&quot;row&quot;&gt;
+                &lt;div class=&quot;col-xs-12&quot;&gt;
+                    &lt;div class=&quot;form-group margin-left&quot;&gt;
+                        &lt;input type=&quot;radio&quot; id=&quot;option_a&quot; name=&quot;year&quot; value=&quot;2016&quot; checked&gt;
+                        &lt;label class=&quot;aligner&quot; for=&quot;option_a&quot;&gt;&lt;span role=&quot;radio&quot;&gt;&lt;/span&gt;2016&lt;/label&gt;
+
+                        &lt;input type=&quot;radio&quot; id=&quot;option_b&quot; name=&quot;year&quot; value=&quot;2012&quot;&gt;
+                        &lt;label class=&quot;aligner&quot; for=&quot;option_b&quot;&gt;&lt;span role=&quot;radio&quot;&gt;&lt;/span&gt;2012&lt;/label&gt;
+
+                        &lt;input type=&quot;radio&quot; id=&quot;option_c&quot; name=&quot;year&quot; value=&quot;2005&quot;&gt;
+                        &lt;label class=&quot;aligner&quot; for=&quot;option_c&quot;&gt;&lt;span role=&quot;radio&quot;&gt;&lt;/span&gt;2005&lt;/label&gt;
+
+                        &lt;input type=&quot;radio&quot; id=&quot;option_d&quot; name=&quot;year&quot; value=&quot;2003&quot;&gt;
+                        &lt;label class=&quot;aligner&quot; for=&quot;option_d&quot;&gt;&lt;span role=&quot;radio&quot;&gt;&lt;/span&gt;2003&lt;/label&gt;
+
+                        &lt;input type=&quot;radio&quot; id=&quot;option_e&quot; name=&quot;year&quot; value=&quot;none&quot;&gt;
+                        &lt;label class=&quot;aligner&quot; for=&quot;option_e&quot;&gt;&lt;span role=&quot;radio&quot;&gt;&lt;/span&gt;None of the above&lt;/label&gt;
+                    &lt;/div&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+            &lt;!-- / QUESTION 1 --&gt;
+
+            &lt;!-- START QUESTION 2 --&gt;
+            &lt;h3 class=&quot;section-title margin-bottom margin-top-lg&quot;&gt;Which of the businesses are you associated with?&lt;/h3&gt;
+            &lt;div class=&quot;row&quot;&gt;
+                &lt;div class=&quot;col-xs-12&quot;&gt;
+                    &lt;div class=&quot;form-group margin-left&quot;&gt;
+                        &lt;input type=&quot;radio&quot; id=&quot;option_a2&quot; name=&quot;business&quot; value=&quot;Target&quot; checked&gt;
+                        &lt;label class=&quot;aligner&quot; for=&quot;option_a2&quot;&gt;&lt;span role=&quot;radio&quot;&gt;&lt;/span&gt;Target&lt;/label&gt;
+
+                        &lt;input type=&quot;radio&quot; id=&quot;option_b2&quot; name=&quot;business&quot; value=&quot;Walmart&quot;&gt;
+                        &lt;label class=&quot;aligner&quot; for=&quot;option_b2&quot;&gt;&lt;span role=&quot;radio&quot;&gt;&lt;/span&gt;Walmart&lt;/label&gt;
+
+                        &lt;input type=&quot;radio&quot; id=&quot;option_c2&quot; name=&quot;business&quot; value=&quot;bofa&quot;&gt;
+                        &lt;label class=&quot;aligner&quot; for=&quot;option_c2&quot;&gt;&lt;span role=&quot;radio&quot;&gt;&lt;/span&gt;Bank of America&lt;/label&gt;
+
+                        &lt;input type=&quot;radio&quot; id=&quot;option_d2&quot; name=&quot;business&quot; value=&quot;none&quot;&gt;
+                        &lt;label class=&quot;aligner&quot; for=&quot;option_d2&quot;&gt;&lt;span role=&quot;radio&quot;&gt;&lt;/span&gt;None of These&lt;/label&gt;
+
+                        &lt;input type=&quot;radio&quot; id=&quot;option_e2&quot; name=&quot;business&quot; value=&quot;none&quot;&gt;
+                        &lt;label class=&quot;aligner&quot; for=&quot;option_e2&quot;&gt;&lt;span role=&quot;radio&quot;&gt;&lt;/span&gt;None of the above&lt;/label&gt;
+                    &lt;/div&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+            &lt;!-- / QUESTION 2 --&gt;
+
+            &lt;!-- START QUESTION 3 --&gt;
+            &lt;h3 class=&quot;section-title margin-bottom margin-top-lg&quot;&gt;What country do you live?&lt;/h3&gt;
+            &lt;div class=&quot;row&quot;&gt;
+                &lt;div class=&quot;col-xs-12&quot;&gt;
+                    &lt;div class=&quot;form-group margin-left&quot;&gt;
+                        &lt;input type=&quot;radio&quot; id=&quot;option_a3&quot; name=&quot;country&quot; value=&quot;argentina&quot; checked&gt;
+                        &lt;label class=&quot;aligner&quot; for=&quot;option_a3&quot;&gt;&lt;span role=&quot;radio&quot;&gt;&lt;/span&gt;Argentina&lt;/label&gt;
+
+                        &lt;input type=&quot;radio&quot; id=&quot;option_b3&quot; name=&quot;country&quot; value=&quot;canada&quot;&gt;
+                        &lt;label class=&quot;aligner&quot; for=&quot;option_b3&quot;&gt;&lt;span role=&quot;radio&quot;&gt;&lt;/span&gt;Canada&lt;/label&gt;
+
+                        &lt;input type=&quot;radio&quot; id=&quot;option_c3&quot; name=&quot;country&quot; value=&quot;spain&quot;&gt;
+                        &lt;label class=&quot;aligner&quot; for=&quot;option_c3&quot;&gt;&lt;span role=&quot;radio&quot;&gt;&lt;/span&gt;Spain&lt;/label&gt;
+
+                        &lt;input type=&quot;radio&quot; id=&quot;option_d3&quot; name=&quot;country&quot; value=&quot;us&quot;&gt;
+                        &lt;label class=&quot;aligner&quot; for=&quot;option_d3&quot;&gt;&lt;span role=&quot;radio&quot;&gt;&lt;/span&gt;United States&lt;/label&gt;
+
+                        &lt;input type=&quot;radio&quot; id=&quot;option_e3&quot; name=&quot;country&quot; value=&quot;none&quot;&gt;
+                        &lt;label class=&quot;aligner&quot; for=&quot;option_e3&quot;&gt;&lt;span role=&quot;radio&quot;&gt;&lt;/span&gt;None of the above&lt;/label&gt;
+                    &lt;/div&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+            &lt;!-- / QUESTION 3 --&gt;
+
+            &lt;!-- START QUESTION 4 --&gt;
+            &lt;h3 class=&quot;section-title margin-bottom margin-top-lg&quot;&gt;What year did you graduate high school?&lt;/h3&gt;
+            &lt;div class=&quot;row&quot;&gt;
+                &lt;div class=&quot;col-xs-12&quot;&gt;
+                    &lt;div class=&quot;form-group margin-left&quot;&gt;
+                        &lt;input type=&quot;radio&quot; id=&quot;option_a4&quot; name=&quot;school&quot; value=&quot;1982&quot; checked&gt;
+                        &lt;label class=&quot;aligner&quot; for=&quot;option_a4&quot;&gt;&lt;span role=&quot;radio&quot;&gt;&lt;/span&gt;1982&lt;/label&gt;
+
+                        &lt;input type=&quot;radio&quot; id=&quot;option_b4&quot; name=&quot;school&quot; value=&quot;1980&quot;&gt;
+                        &lt;label class=&quot;aligner&quot; for=&quot;option_b4&quot;&gt;&lt;span role=&quot;radio&quot;&gt;&lt;/span&gt;1980&lt;/label&gt;
+
+                        &lt;input type=&quot;radio&quot; id=&quot;option_c4&quot; name=&quot;school&quot; value=&quot;1976&quot;&gt;
+                        &lt;label class=&quot;aligner&quot; for=&quot;option_c4&quot;&gt;&lt;span role=&quot;radio&quot;&gt;&lt;/span&gt;1976&lt;/label&gt;
+
+                        &lt;input type=&quot;radio&quot; id=&quot;option_d4&quot; name=&quot;school&quot; value=&quot;1972&quot;&gt;
+                        &lt;label class=&quot;aligner&quot; for=&quot;option_d4&quot;&gt;&lt;span role=&quot;radio&quot;&gt;&lt;/span&gt;1972&lt;/label&gt;
+
+                        &lt;input type=&quot;radio&quot; id=&quot;option_e4&quot; name=&quot;school&quot; value=&quot;none&quot;&gt;
+                        &lt;label class=&quot;aligner&quot; for=&quot;option_e4&quot;&gt;&lt;span role=&quot;radio&quot;&gt;&lt;/span&gt;None of the above&lt;/label&gt;
+                    &lt;/div&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+            &lt;!-- / QUESTION 4 --&gt;
+
+            &lt;div class=&quot;row&quot;&gt;
+                &lt;div class=&quot;col-xs-12 padding-top padding-bottom&quot;&gt;
+                    &lt;div class=&quot;btn-unit btn-unit-primary-action&quot;&gt;
+                        &lt;button type=&quot;button&quot; class=&quot;btn btn-primary&quot; disabled&gt;SUBMIT&lt;/button&gt;
+                    &lt;/div&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+
+            &lt;script&gt;
+                window.onbeforeunload = function () {
+                    return 'Are you sure you want to navigate away from this page?';
+                };
+            &lt;/script&gt;                            &lt;!-- /YOUR CODE ENDS HERE. REMOVE THIS COMMENT AFTERWARDS. --&gt;
+
+                        &lt;/div&gt;
+                        &lt;!-- End &quot;body&quot; --&gt;
+                    &lt;/main&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+            &lt;!-- /main area &amp; col-xs-12 --&gt;
+        &lt;/div&gt;
+        &lt;!--/.row--&gt;
+    &lt;/div&gt;
+    &lt;!--/.container--&gt;
+&lt;/div&gt;
+&lt;!--/.page-container--&gt;
+									</code>
+								</pre>
+							</div>
+						</div>
+					</div>
+			</div> <!--end #sg-patterns-->
+	
+		</div><!--end .sg-main-->
+		
+		<!-- JS to hook everything together and do annotations -->
+		<script>
+			// handle injection of items from PHP
+			var patternPartial = "viewall-pages-TransUnion";
+			var lineage = "";
+		</script>
+		
+
+    <!-- scripts -->
+    <script src="../../js/ontrack.js"></script>
+    <script src="../../js/layoutResponsive.js"></script>
+    <script src="../../js/mobile-nav.js"></script>
+    <script src="../../js/globalFooter.js"></script>
+
+		<script>
+		/*!
+		 * scriptLoader - v0.1
+		 *
+		 * Copyright (c) 2014 Dave Olsen, http://dmolsen.com
+		 * Licensed under the MIT license
+		 *
+		 */
+		
+		var scriptLoader = {
+			
+			run: function(js,cb,target) {
+				var s  = document.getElementById(target+'-'+cb); 
+				for (var i = 0; i < js.length; i++) {
+					var src = (typeof js[i] != "string") ? js[i].src : js[i];
+					var c   = document.createElement('script');
+					c.src   = '../../'+src+'?'+cb;
+					if (typeof js[i] != "string") {
+						if (js[i].dep !== undefined) {
+							c.onload = function(dep,cb,target) {
+								return function() {
+									scriptLoader.run(dep,cb,target);
+								}
+							}(js[i].dep,cb,target);
+						}
+					}
+					s.parentNode.insertBefore(c,s);
+				}
+			}
+			
+		}
+	</script>
+	<script id="pl-js-polyfill-insert-1491944073">
+		(function() {
+			if (self != top) {
+				var cb = '1491944073';
+				var js = [];
+				if (typeof document !== "undefined" && !("classList" in document.documentElement)) {
+					js.push("styleguide/js/vendor/classlist-polyfill.js");
+				}
+				scriptLoader.run(js,cb,'pl-js-polyfill-insert');
+			}
+		})();
+	</script>
+	<script id="pl-js-insert-1491944073">
+		(function() {
+			if (self != top) {
+				var cb = '1491944073';
+				var js = [ { "src": "styleguide/js/vendor/jwerty.js", "dep": [ "styleguide/js/postmessage.js", { "src": "data/annotations.js", "dep": [ "styleguide/js/annotations-pattern.js" ] }, "styleguide/js/code-pattern.js" ] } ];
+				scriptLoader.run(js,cb,'pl-js-insert');
+			}
+		})();
+	</script>
+	
+
+
+    <!-- Browser Update notification -->
+    <script>
+        var $buoop = {vs:{i:10,f:30,o:20,s:7},c:2};
+        function $buo_f(){
+            var e = document.createElement("script");
+            e.src = "//browser-update.org/update.min.js";
+            document.body.appendChild(e);
+        };
+        try {document.addEventListener("DOMContentLoaded", $buo_f,false)}
+        catch(e){window.attachEvent("onload", $buo_f)}
+    </script>
+	</body>
+</html>

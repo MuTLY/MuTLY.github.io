@@ -1,0 +1,101 @@
+@import url('https://fast.fonts.net/t/1.css?apiType=css&projectid=2373d867-745b-4fdd-af2a-b98c71878706');
+
+/***************************** http://blog.fontspring.com/2011/02/further-hardening-of-the-bulletproof-syntax/ */
+@font-face {
+    font-family: 'GeorgiaProW01-Light';
+    src: url('fonts/05e3dd98-bf85-4c13-97b6-30f0fe10d44e.eot');
+    src: url('fonts/05e3dd98-bf85-4c13-97b6-30f0fe10d44e.eot?#iefix') format('embedded-opentype'),
+         url('fonts/34e21156-1b01-43b4-b134-06aebfb98f37.woff2') format('woff2'),
+         url('fonts/edef46b7-56a1-480f-952c-376944431d2c.woff') format('woff'),
+         url('fonts/b34958e7-68fa-439a-9cc6-9535edcc24bc.ttf') format('truetype'),
+         url('fonts/c701e146-b6b5-4c4d-b5b2-8f3eef4bd141.svg#c701e146-b6b5-4c4d-b5b2-8f3eef4bd141') format('svg');
+}
+
+@font-face {
+    font-family: 'GeorgiaProW01-LightItal';
+    src: url('fonts/63f96100-5768-40c2-ba28-33bf2f9e6e98.eot');
+    src: url('fonts/63f96100-5768-40c2-ba28-33bf2f9e6e98.eot?#iefix') format('embedded-opentype'),
+         url('fonts/0bf82665-92ff-4a8f-8b09-4743d62f7593.woff2') format('woff2'),
+         url('fonts/ab79a7ac-4aaf-4393-896b-feb6610c9528.woff') format('woff'),
+         url('fonts/39c07a80-f3e6-4ddb-9feb-b99a298d4a4d.ttf') format('truetype'),
+         url('fonts/9d3b8a80-7974-49c2-815b-0df888981823.svg#9d3b8a80-7974-49c2-815b-0df888981823') format('svg');
+}
+@font-face {
+    font-family: 'GeorgiaProW01-Regular';
+    src: url('fonts/3b97520d-a722-45ce-b985-2fe0a48b5c1a.eot');
+    src: url('fonts/3b97520d-a722-45ce-b985-2fe0a48b5c1a.eot?#iefix') format('embedded-opentype'),
+         url('fonts/97eae991-0db5-44a4-847b-3116c3c23e0e.woff2') format('woff2'),
+         url('fonts/47123efd-376a-4ca4-a13a-7e6233cf1864.woff') format('woff'),
+         url('fonts/53c391fa-d334-4b5b-b84e-c5d4f9cd597c.ttf') format('truetype'),
+         url('fonts/f2757779-8128-4b78-a626-ca3af3af15a8.svg#f2757779-8128-4b78-a626-ca3af3af15a8') format('svg');
+}
+
+@font-face {
+    font-family: 'GeorgiaProW01-Italic';
+    src: url('fonts/7b67bf57-3988-4989-9328-ea5f41f1b55c.eot');
+    src: url('fonts/7b67bf57-3988-4989-9328-ea5f41f1b55c.eot?#iefix') format('embedded-opentype'),
+         url('fonts/967ae0d1-b075-42cc-8936-bd782ea13e3a.woff2') format('woff2'),
+         url('fonts/103ac261-2bdc-47c8-b277-4ff41592c169.woff') format('woff'),
+         url('fonts/50422483-14f4-4770-b5f4-1b72838a68b1.ttf') format('truetype'),
+         url('fonts/67c342d6-fa04-46b8-bf2b-fa400759d7aa.svg#67c342d6-fa04-46b8-bf2b-fa400759d7aa') format('svg');
+}
+
+@font-face {
+    font-family: 'GeorgiaProW01-SemiBold';
+    src: url('fonts/9482bb74-d43a-4912-90ad-277f984c4e04.eot');
+    src: url('fonts/9482bb74-d43a-4912-90ad-277f984c4e04.eot?#iefix') format('embedded-opentype'),
+         url('fonts/39f132ed-46b2-4873-adba-08f854c0ecba.woff2') format('woff2'),
+         url('fonts/7e5378b1-28b7-49af-8f8b-501d31a25c3d.woff') format('woff'),
+         url('fonts/044dc750-1ac9-4947-a476-234934f64a53.ttf') format('truetype'),
+         url('fonts/c8bdc7f1-a479-48ac-b556-c9f2058f6c1b.svg#c8bdc7f1-a479-48ac-b556-c9f2058f6c1b') format('svg');
+}
+
+@font-face {
+    font-family: 'GeorgiaProW01-SemiBoldI';
+    src: url('fonts/6d7dd9ee-bb3f-4677-9c0c-5a1c8325bb15.eot');
+    src: url('fonts/6d7dd9ee-bb3f-4677-9c0c-5a1c8325bb15.eot?#iefix') format('embedded-opentype'),
+         url('fonts/a9796fad-b245-4d5b-980f-15de399b9a4c.woff2') format('woff2'),
+         url('fonts/8562bfd4-9442-4187-87a2-18312be7f395.woff') format('woff'),
+         url('fonts/01648786-bad8-4633-8993-f453d79b4946.ttf') format('truetype'),
+         url('fonts/f396f0fb-4c68-4916-8779-a5a4f0b5d239.svg#f396f0fb-4c68-4916-8779-a5a4f0b5d239') format('svg');
+}
+
+@font-face {
+    font-family: 'GeorgiaProW01-Bold';
+    src: url('fonts/a47299aa-025b-4095-bd7f-7f1a107a2fcf.eot');
+    src: url('fonts/a47299aa-025b-4095-bd7f-7f1a107a2fcf.eot?#iefix') format('embedded-opentype'),
+         url('fonts/21c9c0f5-9b4f-4ba2-8418-ce3db7bf245d.woff2') format('woff2'),
+         url('fonts/21c88e6f-2518-4756-ad30-da0b1380a6bd.woff') format('woff'),
+         url('fonts/9bce2f2c-825c-43b6-b8fd-e5ade8dcb50b.ttf') format('truetype'),
+         url('fonts/46a4b9e6-af52-4acd-bb7c-bcd22e0bb306.svg#46a4b9e6-af52-4acd-bb7c-bcd22e0bb306') format('svg');
+}
+
+@font-face {
+    font-family: 'GeorgiaProW01-BoldItali';
+    src: url('fonts/619feb4a-b054-4264-8a7d-54f3334f316f.eot');
+    src: url('fonts/619feb4a-b054-4264-8a7d-54f3334f316f.eot?#iefix') format('embedded-opentype'),
+         url('fonts/91f5e104-87e1-4a52-a9e6-1b3a8da5fb64.woff2') format('woff2'),
+         url('fonts/71bc72b4-e8c3-413f-953d-8dea97140670.woff') format('woff'),
+         url('fonts/f29b26d6-c03c-4e4e-8a7e-c8630fa6b742.ttf') format('truetype'),
+         url('fonts/d135ad84-c8da-4a9e-aaa2-84db1b61005a.svg#d135ad84-c8da-4a9e-aaa2-84db1b61005a') format('svg');
+}
+
+@font-face {
+    font-family: 'GeorgiaProW01-Black';
+    src: url('fonts/95a34f6d-efd1-4d21-8c99-2f9136afcdc6.eot');
+    src: url('fonts/95a34f6d-efd1-4d21-8c99-2f9136afcdc6.eot?#iefix') format('embedded-opentype'),
+         url('fonts/c9095439-39a4-44ea-86f4-4d213eb3af54.woff2') format('woff2'),
+         url('fonts/a5d15255-f5b4-4cca-808f-211ec0f25ac8.woff') format('woff'),
+         url('fonts/5565af9b-bf19-43a6-b4e5-7938ca541621.ttf') format('truetype'),
+         url('fonts/3e877ef1-6ca6-4f45-b00f-3aa6c76e610d.svg#3e877ef1-6ca6-4f45-b00f-3aa6c76e610d') format('svg');
+}
+
+@font-face {
+    font-family: 'GeorgiaProW01-BlackItal';
+    src: url('fonts/c12f6ebd-a255-47c9-8561-3570acb3892c.eot');
+    src: url('fonts/c12f6ebd-a255-47c9-8561-3570acb3892c.eot?#iefix') format('embedded-opentype'),
+         url('fonts/3f3b608e-69dc-410f-8b27-b67aa18c3762.woff2') format('woff2'),
+         url('fonts/3859825b-bdc4-47f3-af3d-a2ef42d58cfb.woff') format('woff'),
+         url('fonts/89bac13f-e1ca-4dbd-b9f2-9a00776edef1.ttf') format('truetype'),
+         url('fonts/92e34dc2-a4b2-4a5e-a2fb-65a02edd5881.svg#92e34dc2-a4b2-4a5e-a2fb-65a02edd5881') format('svg');
+}

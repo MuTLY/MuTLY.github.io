@@ -1,0 +1,173 @@
+&lt;div class=&quot;panel panel-default&quot;&gt;
+    &lt;div class=&quot;panel-heading&quot;&gt;
+        &lt;h3 class=&quot;panel-title&quot;&gt;&lt;em&gt;Managed Advice&lt;/em&gt;&lt;sup&gt;&amp;reg;&lt;/sup&gt;, put your retirement on course. We can help.&lt;/h3&gt;
+    &lt;/div&gt;
+    &lt;div class=&quot;panel-body&quot;&gt;
+
+        &lt;p&gt;
+            &lt;em&gt;Managed Advice&lt;/em&gt;&lt;sup&gt;&amp;reg;&lt;/sup&gt; is Transamerica's comprehensive retirement planning solution.
+            It helps take the hard work (and guess work) of researching, investing, and managing your plan account out of your hands.
+            It will automatically invest your account across the eligible funds in your retirement plan - as well as
+            regularly rebalance these allocations as your investments change value over time.
+        &lt;/p&gt;
+
+        &lt;p&gt;&lt;strong&gt;How You Will Be Invested.&lt;/strong&gt;&lt;/p&gt;
+
+        &lt;div class=&quot;row&quot;&gt;
+            &lt;div class=&quot;col-xs-5&quot;&gt;
+                &lt;div id=&quot;investments-chart&quot;&gt;&lt;/div&gt;
+            &lt;/div&gt;
+
+            &lt;div class=&quot;col-xs-6&quot;&gt;
+                &lt;table class=&quot;tbl-style1&quot;&gt;
+                    &lt;tbody&gt;
+                        &lt;tr&gt;
+                            &lt;td&gt;&lt;span class=&quot;box-sm graph-color1&quot;&gt;&lt;/span&gt;Short Bonds/Stable/MMkt&lt;/td&gt;
+                            &lt;td class=&quot;text-right&quot;&gt;17%&lt;/td&gt;
+                        &lt;/tr&gt;
+                        &lt;tr&gt;
+                            &lt;td&gt;&lt;span class=&quot;box-sm graph-color2&quot;&gt;&lt;/span&gt;Interm./Long-term Bonds&lt;/td&gt;
+                            &lt;td class=&quot;text-right&quot;&gt;33%&lt;/td&gt;
+                        &lt;/tr&gt;
+                        &lt;tr&gt;
+                            &lt;td&gt;&lt;span class=&quot;box-sm graph-color3&quot;&gt;&lt;/span&gt;Aggressive Bonds&lt;/td&gt;
+                            &lt;td class=&quot;text-right&quot;&gt;5%&lt;/td&gt;
+                        &lt;/tr&gt;
+                        &lt;tr&gt;
+                            &lt;td&gt;&lt;span class=&quot;box-sm graph-color4&quot;&gt;&lt;/span&gt;Large-Cap Stocks&lt;/td&gt;
+                            &lt;td class=&quot;text-right&quot;&gt;31%&lt;/td&gt;
+                        &lt;/tr&gt;
+                        &lt;tr&gt;
+                            &lt;td&gt;&lt;span class=&quot;box-sm graph-color5&quot;&gt;&lt;/span&gt;Small/Mid-Cap Stocks&lt;/td&gt;
+                            &lt;td class=&quot;text-right&quot;&gt;6%&lt;/td&gt;
+                        &lt;/tr&gt;
+                        &lt;tr&gt;
+                            &lt;td&gt;&lt;span class=&quot;box-sm graph-color6&quot;&gt;&lt;/span&gt;International Stocks&lt;/td&gt;
+                            &lt;td class=&quot;text-right&quot;&gt;8%&lt;/td&gt;
+                        &lt;/tr&gt;
+                    &lt;/tbody&gt;
+                &lt;/table&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+
+        &lt;p class=&quot;no-vertical-margin&quot;&gt;&lt;strong&gt;Other Benefits&lt;/strong&gt;&lt;/p&gt;
+        &lt;p&gt;
+            With &lt;em&gt;Managed Advice&lt;/em&gt;&lt;sup&gt;&amp;reg;&lt;/sup&gt;, you can get access to a team of experts to advice you on virtually every aspect of your account.
+            These professionals are not paid by commission - so they can focus on your situation in a balanced way through one-on-one counselling sessions.
+        &lt;/p&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div class=&quot;margin-bottom-lg&quot;&gt;
+&lt;/div&gt;
+&lt;p class=&quot;disclosure&quot;&gt;&lt;em&gt;Managed Advice&lt;/em&gt;&lt;sup&gt;&amp;reg;&lt;/sup&gt; provides a participant with an asset allocation mix of funds available within the plan.  The asset allocation mix will be automatically rebalanced to become more conservative over time as the participant approaches a designated retirement year. Additional fees and terms and conditions apply to the &lt;em&gt;Managed Advice&lt;/em&gt;&lt;sup&gt;&amp;reg;&lt;/sup&gt; service.  Retirement date portfolios are subject to the same risks as the underlying asset classes in which they invest. The higher the portfolio's allocation to stocks the greater the risk. The principal value of the portfolio is never guaranteed, including at and after the target date.&lt;/p&gt;
+&lt;p class=&quot;disclosure&quot;&gt;The &lt;em&gt;Managed Advice&lt;/em&gt;&lt;sup&gt;&amp;reg;&lt;/sup&gt; service is offered through Transamerica Retirement Advisors, LLC (TRA), registered investment advisor. Transamerica Retirement Solutions and TRA are affiliated companies. Depending on the option chosen by the plan fiduciary, the Managed Advice&lt;sup&gt;&amp;reg;&lt;/sup&gt; service may be offered through, and the asset allocation portfolios constructed by, the plan's investment advisor.  If the plan chooses this option, only the Managed Advice&lt;sup&gt;&amp;reg;&lt;/sup&gt; one-on-one advisory services are provided by TRA at the direction of the  plan's investment advisor. To find out more,  please call your Transamerica representative.&lt;/p&gt;
+
+&lt;script&gt;
+$(document).on('ready', function () {
+
+    // Double --&gt; Currency
+    function toCurrency(value) {
+        value = value.toString();
+        var dollars = value.split('.')[0],
+            cents = (value.split('.')[1] || '') + '00';
+        dollars = dollars.split('').reverse().join('').replace(/(\d{3}(?!$)(?!-))/g, '$1,').split('').reverse().join('');
+        return dollars + '.' + cents.slice(0, 2);
+    }
+
+    // Chart colors, based on SCSS variables, they're all here and the charts will use what's available, in order
+    // var colors = [&quot;#C07DE2&quot;, &quot;#14B7DB&quot;, &quot;#F76230&quot;, &quot;#D0D0D0&quot;, &quot;#20C772&quot;, &quot;#02648E&quot;, &quot;#3E7CAB&quot;, &quot;#1798CB&quot;, &quot;#1B8A39&quot;, &quot;#66BE7D&quot;, &quot;#6CD487&quot;, &quot;#02648E&quot;, &quot;#A95ECF&quot;, &quot;#F76230&quot;, &quot;#E7E6E5&quot;];
+
+    var colors = [&quot;#AA5AD2&quot;, &quot;#14B7DB&quot;, &quot;#F76230&quot;, &quot;#D0D0D0&quot;, &quot;#20C772&quot;, &quot;#E22739&quot;, &quot;#1E4387&quot;]; // Official Zeplin colors for graphs
+
+    Highcharts.setOptions({
+        colors: colors,
+        credits: false
+    });
+
+    // Chart 1
+    (function () {
+        var chart = new Highcharts.Chart({
+                series: [{
+                    data: [
+                        ['Short Bonds/Stable/MMkt', 17],
+                        ['Interm./Long-term Bonds', 33],
+                        ['Aggressive Bonds', 5],
+                        ['Large-Cap Stocks', 31],
+                        ['Small/Mid-Cap Stocks', 6],
+                        ['International Stocks', 8]
+                    ]
+                }],
+                chart: {
+                    renderTo: 'investments-chart',
+                    type: 'pie',
+                    height: 245
+                },
+                tooltip: {
+                    backgroundColor: 'rgba(255,255,255,0)',
+                    borderWidth: 0,
+                    borderRadius: 0,
+                    shadow: false,
+                    useHTML: true,
+                    valueDecimals: 2,
+                    percentageDecimals: 2,
+                    // pointFormat: '&lt;b&gt;{point.y}&lt;/b&gt;',
+                    // valuePrefix: '',
+                    // valueSuffix: '',
+                    shared: false,
+                    formatter: function() {
+                        return '&lt;div class=&quot;chart-point-name&quot;&gt;' + this.point.name +'&lt;/div&gt;&lt;div class=&quot;chart-point-xy&quot;&gt;$'+ toCurrency(this.point.y) +'&lt;/div&gt;';
+                    }
+                },
+                title: {
+                    text: 'How You Will Be Invested',
+                    align: 'center',
+                    verticalAlign: 'middle',
+                    useHTML: true,
+                    y: 15
+                },
+                subtitle: {
+                    text: 'Total Investment',
+                    align: 'center',
+                    verticalAlign: 'middle',
+                    useHTML: true,
+                    y: -10
+                },
+                plotOptions: {
+                    pie: {
+                        shadow: false,
+                        allowPointSelect: true,
+                        startAngle: 360,
+                        innerSize: '85%',
+                        size: '100%',
+                        dataLabels: false,
+                        stickyTracking: false,
+                        states: {
+                            hover: {
+                                enabled: true
+                            }
+                        }
+                    }
+                }
+            },
+            function (chart) {
+                var series = chart.options.series[0].data;
+                var total = 0;
+
+                for (var i = 0, l = series.length; i &lt; l; i++) {
+                    var n = Number(series[i][1]);
+                    total += n;
+                }
+
+                chart.setTitle({
+                    // text: toCurrency(total) + '%',
+                    text: total + '%',
+                    useHTML: true
+                });
+
+                // $('#total-retirement-budget').text('$' + toCurrency(total));
+            });
+    }());
+
+});
+&lt;/script&gt;

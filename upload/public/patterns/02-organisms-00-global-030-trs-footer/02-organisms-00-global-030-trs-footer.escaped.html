@@ -1,0 +1,54 @@
+&lt;footer id=&quot;global_footer&quot; class=&quot;trs-footer page-footer row&quot;&gt;
+    &lt;div class=&quot;trs-footer__phone clearfix&quot;&gt;
+        &lt;div class=&quot;col-xs-12 text-center trs-footer__social&quot;&gt;
+		&lt;a class=&quot;trs-icon-circle&quot; href=&quot;http://www.facebook.com/transamerica&quot;&gt;&lt;span class=&quot;trs-icons-fb&quot; role=&quot;presentation&quot;&gt;&lt;/span&gt;&lt;span class=&quot;sr-only&quot;&gt;Facebook&lt;/span&gt;&lt;/a&gt;		&lt;a class=&quot;trs-icon-circle&quot; href=&quot;http://www.youtube.com/transamerica&quot;&gt;&lt;span class=&quot;trs-icons-youtube&quot; role=&quot;presentation&quot;&gt;&lt;/span&gt;&lt;span class=&quot;sr-only&quot;&gt;Youtube&lt;/span&gt;&lt;/a&gt;        &lt;/div&gt;    	&lt;div class=&quot;col-sm-12 text-center&quot;&gt;
+	&lt;a href=&quot;tel:8007555801&quot;  class=&quot;btn btn-secondary&quot;&gt;&lt;span class='glyphicon glyphicon-earphone' role='presentation'&gt;&lt;/span&gt; &lt;span class='phone-number'&gt;1-800-755-5801&lt;/span&gt;&lt;/a&gt;
+    &lt;div id=&quot;lpbutton&quot; class=&quot;chat-button&quot;&gt;&lt;a class=&quot;btn btn-secondary btn--chat&quot; href=&quot;javascript:void(0);&quot;&gt;&lt;span class=&quot;glyphicon glyphicon-comment&quot; role=&quot;presentation&quot;&gt;&lt;/span&gt; &lt;span class=&quot;phone-number&quot;&gt;Live Chat&lt;/span&gt;&lt;/a&gt;&lt;/div&gt;
+    &lt;!-- this button has ZERO content options. It is injected by LivePerson. The only thing needed for export is &lt;div id=&quot;lpbutton&quot; class=&quot;chat-button&quot;&gt;&lt;/div&gt; --&gt;
+    &lt;script&gt;
+    (function($){
+    	
+    	$(ready);
+    	
+    	function ready(){
+    		$('.btn--chat', '#lpbutton').on('click blur', killButton);
+    	}
+    	
+    	function killButton(){
+    		var $thisButton = $(this),
+    			disabledText = &quot;live chat offline&quot;,
+    			enabledText = &quot;live chat&quot;;
+    		
+    		if (!$thisButton.hasClass('disabled')){
+    			$(this).attr('disabled', '').addClass('disabled').find('.phone-number').text(disabledText);
+    		}else{
+    			$(this).removeAttr('disabled').removeClass('disabled').find('.phone-number').text(enabledText);
+    		}
+    	}
+    	
+    })(jQuery);
+    &lt;/script&gt;
+    &lt;!-- ALERT: NEVER EXPORT THIS SCRIPT!!! IT IS FOR PL DEMO ONLY!!! --&gt;&lt;/div&gt; &lt;/div&gt;
+    &lt;div class=&quot;trs-footer__body&quot;&gt;
+        &lt;div class=&quot;row&quot;&gt;
+            &lt;nav class=&quot;col-xs-12 trs-footer__policies text-center display-table&quot;&gt;
+&lt;h3 class=&quot;trs-footer__subhead&quot; &gt;Online policies&lt;/h3&gt;                &lt;ul class=&quot;trs-footer__nav-list&quot;&gt;
+                    &lt;li&gt;&lt;a class=&quot;&quot; href=&quot;&quot;&gt;Website Privacy Statement &lt;span class='divider' aria-hidden=&quot;true&quot;&gt;|&lt;/span&gt;&lt;/a&gt;
+&lt;/li&gt;
+                    &lt;li&gt;&lt;a class=&quot;&quot; href=&quot;&quot;&gt;Terms and Conditions of Use &lt;span class='divider' aria-hidden=&quot;true&quot;&gt;|&lt;/span&gt;&lt;/a&gt;
+&lt;/li&gt;
+                    &lt;li&gt;&lt;a class=&quot;&quot; href=&quot;&quot;&gt;Business Continuity Plan Summary &lt;span class='divider' aria-hidden=&quot;true&quot;&gt;|&lt;/span&gt;&lt;/a&gt;
+&lt;/li&gt;
+                    &lt;li&gt;&lt;a class=&quot;&quot; href=&quot;&quot;&gt;Security Measures&lt;/a&gt;
+&lt;/li&gt;
+                &lt;/ul&gt;             &lt;/nav&gt;
+        &lt;/div&gt;
+        &lt;div class=&quot;row&quot;&gt;
+            &lt;div class=&quot;col-xs-12 trs-footer__footnotes&quot;&gt;
+                &lt;div class=&quot;footer-rule&quot; role=&quot;presentation&quot;&gt;&lt;/div&gt;
+                &lt;p&gt;Securities offered by Transamerica Investors Securities Corporation (TISC), 440 Mamaroneck Avenue, Harrison, N.Y. 10528. Transamerica Retirement Solutions Corporation is an affiliate of TISC.&lt;/p&gt;
+                &lt;p&gt;Transamerica companies are part of the worldwide group of AEGON companies. Copyright 2011 - 2014 Transamerica Corporation, 4333 Edgewood Road NE, Cedar Rapids, IA 52499&mdash;All Rights Reserved.&lt;/p&gt;
+                &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+&lt;/footer&gt;

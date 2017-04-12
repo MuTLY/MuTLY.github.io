@@ -1,0 +1,360 @@
+{{#showModalLink}}
+&lt;p&gt;
+    &lt;a href=&quot;#&quot; data-toggle=&quot;modal&quot; data-target=&quot;#modal-{{ uniqueId }}&quot;&gt;
+        {{#addAccountManual}}
+            &lt;em&gt;OnTrack&lt;/em&gt;&lt;sup&gt;&amp;reg;&lt;/sup&gt; Modal - SLIDE #01: Add New Account Modal (Manual Account)
+            {{#isEditable}}[Editable]{{/isEditable}}
+            {{#isNonEditable}}[Non-editable]{{/isNonEditable}},
+            {{#isTaxable}}[Taxable]{{/isTaxable}}
+            {{#isGeneric}}[Generic]{{/isGeneric}}
+            {{#isIra}}[IRA]{{/isIra}}
+        {{/addAccountManual}}
+
+        {{#editAccountManual}}&lt;em&gt;OnTrack&lt;/em&gt;&lt;sup&gt;&amp;reg;&lt;/sup&gt; Modal - Edit Account Modal (Manual Account){{/editAccountManual}}
+        {{#editAccountYodlee}}&lt;em&gt;OnTrack&lt;/em&gt;&lt;sup&gt;&amp;reg;&lt;/sup&gt; Modal - Edit Account Modal (Yodlee Account){{/editAccountYodlee}}
+    &lt;/a&gt;
+&lt;/p&gt;
+{{/showModalLink}}
+
+&lt;!-- add/edit new account (manual/yodlee) --&gt;
+&lt;div class=&quot;modal fade&quot; id=&quot;modal-{{ uniqueId }}&quot; tabindex=&quot;-1&quot; role=&quot;dialog&quot; aria-labelledby=&quot;section-title-add-account&quot;&gt;
+    &lt;div class=&quot;modal-dialog&quot; role=&quot;document&quot;&gt;{{! optional modal-lg or modal-sm can be added here }}
+        &lt;div class=&quot;modal-content&quot;&gt;
+            &lt;div class=&quot;modal-header&quot;&gt;
+                &lt;a href=&quot;#&quot; type=&quot;button&quot; class=&quot;close&quot; data-dismiss=&quot;modal&quot; aria-label=&quot;Close&quot;&gt;
+                    &lt;span aria-hidden=&quot;true&quot; class=&quot;trs-icons-close-btn&quot;&gt;&lt;/span&gt;
+                &lt;/a&gt;
+                &lt;h3 id=&quot;section-title-add-account&quot; class=&quot;modal-title section-title&quot;&gt;
+                    {{# addAccountManual }}Add a new{{/ addAccountManual }}
+                    {{# editAccountManual }}Edit{{/ editAccountManual }}
+                    {{# editAccountYodlee }}Edit{{/ editAccountYodlee }}
+                    account
+                &lt;/h3&gt;
+            &lt;/div&gt;
+
+            &lt;div class=&quot;modal-body&quot;&gt;
+                &lt;!-- error list --&gt;
+                &lt;div id=&quot;alertErrors{{ uniqueId }}&quot; class=&quot;row&quot;&gt;
+                    &lt;div class=&quot;col-xs-12&quot;&gt;
+                        &lt;div class=&quot;margin-bottom-lg alert alert-error&quot; id=&quot;errorBox{{ uniqueId }}&quot;&gt;
+                            &lt;div class=&quot;alert-icon&quot;&gt;&lt;span role=&quot;presentation&quot; class=&quot;glyphicon glyphicon-remove-sign glyph-white alert-icon-size&quot;&gt;&lt;/span&gt;&lt;/div&gt;
+                            &lt;div class=&quot;alert-message&quot;&gt;
+                                &lt;strong&gt;Error&lt;/strong&gt;&lt;br&gt;
+                                &lt;ul&gt;
+                                    &lt;li&gt;Some super big, with lots of words, generic error to test how errors show up here.&lt;/li&gt;
+                                    &lt;li&gt;Some generic error to test how errors show up here.&lt;/li&gt;
+                                    &lt;li&gt;Some generic error.&lt;/li&gt;
+                                &lt;/ul&gt;
+                            &lt;/div&gt;
+                        &lt;/div&gt;
+                    &lt;/div&gt;
+                &lt;/div&gt;
+                &lt;!-- /error list --&gt;
+
+                &lt;form role=&quot;form&quot; class=&quot;form-inline ontrack__form add-manual-account-yodlee&quot;&gt;
+                    &lt;fieldset&gt;
+                        &lt;div class=&quot;row row__mobile row__mobile--bg no-border no-vertical-margin type&quot;&gt;
+                            &lt;div class=&quot;col-sm-4 col-xs-12&quot;&gt;
+                                &lt;label class=&quot;aligner aligner--mobile&quot; for=&quot;ontrack_retire_type&quot;&gt;Type:&lt;/label&gt;
+                            &lt;/div&gt;
+                            &lt;div class=&quot;col-sm-8 col-xs-12&quot;&gt;
+                                {{# addAccountManual }}
+                                &lt;select class=&quot;form-control full-width&quot; id=&quot;ontrack_retire_type&quot;&gt;
+                                    &lt;option selected&gt;Choose one&lt;/option&gt;
+                                    &lt;option value=&quot;401&quot;&gt;401(k)&lt;/option&gt;
+                                    &lt;option value=&quot;403&quot;&gt;403(b)&lt;/option&gt;
+                                    &lt;option value=&quot;ira&quot;{{# isIra }} selected{{/ isIra }}&gt;IRA - Roth&lt;/option&gt;
+                                    &lt;option value=&quot;taxable&quot;{{# isTaxable }} selected{{/ isTaxable }}&gt;Taxable&lt;/option&gt;
+                                    &lt;option value=&quot;gen-tax-def&quot;{{# isGeneric }} selected{{/ isGeneric }}&gt;Generic Tax Deferred&lt;/option&gt;
+                                &lt;/select&gt;
+                                {{/ addAccountManual }}
+
+                                {{# editAccountManual }}
+                                &lt;span class=&quot;aligner aligner--mobile&quot;&gt;IRA - Roth&lt;/span&gt;
+                                {{/ editAccountManual }}
+
+                                {{# editAccountYodlee }}
+                                &lt;span class=&quot;aligner aligner--mobile&quot;&gt;Generic Tax Deferred&lt;/span&gt;
+                                {{/ editAccountYodlee }}
+                            &lt;/div&gt;
+                        &lt;/div&gt;
+
+                        {{# isIra }}
+                        &lt;div class=&quot;row row__mobile row__mobile--bg no-border no-vertical-margin ira&quot;&gt;
+                            &lt;div class=&quot;col-sm-4 col-xs-12&quot;&gt;
+                                &lt;label class=&quot;aligner aligner--mobile&quot; for=&quot;ira-brokerage&quot;&gt;IRA:&lt;/label&gt;
+                            &lt;/div&gt;
+
+                            &lt;div class=&quot;col-sm-8 col-xs-12&quot;&gt;
+                                &lt;input type=&quot;radio&quot; checked id=&quot;ira-deductible&quot; name=&quot;ira&quot;&gt;
+                                &lt;label class=&quot;aligner&quot; for=&quot;ira-deductible&quot;&gt;&lt;span role=&quot;radio&quot;&gt;&lt;/span&gt;Deductible&lt;/label&gt;
+
+                                &lt;br class=&quot;visible-xs&quot;&gt;
+
+                                &lt;input type=&quot;radio&quot; id=&quot;ira-non-deductible&quot; name=&quot;ira&quot;&gt;
+                                &lt;label class=&quot;aligner&quot; for=&quot;ira-non-deductible&quot;&gt;&lt;span role=&quot;radio&quot;&gt;&lt;/span&gt;Non-deductible&lt;/label&gt;
+
+                                &lt;br class=&quot;visible-xs&quot;&gt;
+
+                                &lt;input type=&quot;radio&quot; id=&quot;ira-roth&quot; name=&quot;ira&quot;&gt;
+                                &lt;label class=&quot;aligner&quot; for=&quot;ira-roth&quot;&gt;&lt;span role=&quot;radio&quot;&gt;&lt;/span&gt;Roth&lt;/label&gt;
+                            &lt;/div&gt;
+                        &lt;/div&gt;
+                        {{/ isIra }}
+
+                        {{# isTaxable }}
+                        &lt;div class=&quot;row row__mobile row__mobile--bg no-border no-vertical-margin taxable&quot;&gt;
+                            &lt;div class=&quot;col-sm-4 col-xs-12&quot;&gt;
+                                &lt;label class=&quot;aligner aligner--mobile&quot; for=&quot;taxable-brokerage&quot;&gt;Taxable:&lt;/label&gt;
+                            &lt;/div&gt;
+
+                            &lt;div class=&quot;col-sm-8 col-xs-12&quot;&gt;
+                                &lt;input type=&quot;radio&quot; checked id=&quot;taxable-brokerage&quot; name=&quot;taxabale&quot;&gt;
+                                &lt;label class=&quot;aligner&quot; for=&quot;taxable-brokerage&quot;&gt;&lt;span role=&quot;radio&quot;&gt;&lt;/span&gt;Brokerage&lt;/label&gt;
+
+                                &lt;br class=&quot;visible-xs&quot;&gt;
+
+                                &lt;input type=&quot;radio&quot; id=&quot;taxable-savings&quot; name=&quot;taxabale&quot;&gt;
+                                &lt;label class=&quot;aligner&quot; for=&quot;taxable-savings&quot;&gt;&lt;span role=&quot;radio&quot;&gt;&lt;/span&gt;Savings&lt;/label&gt;
+
+                                &lt;br class=&quot;visible-xs&quot;&gt;
+
+                                &lt;input type=&quot;radio&quot; id=&quot;taxable-other&quot; name=&quot;taxabale&quot;&gt;
+                                &lt;label class=&quot;aligner&quot; for=&quot;taxable-other&quot;&gt;&lt;span role=&quot;radio&quot;&gt;&lt;/span&gt;Other&lt;/label&gt;
+                            &lt;/div&gt;
+                        &lt;/div&gt;
+                        {{/ isTaxable }}
+
+                        {{# isGeneric }}
+                        &lt;div class=&quot;row row__mobile row__mobile--bg no-border no-vertical-margin generic-tax-deferred&quot;&gt;
+                            &lt;div class=&quot;col-sm-4 col-xs-12&quot;&gt;
+                                &lt;label class=&quot;aligner aligner--mobile&quot; for=&quot;generic-tax-qualified&quot;&gt;Generic Tax Deferred:&lt;/label&gt;
+                            &lt;/div&gt;
+
+                            &lt;div class=&quot;col-sm-8 col-xs-12&quot;&gt;
+                                &lt;input type=&quot;radio&quot; checked id=&quot;generic-tax-qualified&quot; name=&quot;generic-tax&quot;&gt;
+                                &lt;label class=&quot;aligner&quot; for=&quot;generic-tax-qualified&quot;&gt;&lt;span role=&quot;radio&quot;&gt;&lt;/span&gt;Qualified&lt;/label&gt;
+
+                                &lt;br class=&quot;visible-xs&quot;&gt;
+
+                                &lt;input type=&quot;radio&quot; id=&quot;generic-tax-non-qualified&quot; name=&quot;generic-tax&quot;&gt;
+                                &lt;label class=&quot;aligner&quot; for=&quot;generic-tax-non-qualified&quot;&gt;&lt;span role=&quot;radio&quot;&gt;&lt;/span&gt;Non-qualified&lt;/label&gt;
+                            &lt;/div&gt;
+                        &lt;/div&gt;
+                        {{/ isGeneric }}
+
+                        &lt;div class=&quot;row row__mobile row__mobile--bg no-border no-vertical-margin nickname&quot;&gt;
+                            &lt;div class=&quot;col-sm-4 col-xs-12&quot;&gt;
+                                &lt;label class=&quot;aligner aligner--mobile&quot; for=&quot;nickname&quot;&gt;Name:&lt;/label&gt;
+                            &lt;/div&gt;
+                            &lt;div class=&quot;col-sm-8 col-xs-12&quot;&gt;
+                                &lt;div class=&quot;form-group full-width&quot;&gt;
+                                    &lt;input type=&quot;text&quot; pattern=&quot;.*&quot; novalidate autocorrect=&quot;off&quot; autocapitalize=&quot;words&quot; autocomplete=&quot;on&quot; class=&quot;form-control full-width&quot; id=&quot;nickname&quot; placeholder=&quot;401(k)&quot; value=&quot;{{# editAccountManual }}My Custom Manual Account Name{{/ editAccountManual }}{{# editAccountYodlee }}My Custom Yodlee Account Name{{/ editAccountYodlee }}&quot;&gt;
+                                &lt;/div&gt;
+                            &lt;/div&gt;
+                        &lt;/div&gt;
+
+                        {{# isAccountNumber }}
+                        &lt;div class=&quot;row row__mobile row__mobile--bg no-border no-vertical-margin&quot;&gt;
+                            &lt;div class=&quot;col-sm-4 col-xs-12&quot;&gt;
+                                &lt;span class=&quot;aligner aligner--mobile&quot;&gt;Account Number:&lt;/span&gt;
+                            &lt;/div&gt;
+                            &lt;div class=&quot;col-sm-8 col-xs-12&quot;&gt;
+                                &lt;span class=&quot;aligner aligner--mobile&quot; id=&quot;accountNumber&quot;&gt;xxxx1234&lt;/span&gt;
+                                &lt;span class=&quot;aligner aligner--mobile text-small&quot;&gt;&lt;a href=&quot;#&quot;&gt;View website&lt;/a&gt;&lt;/span&gt;
+                            &lt;/div&gt;
+                        &lt;/div&gt;
+                        {{/ isAccountNumber }}
+
+                        {{# isBalance }}
+                        &lt;div class=&quot;row row__mobile row__mobile--bg {{# isOwner }}no-border no-vertical-margin{{/ isOwner }} balance&quot;&gt;
+                            &lt;div class=&quot;col-sm-4 col-xs-12&quot;&gt;
+                                &lt;span class=&quot;aligner aligner--mobile&quot;&gt;Balance:&lt;/span&gt;
+                            &lt;/div&gt;
+                            &lt;div class=&quot;col-sm-8 col-xs-12&quot;&gt;
+                                {{# isBalanceEditable }}
+                                &lt;label class=&quot;aligner&quot; for=&quot;balanceAmount&quot;&gt;$&lt;/label&gt;
+                                &lt;div class=&quot;form-group&quot;&gt;&lt;input type=&quot;text&quot; pattern=&quot;[+-]?[0-9]{1,3}(?:,?[0-9]{3})*(?:\.[0-9]{2})?&quot; novalidate autocorrect=&quot;off&quot; autocapitalize=&quot;off&quot; autocomplete=&quot;off&quot; class=&quot;form-control currency&quot; id=&quot;balanceAmount&quot; name=&quot;balanceAmount&quot; placeholder=&quot;0&quot; value=&quot;55,555,555&quot;&gt;&lt;/div&gt;
+                                &lt;span class=&quot;aligner text-small&quot;&gt;
+                                    &lt;em&gt;as of &lt;span id=&quot;balanceAsOfDate&quot;&gt;01/01/2015&lt;/span&gt;.&lt;/em&gt;
+                                &lt;/span&gt;
+                                {{/ isBalanceEditable }}
+                                &lt;br class=&quot;DELETE_THIS_BR&quot;&gt;
+                                {{# isBalanceNonEditable }}
+                                &lt;span class=&quot;aligner aligner--mobile&quot;&gt;$&lt;/span&gt;
+                                &lt;span class=&quot;aligner aligner--mobile&quot; id=&quot;balanceAmount&quot;&gt;555,555,555.55&lt;/span&gt;
+                                &lt;span class=&quot;aligner aligner--mobile text-small&quot;&gt;&lt;em&gt;as of &lt;span id=&quot;balanceAsOfDate&quot;&gt;01/01/2015&lt;/span&gt;.&lt;/em&gt;&lt;/span&gt;
+                                {{/ isBalanceNonEditable }}
+                            &lt;/div&gt;
+                        &lt;/div&gt;
+                        {{/ isBalance }}
+
+                        {{# isOwner }}
+                        &lt;div class=&quot;row row__mobile row__mobile--bg owner&quot;&gt;
+                            &lt;div class=&quot;col-sm-4 col-xs-12&quot;&gt;
+                                &lt;label class=&quot;aligner aligner--mobile&quot; for=&quot;owner-self&quot;&gt;Owner:&lt;/label&gt;
+                            &lt;/div&gt;
+                            &lt;div class=&quot;col-sm-8 col-xs-12&quot;&gt;
+                                &lt;input type=&quot;radio&quot; checked id=&quot;owner-self&quot; name=&quot;owner&quot;&gt;
+                                &lt;label class=&quot;aligner&quot; for=&quot;owner-self&quot;&gt;&lt;span role=&quot;radio&quot;&gt;&lt;/span&gt;Self&lt;/label&gt;
+
+                                &lt;br class=&quot;visible-xs&quot;&gt;
+
+                                &lt;input type=&quot;radio&quot; id=&quot;owner-spouse&quot; name=&quot;owner&quot;&gt;
+                                &lt;label class=&quot;aligner&quot; for=&quot;owner-spouse&quot;&gt;&lt;span role=&quot;radio&quot;&gt;&lt;/span&gt;Spouse/Partner&lt;/label&gt;
+                            &lt;/div&gt;
+
+                        &lt;/div&gt;
+                        {{/ isOwner }}
+
+                        &lt;div class=&quot;row row__mobile row__mobile--bg how-much-are-you-contributing&quot;&gt;
+                            &lt;hr class=&quot;visible-xs hr--mobile__separator&quot;&gt;
+                            &lt;div class=&quot;visible-xs clear&quot;&gt;&lt;/div&gt;
+
+                            &lt;div class=&quot;col-xs-12&quot;&gt;
+                                &lt;h4 class=&quot;sub-title margin-bottom&quot;&gt;How much {{# isYou }}are you{{/ isYou}}{{# isYourEmployer }}is your employer{{/ isYourEmployer }} contributing annually?&lt;/h4&gt;
+
+                                &lt;div class=&quot;row no-border no-vertical-margin&quot;&gt;
+                                    &lt;div class=&quot;col-sm-4 col-xs-12&quot;&gt;
+                                        &lt;label class=&quot;aligner&quot; for=&quot;pre-tax-contrib&quot;&gt;Pre-tax&lt;/label&gt;
+                                    &lt;/div&gt;
+                                    &lt;div class=&quot;col-sm-8 col-xs-12&quot;&gt;
+                                        &lt;div class=&quot;form-group&quot;&gt;&lt;input type=&quot;text&quot; pattern=&quot;[+-]?[0-9]{1,3}(?:,?[0-9]{3})*(?:\.[0-9]{2})?&quot; novalidate autocorrect=&quot;off&quot; autocapitalize=&quot;off&quot; autocomplete=&quot;off&quot; class=&quot;form-control currency&quot; id=&quot;pre-tax-contrib&quot; placeholder=&quot;0&quot;&gt;&lt;/div&gt;
+                                        &lt;select id=&quot;pre-tax-type&quot; name=&quot;pre-tax-type&quot;&gt;
+                                            &lt;option value=&quot;dollar&quot; selected&gt;dollar&lt;/option&gt;
+                                            &lt;option value=&quot;percent&quot;&gt;percent&lt;/option&gt;
+                                        &lt;/select&gt;
+                                    &lt;/div&gt;
+                                &lt;/div&gt;
+
+                                &lt;div class=&quot;row no-border no-vertical-margin&quot;&gt;
+                                    &lt;div class=&quot;col-sm-4 col-xs-12&quot;&gt;
+                                        &lt;label class=&quot;aligner&quot; for=&quot;post-tax-contrib&quot;&gt;Post-tax&lt;/label&gt;
+                                    &lt;/div&gt;
+                                    &lt;div class=&quot;col-sm-8 col-xs-12&quot;&gt;
+                                        &lt;div class=&quot;form-group&quot;&gt;&lt;input type=&quot;text&quot; pattern=&quot;[+-]?[0-9]{1,3}(?:,?[0-9]{3})*(?:\.[0-9]{2})?&quot; novalidate autocorrect=&quot;off&quot; autocapitalize=&quot;off&quot; autocomplete=&quot;off&quot; class=&quot;form-control currency&quot; id=&quot;post-tax-contrib&quot; placeholder=&quot;0&quot;&gt;&lt;/div&gt;
+                                        &lt;select id=&quot;post-tax-type&quot; name=&quot;post-tax-type&quot;&gt;
+                                            &lt;option value=&quot;dollar&quot;&gt;dollar&lt;/option&gt;
+                                            &lt;option value=&quot;percent&quot; selected&gt;percent&lt;/option&gt;
+                                        &lt;/select&gt;
+                                    &lt;/div&gt;
+                                &lt;/div&gt;
+
+                                &lt;div class=&quot;row no-border no-vertical-margin&quot;&gt;
+                                    &lt;div class=&quot;col-sm-4 col-xs-12&quot;&gt;
+                                        &lt;label class=&quot;aligner&quot; for=&quot;roth-contrib&quot;&gt;Roth&lt;/label&gt;
+                                    &lt;/div&gt;
+                                    &lt;div class=&quot;col-sm-8 col-xs-12&quot;&gt;
+                                        &lt;div class=&quot;form-group&quot;&gt;&lt;input type=&quot;text&quot; pattern=&quot;[+-]?[0-9]{1,3}(?:,?[0-9]{3})*(?:\.[0-9]{2})?&quot; novalidate autocorrect=&quot;off&quot; autocapitalize=&quot;off&quot; autocomplete=&quot;off&quot; class=&quot;form-control currency&quot; id=&quot;roth-contrib&quot; placeholder=&quot;0&quot;&gt;&lt;/div&gt;
+                                        &lt;select id=&quot;roth-type&quot;&gt;
+                                            &lt;option value=&quot;dollar&quot; selected&gt;dollar&lt;/option&gt;
+                                            &lt;option value=&quot;percent&quot;&gt;percent&lt;/option&gt;
+                                        &lt;/select&gt;
+                                    &lt;/div&gt;
+                                &lt;/div&gt;
+
+                                &lt;p class=&quot;disclosure&quot;&gt;Contribution percentage is based on gross compensation.&lt;/p&gt;
+                            &lt;/div&gt;
+                        &lt;/div&gt;&lt;!-- //how-much-are-you-contributing --&gt;
+
+                        &lt;div class=&quot;row row__mobile row__mobile--bg how-are-currently-invested&quot;&gt;
+                            &lt;hr class=&quot;visible-xs hr--mobile__separator&quot;&gt;
+                            &lt;div class=&quot;visible-xs clear&quot;&gt;&lt;/div&gt;
+
+                            &lt;div class=&quot;col-xs-12&quot;&gt;
+                                &lt;h4 class=&quot;sub-title margin-bottom&quot;&gt;
+                                    &lt;span&gt;How you are currently invested.&lt;/span&gt;
+                                    &lt;br class=&quot;visible-xs&quot;&gt;
+                                    &lt;span class=&quot;text-small no-bold&quot;&gt;&lt;a href=&quot;#&quot;&gt;View Holdings&lt;/a&gt;&lt;/span&gt;
+                                &lt;/h4&gt;
+                            &lt;/div&gt;
+
+                            &lt;div class=&quot;col-sm-4 col-xs-12&quot;&gt;
+                                &lt;div id=&quot;risk-preference{{uniqueId}}&quot; class=&quot;row no-border no-vertical-padding js-risk-input&quot;&gt;
+                                    &lt;div class=&quot;col-sm-12 col-xs-6 no-wrap&quot;&gt;
+                                        &lt;input type=&quot;radio&quot; checked value=&quot;conservative&quot; name=&quot;chkStrat&quot; id=&quot;chkConservative{{uniqueId}}&quot;&gt;
+                                        &lt;label class=&quot;aligner&quot; for=&quot;chkConservative{{uniqueId}}&quot;&gt;&lt;span role=&quot;radio&quot;&gt;&lt;/span&gt;Conservative&lt;/label&gt;
+                                    &lt;/div&gt;
+
+                                    &lt;div class=&quot;col-sm-12 col-xs-6 no-wrap&quot;&gt;
+                                        &lt;input type=&quot;radio&quot; value=&quot;moderate&quot; name=&quot;chkStrat&quot; id=&quot;chkModerate{{uniqueId}}&quot;&gt;
+                                        &lt;label class=&quot;aligner&quot; for=&quot;chkModerate{{uniqueId}}&quot;&gt;&lt;span role=&quot;radio&quot;&gt;&lt;/span&gt;Moderate&lt;/label&gt;
+                                    &lt;/div&gt;
+
+                                    &lt;div class=&quot;col-sm-12 col-xs-6 no-wrap&quot;&gt;
+                                        &lt;input type=&quot;radio&quot; value=&quot;aggressive&quot; name=&quot;chkStrat&quot; id=&quot;chkAggressive{{uniqueId}}&quot;&gt;
+                                        &lt;label class=&quot;aligner&quot; for=&quot;chkAggressive{{uniqueId}}&quot;&gt;&lt;span role=&quot;radio&quot;&gt;&lt;/span&gt;Aggressive&lt;/label&gt;
+                                    &lt;/div&gt;
+
+                                    &lt;div class=&quot;col-sm-12 col-xs-6 no-wrap&quot;&gt;
+                                        &lt;input type=&quot;radio&quot; value=&quot;custom&quot; name=&quot;chkStrat&quot; id=&quot;chkcustom{{uniqueId}}&quot;&gt;
+                                        &lt;label class=&quot;aligner&quot; for=&quot;chkcustom{{uniqueId}}&quot;&gt;&lt;span role=&quot;radio&quot;&gt;&lt;/span&gt;Custom&lt;/label&gt;
+                                    &lt;/div&gt;
+                                &lt;/div&gt;
+                            &lt;/div&gt;
+
+                            &lt;div class=&quot;col-sm-8 col-xs-12&quot;&gt;
+                                &lt;div class=&quot;panel panel-default contributions chart js-risk-output&quot;&gt;
+                                    &lt;div class=&quot;panel-body&quot;&gt;
+                                        &lt;div class=&quot;row&quot;&gt;
+                                            &lt;div class=&quot;col-xs-12 col-sm-6 no-padding allocation-graph&quot;&gt;
+                                                &lt;div class=&quot;allocation-graph-container&quot;&gt;
+                                                    &lt;div id=&quot;allocation-graph{{ uniqueId }}&quot;&gt;&lt;/div&gt;
+                                                &lt;/div&gt;
+                                            &lt;/div&gt;
+
+                                            &lt;div id=&quot;chart-output&quot; class=&quot;col-sm-6 col-xs-12&quot;&gt;
+                                                &lt;div class=&quot;row&quot;&gt;
+                                                    &lt;div class=&quot;col-xs-12&quot;&gt;
+                                                        &lt;label class=&quot;aligner text-small pull-left&quot; for=&quot;stocks&quot;&gt;&lt;span class=&quot;box-sm graph-color1&quot;&gt;&lt;/span&gt;Stocks&lt;/label&gt;
+                                                        &lt;span class=&quot;pull-right&quot;&gt;
+                                                            &lt;div class=&quot;form-group&quot;&gt;&lt;input type=&quot;text&quot; pattern=&quot;\d*&quot; novalidate autocorrect=&quot;off&quot; autocapitalize=&quot;off&quot; autocomplete=&quot;off&quot; id=&quot;stocks&quot; class=&quot;form-control percentage&quot; placeholder=&quot;0&quot; value=&quot;35&quot;&gt;&lt;span class=&quot;aligner&quot;&gt;%&lt;/span&gt;&lt;/div&gt;
+                                                        &lt;/span&gt;
+                                                    &lt;/div&gt;
+                                                &lt;/div&gt;
+                                                &lt;div class=&quot;row&quot;&gt;
+                                                    &lt;div class=&quot;col-xs-12&quot;&gt;
+                                                        &lt;label class=&quot;aligner text-small&quot; for=&quot;bonds&quot;&gt;&lt;span class=&quot;box-sm graph-color2&quot;&gt;&lt;/span&gt;Bonds&lt;/label&gt;
+                                                        &lt;span class=&quot;pull-right&quot;&gt;
+                                                            &lt;div class=&quot;form-group&quot;&gt;&lt;input type=&quot;text&quot; pattern=&quot;\d*&quot; novalidate autocorrect=&quot;off&quot; autocapitalize=&quot;off&quot; autocomplete=&quot;off&quot; id=&quot;bonds&quot; class=&quot;form-control percentage&quot; placeholder=&quot;0&quot; value=&quot;15&quot;&gt;&lt;span class=&quot;aligner&quot;&gt;%&lt;/span&gt;&lt;/div&gt;
+                                                        &lt;/span&gt;
+                                                    &lt;/div&gt;
+                                                &lt;/div&gt;
+                                                &lt;div class=&quot;row&quot;&gt;
+                                                    &lt;div class=&quot;col-xs-12&quot;&gt;
+                                                        &lt;label class=&quot;aligner text-small&quot; for=&quot;cash&quot;&gt;&lt;span class=&quot;box-sm graph-color3&quot;&gt;&lt;/span&gt;Cash&lt;/label&gt;
+                                                        &lt;span class=&quot;pull-right&quot;&gt;
+                                                            &lt;div class=&quot;form-group&quot;&gt;&lt;input type=&quot;text&quot; pattern=&quot;\d*&quot; novalidate autocorrect=&quot;off&quot; autocapitalize=&quot;off&quot; autocomplete=&quot;off&quot; id=&quot;cash&quot; class=&quot;form-control percentage&quot; placeholder=&quot;0&quot; value=&quot;45&quot;&gt;&lt;span class=&quot;aligner&quot;&gt;%&lt;/span&gt;&lt;/div&gt;
+                                                        &lt;/span&gt;
+                                                    &lt;/div&gt;
+                                                &lt;/div&gt;
+                                                &lt;div class=&quot;row no-border margin-top&quot;&gt;
+                                                    &lt;div class=&quot;col-xs-12&quot;&gt;
+                                                        &lt;label class=&quot;aligner aligner--mobile pull-left&quot;&gt;
+                                                            &lt;span class=&quot;box-sm&quot;&gt;&lt;/span&gt;&lt;strong&gt;Total&lt;/strong&gt;
+                                                        &lt;/label&gt;
+                                                        &lt;span class=&quot;aligner aligner--mobile pull-right&quot;&gt;
+                                                            &lt;strong&gt;&lt;span id=&quot;riskTotal&quot; class=&quot;risk-total&quot;&gt;100&lt;/span&gt;%&lt;/strong&gt;
+                                                        &lt;/span&gt;
+                                                    &lt;/div&gt;
+                                                &lt;/div&gt;
+                                            &lt;/div&gt;
+                                        &lt;/div&gt;
+                                    &lt;/div&gt;
+                                &lt;/div&gt;
+                            &lt;/div&gt;
+                        &lt;/div&gt;&lt;!-- // how-are-currently-invested --&gt;
+                    &lt;/fieldset&gt;
+                &lt;/form&gt;
+            &lt;/div&gt;
+
+            &lt;div class=&quot;modal-footer&quot;&gt;
+                &lt;a class=&quot;btn btn-secondary pull-left&quot; data-dismiss=&quot;modal&quot; href=&quot;#&quot;&gt;Cancel&lt;/a&gt;
+                {{# editAccountManual }}&lt;a class=&quot;btn btn-secondary pull-left&quot; data-dismiss=&quot;modal&quot; href=&quot;#&quot;&gt;Delete&lt;/a&gt;{{/ editAccountManual }}
+                {{# editAccountYodlee }}&lt;a class=&quot;btn btn-secondary pull-left&quot; data-dismiss=&quot;modal&quot; href=&quot;#&quot;&gt;Delete&lt;/a&gt;{{/ editAccountYodlee }}
+                &lt;a class=&quot;btn btn-primary&quot; href=&quot;javascript:void(0);&quot; onclick=&quot;return false;&quot;&gt;Save&lt;/a&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
+&lt;!-- //add/edit new account (manual/yodlee) --&gt;

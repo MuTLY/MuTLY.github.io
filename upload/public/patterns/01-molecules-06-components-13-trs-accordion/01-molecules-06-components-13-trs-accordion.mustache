@@ -1,0 +1,14 @@
+&lt;div class=&quot;panel-group trs-accordion&quot; id=&quot;{{accordion_id}}&quot;&gt;
+{{#accordion_items }}
+        &lt;div class=&quot;panel panel-default&quot;&gt;
+        &lt;div class=&quot;panel-heading accordion-toggle&quot; data-toggle=&quot;collapse&quot; data-parent=&quot;#{{accordion_id}}&quot; href=&quot;#{{id}}&quot;&gt;
+			&lt;h3 class=&quot;panel-title&quot;&gt;&lt;i class=&quot;{{glyph_icon}}&quot; aria-hidden=&quot;true&quot;&gt; &lt;/i&gt;{{{panel_name}}}&lt;div class=&quot;text-right&quot;&gt;{{{panel_label}}}&lt;/div&gt;&lt;/h3&gt;
+		&lt;/div&gt;
+            &lt;div id=&quot;{{id}}&quot; class=&quot;panel-collapse collapse {{state}}&quot;&gt;
+                &lt;div class=&quot;panel-body&quot;&gt;
+                {{&gt; atoms-table-style2 }}
+                &lt;/div&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+{{/accordion_items }}
+&lt;/div&gt;

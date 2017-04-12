@@ -1,0 +1,117 @@
+&lt;!-- Load these scripts in your header/footer
+&lt;script src=&quot;https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.8/angular.js&quot;&gt;&lt;/script&gt;
+&lt;script src=&quot;https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.8/angular-animate.min.js&quot;&gt;&lt;/script&gt;
+&lt;script src=&quot;/js/trs-angular/responsive-table.js&quot;&gt;&lt;/script&gt;
+--&gt;
+
+&lt;div ng-app=&quot;TRS.ResponsiveTable&quot; id=&quot;YodleeResponsiveTable&quot;&gt;
+    &lt;trs-responsive-table class=&quot;mobile-table--light-rows&quot;&gt;&lt;/trs-responsive-table&gt;
+&lt;/div&gt;
+
+&lt;script&gt;
+    // Set up angular app environment configuration
+    angular.module('TRS.ResponsiveTable.config', [])
+        .constant('BASE_PATH', &quot;/angular-templates/&quot;)
+        .constant('TEMPLATE_EXTENSION', &quot;html&quot;)
+        .constant('APP_BUILD', &quot;${_applicationSession.buildId}&quot;);
+&lt;/script&gt;
+
+&lt;script&gt;
+(function(){ // on page load
+    // Feed data into Angular app after it has loaded
+    var tableDataJsonAlternate2MobileHighlights = {
+        columns: [
+            { id: 'symbol', title: 'Symbol' },
+            { id: 'descr', title: 'Fund', isMobileHighlight: true },
+            { id: 'qtt', title: 'Quantity', className: 'text-right' },
+            { id: 'price', title: 'Price', className: 'text-right' },
+            { id: 'value', title: 'Value', className: 'text-right', isMobileHighlight: true },
+        ],
+        rows: [
+            {
+                symbol: 'SYM',
+                descr: 'High Quality Bond Fund',
+                qtt: '100,000',
+                price: '$1,000.00',
+                value: '$23,000.00'
+            },
+            {
+                symbol: 'SYM',
+                descr: 'This is a fund with a really long name meant to see how long names behave in constrained real estate',
+                qtt: '100,000',
+                price: '$100.00',
+                value: '$3,000.00'
+            },
+            {
+                symbol: 'SYM',
+                descr: 'High Yield Bond Fund',
+                qtt: '100,000',
+                price: '$100.00',
+                value: '$3,000.00'
+            },
+            {
+                symbol: 'SYM',
+                descr: 'Large Value',
+                qtt: '100,000',
+                price: '$100.00',
+                value: '$13,000.00'
+            },
+            {
+                symbol: 'SYM',
+                descr: 'High Quality Bond Fund',
+                qtt: '100,000',
+                price: '$1,000.00',
+                value: '$23,000.00'
+            },
+            {
+                symbol: 'SYM',
+                descr: 'High Quality Bond Fund',
+                qtt: '100,000',
+                price: '$1,000.00',
+                value: '$23,000.00'
+            },
+            {
+                symbol: 'SYM',
+                descr: 'Core Bond Fund',
+                qtt: '100,000',
+                price: '$100.00',
+                value: '$3,000.00'
+            },
+            {
+                symbol: 'SYM',
+                descr: 'High Yield Bond Fund',
+                qtt: '100,000',
+                price: '$100.00',
+                value: '$3,000.00'
+            },
+            {
+                symbol: 'SYM',
+                descr: 'Large Value',
+                qtt: '100,000',
+                price: '$100.00',
+                value: '$13,000.00'
+            },
+            {
+                symbol: 'SYM',
+                descr: 'High Quality Bond Fund',
+                qtt: '100,000',
+                price: '$1,000.00',
+                value: '$23,000.00'
+            }
+        ],
+        footer: [
+            { colspan: 2, title:'Total' },
+            { className: &quot;text-right&quot;, title: '100,000.00', isMobileHighlight: true, mobileLabel: 'Total Quantity' },
+            { className: &quot;text-right&quot;, title: '$100,000.00', isMobileHighlight: true, mobileLabel: 'Total Price' },
+            { className: &quot;text-right&quot;, title: '$100,000,000.00', isMobileHighlight: true, mobileLabel: 'Total Value' }
+        ]
+    };
+
+    // Timeout just to make sure the app is bootstrapped. Usually this isn't needed if you're fetching data from AJAX since that adds enough delay.
+    setTimeout(function(){
+        angular.element('#YodleeResponsiveTable').scope().$broadcast('setTableData', tableDataJsonAlternate2MobileHighlights);
+    }, 1000);
+}());
+&lt;/script&gt;
+
+&lt;p class=&quot;footnote&quot;&gt;Note: due to an AngularJS restriction, only one instance of the same app can load in any one page. To see this table at work, open it in its own page (click the link above).&lt;/p&gt;

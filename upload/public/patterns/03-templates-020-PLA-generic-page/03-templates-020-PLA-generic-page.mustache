@@ -1,0 +1,27 @@
+&lt;div class=&quot;page-container&quot;&gt;
+    &lt;div class=&quot;container-fluid&quot;&gt;
+        &lt;!-- top navbar --&gt;
+        {{&gt; organisms-headerPLA }}
+        &lt;div class=&quot;row&quot;&gt;
+
+            &lt;!-- sidebar --&gt;
+            &lt;div class=&quot;col-xs-6 col-sm-0 col-md-3 left_sidebar sidebar-offcanvas&quot; id=&quot;sidebar&quot; role=&quot;navigation&quot;&gt;
+                &lt;nav id=&quot;myNavmenu&quot; class=&quot;navmenu navmenu-default&quot; role=&quot;navigation&quot;&gt;
+                    &lt;ul class=&quot;menu&quot;&gt;
+					{{# util_menu}}
+                        {{&gt; molecules-pla-desktop-primary }}
+                    {{/ util_menu}}
+					&lt;/ul&gt;
+                &lt;/nav&gt;
+            &lt;/div&gt;
+
+            &lt;!-- main area --&gt;
+            &lt;div class=&quot;col-xs-12 col-sm-12 col-md-9 left-content-border right_panel&quot;&gt;
+                &lt;main class=&quot;row&quot; id=&quot;main_content&quot;&gt; &lt;!-- this id provides necessary ada skip navigation for better user experience and ada compliance --&gt;
+                    {{&gt; organisms-body}}
+                &lt;/main&gt;
+                {{&gt; organisms-pla-footer }}
+            &lt;/div&gt;&lt;!-- /.col-xs-12 main --&gt;
+        &lt;/div&gt;&lt;!--/.row--&gt;
+    &lt;/div&gt;&lt;!--/.container--&gt;
+&lt;/div&gt;&lt;!--/.page-container--&gt;

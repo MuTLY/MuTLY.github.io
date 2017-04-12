@@ -1,0 +1,239 @@
+&lt;div id=&quot;vacation-time-chart&quot;&gt;&lt;/div&gt;
+
+&lt;script&gt;
+$(function(){
+
+    // Double --&gt; Currency
+    function toCurrency(value) {
+        value = value.toString();
+        var dollars = value.split('.')[0],
+            cents = (value.split('.')[1] || '') + '00';
+        dollars = dollars.split('').reverse().join('').replace(/(\d{3}(?!$)(?!-))/g, '$1,').split('').reverse().join('');
+        return dollars + '.' + cents.slice(0, 2);
+    }
+
+    // Chart
+    (function () {
+        // var colors = [&quot;#C07DE2&quot;, &quot;#14B7DB&quot;, &quot;#F76230&quot;, &quot;#D0D0D0&quot;, &quot;#20C772&quot;, &quot;#02648E&quot;, &quot;#3E7CAB&quot;, &quot;#1798CB&quot;, &quot;#1B8A39&quot;, &quot;#66BE7D&quot;, &quot;#6CD487&quot;, &quot;#02648E&quot;, &quot;#A95ECF&quot;, &quot;#F76230&quot;, &quot;#E7E6E5&quot;];
+
+        var colors = [&quot;#AA5AD2&quot;, &quot;#14B7DB&quot;, &quot;#F76230&quot;, &quot;#D0D0D0&quot;, &quot;#20C772&quot;, &quot;#E22739&quot;, &quot;#1E4387&quot;]; // Official Zeplin colors for graphs
+
+        Highcharts.setOptions({
+            colors: colors,
+            exporting: {
+                enabled: false
+            },
+            credits: {
+                enabled: false
+            }
+        });
+
+        var chart = new Highcharts.Chart({
+                series: [{
+                    data: [
+                       ['Stocks', 45000.00],
+                       ['Bonds', 50000.00],
+                       ['Multi Asset/Other', 5000.00],
+                       ['Secure Path', 10000.00]
+                    ]
+                }],
+                chart: {
+                    renderTo: 'vacation-time-chart',
+                    type: 'pie',
+                    margin: 0,
+                    spacing: [0,0,0,0],
+                    backgroundColor: 'transparent',
+                    width: 230,
+                    height: 230
+                },
+                tooltip: {
+                    backgroundColor: 'rgba(255,255,255,0)',
+                    borderWidth: 0,
+                    borderRadius: 0,
+                    shadow: false,
+                    useHTML: true,
+                    valueDecimals: 2,
+                    percentageDecimals: 2,
+                    // pointFormat: '&lt;b&gt;{point.y}&lt;/b&gt;',
+                    // valuePrefix: '',
+                    // valueSuffix: '',
+                    shared: false,
+                    formatter: function() {
+                        return '&lt;div class=&quot;chart-point-name&quot;&gt;' + this.point.name +'&lt;/div&gt;&lt;div class=&quot;chart-point-xy&quot;&gt;$'+ toCurrency(this.point.y) +'&lt;/div&gt;';
+                    }
+                },
+                title: {
+                    text: '',
+                    align: 'center',
+                    verticalAlign: 'middle',
+                    useHTML: true,
+                    y: 15,
+                    x: 5
+                },
+                subtitle: {
+                    text: 'Total Balance',
+                    align: 'center',
+                    verticalAlign: 'middle',
+                    useHTML: true,
+                    y: -10,
+                    x: -8
+                },
+                plotOptions: {
+                    pie: {
+                        shadow: false,
+                        allowPointSelect: true,
+                        startAngle: 360,
+                        innerSize: '90%',
+                        size: '100%',
+                        dataLabels: false,
+                        stickyTracking: false,
+                        states: {
+                            hover: {
+                                enabled: true,
+                                halo: {
+                                    size: 10,
+                                    opacity: 0.8,
+                                    attributes: {
+                                        'stroke-width': 0
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            },
+            function (chart) {
+                var series = chart.options.series[0].data;
+                var total = 0;
+
+                for (var i = 0, l = series.length; i &lt; l; i++) {
+                    var n = Number(series[i][1]);
+                    total += n;
+                }
+
+                chart.setTitle({
+                    text: '$' + toCurrency(total),
+                    useHTML: true
+                });
+            });
+    }());
+
+});
+&lt;/script&gt;
+
+{{!
+ &lt;script&gt;
+            $(function () {
+                Highcharts.setOptions({
+                    colors: [&quot;#14b7db&quot;, &quot;#f06c43&quot;, &quot;#d8d8d8&quot;, &quot;#aa5ad2&quot;, &quot;#F2C119&quot;, &quot;#EE8E24&quot;, &quot;#E7E6E5&quot;]
+                });
+                var chart = new Highcharts.Chart({
+                    chart: {
+                        renderTo: 'vacation-time-chart',
+                        type: 'pie',
+                        height: 250,
+                        width: 250,
+                        borderRadius: 0
+                    },
+                    tooltip: {
+                        pointFormat: &quot;Value: {point.y:.2f}&quot;,
+                        formatter: function () {
+                            return '&lt;b&gt;' + this.point.name + '&lt;/b&gt;: ' + '&lt;sup&gt;$&lt;/sup&gt;' + Highcharts.numberFormat(this.point.y, 2);
+
+                        }
+                    },
+                    exporting: {
+                        enabled: false
+                    },
+                    credits: {
+                        enabled: false
+                    },
+                    title: false,
+
+                    plotOptions: {
+                        pie: {
+                            shadow: false,
+                            allowPointSelect: true,
+                            startAngle: 360,
+                            innerSize: '85%',
+                            size: '100%',
+                            dataLabels: false,
+
+                            stickyTracking: false,
+
+                            states: {
+                                hover: {
+                                    enabled: true
+                                }
+                            },
+                            point: {
+                                events: {
+                                    mouseOver: function () {
+                                        this.series.chart.innerText.attr({
+                                            text: '&lt;sup&gt;$&lt;/sup&gt;' + this.y + '.00'
+
+                                        });
+                                    },
+                                    mouseOut: function () {
+                                        this.series.chart.innerText.attr({
+                                            text: '&lt;sup&gt;$&lt;/sup&gt;' + 110000 + '.00'
+                                        });
+                                    }
+                                }
+                            }
+                        }
+                    },
+
+                    series: [{
+
+                        data: [
+                           ['Stocks', 45000.00],
+                           ['Bonds', 50000.00],
+                           ['Multi Asset/Other', 5000.00],
+                           ['Secure Path', 10000.00]
+
+                        ]
+                    }]
+                },
+
+                function (chart) { // on complete
+
+                    var xpos = '50%';
+                    var ypos = '53%';
+                    var circleradius = 102;
+                    var boundingBox;
+                    var series = chart.series[0];
+
+                    // Render the text
+                    chart.innerText = chart.renderer.text('$110000.00', 0, 0).add();
+                    boundingBox = chart.innerText.getBBox();
+
+                    chart.innerText.css({
+                        width: circleradius * 2,
+                        color: '#000',
+                        fontSize: '16px',
+                        textAlign: 'center',
+                        marginTop: '1.5px'
+
+                    }).attr({
+                        // why doesn't zIndex get the text in front of the chart?
+                        x: 83,//series.center[0] - boundingBox.width / 2 + chart.plotLeft / 2,
+                        y: 150,//series.center[1] + boundingBox.height / 2 + chart.plotTop,
+                        zIndex: 999
+                    }).add();
+                    var textX = chart.plotLeft + (chart.plotWidth * 0.5);
+                    var textY = chart.plotTop + (chart.plotHeight * 0.5);
+
+                    var span = '&lt;span id=&quot;pieChartInfoText&quot; style=&quot;position: absolute; text-align: center;border-bottom: 2px solid #ddd;height: 30px;width: 118px;&quot;&gt;';
+                    span += '&lt;span style=&quot;font-size: 12px;font-weight:bold;display: inline-block;width: 50px;margin-top: -10px;&quot;&gt;TOTAL BALANCE&lt;/span&gt;&lt;br&gt;';
+                    span += '&lt;/span&gt;';
+
+   $(&quot;#addText&quot;).append(span);
+   span = $('#pieChartInfoText');
+   span.css('left', '70.5px');
+   span.css('top', '174.5px');
+   });
+   });
+
+ &lt;/script&gt;
+}}

@@ -1,0 +1,113 @@
+	&lt;h1 class=&quot;heading--top-of-content text-center-sm margin-bottom&quot; &gt;Forgot Your Username or Password&lt;/h1&gt;    &lt;div id=&quot;errors&quot; style=&quot;display:none;&quot;&gt;
+    &lt;div class=&quot;alert  alert-error 
+    margin-top
+&quot;&gt;
+        &lt;div class=&quot;alert-icon&quot;&gt;
+        	&lt;span class=&quot;
+             trs-icons-alert-error  alert-icon-size&quot; role=&quot;presentation&quot;&gt;&lt;/span&gt;
+            &lt;/div&gt;
+        &lt;div class=&quot;alert-message&quot;&gt; 
+            &lt;strong&gt;Error&lt;/strong&gt;
+            
+            &lt;p&gt;Hey there. You need to fix some things before you push that button.&lt;/p&gt;
+            &lt;ul&gt;
+                &lt;li&gt;SSN is not found.&lt;/li&gt;
+                &lt;li&gt;Password is incorrect.&lt;/li&gt;
+                &lt;li&gt;SSN/Username does not match our records.&lt;/li&gt;
+            &lt;/ul&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+    &lt;/div&gt;
+
+&lt;div class=&quot;row clearfix&quot;&gt;
+	&lt;div class=&quot;js-panel-group&quot; id=&quot;panels-container&quot; role=&quot;tablist&quot; aria-multiselectable=&quot;true&quot;&gt;&lt;!-- panels wrapper --&gt;
+    	
+        &lt;section class=&quot;panel panel--accordion-placeholder clearfix&quot;&gt;
+        
+        	&lt;h2 data-toggle=&quot;collapse&quot; class=&quot;h3 accordion-toggle col-xs-12&quot; data-target=&quot;#panel-1&quot; data-parent=&quot;#panels-container&quot; aria-expanded=&quot;false&quot; aria-controls=&quot;panel-1&quot;&gt;
+                I Forgot my Username
+                &lt;span class=&quot;glyphicon glyphicon-plus-sign alert-icon-size margin-left&quot; aria-hidden=&quot;true&quot;&gt;&lt;/span&gt;&lt;/h2&gt;
+
+            &lt;div id=&quot;panel-1&quot; class=&quot;col-xs-12 collapse js-sliding-panel mobile-content-panel&quot;&gt;
+                &lt;p class=&quot;text-center-sm&quot;&gt;Complete the form below to Create or Reset your Username.&lt;/p&gt;
+                &lt;div class=&quot;row&quot;&gt;
+                    &lt;div class=&quot;field-container col-xs-12 col-sm-7&quot;&gt;
+                        &lt;label for=&quot;ssn&quot;&gt;Social Security Number&lt;/label&gt;
+                        &lt;input type=&quot;text&quot; id=&quot;ssn&quot; value=&quot;&quot; max-length=&quot;11&quot; min-length=&quot;9&quot; pattern=&quot;\d*&quot; novalidate autocorrect=&quot;off&quot; /&gt;
+                    &lt;/div&gt;
+                &lt;/div&gt;
+                &lt;div class=&quot;row&quot;&gt;
+                    &lt;div class=&quot;field-container col-xs-12 col-sm-7&quot;&gt;
+                        &lt;label for=&quot;pass&quot;&gt;Password&lt;/label&gt;
+                        &lt;input type=&quot;password&quot; id=&quot;pass&quot; value=&quot;&quot; max-length=&quot;16&quot; min-length=&quot;6&quot; /&gt;
+                    &lt;/div&gt;
+                &lt;/div&gt;
+                &lt;div class=&quot;text-center-sm&quot;&gt;
+                    &lt;a type=&quot;submit&quot; class=&quot;btn btn-primary btn-wide&quot; value=&quot;Submit&quot; href=&quot;?p=pages-trs-update-username&quot;&gt;Submit&lt;/a&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+        &lt;/section&gt;
+        
+        &lt;hr class=&quot;hidden-xs margin-left margin-right&quot; /&gt;
+        
+        &lt;section class=&quot;panel panel--accordion-placeholder clearfix&quot;&gt;
+        
+        	&lt;h2 data-toggle=&quot;collapse&quot; class=&quot;h3 accordion-toggle col-xs-12&quot; data-target=&quot;#panel-2&quot; data-parent=&quot;#panels-container&quot; aria-expanded=&quot;false&quot; aria-controls=&quot;panel-2&quot;&gt;
+                I Forgot my Password
+                &lt;span class=&quot;glyphicon glyphicon-plus-sign alert-icon-size margin-left&quot; aria-hidden=&quot;true&quot;&gt;&lt;/span&gt;&lt;/h2&gt;
+
+            &lt;div id=&quot;panel-2&quot; class=&quot;col-xs-12 collapse js-sliding-panel mobile-content-panel&quot;&gt;
+                &lt;p class=&quot;text-center-sm  padding-bottom&quot;&gt;Complete the form below to get your password hint by email or to reset your password.&lt;/p&gt;
+                &lt;div class=&quot;alert  alert-caution 
+                
+&quot;&gt;
+                    &lt;div class=&quot;alert-icon&quot;&gt;
+                    	&lt;span class=&quot;
+                         trs-icons-alert-caution  alert-icon-size&quot; role=&quot;presentation&quot;&gt;&lt;/span&gt;
+                        &lt;/div&gt;
+                    &lt;div class=&quot;alert-message&quot;&gt; 
+                        
+                        &lt;p&gt;If your email software blocks unregistered emails, please add: &lt;&lt;strong&gt;GeneralInfo.&amp;#8203;Retirement@&amp;#8203;transamerica.&amp;#8203;com&lt;/strong&gt; to your list of approved incoming addresses. This will ensure you receive the email.&lt;/p&gt;
+                    &lt;/div&gt;
+                &lt;/div&gt;
+                &lt;div class=&quot;row&quot;&gt;
+                    &lt;div class=&quot;field-container col-xs-12 col-sm-7 margin-top&quot;&gt;
+                        &lt;label for=&quot;ssn-pw&quot;&gt;Social Security Number or Username&lt;/label&gt;
+                        &lt;input type=&quot;text&quot; id=&quot;ssn-pw&quot; value=&quot;&quot; min-length=&quot;8&quot; novalidate autocorrect=&quot;off&quot; /&gt;
+                    &lt;/div&gt;
+                &lt;/div&gt;
+                &lt;div class=&quot;text-center-sm&quot;&gt;
+                    &lt;a type=&quot;submit&quot; class=&quot;btn btn-primary btn-wide&quot; value=&quot;Submit&quot; href=&quot;?p=pages-trs-user-pw-confirmation&quot;&gt;Submit&lt;/a&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+        &lt;/section&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
+
+&lt;script type=&quot;text/javascript&quot;&gt;
+
+(function($){
+	
+	$(ready);
+	
+	function ready(){
+		$('.js-panel-group').each(setPanelGroupView);
+		$('.accordion-toggle[data-target=&quot;#panel-2&quot;]').on('click', closeErrors);
+	}
+	
+	function setPanelGroupView(){
+		$('#panels-container').on('shown.bs.collapse', focusInput);
+	}
+	
+	function focusInput(e) {
+		$(e.target)
+			.find('input:first')
+			.focus();	
+	}
+	
+	function closeErrors(){
+		$('#errors:visible').hide(250);	
+	}
+
+})(jQuery);
+&lt;/script&gt;

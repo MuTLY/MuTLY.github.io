@@ -1,0 +1,642 @@
+&lt;!-- Begin &quot;body&quot; --&gt;
+&lt;div class=&quot;col-xs-12 {{# content_body_classes}}{{ . }}{{/ content_body_classes}}&quot;&gt;
+
+    &lt;!-- YOUR CODE STARTS HERE. REMOVE THIS COMMENT AFTERWARDS. --&gt;
+    {{# loginStatus}}
+        {{&gt; atoms-status-note}}
+    {{/ loginStatus}}
+    {{!
+        **** !IMPORTANT ------ MUSTACHE COMMENT LINE BREAKS OR THEY WILL SHOW IN CODE VIEW ON PATTERNLAB *****
+    }}
+    {{! -------------- PATTERNLAB START PAGE ------------------}}
+    {{# isStart }}
+        &lt;h1&gt;Welcome to TRS Pattern Lab&lt;/h1&gt;
+        {{&gt; organisms-start-page }}
+    {{/ isStart }}
+    {{! -------------- END PATTERNLAB START PAGE --------------}}
+    {{!
+
+    }}
+    {{! -------------- START PLA MAIN PAGE ------------}}
+    {{# isPLATopButtonGroupNav }}
+        &lt;!-- SPECIFIC FOR PLA TOP BUTTON GROUP NAV --&gt;
+        {{&gt; molecules-PLA-nav-btn-group- }}
+        &lt;!-- END PLA TOP BUTTON GROUP NAV --&gt;
+    {{/ isPLATopButtonGroupNav }}
+    {{!
+
+    }}
+    {{# isPLASampleElements }}
+        &lt;!-- SPECIFIC FOR PLA SAMPLE ELEMENTS --&gt;
+        &lt;h1&gt;PLA Sample Elements&lt;/h1&gt;
+        {{# tables}}
+            {{&gt; organisms-pla-sample-elements }}
+        {{/ tables}}
+        &lt;!-- END PLA SAMPLE MAIN ELEMENTS --&gt;
+    {{/ isPLASampleElements }}
+    {{! -------------- END PLA MAIN PAGE --------------}}
+    {{!
+
+    }}
+    {{! -------------- START SELECT AN ACCOUNT ------------}}
+    {{# isSelectAccount }}
+        &lt;h1&gt;Select an Account Below to Continue&lt;/h1&gt;
+        {{&gt; organisms-select-account }}
+    {{/ isSelectAccount }}
+    {{! -------------- END SELECT AN ACCOUNT --------------}}
+    {{!
+
+    }}
+    {{! -------------- START BALANCE ------------}}
+    {{# isBalance }}
+        &lt;h1&gt;Balances&lt;/h1&gt;
+        {{&gt; organisms-balance }}
+    {{/ isBalance }}
+    {{! -------------- END BALANCE --------------}}
+    {{!
+
+    }}
+    {{! -------------- START LOAN PAYOFF ------------}}
+    {{# isLoanPayoff }}
+        &lt;h1&gt;Loans&lt;/h1&gt;
+        {{&gt; organisms-loan-payoff }}
+    {{/ isLoanPayoff }}
+    {{! -------------- END LOAN PAYOFF --------------}}
+    {{!
+
+    }}
+    {{! -------------- START LOAN MODELING ------------}}
+    {{# isLoanRefinancingModeling }}
+        &lt;h1&gt;Loans Refinancing&lt;/h1&gt;
+        {{&gt; organisms-loan-refinancing-modeling }}
+    {{/ isLoanRefinancingModeling }}
+    {{! -------------- END LOAN MODELING --------------}}
+    {{!
+
+    }}
+    {{! -------------- START ACTIVITY SUMMARY ------------}}
+    {{# isActivitySummary }}
+        &lt;h1&gt;Activity Summary&lt;/h1&gt;
+        {{&gt; organisms-activity-summary }}
+    {{/ isActivitySummary }}
+    {{! -------------- END ACTIVITY SUMMARY --------------}}
+    {{!
+
+    }}
+    {{! -------------- START ACTIVITY DETAILS ------------}}
+    {{# isActivityDetails }}
+        &lt;h1&gt;Activity Details&lt;/h1&gt;
+        {{&gt; organisms-activity-details }}
+    {{/ isActivityDetails}}
+    {{! -------------- END ACTIVITY DETAILS --------------}}
+    {{!
+
+    }}
+    {{! -------------- START DASHBOARD ------------}}
+    {{# isDashboard }}
+        {{&gt; organisms-dashboard }}
+    {{/ isDashboard}}
+    {{! -------------- END DASHBOARD --------------}}
+    {{!
+
+    }}
+    {{! -------------- START TRS LOGIN CONTENT ------------}}
+    {{# isTrsLogin }}
+        {{&gt; organisms-trs-login-body}}
+    {{/ isTrsLogin }}
+    {{! -------------- END TRS LOGIN CONTENT --------------}}
+    {{!
+
+    }}
+    {{! -------------- START FORGOT PASSWORD ------------}}
+    {{# isForgotPassword }}
+        {{&gt; organisms-trs-forgot-user-pw}}
+    {{/ isForgotPassword }}
+    {{! -------------- END FORGOT PASSWORD --------------}}
+    {{!
+
+    }}
+    {{! -------------- START UPDATE USERNAME ------------}}
+    {{# isUpdateUsername }}
+        {{&gt; organisms-trs-update-username}}
+    {{/ isUpdateUsername }}
+    {{! -------------- END UPDATE USERNAME --------------}}
+    {{!
+
+    }}
+    {{! -------------- START TRS CONFIRMATIONS ------------}}
+    {{# isTRSFormConfirmation }}
+        {{&gt; organisms-trs-forgot-pw-confirmation}}
+    {{/ isTRSFormConfirmation }}
+
+    {{# isTRSUserPWConfirmation }}
+        {{&gt; organisms-trs-userpw-confirmation}}
+    {{/ isTRSUserPWConfirmation }}
+    {{! -------------- END TRS CONFIRMATIONS --------------}}
+    {{!
+
+    }}
+    {{! -------------- START DEMO PAGE ------------}}
+    {{# isDemoLayout }}
+        &lt;h1&gt;Demo Page&lt;/h1&gt;
+        {{&gt; atoms-paragraph }}
+        {{&gt; molecules-block-columns }}
+    {{/ isDemoLayout }}
+    {{! -------------- END DEMO PAGE --------------}}
+    {{!
+
+    }}
+    {{! -------------- START ONTRACK BRIGHTEN YOUR OUTLOOK ------------}}
+    {{# isOntrackBrightenYourOutlook }}
+        &lt;h1 class=&quot;display-inline-block&quot;&gt;&lt;em&gt;Brighten Your Outlook&lt;/em&gt;&lt;sup&gt;&amp;reg;&lt;/sup&gt;&lt;/h1&gt;
+        &lt;button class=&quot;btn btn-secondary btn-small pull-right&quot;&gt;Print action plan&lt;/button&gt;
+        {{&gt; organisms-ontrack-brighten-your-outlook }}
+    {{/ isOntrackBrightenYourOutlook }}
+    {{! -------------- END ONTRACK BRIGHTEN YOUR OUTLOOK --------------}}
+    {{!
+
+    }}
+    {{! -------------- START ONTRACK BRIGHTEN YOUR OUTLOOK V2------------}}
+    {{# isOntrackBrightenYourOutlook2 }}
+        &lt;h1 class=&quot;display-inline-block&quot;&gt;&lt;em&gt;Brighten Your Outlook&lt;/em&gt;&lt;sup&gt;&amp;reg;&lt;/sup&gt;&lt;/h1&gt;
+        &lt;button class=&quot;btn btn-secondary btn-small pull-right&quot;&gt;Print action plan&lt;/button&gt;
+        {{&gt; organisms-ontrack-brighten-your-outlook-2 }}
+    {{/ isOntrackBrightenYourOutlook2 }}
+    {{! -------------- END ONTRACK BRIGHTEN YOUR OUTLOOK V2--------------}}
+    {{!
+
+    }}
+    {{! -------------- START ONTRACK Choose Investment Strategy ------------}}
+    {{# isOntrackChooseInvestmentStrategy }}
+        &lt;h1&gt;Choose an Investment Strategy&lt;/h1&gt;
+        {{&gt; organisms-ontrack-choose-investment-strategy }}
+    {{/ isOntrackChooseInvestmentStrategy }}
+    {{! -------------- END ONTRACK Choose Investment Strategy --------------}}
+    {{!
+
+    }}
+    {{! -------------- START CHOOSE TO SAVE MORE ------------}}
+    {{# isChooseToSaveMore }}
+        &lt;h1&gt;Choose to Save More&lt;/h1&gt;
+        {{&gt; organisms-ontrack-choose-to-save-more}}
+    {{/ isChooseToSaveMore }}
+    {{! -------------- END CHOOSE TO SAVE MORE --------------}}
+    {{!
+
+    }}
+    {{! -------------- START CHOOSE TO SAVE MORE 2 ------------}}
+    {{# isChooseToSaveMore2 }}
+        &lt;h1&gt;Choose to Save More&lt;/h1&gt;
+        {{&gt; organisms-ontrack-choose-to-save-more-2}}
+    {{/ isChooseToSaveMore2 }}
+    {{! -------------- END CHOOSE TO SAVE MORE ----------------}}
+    {{!
+
+    }}
+    {{! -------------- START CHOOSE TO SAVE MORE 2 ------------}}
+    {{# isRetirementAccounts }}
+        &lt;h1&gt;Retirement Accounts&lt;/h1&gt;
+        {{&gt; organisms-ontrack-retirement-accounts}}
+    {{/ isRetirementAccounts }}
+    {{! -------------- END CHOOSE TO SAVE MORE ----------------}}
+    {{!
+
+    }}
+    {{! -------------- START ONTRACK PROFILE AND GOALS ------------}}
+    {{# isOntrackProfileAndGoals }}
+        &lt;h1&gt;Profile and Goals&lt;/h1&gt;
+        {{&gt; organisms-ontrack-profile-and-goals }}
+    {{/ isOntrackProfileAndGoals }}
+    {{! -------------- END ONTRACK PROFILE AND GOALS --------------}}
+    {{!
+
+    }}
+    {{! -------------- START ONTRACK HOME ------------}}
+    {{# isOntrackHome }}
+        &lt;h1&gt;&lt;em&gt;OnTrack&lt;/em&gt;&lt;sup&gt;&amp;reg;&lt;/sup&gt;
+            &lt;small&gt; Your personalized retirement income analysis&lt;/small&gt;
+        &lt;/h1&gt;
+        {{&gt; organisms-ontrack-home }}
+    {{/ isOntrackHome }}
+    {{! -------------- END ONTRACK HOME --------------}}
+    {{!
+
+    }}
+    {{! -------------- START MANAGED ADVICE SPLASH PAGE ------------}}
+    {{# isManagedAdviceSplashNonDefaulted }}
+        &lt;h1&gt;Invest with &lt;em&gt;Managed Advice&lt;/em&gt;&lt;sup&gt;&amp;reg;&lt;/sup&gt;&lt;/h1&gt;
+        {{&gt; organisms-managed-advice-splash }}
+    {{/ isManagedAdviceSplashNonDefaulted }}
+    {{! -------------- END MANAGED ADVICE SPLASH PAGE --------------}}
+    {{!
+
+    }}
+    {{! -------------- START MANAGED ADVICE FIND OUT MORE ------------}}
+    {{# isManagedAdviceFindOutMore }}
+        &lt;h1&gt;Invest in &lt;em&gt;Managed Advice&lt;/em&gt;&lt;sup&gt;&amp;reg;&lt;/sup&gt;&lt;/h1&gt;
+        {{&gt; organisms-find-out-more_old }}
+    {{/ isManagedAdviceFindOutMore }}
+    {{! -------------- END MANAGED ADVICE FIND OUT MORE --------------}}
+    {{!
+
+    }}
+    {{! -------------- START ONTRACK NEW USER ------------}}
+    {{# isOntrackNewUser }}
+        &lt;h1&gt;&lt;em&gt;OnTrack&lt;/em&gt;&lt;sup&gt;&amp;reg;&lt;/sup&gt;
+            &lt;small&gt; Your personalized retirement income analysis&lt;/small&gt;
+        &lt;/h1&gt;
+        {{&gt; organisms-ontrack-new-user }}
+    {{/ isOntrackNewUser }}
+    {{! -------------- END ONTRACK NEW USER --------------}}
+    {{!
+
+    }}
+    {{! -------------- START OTHER RETIREMENT INCOMES ------------}}
+    {{# isOtherRetirementIncomes }}
+        &lt;h1&gt;Other Retirement Incomes&lt;/h1&gt;
+        {{&gt; molecules-other-retirement-incomes }}
+    {{/ isOtherRetirementIncomes }}
+    {{! -------------- END OTHER RETIREMENT INCOMES --------------}}
+    {{!
+
+    }}
+    {{! -------------- START Withdrawals from Retirement Assets ------------}}
+    {{# isWithdrawalsFromRetirementAssets }}
+        &lt;h1&gt;Withdrawals from Retirement Assets&lt;/h1&gt;
+        {{&gt; molecules-ontrack-withdrawals-from-retirement-assets }}
+    {{/ isWithdrawalsFromRetirementAssets }}
+    {{! -------------- END Withdrawals from Retirement Assets --------------}}
+    {{!
+
+    }}
+    {{! -------------- START Household Retirement Budget ------------}}
+    {{# isHouseholdRetirementBudget }}
+        &lt;h1&gt;Household Retirement Budget&lt;/h1&gt;
+        {{&gt; molecules-household-retirement-budget }}
+    {{/ isHouseholdRetirementBudget }}
+    {{! -------------- END Household Retirement Budget --------------}}
+    {{!
+
+    }}
+    {{! ------------------------------------------------------- =================  DCMA  =================== ----------------------------}}
+    {{! -------------- START DCMA - DASHBOARD (SUBSCRIBED) ------------}}
+    {{# isDCMADashboardSubscribed }}
+        {{&gt; organisms-sub-dashboard }}
+    {{/ isDCMADashboardSubscribed }}
+    {{! -------------- END DCMA - DASHBOARD (SUBSCRIBED) --------------}}
+    {{!
+
+    }}
+    {{! -------------- START DCMA - HOW YOU ARE INVESTED ------------}}
+    {{# isDCMAHowYouAreInvested }}
+        {{&gt; organisms-sub-how-you-are-invested }}
+    {{/ isDCMAHowYouAreInvested }}
+    {{! -------------- END DCMA - HOW YOU ARE INVESTED --------------}}
+    {{!
+
+    }}
+    {{! -------------- START DCMA - NEW SUB - MANAGED ADVICE SPLASH ------------}}
+    {{# isDCMANewSubMALanding }}
+        {{&gt; organisms-managed-advice-splash }}
+    {{/ isDCMANewSubMALanding }}
+    {{! -------------- END DCMA - NEW SUB - MANAGED ADVICE SPLASH --------------}}
+    {{!
+
+    }}
+    {{! -------------- START DCMA - NEW SUB SUMMARY PAGE ------------}}
+    {{# isDCMANewsubSummaryPage }}
+        {{&gt; organisms-new-summary }}
+    {{/ isDCMANewsubSummaryPage }}
+    {{! -------------- END DCMA - NEW SUB SUMMARY PAGE --------------}}
+    {{!
+
+    }}
+    {{! -------------- START DCMA - NEW SUB SUMMARY PAGE - MULTIPLE ACCOUNTS ------------}}
+    {{# isDCMANewsubSummaryPageMultiple }}
+        {{&gt; organisms-new-summary-multiple }}
+    {{/ isDCMANewsubSummaryPageMultiple }}
+    {{! -------------- END DCMA - NEW SUB SUMMARY PAGE - MULTIPLE ACCOUNTS --------------}}
+    {{!
+
+    }}
+    {{! -------------- START DCMA - MANAGED ADVICE RETIREMENT PROFILE ------------}}
+    {{# isDCMAManagedRetirement }}
+        {{&gt; organisms-sub-retirement-profile }}
+    {{/ isDCMAManagedRetirement }}
+    {{! -------------- END DCMA - MANAGED ADVICE RETIREMENT PROFILE --------------}}
+    {{!
+
+    }}
+    {{! -------------- START DCMA - MANAGED ACCOUNT INCOME PLANNING ------------}}
+    {{# isDCMAManagedIncome }}
+        {{&gt; organisms-sub-income-planning }}
+    {{/ isDCMAManagedIncome }}
+    {{! -------------- END DCMA - MANAGED ACCOUNT INCOME PLANNING --------------}}
+    {{!
+
+    }}
+    {{! -------------- START DCMA - MANAGED ADVICE CONFIRMATION ------------}}
+    {{# isDCMAManagedConfirmationNewSub }}
+        {{&gt; organisms-new-confirmation }}
+    {{/ isDCMAManagedConfirmationNewSub }}
+    {{! -------------- END DCMA - MANAGED ADVICE CONFIRMATION --------------}}
+    {{!
+
+    }}
+    {{! -------------- START DCMA - SUMMARY VARIATIONS MANAGED ADVICE SUMMARY PAGE ------------}}
+    {{# isDCMASummaryPage }}
+        {{&gt; organisms-sub-summary }}
+    {{/ isDCMASummaryPage }}
+    {{! -------------- END DCMA - SUMMARY VARIATIONS MANAGE ADVICE SUMMARY PAGE --------------}}
+    {{!
+
+    }}
+    {{! -------------- START DCMA ENROLLMENT PATH ------------------}}
+    {{! -------------- START LETS GET STARTED ------------}}
+    {{# isDcmaLetsGetStarted }}
+        {{&gt; organisms-new-lets-get-started }}
+    {{/ isDcmaLetsGetStarted }}
+    {{! -------------- END LETS GET STARTED --------------}}
+    {{!
+
+    }}
+    {{! -------------- START WHAT'S YOUR GOAL ------------}}
+    {{# isDcmaWhatsYourGoal }}
+        {{&gt; organisms-new-whats-your-goal}}
+    {{/ isDcmaWhatsYourGoal }}
+    {{! -------------- END WHAT'S YOUR GOAL --------------}}
+    {{!
+
+    }}
+    {{! -------------- START HOW CAN YOU DO BETTER ------------}}
+    {{# isDcmaHowCanBetter }}
+        {{&gt; organisms-sub-how-you-can-do-better }}
+    {{/ isDcmaHowCanBetter }}
+    {{! -------------- END HOW CAN YOU DO BETTER --------------}}
+    {{!
+
+    }}
+    {{! -------------- START NEW SUBSCRIBER CONFIRMATION ------------}}
+    {{# isDcmaNewSubConfirm }}
+        {{# confirm_content }}
+        {{&gt; organisms-new-confirmation }}
+        {{/ confirm_content }}
+    {{/ isDcmaNewSubConfirm }}
+    {{! -------------- END NEW SUBSCRIBER CONFIRMATION --------------}}
+    {{!
+
+    }}
+    {{! -------------- START NEW SUBSCRIBER AGREEMENT ------------}}
+    {{# isDcmaNewSubAgreement }}
+        {{&gt; organisms-new-agreement }}
+    {{/ isDcmaNewSubAgreement }}
+    {{! -------------- END NEW SUBSCRIBER AGREEMENT --------------}}
+    {{!
+
+    }}
+    {{! -------------- START NEW ENROLLMENT AGREEMENT ------------}}
+    {{# isDcmaNewEnrollmentAgreement }}
+        {{&gt; organisms-agreement }}
+    {{/ isDcmaNewEnrollmentAgreement }}
+    {{! -------------- END NEW ENROLLMENT AGREEMENT --------------}}
+    {{!
+
+    }}
+    {{! -------------- END DCMA ENROLLMENT PATH --------------------}}
+    {{! ----------------------------------------------------- =================  /DCMA  =================== ----------------------------}}
+    {{!
+
+    }}
+    {{! -------------- START SSO ALERTS ------------}}
+    {{# isSSOAlerts }}
+        &lt;h1&gt;SSO Alerts&lt;/h1&gt;
+        {{&gt; organisms-sso-alerts }}
+    {{/ isSSOAlerts }}
+    {{! -------------- END SSO ALERTS --------------}}
+    {{!
+
+    }}
+    {{! -------------- START SSO UPDATE USER PROFILE ------------}}
+    {{# isSSOUpdateProfile }}
+        &lt;h1&gt;Update Your Online Profile&lt;/h1&gt;
+        {{&gt; organisms-sso-update-profile }}
+    {{/ isSSOUpdateProfile }}
+    {{! -------------- END SSO UPDATE USER PROFILE --------------}}
+    {{!
+
+    }}
+    {{! -------------- START SSO UPDATE USER PROFILE2 ------------}}
+    {{# isSSOUpdateProfile2 }}
+        &lt;h1&gt;Edit Web Profile&lt;/h1&gt;
+        {{&gt; organisms-sso-update-profile2 }}
+    {{/ isSSOUpdateProfile2 }}
+    {{! -------------- END SSO UPDATE USER PROFILE2 --------------}}
+    {{!
+
+    }}
+    {{! -------------- START SSO UNRECOGNIZED DEVICE ------------}}
+    {{# isSSOUnrecognizedDevice }}
+        &lt;h1&gt;Unrecognized Device&lt;/h1&gt;
+        {{&gt; organisms-sso-unrecognized-device }}
+    {{/ isSSOUnrecognizedDevice }}
+    {{! -------------- END SSO UNRECOGNIZED DEVICE --------------}}
+    {{!
+
+    }}
+    {{! -------------- START SSO TERMS ------------}}
+    {{# isSSOTerms }}
+        &lt;h1&gt;Terms and Conditions&lt;/h1&gt;
+        {{&gt; organisms-sso-terms }}
+    {{/ isSSOTerms }}
+    {{! -------------- END SSO TERMS --------------}}
+    {{!
+
+    }}
+    {{! -------------- START SSO 404 ------------}}
+    {{# isSSO404 }}
+        {{&gt; organisms-sso-404 }}
+    {{/ isSSO404 }}
+    {{! -------------- END SSO 404 --------------}}
+    {{!
+
+    }}
+    {{! -------------- START SSO ACCOUNT EXCEPTION ------------}}
+    {{# isSSOAccountException }}
+        &lt;h1&gt;Account Exception&lt;/h1&gt;
+        {{&gt; organisms-sso-account-exception }}
+    {{/ isSSOAccountException }}
+    {{! -------------- END SSO ACCOUNT EXCEPTION --------------}}
+    {{!
+
+    }}
+    {{! -------------- START SSO DASHBOARD ------------}}
+    {{# isSSODashboard }}
+        &lt;h1&gt;My Transamerica Products&lt;/h1&gt;
+        {{&gt; organisms-sso-dashboard }}
+    {{/ isSSODashboard }}
+    {{! -------------- END SSO DASHBOARD --------------}}
+    {{!
+
+    }}
+    {{! -------------- START SSO DASHBOARD WHITE LABEL ------------}}
+    {{# isSSODashboardWhite }}
+        {{&gt; organisms-sso-dashboard-white }}
+    {{/ isSSODashboardWhite }}
+    {{! -------------- END SSO DASHBOARD WHITE LABEL --------------}}
+    {{!
+
+    }}
+    {{! -------------- START SSO PASSWORD ------------}}
+    {{# isSSOPassword }}
+        &lt;h1&gt;Password Strength Meter&lt;/h1&gt;
+        {{&gt; organisms-sso-password }}
+    {{/ isSSOPassword }}
+    {{! -------------- END SSO PASSWORD --------------}}
+    {{!
+
+    }}
+    {{! -------------- START SSO VALIDATION ------------}}
+    {{# isSSOValidation }}
+        &lt;h1&gt;Form Validation Example&lt;/h1&gt;
+        {{&gt; organisms-sso-validation }}
+    {{/ isSSOValidation }}
+    {{! -------------- END SSO VALIDATION --------------}}
+    {{!
+
+    }}
+    {{! -------------- START SSO CONTACT ------------}}
+    {{# isSSOContact }}
+        &lt;h1&gt;Contact Us&lt;/h1&gt;
+        {{&gt; organisms-sso-contact-us }}
+    {{/ isSSOContact }}
+    {{! -------------- END SSO CONTACT --------------}}
+    {{!
+
+    }}
+    {{! -------------- START SSO CAPTCHA --------------}}
+    {{# isCTI }}
+        {{&gt; organisms-cti-demo }}
+    {{/ isCTI }}
+    {{! -------------- START SSO CAPTCHA --------------}}
+    {{!
+
+    }}
+    {{! -------------- START SSO TIMEOUT --------------}}
+    {{# isSSOTimeout }}
+        {{&gt; organisms-sso-timeout }}
+    {{/ isSSOTimeout }}
+    {{! -------------- START SSO TIMEOUT --------------}}
+    {{!
+
+    }}
+    {{! -------------- START SSO EDIT PROFILE ------------}}
+    {{# isSSOEditProfile }}
+        &lt;h1&gt;Edit Web Profile&lt;/h1&gt;
+        {{&gt; organisms-sso-edit-profile }}
+    {{/ isSSOEditProfile }}
+    {{! -------------- END SSO EDIT PROFILE --------------}}
+    {{!
+
+    }}
+    {{! -------------- START SSO DETAILS BUTTON ------------}}
+    {{# isSSODetailsButton }}
+        {{&gt; organisms-sso-details-button }}
+    {{/ isSSODetailsButton }}
+    {{! -------------- END SSO DETAILS BUTTON --------------}}
+    {{!
+
+    }}
+    {{! -------------- START CTI ------------}}
+    {{# isSSOCaptcha }}
+        &lt;h1&gt;SSO Captcha&lt;/h1&gt;
+        {{&gt; organisms-sso-captcha }}
+    {{/ isSSOCaptcha }}
+    {{! -------------- END CTI --------------}}
+    {{!
+
+    }}
+    {{! -------------- START TRANS UNION ------------}}
+    {{# isTUQuestions }}
+        &lt;h1&gt;Secure Authentication&lt;/h1&gt;
+        {{&gt; organisms-tu-questions }}
+    {{/ isTUQuestions }}
+    {{! -------------- END TRANS UNION --------------}}
+    {{!
+
+    }}
+    {{! -------------- START TABLESAW --------------}}
+    {{# isTableSaw }}
+        &lt;h1&gt;TableSaw&lt;/h1&gt;
+        &lt;p&gt;This is a test page for the TableSaw plugin&lt;br&gt;
+            &lt;a href=&quot;https://github.com/filamentgroup/tablesaw&quot; target=&quot;_blank&quot;&gt;https://github.com/filamentgroup/tablesaw&lt;/a&gt;
+        &lt;/p&gt;
+
+        &lt;p&gt;&amp;nbsp;&lt;/p&gt;
+
+        &lt;h2&gt;TableSaw Swipe Mode + Minimap&lt;/h2&gt;
+        {{&gt; atoms-table-style2(tbl_class: &quot;table js-tbl-nofontresize tablesaw tablesaw-swipe margin-bottom&quot;, tbl_att: &quot;data-tablesaw-mode=\&quot;swipe\&quot; data-tablesaw-minimap&quot;) }}
+
+        &lt;p&gt;&amp;nbsp;&lt;/p&gt;
+
+        &lt;h2&gt;TableSaw Column Toggle Mode + Minimap&lt;/h2&gt;
+        {{&gt; atoms-table-style2(tbl_class: &quot;table js-tbl-nofontresize tablesaw tablesaw-columntoggle margin-bottom&quot;, tbl_att: &quot;data-tablesaw-mode=\&quot;columntoggle\&quot; data-tablesaw-minimap&quot;) }}
+
+        &lt;p&gt;&amp;nbsp;&lt;/p&gt;
+
+        &lt;h2&gt;TableSaw Sortable (with optional switch) - stack mode is default&lt;/h2&gt;
+        {{&gt; atoms-table-style2(tbl_class: &quot;table js-tbl-nofontresize tablesaw margin-bottom&quot;, tbl_att: &quot;data-tablesaw-sortable data-tablesaw-sortable-switch&quot;) }}
+
+        &lt;p&gt;&amp;nbsp;&lt;/p&gt;
+
+        &lt;h2&gt;TableSaw Stack Mode&lt;/h2&gt;
+        {{&gt; atoms-table-style2(tbl_class: &quot;table js-tbl-nofontresize tablesaw tablesaw-stack margin-bottom&quot;, tbl_att: &quot;data-tablesaw-mode=\&quot;stack\&quot;&quot;) }}
+
+        &lt;p&gt;&amp;nbsp;&lt;/p&gt;
+
+        &lt;h2&gt;Table Responsive (Bootstrap Default)&lt;/h2&gt;
+        &lt;div class=&quot;table-responsive&quot;&gt;
+            {{&gt; atoms-table-style2(tbl_class: &quot;table js-tbl-nofontresize margin-bottom&quot;) }}
+        &lt;/div&gt;
+
+        &lt;script&gt;
+            $(function () {
+                // TableSaw Custom Sort for currency format ($x,xxx.xx)
+                $('.currency-sort').data('tablesaw-sort', function (ascending) {
+                    return function (a, b) {
+                        var a = Number(a.cell.replace(/(^\$|,)/g, '')),
+                            b = Number(b.cell.replace(/(^\$|,)/g, ''));
+                        if (ascending) {
+                            return a - b;
+                        } else {
+                            return b - a;
+                        }
+                    }
+                });
+            });
+        &lt;/script&gt;
+    {{/ isTableSaw }}
+    {{! -------------- END TABLESAW ----------------}}
+    {{!
+
+    }}
+    {{! -------------- START SIMPLE RESPONSIVE TABLE ------------ }}
+    {{# isSRT }}
+        &lt;h1 class=&quot;margin-bottom-lg&quot;&gt;Simple Responsive Table with CSS&lt;/h1&gt;
+        {{&gt; molecules-simple-responsive-table }}
+    {{/ isSRT }}
+    {{! -------------- END SIMPLE RESPONSIVE TABLE ------------ }}
+    {{!
+
+    }}
+    {{! -------------- START FE RETIREMENT PLANNING TOOLS ------------ }}
+    {{# isFERetirementPlanning }}
+        &lt;h1&gt;Retirement Planning&lt;/h1&gt;
+        &lt;p class=&quot;text-center-xs&quot;&gt;If you want to help with your retirement planning, Financial Engines can create, implement and monitor a personalized strategy for you.&lt;/p&gt;
+        &lt;div role=&quot;presentation&quot; class=&quot;clearfix hidden-xs margin-bottom-lg&quot;&gt;&lt;/div&gt;
+        {{&gt; molecules-fe-retirement-planning-tools-table }}
+    {{/ isFERetirementPlanning }}
+    {{! -------------- END FE RETIREMENT PLANNING TOOLS ------------ }}
+    &lt;!-- /YOUR CODE ENDS HERE. REMOVE THIS COMMENT AFTERWARDS. --&gt;
+
+&lt;/div&gt;
+&lt;!-- End &quot;body&quot; --&gt;

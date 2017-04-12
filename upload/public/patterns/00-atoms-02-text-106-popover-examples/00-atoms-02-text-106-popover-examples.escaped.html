@@ -1,0 +1,27 @@
+&lt;style type=&quot;text/css&quot;&gt;
+
+a[data-toggle=&quot;popover&quot;] {
+	display: block;
+    float: left;
+    clear: both;
+	margin: 30px 0 0 100px;
+}
+
+&lt;/style&gt;
+
+&lt;a tabindex=&quot;0&quot; class=&quot;&quot; role=&quot;button&quot; data-toggle=&quot;popover&quot; data-html=&quot;true&quot; data-trigger=&quot;focus&quot;  data-title=&quot;Default Popover Title&quot; data-content=&quot;This popover carries default values of closing on ANY click and right positioning.&quot; href=&quot;javascript:void(0);&quot; &gt;This is a [default] popover link&lt;/a&gt;
+&lt;a tabindex=&quot;0&quot; class=&quot;&quot; role=&quot;button&quot; data-toggle=&quot;popover&quot; data-html=&quot;true&quot;  data-placement=&quot;right&quot; data-title=&quot;Right Popover Title&quot; data-content=&quot;This popover declares the right position, but removes the click anywhere to close. you must click the link to close this. &amp;lt;em&amp;gt;By the way&amp;lt;/em&amp;gt; - there's html in here, inclugin a &amp;lt;a href='javascript:void(0);'&amp;gt;link&amp;lt;/a&amp;gt;.&quot; href=&quot;javascript:void(0);&quot; &gt;This is a [right side] popover link&lt;/a&gt;
+&lt;a tabindex=&quot;0&quot; class=&quot;tooltip-link&quot; role=&quot;button&quot; data-toggle=&quot;popover&quot; data-html=&quot;true&quot; data-trigger=&quot;focus&quot; data-placement=&quot;left&quot; data-title=&quot;Popover Title&quot; data-content=&quot;This is some popover content for a left positioned popover. the tooltip link class was added for flexibility in styling the link&quot; href=&quot;javascript:void(0);&quot; &gt;[left side] popover&lt;/a&gt;
+&lt;a tabindex=&quot;0&quot; class=&quot;btn btn-secondary&quot; role=&quot;button&quot; data-toggle=&quot;popover&quot; data-html=&quot;true&quot; data-trigger=&quot;focus&quot; data-placement=&quot;top&quot; data-title=&quot;Top Popover Title&quot; data-content=&quot;This is some popover content sitting above the link. the link can use the button styles as well.&quot; href=&quot;javascript:void(0);&quot; &gt;This is a [top position] popover link&lt;/a&gt;
+&lt;a tabindex=&quot;0&quot; class=&quot;&quot; role=&quot;button&quot; data-toggle=&quot;popover&quot; data-html=&quot;true&quot;  data-placement=&quot;bottom&quot; data-title=&quot;Bottom Popover Title&quot; data-content=&quot;This is the last popover. It does not close on click anywhere and sits below the content.&quot; href=&quot;javascript:void(0);&quot; &gt;This is a [bottom position] popover link&lt;/a&gt;
+
+&lt;script type=&quot;text/javascript&quot;&gt;
+
+$(function () {
+
+  $('[data-toggle=&quot;popover&quot;]').popover({
+	  container: 'body' 
+  });
+})
+
+&lt;/script&gt;

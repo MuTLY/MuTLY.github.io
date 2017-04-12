@@ -1,0 +1,230 @@
+<style>
+/* TEST FOR NEW LAYOUT */
+.row {
+	margin-right: 0px;
+	margin-left: 0px;
+}
+.container {
+	padding-right: 0px;
+	padding-left: 0px;
+}
+header {
+	height: auto;
+}
+#body-wrapper {
+	width: 980px;
+	padding: 0;
+	overflow-y: hidden;
+	-webkit-transition: all 0.5s ease;
+	-moz-transition: all 0.5s ease;
+	-o-transition: all 0.5s ease;
+	transition: all 0.5s ease;
+}
+.inner-body {
+	padding-left: 15px;
+	padding-right: 15px;
+}
+.table .active {
+	border-left: #e22739 solid 7px;
+}
+#sidebar-wrapper {
+	top: 0px;
+	left: 0px;
+	width: 221px;
+	float: left;
+	height: 100%;
+	overflow:hidden;
+	border-right: #eeeeee solid 1px;
+	margin-left: -221px;
+	overflow-y: hidden;
+	-webkit-transition: all 0.5s ease;
+	-moz-transition: all 0.5s ease;
+	-o-transition: all 0.5s ease;
+	transition: all 0.5s ease;
+}
+
+@media(min-width:768px) {
+#body-wrapper {
+	padding-left: 221px;
+}
+#body-wrapper.toggled {
+	padding-left: 0;
+}
+}
+.panel-default .panel-heading {
+	color: #333;
+	background-color: #fff;
+	border-color: #ddd;
+	background-image: none;
+	padding-left: 20px;
+}
+.panel-default .panel-heading span {
+	padding-left: 15px;
+}
+.panel-default .panel-heading a {
+	padding-left: 5px;
+}
+.panel-body {
+	background-color: #f9f9f9;
+	border-top: none;
+	border-bottom: none;
+}
+.panel-body a:hover {
+	text-decoration: none;
+}
+.panel-body .table tbody tr td {
+	border: 0;
+	padding-left: 40px;
+}
+.panel-group .panel-heading .panel-collapse .panel-body {
+	border-top: none;
+	border-bottom: none;
+}
+.panel-collapse {
+	border-top: none;
+}
+.panel-heading .contact, .phone {
+	padding-left: 20px;
+	padding-top: 10px;
+	padding-bottom: 10px;
+	font-weight: bold;
+}
+.panel-heading .contact a {
+	margin-left: 5px;
+}
+.panel-heading a {
+	font-weight: bold;
+}
+.panel-heading a:hover {
+	text-decoration: none;
+}
+.glyphicon {
+	margin-right: 10px;
+}
+.panel-body {
+	padding: 0px;
+}
+.panel-body table tr td {
+	padding-left: 15px
+}
+.panel-body .table {
+	margin-bottom: 0px;
+}
+</style>
+
+<div id="page" class="container">
+  <header class="container"> <a class="ada-only" href="#main_content">Skip to main content</a><!-- keep this for ada compliance -->
+    <!-- Page Header -->
+    <div class="container no-padding"> {{> organisms-header }} </div>
+    <!-- /Page Header -->
+
+    <!-- Breadcrumbs -->
+    <div class="container"> {{> organisms-breadcrumbs }} </div>
+    <!-- /Breadcrumbs -->
+  </header>
+  <div id="body-wrapper" class="container clearfix">
+
+    <!-- Sidebar -->
+    <div id="sidebar-wrapper">
+      <div class="container">
+        <div class="panel-group" id="accordion">
+          <div class="panel panel-default">
+            <div class="panel-heading"> <span class="trs-icons-home" role="presentation"></span><a data-toggle="collapse" data-parent="#accordion" href="#collapseOne"> Home</a> </div>
+            <div id="collapseOne" class="panel-collapse collapse in">
+              <div class="panel-body">
+                <table class="table">
+                  <tr>
+                    <td><span></span><a href="#">Overview</a></td>
+                  </tr>
+                  <tr class="active">
+                    <td><span></span><a href="#">Balances</a></td>
+                  </tr>
+                  <tr>
+                    <td><span></span><a href="#">Beneficiaries</a></td>
+                  </tr>
+                  <tr>
+                    <td><span></span><a href="#">Forms</a></td>
+                  </tr>
+                  <tr>
+                    <td><span></span><a href="#">E-Documents</a></td>
+                  </tr>
+                  <tr>
+                    <td><span></span><a href="#">Account Summary</a></td>
+                  </tr>
+                </table>
+              </div>
+            </div>
+          </div>
+          <div class="panel panel-default">
+            <div class="panel-heading"> <span class="trs-icons-eye" role="presentation"></span><a data-toggle="collapse" data-parent="#accordion" href="#collapseTwo">Review</a> </div>
+            <div id="collapseTwo" class="panel-collapse collapse">
+              <div class="panel-body">
+                <table class="table">
+                  <tr>
+                    <td><span class="trs-icons-hamburger"></span><a href="#">Child</a></td>
+                  </tr>
+                </table>
+              </div>
+            </div>
+          </div>
+          <div class="panel panel-default">
+            <div class="panel-heading"> <span class="trs-icons-settings" role="presentation"></span><a data-toggle="collapse" data-parent="#accordion" href="#collapseThree">Manage</a> </div>
+            <div id="collapseThree" class="panel-collapse collapse">
+              <div class="panel-body">
+                <table class="table">
+                  <tr>
+                    <td><span class="trs-icons-hamburger"></span><a href="#">Child</a></td>
+                  </tr>
+                </table>
+              </div>
+            </div>
+          </div>
+          <div class="panel panel-default">
+            <div class="panel-heading"> <span class="trs-icons-on-track" role="presentation"></span><a data-toggle="collapse" data-parent="#accordion" href="#collapseFour">Are You Ontrack</a> </div>
+            <div id="collapseFour" class="panel-collapse collapse">
+              <div class="panel-body">
+                <table class="table">
+                  <tr>
+                    <td><span class="trs-icons-hamburger"></span><a href="#">Child</a></td>
+                  </tr>
+                </table>
+              </div>
+            </div>
+          </div>
+          <div class="panel-heading"> <span class="trs-icons-phone-ring contact" role="presentation"></span> <a href="#">Contact Us</a>
+            <div class="phone">1-800-755-5801</div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- /#sidebar-wrapper -->
+
+    <!-- inner-body -->
+    <div class="inner-body">
+    <a href="#test" class="btn-primary btn-xs" id="menu-toggle">Toggle Menu</a>
+      <h1>Select an Account Below to Continue</h1>
+      {{# tables}}
+      {{> organisms-select-account }}
+      {{/ tables}}
+      </div>
+    <!-- inner-body -->
+
+    <!-- Footer -->
+    {{> organisms-trs-footer }}
+    <!-- Footer -->
+
+  </div>
+  <!-- /#body-wrapper -->
+</div>
+<!-- /#page -->
+
+<!-- Menu Toggle Script & menu height -->
+<script>
+$( document ).ready(function() {
+    $("#sidebar-wrapper").height($("#body-wrapper").height());
+});
+$("#menu-toggle").click(function(e) {
+	e.preventDefault();
+	$("#body-wrapper").toggleClass("toggled");
+});
+</script>

@@ -1,0 +1,36 @@
+&lt;!-- &lt;section class=&quot;row&quot;&gt; outer layer --&gt;
+    &lt;div class=&quot;trs-header col-xs-12 hidden-md hidden-lg&quot;&gt;
+        &lt;div class=&quot;row&quot;&gt;
+            &lt;div class=&quot;col-xs-3&quot;&gt;
+                &lt;a href=&quot;javascript:void(0);&quot; class=&quot;js-menu-trigger trs-header__menu-link&quot;&gt;
+                    &lt;span class=&quot;glyphicon glyphicon-menu-hamburger&quot; role=&quot;presentation&quot;&gt; &lt;/span&gt;Menu&lt;/a&gt;&lt;/div&gt;
+            &lt;div class=&quot;col-xs-6 align-center&quot;&gt;
+                &lt;a class=&quot;logo-link&quot; href=&quot;javascript:void(0);&quot;&gt;
+                    &lt;img src=&quot;../../../images/trs-mobile-logo.png&quot; class=&quot;trs-header__logo--mobile hidden-sm&quot; alt=&quot;Transamerica (logo)&quot; /&gt;&lt;/a&gt;
+                    &lt;img src=&quot;../../../images/trs-logo-166px.png&quot; class=&quot;trs-header__logo--mobile hidden-xs&quot; alt=&quot;Transamerica (logo)&quot; /&gt;&lt;/a&gt;&lt;/div&gt;
+            &lt;div class=&quot;col-xs-3&quot;&gt;
+                &lt;button type=&quot;button&quot; class=&quot;btn btn-logout btn--small&quot;&gt;
+                    &lt;span class=&quot;trs-icons-lock hidden-xs&quot; role=&quot;presentation&quot;&gt;&amp;nbsp;&lt;/span&gt;LOG OUT&lt;/button&gt;&lt;/div&gt;
+        &lt;/div&gt;
+        &lt;div class=&quot;clearfix&quot; role=&quot;presentation&quot;&gt;&lt;/div&gt;
+    &lt;/div&gt;
+&lt;!-- &lt;/section&gt; --&gt;
+
+&lt;!-- will need separate js file and hook up to navigation --&gt;
+&lt;script type=&quot;text/javascript&quot;&gt;
+( function($){
+	$(ready);
+	
+	function ready(){
+		$('.js-menu-trigger').on('click', menuToggle);
+	}
+	
+	function menuToggle(){
+		var $this = $(this),
+			$thisIcon = $this.find('.glyphicon');
+		$thisIcon.toggleClass('glyphicon-menu-hamburger glyphicon-remove');
+		$this.blur();//intent: move focus to the nav unit.		
+	}
+})(jQuery);
+
+&lt;/script&gt;

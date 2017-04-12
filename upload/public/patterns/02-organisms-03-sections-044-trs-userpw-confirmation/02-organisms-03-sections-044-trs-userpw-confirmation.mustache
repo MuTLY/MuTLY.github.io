@@ -1,0 +1,16 @@
+&lt;div class=&quot;text-center-sm col-xs-12&quot;&gt;
+{{# page_heading }}
+	{{&gt; atoms-heading }}
+{{/ page_heading }}    
+    &lt;div class=&quot;row clearfix&quot;&gt;
+        &lt;div class=&quot;col-xs-12 col-sm-10 margin-bottom mobile-content-panel&quot;&gt;
+        {{&gt; molecules-alert-messages }}
+        {{# body }}
+        	&lt;p&gt;{{{ . }}}&lt;/p&gt;
+        {{/ body }}
+        {{# button_1 }}
+            {{&gt; atoms-button-link }}
+        {{/ button_1 }}
+        &lt;/div&gt;
+    &lt;/div&gt;
+&lt;/div&gt;

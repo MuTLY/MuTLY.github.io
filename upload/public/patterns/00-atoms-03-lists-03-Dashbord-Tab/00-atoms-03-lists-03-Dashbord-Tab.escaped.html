@@ -1,0 +1,94 @@
+&lt;style&gt;
+
+#tabs {
+    list-style: none;
+    
+    
+}
+#tabs li {
+    display: inline;
+	padding:14px 0px 14px 0px;
+}
+#tabs li a {
+    text-decoration:none;
+}
+
+
+#tabs li.active a:hover {
+    background-color: #fff;
+    
+}
+ 
+
+#tabs li.active {
+    border-bottom: 1px solid red;
+    padding: 15px 0px 15px 0px;
+}
+ 
+ .tab-2 {
+    display: none;
+}
+   
+
+&lt;/style&gt;
+
+
+
+&lt;div class=&quot;row row-margin-fix row-height&quot;&gt;
+&lt;div class=&quot;col-xs-12&quot;&gt;
+&lt;div class=&quot;block block-well col-sm-6 col-lg-12 block-left border-right-collapse col-height&quot;&gt;
+
+&lt;div class=&quot;well-title&quot;&gt;
+  &lt;div class=&quot;container&quot; id=&quot;tabs_container&quot;&gt;
+    &lt;ul id=&quot;tabs&quot;&gt;
+        &lt;li class=&quot;active&quot;&gt;&lt;a href=&quot;#tab1&quot;&gt;Annual&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a class=&quot;icon_accept&quot; href=&quot;#tab2&quot;&gt;Monthly&lt;/a&gt;&lt;/li&gt;
+       
+    &lt;/ul&gt;
+&lt;/div&gt;&lt;/div&gt;
+&lt;div class=&quot;container&quot; id=&quot;tabs_content_container&quot;&gt;
+
+&lt;div class=&quot;col-lg-12&quot;&gt;&lt;p&gt;cvbjkj&lt;/p&gt;&lt;p&gt;cvbjkj&lt;/p&gt;&lt;p&gt;cvbjkj&lt;/p&gt;&lt;/div&gt;
+ 
+    &lt;div id=&quot;tab1&quot; class=&quot;tab_content col-lg-6 no-padding&quot; style=&quot;display: block;&quot;&gt;
+        &lt;div class=&quot;col-lg-12&quot;&gt;$2000&lt;/div&gt;
+&lt;div class=&quot;col-lg-12&quot;&gt;$2000&lt;/div&gt;
+&lt;div class=&quot;col-lg-12&quot;&gt;$2000&lt;/div&gt;
+    &lt;/div&gt;
+	
+	
+    &lt;div id=&quot;tab2&quot; class=&quot;tab_content tab-2 col-lg-6 no-padding&quot;&gt;
+      &lt;div class=&quot;col-lg-12&quot;&gt;$1000&lt;/div&gt;
+&lt;div class=&quot;col-lg-12&quot;&gt;$1000&lt;/div&gt;
+&lt;div class=&quot;col-lg-12&quot;&gt;$1000&lt;/div&gt;
+    &lt;/div&gt;
+	&lt;div class=&quot;col-lg-6&quot;&gt;vhjbjkj&lt;/div&gt;
+   &lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;script&gt;
+$(document).ready(function(){
+    //  When user clicks on tab, this code will be executed
+    $(&quot;#tabs li&quot;).click(function() {
+        //  First remove class &quot;active&quot; from currently active tab
+        $(&quot;#tabs li&quot;).removeClass('active');
+ 
+        //  Now add class &quot;active&quot; to the selected/clicked tab
+        $(this).addClass(&quot;active&quot;);
+ 
+        //  Hide all tab content
+        $(&quot;.tab_content&quot;).hide();
+ 
+        //  Here we get the href value of the selected tab
+        var selected_tab = $(this).find(&quot;a&quot;).attr(&quot;href&quot;);
+ 
+        //  Show the selected tab content
+        $(selected_tab).fadeIn();
+ 
+        //  At the end, we add return false so that the click on the link is not executed
+        return false;
+    });
+});
+&lt;/script&gt;

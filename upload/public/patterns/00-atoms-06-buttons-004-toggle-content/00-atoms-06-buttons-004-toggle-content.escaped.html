@@ -1,0 +1,59 @@
+
+&lt;div class=&quot;container-fluid&quot;&gt;
+
+	&lt;div class=&quot;row&quot;&gt;
+		&lt;div class=&quot;col-xs-12&quot;&gt;
+		    &lt;ul class=&quot;tabs--red-underline&quot;&gt;
+			    &lt;li class=&quot;tabs--li active&quot;&gt;
+			    	&lt;a id=&quot;annualLink&quot; href=&quot;javascript:void(0);&quot;&gt;Annual&lt;/a&gt;
+			    &lt;/li&gt;
+			    &lt;li class=&quot;tabs--li&quot; &gt;
+			    	&lt;a id=&quot;monthlyLink&quot; href=&quot;javascript:void(0);&quot;&gt;Monthly&lt;/a&gt;
+			    &lt;/li&gt;
+		    &lt;/ul&gt;
+		&lt;/div&gt;					          
+	&lt;/div&gt;
+      
+	&lt;div class = &quot;row&quot;&gt;
+		&lt;div class=&quot;col-sm-6&quot;&gt;
+			&lt;table class=&quot;tbl-style1&quot;&gt;
+				&lt;tbody&gt;
+				    &lt;tr class=&quot;border-bottom&quot;&gt;
+						&lt;td&gt;Household Income Goal&lt;/td&gt;
+						&lt;td class=&quot;text-right&quot; id= &quot;goal&quot;&gt;$12,0000&lt;/td&gt;
+				    &lt;/tr&gt; 
+				    &lt;tr class=&quot;border-bottom&quot;&gt;
+						&lt;td&gt;Estimated Household Income&lt;/td&gt;
+						&lt;td class=&quot;text-right&quot; id=&quot;estimate&quot;&gt;$60,000&lt;/td&gt;
+				    &lt;/tr&gt;
+				    &lt;tr class=&quot;bottom-border&quot;&gt;
+						&lt;td&gt;Income Surplus&lt;/td&gt;
+						&lt;td class=&quot;text-right&quot; id=&quot;difference&quot;&gt;$60,000&lt;/td&gt;
+				    &lt;/tr&gt;
+				&lt;/tbody&gt;
+			&lt;/table&gt;
+		&lt;/div&gt;      
+	&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;script&gt;
+	$(function () {
+		//toggles the active class 
+		$(&quot;#annualLink&quot;).on('click', function () {
+			$('.tabs--li').removeClass('active');
+			$(this).parent().toggleClass('active');
+			$(&quot;#goal&quot;).html('$120,000');
+			$(&quot;#estimate&quot;).html('$60,000');
+			$(&quot;#difference&quot;).html('$60,000');
+		});
+		
+		$(&quot;#monthlyLink&quot;).on('click', function () {
+			$('.tabs--li').removeClass('active');
+			$(this).parent().toggleClass('active');
+			$(&quot;#goal&quot;).html('$10,000');
+			$(&quot;#estimate&quot;).html('$5,000');
+			$(&quot;#difference&quot;).html('$5,000');
+		});
+
+	});
+&lt;/script&gt;

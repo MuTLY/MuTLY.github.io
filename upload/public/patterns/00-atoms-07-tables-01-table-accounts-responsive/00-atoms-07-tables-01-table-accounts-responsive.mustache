@@ -1,0 +1,57 @@
+&lt;div class=&quot;table--style2&quot;&gt;
+    &lt;table class=&quot;table table-inline tbl-mobile {{ tbl_class }}&quot; {{{ tbl_att }}} {{# tbl_id }}aria-describedby=&quot;{{ tbl_id }}&quot;{{/ tbl_id }}&gt;
+        {{# caption}}
+        &lt;caption {{# tbl_id }}id=&quot;{{ tbl_id }}&quot;{{/ tbl_id }} class=&quot;sr-only&quot;&gt;{{{ caption }}}&lt;/caption&gt;
+        {{/ caption}}
+
+        &lt;thead&gt;
+            &lt;tr&gt;
+                {{# h_th}}
+                &lt;th {{# th_class}}class=&quot;{{ th_class }}&quot;{{/ th_class}} {{{ th_att }}} scope=&quot;{{# scope}}{{ scope }}{{/ scope}}{{^ scope}}col{{/ scope}}&quot; {{# col_id }}id=&quot;{{ col_id }}&quot;{{/ col_id }} {{#columns}}colspan=&quot;{{columns}}&quot;{{/columns}}&gt;{{{ value }}}&lt;/th&gt;
+                {{/ h_th}}
+            &lt;/tr&gt;
+        &lt;/thead&gt;
+
+        {{# rowgroup}}
+        &lt;tbody class=&quot;tbl-responsive-body&quot; id=&quot;{{ rowgroup_id }}&quot;&gt;
+            {{# rows}}
+            &lt;tr class=&quot;tbl-td-noborder click-action {{ tr_class }}&quot; {{# tr_link }}onclick=&quot;{{{ tr_link }}}&quot;{{/ tr_link}}&gt;
+                {{# data.0}}
+                &lt;td {{# td_class }}class=&quot;{{ td_class }}&quot;{{/ td_class }} data-title=&quot;{{{ data_title }}}&quot;&gt;
+                    &lt;div&gt;{{{ value }}}&lt;/div&gt;
+                    {{# error_msg }}&lt;div class=&quot;error text-small margin-top-sm&quot;&gt;{{{ error_msg }}}&lt;/div&gt;{{/ error_msg}}
+                &lt;/td&gt;
+                {{/ data.0}}
+
+                {{# data.1}}
+                &lt;td {{# td_class }}class=&quot;{{ td_class }}&quot;{{/ td_class }} data-title=&quot;{{{ data_title }}}&quot;&gt;{{{ value }}}&lt;/td&gt;
+                {{/ data.1}}
+
+                {{# data.2}}
+                &lt;td class=&quot;text-right tbl-mobile-hide text-nowrap {{ td_class }}&quot;&gt;
+                    {{# btn1_link }}&lt;button type=&quot;button&quot; onclick=&quot;{{{ btn1_link }}}&quot; class=&quot;btn btn-secondary btn-small js-btn-delete&quot;&gt;{{{ btn1_text }}}&lt;/button&gt;{{/ btn1_link }}
+                    {{# btn2_link }}&lt;button type=&quot;button&quot; onclick=&quot;{{{ btn2_link }}}&quot; class=&quot;btn btn-secondary btn-small&quot;&gt;{{{ btn2_text }}}&lt;/button&gt;{{/ btn2_link }}
+                &lt;/td&gt;
+                {{/ data.2}}
+            &lt;/tr&gt;
+            {{/ rows}}
+        &lt;/tbody&gt;
+        {{/ rowgroup}}
+
+        {{# tfoot}}
+        &lt;tbody class=&quot;tbl-responsive-footer&quot; id=&quot;{{ tfoot_id }}&quot;&gt;
+            &lt;tr&gt;
+                &lt;td class=&quot;tbl-mobile-hide&quot;&gt;&lt;strong&gt;{{{ tfoot_label }}}&lt;/strong&gt;&lt;/td&gt;
+                &lt;td class=&quot;text-right&quot; data-title=&quot;{{{ tfoot_label }}}&quot;&gt;
+                    &lt;strong&gt;{{{ tfoot_value }}}&lt;/strong&gt;
+                &lt;/td&gt;
+                &lt;td class=&quot;tbl-mobile-hide&quot;&gt;&lt;/td&gt;
+            &lt;/tr&gt;
+        &lt;/tbody&gt;
+        {{/ tfoot}}
+    &lt;/table&gt;
+
+    {{# showNote}}
+    &lt;p class=&quot;footnote&quot;&gt;{{{ noteText }}}&lt;/p&gt;
+    {{/ showNote}}
+&lt;/div&gt;

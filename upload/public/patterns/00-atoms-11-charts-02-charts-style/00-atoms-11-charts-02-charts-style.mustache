@@ -1,0 +1,112 @@
+&lt;div id=&quot;allocation-chart&quot;&gt;&lt;/div&gt;
+
+&lt;script&gt;
+$(function(){
+    // Chart
+    (function () {
+        // var colors = [&quot;#C07DE2&quot;, &quot;#14B7DB&quot;, &quot;#F76230&quot;, &quot;#D0D0D0&quot;, &quot;#20C772&quot;, &quot;#02648E&quot;, &quot;#3E7CAB&quot;, &quot;#1798CB&quot;, &quot;#1B8A39&quot;, &quot;#66BE7D&quot;, &quot;#6CD487&quot;, &quot;#02648E&quot;, &quot;#A95ECF&quot;, &quot;#F76230&quot;, &quot;#E7E6E5&quot;];
+
+        var colors = [&quot;#AA5AD2&quot;, &quot;#14B7DB&quot;, &quot;#F76230&quot;, &quot;#D0D0D0&quot;, &quot;#20C772&quot;, &quot;#E22739&quot;, &quot;#1E4387&quot;]; // Official Zeplin colors for graphs
+
+        Highcharts.setOptions({
+            colors: colors,
+            exporting: {
+                enabled: false
+            },
+            credits: {
+                enabled: false
+            }
+        });
+
+        var chart = new Highcharts.Chart({
+            series: [{
+                data: [
+                   ['Stocks', 45.00],
+                   ['Bonds', 50.00],
+                   ['Multi Asset/Other', 5.00],
+                   ['Secure Path', 10.00]
+                ]
+            }],
+            chart: {
+                renderTo: 'allocation-chart',
+                type: 'pie',
+                margin: 0,
+                spacing: [0,0,0,0],
+                backgroundColor: 'transparent',
+                width: 230,
+                height: 230
+            },
+            tooltip: {
+                backgroundColor: 'rgba(255,255,255,0)',
+                borderWidth: 0,
+                borderRadius: 0,
+                shadow: false,
+                useHTML: true,
+                valueDecimals: 2,
+                percentageDecimals: 2,
+                // pointFormat: '&lt;b&gt;{point.y}&lt;/b&gt;',
+                // valuePrefix: '',
+                // valueSuffix: '',
+                shared: false,
+                formatter: function() {
+                    return '&lt;div class=&quot;chart-point-name&quot;&gt;' + this.point.name +'&lt;/div&gt;&lt;div class=&quot;chart-point-xy&quot;&gt;$'+ toCurrency(this.point.y) +'&lt;/div&gt;';
+                }
+            },
+            title: {
+                text: 'Conservative',
+                align: 'center',
+                verticalAlign: 'middle',
+                useHTML: true,
+                y: 15,
+                x: 0
+            },
+            subtitle: {
+                text: 'Risk Profile',
+                align: 'center',
+                verticalAlign: 'middle',
+                useHTML: true,
+                y: -10,
+                x: -5
+            },
+            plotOptions: {
+                pie: {
+                    shadow: false,
+                    allowPointSelect: true,
+                    startAngle: 360,
+                    innerSize: '90%',
+                    size: '100%',
+                    dataLabels: false,
+                    stickyTracking: false,
+                    states: {
+                        hover: {
+                            enabled: true,
+                            halo: {
+                                size: 10,
+                                opacity: 0.8,
+                                attributes: {
+                                    'stroke-width': 0
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }, function (chart) {
+            // callback
+
+            // var series = chart.options.series[0].data;
+            // var total = 0;
+
+            // for (var i = 0, l = series.length; i &lt; l; i++) {
+            //     var n = Number(series[i][1]);
+            //     total += n;
+            // }
+
+            // chart.setTitle({
+            //     text: '$' + toCurrency(total),
+            //     useHTML: true
+            // });
+        });
+    }());
+});
+&lt;/script&gt;

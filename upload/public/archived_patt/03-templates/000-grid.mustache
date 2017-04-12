@@ -1,0 +1,19 @@
+<div id="page">
+
+	<!-- Page Header -->
+	<div class="container">
+		{{> organisms-header }}
+	</div> <!-- /Page Header -->
+
+	<div role="main_body" class="container">
+		{{# emergency }}
+			{{> molecules-alert:error }}
+		{{/ emergency }}
+
+		{{> organisms-body}}
+	</div><!--End role=main-->
+
+	<div class="container">
+		{{> organisms-footer }}
+	</div>
+</div>

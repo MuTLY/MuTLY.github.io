@@ -1,0 +1,118 @@
+&lt;div class=&quot;row margin-bottom ma-monitoring js-monitor-click&quot;&gt;
+    &lt;div class=&quot;col-xs-12 js-eq-ht-container&quot;&gt;
+        &lt;div class=&quot;block block-well col-xs-12 col-sm-6 block-left border-right-collapse js-eq-ht-div&quot;&gt;
+            &lt;div class=&quot;well-body&quot;&gt;
+                &lt;h3 class=&quot;regular no-vertical-margin&quot;&gt;
+                    &lt;div class=&quot;margin-top-sm&quot;&gt;
+                        &lt;strong class=&quot;semi-bold&quot;&gt;&lt;em&gt;Managed Advice&lt;/em&gt;&lt;sup&gt;&amp;reg;&lt;/sup&gt;&lt;/strong&gt; is monitoring and&lt;br class=&quot;hidden-xs&quot;&gt;
+                        updating your investment mix.
+                    &lt;/div&gt;
+                    &lt;div class=&quot;margin-top-sm&quot;&gt;&lt;a href=&quot;#&quot; class=&quot;js-skip-click&quot;&gt;Update or view details&lt;/a&gt;&lt;/div&gt;
+                &lt;/h3&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+        &lt;div class=&quot;block block-well col-xs-12 col-sm-6 block-right js-eq-ht-div&quot;&gt;
+            &lt;div class=&quot;well-body blue-arrow&quot;&gt;
+                &lt;div class=&quot;row&quot;&gt;
+                    &lt;div class=&quot;col-xs-4&quot;&gt;
+                        &lt;div id=&quot;ma-monitoring-chart&quot; class=&quot;ma-monitoring-chart&quot; data-chart-title=&quot;&quot; data-chart-subtitle=&quot;&quot;&gt;&lt;/div&gt;
+                    &lt;/div&gt;
+                    &lt;div class=&quot;col-xs-8&quot;&gt;
+                        &lt;table class=&quot;table__ma-monitoring&quot;&gt;
+                            &lt;tr&gt;
+                                &lt;td&gt;&lt;span class=&quot;box-sm graph-color2&quot;&gt;&lt;/span&gt;Bonds&lt;/td&gt;
+                                &lt;td&gt;60%&lt;/td&gt;
+                            &lt;/tr&gt;
+                            &lt;tr&gt;
+                                &lt;td&gt;&lt;span class=&quot;box-sm graph-color1&quot;&gt;&lt;/span&gt;Stocks&lt;/td&gt;
+                                &lt;td&gt;30%&lt;/td&gt;
+                            &lt;/tr&gt;
+                            &lt;tr&gt;
+                                &lt;td&gt;&lt;span class=&quot;box-sm&quot;&gt;&lt;/span&gt;Other&lt;/td&gt;
+                                &lt;td&gt;10%&lt;/td&gt;
+                            &lt;/tr&gt;
+                        &lt;/table&gt;
+                    &lt;/div&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
+
+&lt;script&gt;
+$(function() {
+    // Clicking on the component
+    $('.js-monitor-click').off('click').on('click', function(e) {
+        e.preventDefault();
+        alert('You clicked the component!');
+    });
+
+    $('.js-skip-click').off('click').on('click', function(e) {
+        e.preventDefault();
+        e.stopPropagation();
+        alert('You clicked just this link!');
+    });
+
+    // Chart
+    (function() {
+        var colors = [&quot;#006390&quot;, &quot;#2ba644&quot;, &quot;#000000&quot;]; // chart colors
+
+        var chartContainer = $('#ma-monitoring-chart').parent(),
+            chartDimension = chartContainer.actual('width'),
+            chartElement = chartContainer.find('.ma-monitoring-chart').attr('id');
+
+        Highcharts.setOptions({
+            colors: colors,
+            exporting: {
+                enabled: false
+            },
+            credits: {
+                enabled: false
+            }
+        });
+
+        $(window).off('resize.chart');
+        $(window).on('resize.chart', function() {
+            var d = chartContainer.actual('width');
+            chart.setSize(d, d, doAnimation = false);
+        });
+
+        var chart = new Highcharts.Chart({
+                series: [{
+                    data: [
+                        ['Bonds', 60.00],
+                        ['Stocks', 30.00],
+                        ['Other', 10.00]
+                    ]
+                }],
+                chart: {
+                    renderTo: chartElement,
+                    type: 'pie',
+                    margin: [0, 0, 0, 0],
+                    spacing: [0, 0, 0, 0],
+                    backgroundColor: 'transparent',
+                    width: chartDimension,
+                    height: chartDimension
+                },
+                title: false,
+                tooltip: false,
+                plotOptions: {
+                    pie: {
+                        slicedOffset: false,
+                        shadow: false,
+                        allowPointSelect: false,
+                        startAngle: 360,
+                        innerSize: '75%',
+                        size: '100%',
+                        dataLabels: false,
+                        stickyTracking: false,
+                        states: {
+                            hover: false
+                        }
+                    }
+                }
+            });
+    }());
+});
+&lt;/script&gt;
+

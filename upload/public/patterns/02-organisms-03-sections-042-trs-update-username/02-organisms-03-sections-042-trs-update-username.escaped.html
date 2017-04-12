@@ -1,0 +1,107 @@
+&lt;div class=&quot;margin-bottom text-center-sm&quot;&gt;
+	&lt;h1 class=&quot;heading--top-of-content&quot; &gt;Reset Username&lt;/h1&gt;    &lt;p&gt;Transamerica has implemented certain security measures to help ensure the confidentiality and safety of your account information while using TRS Retire.&lt;/p&gt;  
+    &lt;p&gt;Please complete the form below to create a username and verify your identity to access your account.&lt;/p&gt;  
+&lt;/div&gt;
+
+&lt;div class=&quot;row clearfix&quot;&gt;
+	&lt;div class=&quot;col-xs-12 col-sm-5 col-sm-push-7 no-pad-xs&quot;&gt;
+        &lt;aside class=&quot;panel panel-default panel-2-accordion__mbl js-panel-2-accordion__mbl&quot;&gt;
+            &lt;div class=&quot;panel-heading&quot;&gt;
+                &lt;h3 class=&quot;panel-title clearfix&quot;&gt;
+                    &lt;div class=&quot;hidden-xs&quot;&gt;Guidelines&lt;/div&gt;
+                    &lt;div data-target=&quot;#guidelines_panel&quot; class=&quot;visible-xs accordion-toggle&quot; data-toggle=&quot;collapse&quot; aria-controls=&quot;guidelines_panel&quot;&gt;
+                        Guidelines
+						&lt;span class=&quot;glyphicon glyphicon-plus-sign alert-icon-size pull-right&quot; aria-hidden=&quot;true&quot;&gt;&lt;/span&gt;&lt;/div&gt;
+                &lt;/h3&gt;
+            &lt;/div&gt;
+            &lt;div class=&quot;panel-body user-pw__guidelines collapse js-mbl-accordion__pnl&quot; id=&quot;guidelines_panel&quot;&gt;
+                &lt;p class=&quot;text-center-sm&quot;&gt;Your username must meet the following requirements:&lt;/p&gt;
+				&lt;ul class=&quot;bullet-list&quot;&gt;
+                    &lt;li&gt;Be at least 7-12 characters in length.&lt;/li&gt;
+                    &lt;li&gt;Can be any combination of letters, numbers, and special characters (such as &amp;amp; or %).&lt;/li&gt;
+                    &lt;li&gt;Cannot be the same as your website password or email address.&lt;/li&gt;
+                    &lt;li&gt;Is not case sensitive.&lt;/li&gt;
+                &lt;/ul&gt;
+                
+            &lt;/div&gt;
+        &lt;/aside&gt;
+    &lt;/div&gt;
+
+    &lt;div class=&quot;col-xs-12 col-sm-7 col-sm-pull-5 margin-bottom mobile-content-panel&quot;&gt;
+        &lt;p class=&quot;status-note&quot;&gt;All fields are required&lt;/p&gt;
+            &lt;div class=&quot;row&quot;&gt;
+                &lt;div class=&quot;field-container col-xs-12 col-sm-9&quot;&gt;
+                    &lt;label for=&quot;newname&quot;&gt;New Username&lt;/label&gt;
+                    &lt;input type=&quot;text&quot; id=&quot;newname&quot; value=&quot;&quot; required maxlength=&quot;12&quot; minlength=&quot;7&quot; novalidate autocorrect=&quot;off&quot; /&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+            &lt;div class=&quot;row&quot;&gt;
+                &lt;div class=&quot;field-container col-xs-12 col-sm-9&quot;&gt;
+                    &lt;label for=&quot;validatename&quot;&gt;Retype Username&lt;/label&gt;
+                    &lt;input type=&quot;text&quot; id=&quot;validatename&quot; value=&quot;&quot; required autocomplete=&quot;off&quot; maxlength=&quot;12&quot; minlength=&quot;7&quot; novalidate autocorrect=&quot;off&quot; /&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+            
+            &lt;hr class=&quot;hidden-xs&quot; /&gt;
+            &lt;div class=&quot;row&quot;&gt;
+                &lt;div class=&quot;field-container col-xs-12 col-sm-9&quot;&gt;
+                    &lt;label for=&quot;dob&quot;&gt;Date of Birth (MMDDYYYY)&lt;/label&gt;
+    &lt;!-- DDOL USERS: this exists as &lt;core-ui:datePicker /&gt;, use the JST instead of the code below --&gt;
+
+    &lt;!-- if you need validation feedback, add the classes 'has-feedback' and 'success' or 'error' along with the 'input-group date' below after the validation --&gt;
+    &lt;div class=&quot;input-group date &quot;&gt;
+        &lt;!-- DEPRECATED! the below span is used for visual feedback of validation. add the classes 'glyphicon-ok' or 'glyphicon-remove' along with the 'glyphicon', depending on the results of the validation. you can also omit the &lt;span&gt; enterely; in this case, the feedback would be only colored borders without the icon on the left side --&gt;
+        &lt;!--&lt;span role=&quot;presentation&quot; class=&quot;glyphicon  icon-left form-control-feedback&quot;&gt;&lt;/span&gt;--&gt;
+
+        &lt;!-- the extra label is for the date range component, you can remove it if this is not a date range (meaning two date pickers, e.g. &quot;from&quot; &amp; &quot;to&quot;) --&gt;
+        &lt;label class=&quot;extra-label&quot; for=&quot;dob&quot; aria-hidden=&quot;true&quot;&gt;dob&lt;/label&gt;
+
+        &lt;!-- min &amp; max values are helpful to limit how far a user can 'play' with the calendar, and can change according to your needs. i.e. for DOB, you would want to limit the max to today (or before); also, for retirement planning you would limit the min to today or later. --&gt;
+        &lt;input type=&quot;date&quot; class=&quot;form-control&quot; id=&quot;dob&quot; name=&quot;dob&quot; value=&quot;&quot; min=&quot;&quot; max=&quot;&quot; required required placeholder=&quot;MM/DD/YYYY&quot; title=&quot;Pattern Lab&quot; /&gt;
+        &lt;label for=&quot;dob&quot; class=&quot;input-group-addon&quot;&gt;
+            &lt;span class=&quot;glyphicon glyphicon-calendar&quot; role=&quot;presentation&quot;&gt;&lt;/span&gt;
+        &lt;/label&gt;
+    &lt;/div&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+            &lt;div class=&quot;row&quot;&gt;
+                &lt;div class=&quot;field-container col-xs-12 col-sm-9&quot;&gt;
+                    &lt;label for=&quot;mother&quot;&gt;Mother's Maiden Name&lt;/label&gt;
+                    &lt;input type=&quot;text&quot; id=&quot;mother&quot; value=&quot;&quot; required novalidate autocorrect=&quot;off&quot; /&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+            &lt;div class=&quot;row&quot;&gt;
+                &lt;div class=&quot;field-container col-xs-12 col-sm-9&quot;&gt;
+                    &lt;label for=&quot;email&quot;&gt;Email address on file&lt;/label&gt;
+                    &lt;input name=&quot;email&quot; id=&quot;email&quot; type=&quot;email&quot; autocapitalize=&quot;off&quot; autocorrect=&quot;off&quot; autocomplete=&quot;email&quot; required &gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+            &lt;div class=&quot;row&quot;&gt;
+                &lt;div class=&quot;field-container col-xs-12 col-sm-9&quot;&gt;
+                    &lt;label for=&quot;zip&quot;&gt;Zip Code&lt;/label&gt;
+                    &lt;input name=&quot;zip&quot; id=&quot;zip&quot;  type=&quot;text&quot; pattern=&quot;\d*&quot; novalidate autocorrect=&quot;off&quot; autocomplete=&quot;postal-code&quot; required maxlength=&quot;10&quot; &gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+            
+            
+                
+     
+        &lt;div class=&quot;alert  alert-caution 
+        margin-top
+&quot;&gt;
+            &lt;div class=&quot;alert-icon&quot;&gt;
+            	&lt;span class=&quot;
+                 trs-icons-alert-caution  alert-icon-size&quot; role=&quot;presentation&quot;&gt;&lt;/span&gt;
+                &lt;/div&gt;
+            &lt;div class=&quot;alert-message&quot;&gt; 
+                &lt;strong&gt;Caution&lt;/strong&gt;
+                
+                &lt;p&gt;Always use this new Username to sign into your account.&lt;/p&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+        
+        &lt;div class=&quot;text-center-sm&quot;&gt;
+            &lt;button type=&quot;button&quot; class=&quot;btn btn-primary btn-wide margin-top&quot;&gt;Submit&lt;/button&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+&lt;/div&gt;

@@ -1,0 +1,57 @@
+<!-- Desktop layout -->
+<div ng-if="!isMobile">
+	<table class="table table--scrollable" aria-describedby="">
+		<thead>
+			<tr>
+				<th scope="col" class="tbl_subHead_bg" ng-repeat="column in data.columns" ng-class="column.className" ng-bind="column.title"></th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr ng-repeat="row in data.rows">
+				<td ng-repeat="column in data.columns" ng-class="column.className" ng-bind="row[column.id]"></td>
+			</tr>
+		</tbody>
+
+		<tfoot ng-if="data.footer">
+			<tr>
+				<td scope="col" ng-repeat="column in data.footer" colspan="{{column.colspan}}" ng-class="column.className" ng-bind="column.title"></td>
+			</tr>
+		</tfoot>
+	</table>
+</div>
+
+<!-- Mobile layout -->
+<div ng-if="isMobile" class="mobile-table">
+	<div class="mobile-table__header">
+		<h3>
+			<span ng-repeat="column in data.columns | mobileHighlightsOnly | reverse" ng-class="{'pull-right': (!$last)}" ng-if="true || column.isMobileHighlight" ng-bind="column.title"><!-- Reverse items for better element positioning; in this logic, $last is the first to appear --></span>
+		</h3>
+	</div>
+
+	<div ng-repeat="row in data.rows">
+		<div class="mobile-table__row accordion-toggle" ng-click="setActiveRow(row)">
+			<h3>
+				<span aria-expanded="{{row == activeRow}}" class="glyphicon glyphicon--smooth pull-right" ng-class="{'glyphicon-plus-sign': (row != activeRow), 'glyphicon-minus-sign': (row == activeRow)}"></span>
+				<span ng-repeat="column in data.columns | mobileHighlightsOnly | reverse" ng-class="{'pull-right': (!$last)}" ng-if="true || column.isMobileHighlight" ng-bind="row[column.id]"><!-- Reverse items for better element positioning; in this logic, $last is the first to appear --></span>
+			</h3>
+		</div>
+
+		<div ng-if="activeRow == row" class="animate-if">
+			<!-- Detail view -->
+			<dl class="mobile-table__detail-view dl-horizontal">
+				<span ng-repeat="column in data.columns" ng-if="!column.isMobileHighlight">
+					<dt ng-bind="column.title"></dt>
+					<dd ng-bind="activeRow[column.id]"></dd>
+				</span>
+			</dl>
+		</div>
+	</div>
+
+	<!-- Mobile footer, one row per total column -->
+	<div ng-if="data.footer" class="mobile-table__footer" ng-repeat="footerItem in data.footer | mobileHighlightsOnly">
+		<dl class="dl-horizontal">
+			<dt ng-bind="footerItem.mobileLabel"></dt>
+			<dd ng-bind="footerItem.title"></dd>
+		</dl>
+	</div>
+</div>

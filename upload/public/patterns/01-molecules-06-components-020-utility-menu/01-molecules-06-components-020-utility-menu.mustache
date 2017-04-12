@@ -1,0 +1,10 @@
+&lt;menu role=&quot;menu&quot; class=&quot;trs-utility {{menu_direction}}&quot;&gt;
+	{{# menu_items }}
+    &lt;a role=&quot;menuitem&quot; href=&quot;{{url}}&quot; {{#isModal}}data-toggle=&quot;modal&quot; data-target=&quot;#{{modal_id}}&quot;{{/isModal}}&gt;
+        &lt;span class=&quot;{{icon}}&quot; role=&quot;presentation&quot;&gt;&lt;/span&gt; 
+        {{text}}
+        {{# second_line_text}}
+        &lt;span class=&quot;{{second_line_class}}&quot;&gt;{{second_line_text}}&lt;/span&gt;
+        {{/ second_line_text}}&lt;/a&gt;
+    {{/ menu_items }}
+&lt;/menu&gt;

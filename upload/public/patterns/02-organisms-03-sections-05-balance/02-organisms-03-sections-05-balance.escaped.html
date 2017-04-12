@@ -1,0 +1,113 @@
+&lt;div class=&quot;js-mobi-slider-noview&quot;&gt;&lt;!-- use this to surround all elements to be hidden when details are in view --&gt;
+&lt;div class=&quot;row row-margin-fix js-eq-ht-container&quot;&gt;
+  &lt;div class=&quot;block block-well col-sm-6 block-left border-right-collapse js-eq-ht-div no-vertical-margin__mobile&quot;&gt;
+    &lt;div class=&quot;well-title&quot;&gt;Select a Date&lt;/div&gt;
+    &lt;div class=&quot;well-body&quot;&gt;
+      &lt;div class=&quot;col-sm-8 col-sm-offset-2&quot;&gt;
+        &lt;p class=&quot;text-center padding-top&quot;&gt;Your balance is now &lt;br&gt;
+          showing as of 7/9/2015 &lt;/p&gt;
+        &lt;div&gt;&lt;!-- DDOL USERS: this exists as &lt;core-ui:datePicker /&gt;, use the JST instead of the code below --&gt;
+
+&lt;!-- if you need validation feedback, add the classes 'has-feedback' and 'success' or 'error' along with the 'input-group date' below after the validation --&gt;
+&lt;div class=&quot;input-group date &quot;&gt;
+    &lt;!-- DEPRECATED! the below span is used for visual feedback of validation. add the classes 'glyphicon-ok' or 'glyphicon-remove' along with the 'glyphicon', depending on the results of the validation. you can also omit the &lt;span&gt; enterely; in this case, the feedback would be only colored borders without the icon on the left side --&gt;
+    &lt;!--&lt;span role=&quot;presentation&quot; class=&quot;glyphicon  icon-left form-control-feedback&quot;&gt;&lt;/span&gt;--&gt;
+
+    &lt;!-- the extra label is for the date range component, you can remove it if this is not a date range (meaning two date pickers, e.g. &quot;from&quot; &amp; &quot;to&quot;) --&gt;
+    &lt;label class=&quot;extra-label&quot; for=&quot;&quot; aria-hidden=&quot;true&quot;&gt;&lt;/label&gt;
+
+    &lt;!-- min &amp; max values are helpful to limit how far a user can 'play' with the calendar, and can change according to your needs. i.e. for DOB, you would want to limit the max to today (or before); also, for retirement planning you would limit the min to today or later. --&gt;
+    &lt;input type=&quot;date&quot; class=&quot;form-control&quot; id=&quot;&quot; name=&quot;&quot; value=&quot;&quot; min=&quot;&quot; max=&quot;&quot; required  placeholder=&quot;MM/DD/YYYY&quot; title=&quot;Date picker alternate title&quot; /&gt;
+    &lt;label for=&quot;&quot; class=&quot;input-group-addon&quot;&gt;
+        &lt;span class=&quot;glyphicon glyphicon-calendar&quot; role=&quot;presentation&quot;&gt;&lt;/span&gt;
+    &lt;/label&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+        &lt;div class=&quot;text-center padding&quot;&gt;
+          &lt;button type=&quot;button&quot; class=&quot;btn btn-primary&quot;&gt;Update&lt;/button&gt;
+        &lt;/div&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+  &lt;div class=&quot;block block-well col-sm-6 block-right js-eq-ht-div no-vertical-margin__mobile&quot;&gt;
+    &lt;div class=&quot;well-title&quot;&gt;Current Balance&lt;/div&gt;
+    &lt;div class=&quot;well-body text-center&quot;&gt;
+      &lt;div class=&quot;currency-balance-title padding-top&quot;&gt;Total Account Balance&lt;/div&gt;
+      &lt;div class=&quot;currency-balance&quot;&gt;$6500.00&lt;/div&gt;
+      &lt;hr class=&quot;dotted&quot;&gt;
+      &lt;div class=&quot;currency-balance-title&quot;&gt;Vested Balance*&lt;/div&gt;
+      &lt;div class=&quot;currency-balance&quot;&gt;$5000.00&lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+
+&lt;!-- Toggle buttons --&gt;
+&lt;div class=&quot;text-center padding&quot;&gt;
+  &lt;span&gt;View By&lt;/span&gt;
+  &lt;div class=&quot;btn-group btn-toggle&quot; data-toggle=&quot;buttons&quot;&gt;
+    &lt;label class=&quot;btn large active&quot;&gt;
+      &lt;input type=&quot;radio&quot; name=&quot;options&quot; id=&quot;option2&quot; autocomplete=&quot;off&quot; checked&gt;
+      Contribution Type &lt;/label&gt;
+    &lt;label class=&quot;btn large&quot;&gt;
+      &lt;input type=&quot;radio&quot; name=&quot;options&quot; id=&quot;option3&quot; autocomplete=&quot;off&quot;&gt;
+      Funds &lt;/label&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&quot;text-center padding visible-xs&quot;&gt;
+  &lt;div&gt;View By:&lt;/div&gt;
+  &lt;div class=&quot;btn-group btn-toggle&quot; data-toggle=&quot;buttons&quot;&gt;
+    &lt;label class=&quot;btn large active&quot;&gt;
+      &lt;input type=&quot;radio&quot; name=&quot;options&quot; id=&quot;option2&quot; autocomplete=&quot;off&quot; checked&gt;
+      $&lt;/label&gt;
+    &lt;label class=&quot;btn large&quot;&gt;
+      &lt;input type=&quot;radio&quot; name=&quot;options&quot; id=&quot;option3&quot; autocomplete=&quot;off&quot;&gt;
+      % &lt;/label&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+&lt;!-- /Toggle buttons --&gt;
+
+&lt;p class=&quot;mobile-center &quot;&gt;Select the Fund Name to view specific fund information in PDF format. &lt;a href=&quot;#&quot;&gt;Help with PDFs&lt;/a&gt;&lt;/p&gt;
+&lt;/div&gt;
+
+&lt;div class=&quot;mobile__view-wrapper clearfix js-mobile-dtl-slider&quot;&gt;&lt;!-- wrapper for slider unit. need all classes as-is. js- classes run js, other classes assigned to css --&gt;
+	&lt;div class=&quot;mobile__account-summary js-mobile-dtl-view&quot;&gt;&lt;!-- container for summary. use only one for all tables. use all classes. --&gt;
+    &lt;!-- 
+    ***** need this structure (additional style classes &amp; attributes per usage):
+    	&lt;tr class=&quot;js-mobile-dtl-fund&quot;&gt;
+        &lt;th scope=&quot;row&quot;&gt;Stable&lt;/th&gt;
+        &lt;td class=&quot;js-mobile-dtl-pct&quot;&gt;10.5%&lt;/td&gt;
+        &lt;td class=&quot;js-mobile-dtl-bal&quot;&gt;$230.00&lt;/td&gt;
+        &lt;td class=&quot;js-mobile-dtl-unit&quot;&gt;1.3654&lt;/td&gt;
+        &lt;td class=&quot;js-mobile-dtl-val&quot;&gt;3.800000&lt;/td&gt;
+    ***** --&gt;
+
+    
+    &lt;/div&gt;
+    &lt;div class=&quot;mobile__account-details js-mobile-dtl-view&quot; aria-hidden=&quot;true&quot;&gt;&lt;!-- container for details view; tables, links, and content on visible on activation. use only one table and one container --&gt;
+        &lt;div class=&quot;mob--text__center margin-bottom&quot;&gt;
+        &lt;/div&gt;
+        &lt;p id=&quot;mobi_dtls_date&quot; class=&quot;text-center&quot;&gt;x&lt;/p&gt;
+        
+         &lt;!-- 
+        ***** need this structure for table (other best practice attributes omitted for clarity, but necessary for compliant code:
+            &lt;tr&gt;
+                &lt;th&gt;Balance&lt;/th&gt;
+                &lt;td id=&quot;mobi_dtls_bal&quot;&gt;$230.00&lt;/td&gt;
+            &lt;tr&gt;
+                &lt;th&gt;Percentage of Portfolio&lt;/th&gt;
+                &lt;td id=&quot;mobi_dtls_pct&quot;&gt;10.5%&lt;/td&gt;
+            &lt;tr&gt;
+                &lt;th&gt;Units/Shares&lt;/th&gt;
+                &lt;td id=&quot;mobi_dtls_unit&quot;&gt;1.3654&lt;/td&gt;
+            &lt;tr&gt;
+                &lt;th&gt;Unit Value/Share&lt;/th&gt;
+                &lt;td id=&quot;mobi_dtls_val&quot;&gt;3.800000&lt;/td&gt;
+        ***** --&gt;
+        
+    &lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;!-- /.contained-width --&gt;
+&lt;p class=&quot;footnote col-xs-12&quot;&gt;Your account balance attributed to employer contributions may be subject to a vesting schedule. If you are not 100% vested, some or all of your employer money may be forfeited. To find your plan/program's vesting schedule, check your summary plan description or call a Customer Service Representative at 800-962-3466.&lt;/p&gt;
+&lt;p class=&quot;footnote col-xs-12&quot;&gt;&lt;sup&gt;*&lt;/sup&gt; Any Loans or Withdrawals from the account will be taken from the vested portion, which will reduce the account's vested balance.&lt;/p&gt;
+
+&lt;script src=&quot;../../js/mobile-dtl-slider.js&quot;&gt;&lt;/script&gt;&lt;!-- better to have this at the bottom of the page than the top. --&gt;

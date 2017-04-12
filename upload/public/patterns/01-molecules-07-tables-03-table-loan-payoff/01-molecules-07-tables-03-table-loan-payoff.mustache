@@ -1,0 +1,34 @@
+&lt;table class=&quot;tbl-collapse-cols&quot; aria-describedby=&quot;loan_{{ loan_id }}_caption&quot;&gt;
+	&lt;caption class=&quot;sr-only&quot; tabindex=&quot;-1&quot; id=&quot;loan_{{ loan_id }}_caption&quot;&gt;{{ tbl_caption }}&lt;/caption&gt;
+    {{# cols }}
+    &lt;tbody&gt;
+        {{# heading }}
+            &lt;tr class=&quot;tbl-collapse-cols__col-hdr {{ row_classes }}&quot;&gt;
+                &lt;th class=&quot;{{ th_classes }}&quot; {{^ hide_id }}id=&quot;{{ id }}&quot;{{/ hide_id }} {{# content }}scope=&quot;colgroup&quot;{{/ content }}{{^ content }}role=&quot;presentation&quot;{{/ content }}&gt;{{ content }}{{^ content }}&amp;nbsp;{{/ content }}&lt;/th&gt;
+                &lt;td class=&quot;align-right&quot; headers=&quot;{{ id }}&quot; role=&quot;presentation&quot;&gt;
+                	{{# hidden_hdr }}&lt;span class=&quot;visible-xs tbl-collapse-cols__pseudo-hdr&quot; aria-live=&quot;assertive&quot;&gt;{{ loan_id }}&lt;/span&gt;{{/ hidden_hdr }}
+                	{{^ hidden_hdr }}&amp;nbsp;{{/ hidden_hdr }}    
+                &lt;/td&gt;
+            &lt;/tr&gt;
+        {{/ heading }}
+        {{# data }}
+            &lt;tr class=&quot;{{ row_classes }}&quot;&gt;
+                &lt;th id=&quot;{{ id }}&quot; headers=&quot;{{ heading.id }}&quot; class=&quot;td {{ th.classes }}&quot;&gt;{{{ th.content }}}&lt;/th&gt;
+                &lt;td headers=&quot;{{ heading.id }} {{ id }}&quot; class=&quot;align-right {{ td.classes }}&quot;&gt;{{{ td.content }}}&lt;/td&gt;
+            &lt;/tr&gt;
+        {{/ data }}
+    &lt;/tbody&gt;
+    {{/ cols }}
+	{{# tbl_foot }}
+    &lt;tfoot&gt;
+    	&lt;td colspan=&quot;2&quot; headers=&quot;{{ cols.0.heading.id }} {{ cols.2.heading.id }}&quot;&gt;
+        	{{# primary_link }}
+            	&lt;a href=&quot;{{ url }}&quot;&gt;{{ text }} {{# icon}}&lt;span class=&quot;glyphicon glyphicon-{{ icon }}&quot; role=&quot;presentation&quot;&gt;&lt;/span&gt;{{/ icon}}&lt;/a&gt;
+            {{/ primary_link }}
+            {{# links }}
+            	&lt;a href=&quot;javascript:void(0);&quot; class=&quot;tbl-collapse-cols__thin-link&quot;&gt;{{ . }}&lt;/a&gt;
+            {{/links}}
+        &lt;/td&gt;
+    &lt;/tfoot&gt;
+    {{/ tbl_foot }}
+&lt;/table&gt;

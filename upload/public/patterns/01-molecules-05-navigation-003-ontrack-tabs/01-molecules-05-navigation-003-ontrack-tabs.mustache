@@ -1,0 +1,12 @@
+&lt;div class=&quot;nav-tabs-wrapper&quot;&gt;
+    &lt;div class=&quot;arrow arrow--left&quot; role=&quot;presentation&quot;&gt;&lt;/div&gt;
+    &lt;div class=&quot;arrow arrow--right&quot; role=&quot;presentation&quot;&gt;&lt;/div&gt;
+    &lt;ul class=&quot;nav nav-tabs&quot; role=&quot;tablist&quot;&gt;
+    {{# tabs }}
+        &lt;li role=&quot;presentation&quot; class=&quot;{{# tab-active }}active{{/ tab-active }}&quot;&gt;
+            &lt;a href=&quot;{{ tab-anchor }}&quot; data-toggle=&quot;tab&quot; aria-expanded=&quot;{{ tab-active }}&quot;&gt;{{ tab-name }}&lt;/a&gt;
+        &lt;/li&gt;
+    {{/ tabs}}
+    &lt;/ul&gt;
+&lt;/div&gt;
+&lt;div class=&quot;nav-tabs-mobile-border visible-xs&quot; role=&quot;presentation&quot;&gt;&lt;/div&gt;

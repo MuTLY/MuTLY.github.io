@@ -1,0 +1,448 @@
+{{#showModalLink}}
+&lt;p&gt;&lt;a href=&quot;#&quot; data-toggle=&quot;modal&quot; data-target=&quot;#modal-{{ uniqueId }}&quot;&gt;&lt;em&gt;OnTrack&lt;/em&gt;&lt;sup&gt;&amp;reg;&lt;/sup&gt; Modal - Edit Account (Manual Account)&lt;/a&gt;&lt;/p&gt;
+{{/showModalLink}}
+
+&lt;!-- edit account - taken from /DDOL/WEB-INF/jsp/authenticated/ontrack/editTrsAccountModal.jsp and refactored --&gt;
+&lt;div class=&quot;modal fade&quot; id=&quot;modal-{{ uniqueId }}&quot; tabindex=&quot;-1&quot; role=&quot;dialog&quot; aria-labelledby=&quot;edit-account-modal-title&quot;&gt;
+    &lt;div class=&quot;modal-dialog modal-xmd&quot; role=&quot;document&quot;&gt;
+        &lt;div class=&quot;modal-content&quot;&gt;
+            &lt;div class=&quot;modal-header&quot;&gt;
+                &lt;a href=&quot;#&quot; type=&quot;button&quot; class=&quot;close&quot; data-dismiss=&quot;modal&quot; aria-label=&quot;Close&quot;&gt;
+                    &lt;span aria-hidden=&quot;true&quot; class=&quot;trs-icons-close-btn&quot;&gt;&lt;/span&gt;
+                &lt;/a&gt;
+                &lt;h3 class=&quot;modal-title&quot; id=&quot;edit-account-modal-title&quot;&gt;Edit Account&lt;/h3&gt;
+            &lt;/div&gt;
+
+            &lt;div class=&quot;modal-body&quot;&gt;
+                &lt;!-- error list --&gt;
+                &lt;div id=&quot;alertErrors{{ uniqueId }}&quot; class=&quot;row&quot;&gt;
+                    &lt;div class=&quot;col-xs-12&quot;&gt;
+                        &lt;div class=&quot;margin-bottom-lg alert alert-error&quot; id=&quot;errorBox{{ uniqueId }}&quot;&gt;
+                            &lt;div class=&quot;alert-icon&quot;&gt;&lt;span role=&quot;presentation&quot; class=&quot;glyphicon glyphicon-remove-sign glyph-white alert-icon-size&quot;&gt;&lt;/span&gt;&lt;/div&gt;
+                            &lt;div class=&quot;alert-message&quot;&gt;
+                                &lt;strong&gt;Error&lt;/strong&gt;&lt;br&gt;
+                                &lt;ul&gt;
+                                    &lt;li&gt;Some super big, with lots of words, generic error to test how errors show up here.&lt;/li&gt;
+                                    &lt;li&gt;Some generic error to test how errors show up here.&lt;/li&gt;
+                                    &lt;li&gt;Some generic error.&lt;/li&gt;
+                                &lt;/ul&gt;
+                            &lt;/div&gt;
+                        &lt;/div&gt;
+                    &lt;/div&gt;
+                &lt;/div&gt;
+                &lt;!-- /error list --&gt;
+
+                &lt;form id=&quot;&quot; class=&quot;form-inline ontrack__form&quot;&gt;
+                    &lt;fieldset&gt;
+                        &lt;div class=&quot;row row__mobile row__mobile--bg no-border no-vertical-margin&quot;&gt;
+                            &lt;div class=&quot;col-xs-12 col-sm-6&quot;&gt;
+                                &lt;label class=&quot;aligner--mobile&quot;&gt;Type:&lt;/label&gt;
+                            &lt;/div&gt;
+                            &lt;div class=&quot;col-xs-12 col-sm-6&quot;&gt;
+                                &lt;span class=&quot;aligner--mobile&quot;&gt;
+                                    Some Big Unexpected Type Name Can Show Up Here So Let's Test This.
+                                    &lt;div class=&quot;text-xsmall&quot;&gt;This account is being managed by &lt;em&gt;Managed Advice&lt;/em&gt;&lt;sup&gt;&amp;reg;&lt;/sup&gt;&lt;/div&gt;
+                                &lt;/span&gt;
+                            &lt;/div&gt;
+                        &lt;/div&gt;
+
+                        &lt;div class=&quot;row row__mobile row__mobile--bg no-border no-vertical-margin&quot;&gt;
+                            &lt;div class=&quot;col-xs-12 col-sm-6&quot;&gt;
+                                &lt;label class=&quot;aligner aligner--mobile&quot;&gt;Account Number:&lt;/label&gt;
+                            &lt;/div&gt;
+                            &lt;div class=&quot;col-xs-12 col-sm-6&quot;&gt;
+                                &lt;span class=&quot;aligner aligner--mobile&quot;&gt;ACCT#123456&lt;/span&gt;
+                            &lt;/div&gt;
+                        &lt;/div&gt;
+
+                        &lt;div class=&quot;row row__mobile row__mobile--bg&quot;&gt;
+                            &lt;div class=&quot;col-xs-12 col-sm-6&quot;&gt;
+                                &lt;label class=&quot;aligner aligner--mobile&quot;&gt;Balance:&lt;/label&gt;
+                            &lt;/div&gt;
+                            &lt;div class=&quot;col-xs-12 col-sm-6&quot;&gt;
+                                &lt;span class=&quot;aligner aligner--mobile&quot;&gt;$ 55,555,555&lt;/span&gt;
+                            &lt;/div&gt;
+                        &lt;/div&gt;
+
+                        &lt;div class=&quot;row row__mobile row__mobile--bg&quot;&gt;
+                            &lt;hr class=&quot;visible-xs hr--mobile__separator&quot;&gt;
+                            &lt;div class=&quot;visible-xs clear&quot;&gt;&lt;/div&gt;
+
+                            &lt;div class=&quot;col-xs-12&quot;&gt;
+                                &lt;h4 class=&quot;sub-title margin-bottom&quot;&gt;How much are you contributing?&lt;/h4&gt;
+
+                                &lt;!-- TRS contributions --&gt;
+                                &lt;div id=&quot;contributionRows&quot;&gt;
+                                    &lt;div class=&quot;row no-border no-vertical-margin&quot;&gt;
+                                        &lt;div class=&quot;col-xs-12 col-sm-6&quot;&gt;
+                                            &lt;label class=&quot;aligner aligner--mobile&quot;&gt;Pre-tax contribution&lt;/label&gt;
+                                        &lt;/div&gt;
+
+                                        &lt;div class=&quot;col-xs-12 col-sm-6&quot;&gt;
+                                            {{!variation 1}}
+                                            &lt;span class=&quot;aligner aligner--mobile&quot;&gt;$ 55,555,555&lt;/span&gt;
+                                        &lt;/div&gt;
+                                    &lt;/div&gt;
+
+                                    &lt;div class=&quot;row no-border no-vertical-margin&quot;&gt;
+                                        &lt;div class=&quot;col-xs-12 col-sm-6&quot;&gt;
+                                            &lt;label class=&quot;aligner aligner--mobile&quot;&gt;Post-tax contribution&lt;/label&gt;
+                                        &lt;/div&gt;
+
+                                        &lt;div class=&quot;col-xs-12 col-sm-6&quot;&gt;
+                                            {{!variation 2}}
+                                            {{!&lt;span class=&quot;aligner aligner--mobile margin-left-lg padding-left&quot;&gt;100 %&lt;/span&gt;}}
+                                            &lt;span class=&quot;aligner aligner--mobile&quot;&gt;100 %&lt;/span&gt;
+                                        &lt;/div&gt;
+                                    &lt;/div&gt;
+
+                                    &lt;div class=&quot;row&quot;&gt;
+                                        &lt;div class=&quot;col-xs-12 col-sm-6&quot;&gt;
+                                            &lt;label class=&quot;aligner aligner--mobile&quot;&gt;Roth&lt;/label&gt;
+                                        &lt;/div&gt;
+
+                                        &lt;div class=&quot;col-xs-12 col-sm-6&quot;&gt;
+                                            {{!variaton 3}}
+                                            &lt;input class=&quot;currency&quot; novalidate autocorrect=&quot;off&quot; autocapitalize=&quot;off&quot; autocomplete=&quot;off&quot; type=&quot;text&quot; value=&quot;55,555,555&quot;&gt;
+                                            &lt;select&gt;
+                                                &lt;option value=&quot;dollar&quot;&gt;dollars&lt;/option&gt;
+                                                &lt;option value=&quot;percent&quot;&gt;percent&lt;/option&gt;
+                                            &lt;/select&gt;
+                                        &lt;/div&gt;
+                                    &lt;/div&gt;
+                                &lt;/div&gt;
+                                &lt;!-- //TRS contributions --&gt;
+
+                                &lt;!-- Nintendo DC Section --&gt;
+                                &lt;div id=&quot;nintendoSection&quot;&gt;
+                                    &lt;div class=&quot;row no-border no-vertical-margin&quot;&gt;
+                                        &lt;div class=&quot;col-xs-12 col-sm-6&quot;&gt;
+                                            &lt;label class=&quot;aligner aligner--mobile&quot;&gt;Semi Annual Bonus&lt;/label&gt;
+                                        &lt;/div&gt;
+                                        &lt;div class=&quot;col-xs-12 col-sm-6&quot;&gt;
+                                            &lt;input type=&quot;text&quot; class=&quot;form-control percentage&quot; novalidate autocorrect=&quot;off&quot; autocapitalize=&quot;off&quot; autocomplete=&quot;off&quot; value=&quot;100&quot; /&gt;
+                                            &lt;span class=&quot;aligner&quot;&gt;%&lt;/span&gt;
+                                        &lt;/div&gt;
+                                    &lt;/div&gt;
+
+                                    &lt;div class=&quot;row no-border no-vertical-margin&quot;&gt;
+                                        &lt;div class=&quot;col-xs-12 col-sm-6&quot;&gt;
+                                            &lt;label class=&quot;aligner aligner--mobile&quot;&gt;Deferred Compensation Base Salary&lt;/label&gt;
+                                        &lt;/div&gt;
+                                        &lt;div class=&quot;col-xs-12 col-sm-6&quot;&gt;
+                                            &lt;input type=&quot;text&quot; class=&quot;form-control percentage&quot; novalidate autocorrect=&quot;off&quot; autocapitalize=&quot;off&quot; autocomplete=&quot;off&quot; value=&quot;100&quot; /&gt;
+                                            &lt;span class=&quot;aligner&quot;&gt;%&lt;/span&gt;
+                                        &lt;/div&gt;
+                                    &lt;/div&gt;
+
+                                    &lt;div class=&quot;row no-border no-vertical-margin&quot;&gt;
+                                        &lt;div class=&quot;col-xs-12 col-sm-6&quot;&gt;
+                                            &lt;label class=&quot;aligner aligner--mobile&quot;&gt;Deferred Compensation Semi Annual Bonus&lt;/label&gt;
+                                        &lt;/div&gt;
+                                        &lt;div class=&quot;col-xs-12 col-sm-6&quot;&gt;
+                                            &lt;input type=&quot;text&quot; class=&quot;form-control percentage&quot; novalidate autocorrect=&quot;off&quot; autocapitalize=&quot;off&quot; autocomplete=&quot;off&quot; value=&quot;100&quot; /&gt;
+                                            &lt;span class=&quot;aligner&quot;&gt;%&lt;/span&gt;
+                                        &lt;/div&gt;
+                                    &lt;/div&gt;
+
+                                    &lt;div class=&quot;row&quot;&gt;
+                                        &lt;div class=&quot;col-xs-12 col-sm-6&quot;&gt;
+                                            &lt;label class=&quot;aligner aligner--mobile&quot;&gt;Pre-Tax Deferred Compensation &lt;/label&gt;
+                                        &lt;/div&gt;
+                                        &lt;div class=&quot;col-xs-12 col-sm-6&quot;&gt;
+                                            {{!&lt;span class=&quot;aligner aligner--mobile margin-left-lg padding-left&quot; id=&quot;pre-tax-deferred-compensation&quot;&gt;100&lt;/span&gt; %}}
+                                            &lt;span class=&quot;aligner aligner--mobile&quot; id=&quot;pre-tax-deferred-compensation&quot;&gt;100&lt;/span&gt; %
+                                        &lt;/div&gt;
+                                    &lt;/div&gt;
+                                &lt;/div&gt;
+                                &lt;!-- //Nintendo DC Section --&gt;
+
+                                &lt;!-- Include Catch-Up --&gt;
+                                &lt;div id=&quot;catchupRows&quot;&gt;
+                                    &lt;div class=&quot;row no-vertical-padding&quot;&gt;
+                                        &lt;div class=&quot;col-xs-12 col-sm-6&quot;&gt;
+                                            &lt;label class=&quot;aligner aligner--mobile&quot;&gt;Include catch-up contributions?&lt;/label&gt;
+                                        &lt;/div&gt;
+                                        &lt;div class=&quot;col-xs-12 col-sm-6&quot;&gt;
+                                            &lt;input type=&quot;radio&quot; checked value=&quot;Yes&quot; /&gt;
+                                            &lt;label class=&quot;aligner&quot; for=&quot;&quot;&gt;&lt;span role=&quot;radio&quot;&gt;&lt;/span&gt;Yes&lt;/label&gt;
+
+                                            &lt;input type=&quot;radio&quot; value=&quot;No&quot; /&gt;
+                                            &lt;label class=&quot;aligner&quot; for=&quot;&quot;&gt;&lt;span role=&quot;radio&quot;&gt;&lt;/span&gt;No&lt;/label&gt;
+                                        &lt;/div&gt;
+                                    &lt;/div&gt;
+                                &lt;/div&gt;
+
+                                &lt;!-- hide or show depending on selection above --&gt;
+                                &lt;div id=&quot;catchupAmtRow&quot;&gt;
+                                    &lt;div class=&quot;row no-vertical-padding padding-top&quot;&gt;
+                                        &lt;div class=&quot;col-xs-12 col-sm-6&quot;&gt;
+                                            &lt;label class=&quot;aligner&quot;&gt;Catch-up amount:&lt;/label&gt;
+                                        &lt;/div&gt;
+                                        &lt;div class=&quot;col-xs-12 col-sm-6&quot;&gt;
+                                            $
+                                            &lt;input id=&quot;catchupAmt&quot; class=&quot;form-control currency&quot; novalidate autocorrect=&quot;off&quot; autocapitalize=&quot;off&quot; autocomplete=&quot;off&quot; type=&quot;text&quot; value=&quot;55,555,555&quot; /&gt;
+                                        &lt;/div&gt;
+                                    &lt;/div&gt;
+                                &lt;/div&gt;
+                                &lt;!-- //Include Catch-Up --&gt;
+                            &lt;/div&gt;
+                        &lt;/div&gt;
+
+                        &lt;div class=&quot;row row__mobile row__mobile--bg no-vertical-margin contributions&quot;&gt;
+                            &lt;hr class=&quot;visible-xs hr--mobile__separator&quot;&gt;
+                            &lt;div class=&quot;visible-xs clear&quot;&gt;&lt;/div&gt;
+
+                            &lt;div class=&quot;col-xs-12&quot;&gt;
+                                &lt;p class=&quot;sub-title&quot;&gt;How much is your employer contributing annually?&lt;/p&gt;
+
+                                &lt;!-- Employer Match Tiers --&gt;
+                                &lt;div id=&quot;employerMatchTiers${managedRow.ID}&quot; class=&quot;employer-match-tiers&quot;&gt;
+
+                                    &lt;!-- First Tier --&gt;
+                                    &lt;div class=&quot;row no-border no-vertical-margin&quot;&gt;
+                                        &lt;div class=&quot;col-xs-12&quot;&gt;
+                                            &lt;strong&gt;First,&lt;/strong&gt; employer matches
+
+                                            &lt;input class=&quot;form-control percentage&quot; type=&quot;text&quot; novalidate autocorrect=&quot;off&quot; autocapitalize=&quot;off&quot; autocomplete=&quot;off&quot; value=&quot;100&quot; maxlength=&quot;4&quot; /&gt;
+
+                                            &lt;span class=&quot;aligner&quot;&gt;% &lt;br class=&quot;visible-xs&quot;&gt;of your initial contribution of&lt;/span&gt;&lt;br class=&quot;visible-xs&quot;&gt;
+
+                                            &lt;input class=&quot;form-control currency&quot; type=&quot;text&quot; novalidate autocorrect=&quot;off&quot; autocapitalize=&quot;off&quot; autocomplete=&quot;off&quot; value=&quot;55,555,555&quot; /&gt;
+
+                                            &lt;select class=&quot;form-control&quot;&gt;
+                                                &lt;option value=&quot;dollar&quot;&gt;dollars&lt;/option&gt;
+                                                &lt;option value=&quot;percent&quot;&gt;percent&lt;/option&gt;
+                                            &lt;/select&gt;
+                                        &lt;/div&gt;
+                                    &lt;/div&gt;
+                                    &lt;!-- End First Tier  --&gt;
+
+                                    &lt;!-- Second Tier  --&gt;
+                                    &lt;div class=&quot;row no-border no-vertical-margin&quot;&gt;
+                                        &lt;hr class=&quot;visible-xs hr--mobile__separator no-vertical-margin margin-bottom&quot;&gt;
+                                        &lt;div class=&quot;visible-xs clear&quot;&gt;&lt;/div&gt;
+
+                                        &lt;div class=&quot;col-xs-12 &quot;&gt;
+                                            &lt;strong&gt;Next,&lt;/strong&gt; matches
+
+                                            &lt;input class=&quot;percentage text-right form-control&quot; type=&quot;text&quot; novalidate autocorrect=&quot;off&quot; autocapitalize=&quot;off&quot; autocomplete=&quot;off&quot; value=&quot;100&quot; maxlength=&quot;4&quot; /&gt;
+
+                                            &lt;span class=&quot;aligner&quot;&gt;% &lt;br class=&quot;visible-xs&quot;&gt;of your next contribution of&lt;/span&gt;&lt;br class=&quot;visible-xs&quot;&gt;
+
+                                            &lt;input class=&quot;currency text-right form-control&quot; type=&quot;text&quot; novalidate autocorrect=&quot;off&quot; autocapitalize=&quot;off&quot; autocomplete=&quot;off&quot; value=&quot;55,555,555&quot; /&gt;
+
+                                            &lt;select class=&quot;form-control&quot;&gt;
+                                                &lt;option value=&quot;dollar&quot;&gt;dollars&lt;/option&gt;
+                                                &lt;option value=&quot;percent&quot;&gt;percent&lt;/option&gt;
+                                            &lt;/select&gt;
+                                        &lt;/div&gt;
+                                    &lt;/div&gt;
+                                    &lt;!-- End Second Tier  --&gt;
+
+                                    &lt;!--  Third Tier  --&gt;
+                                    &lt;div class=&quot;row no-border no-vertical-padding&quot;&gt;
+                                        &lt;hr class=&quot;visible-xs hr--mobile__separator no-vertical-margin margin-bottom&quot;&gt;
+                                        &lt;div class=&quot;visible-xs clear&quot;&gt;&lt;/div&gt;
+
+                                        &lt;div class=&quot;col-xs-12 &quot;&gt;
+                                            &lt;strong&gt;Thereafter,&lt;/strong&gt; matches
+
+                                            &lt;input class=&quot;percentage text-right form-control&quot; type=&quot;text&quot; novalidate autocorrect=&quot;off&quot; autocapitalize=&quot;off&quot; autocomplete=&quot;off&quot; value=&quot;100&quot; maxlength=&quot;4&quot; /&gt;
+
+                                            &lt;span class=&quot;aligner&quot;&gt;% &lt;br class=&quot;visible-xs&quot;&gt;of your remaining contribution of&lt;/span&gt;&lt;br class=&quot;visible-xs&quot;&gt;
+
+                                            &lt;input class=&quot;currency text-right form-control&quot; type=&quot;text&quot; novalidate autocorrect=&quot;off&quot; autocapitalize=&quot;off&quot; autocomplete=&quot;off&quot; value=&quot;55,555,555&quot; /&gt;
+
+                                            &lt;select class=&quot;form-control&quot;&gt;
+                                                &lt;option value=&quot;dollar&quot;&gt;dollars&lt;/option&gt;
+                                                &lt;option value=&quot;percent&quot;&gt;percent&lt;/option&gt;
+                                            &lt;/select&gt;
+                                        &lt;/div&gt;
+                                    &lt;/div&gt;
+                                    &lt;!-- End Third Tier --&gt;
+                                &lt;/div&gt;
+                                &lt;!-- End Employer Match Tiers --&gt;
+
+                                &lt;!-- START NINTENDO LTICP --&gt;
+                                &lt;div id=&quot;nintendoLTICP&quot;&gt;
+                                    &lt;div class=&quot;row no-border no-vertical-margin margin-top&quot;&gt;
+                                        &lt;hr class=&quot;visible-xs hr--mobile__separator no-vertical-margin margin-bottom&quot;&gt;
+                                        &lt;div class=&quot;visible-xs clear&quot;&gt;&lt;/div&gt;
+
+                                        &lt;div class=&quot;col-xs-12 col-sm-6&quot;&gt;
+                                            &lt;label class=&quot;aligner aligner--mobile&quot;&gt;Semi Annual Bonus&lt;/label&gt;
+                                        &lt;/div&gt;
+                                        &lt;div class=&quot;col-xs-12 col-sm-6&quot;&gt;
+                                            &lt;input type=&quot;text&quot; class=&quot;form-control percentage&quot; novalidate autocorrect=&quot;off&quot; autocapitalize=&quot;off&quot; autocomplete=&quot;off&quot; value=&quot;100&quot; /&gt;
+                                            &lt;span class=&quot;aligner&quot;&gt;%&lt;/span&gt;
+                                        &lt;/div&gt;
+                                    &lt;/div&gt;
+
+                                    &lt;div class=&quot;row no-border no-vertical-margin&quot;&gt;
+                                        &lt;div class=&quot;col-xs-12 col-sm-6&quot;&gt;
+                                            &lt;label class=&quot;aligner aligner--mobile&quot;&gt;LTICP&lt;/label&gt;
+                                        &lt;/div&gt;
+                                        &lt;div class=&quot;col-xs-12 col-sm-6&quot;&gt;
+                                            &lt;input type=&quot;text&quot; class=&quot;form-control percentage&quot; novalidate autocorrect=&quot;off&quot; autocapitalize=&quot;off&quot; autocomplete=&quot;off&quot; value=&quot;100&quot; /&gt;
+                                            &lt;span class=&quot;aligner&quot;&gt;%&lt;/span&gt;
+                                        &lt;/div&gt;
+                                    &lt;/div&gt;
+
+                                    &lt;div class=&quot;row no-border no-vertical-margin no-vertical-padding&quot;&gt;
+                                        &lt;div class=&quot;col-xs-12 col-sm-6&quot;&gt;
+                                            &lt;label class=&quot;aligner aligner--mobile&quot;&gt;Your Employer Contributes&lt;/label&gt;
+                                        &lt;/div&gt;
+
+                                        &lt;div class=&quot;col-xs-12 col-sm-6&quot;&gt;
+                                            &lt;span class=&quot;aligner aligner--mobile&quot; id=&quot;otherContrib&quot;&gt;100&lt;/span&gt;
+                                            &lt;span class=&quot;aligner aligner--mobile&quot;&gt;%&lt;/span&gt;
+                                        &lt;/div&gt;
+                                    &lt;/div&gt;
+                                &lt;/div&gt;
+                                &lt;!-- END NINTENTO LTICP --&gt;
+                            &lt;/div&gt;
+                        &lt;/div&gt;
+
+                        &lt;!-- Start Other Employer Contribution --&gt;
+                        &lt;div class=&quot;row row__mobile row__mobile--bg no-border no-vertical-margin&quot; id=&quot;otherEmployerContributionsHeading&quot;&gt;
+                            &lt;hr class=&quot;visible-xs hr--mobile__separator&quot;&gt;
+                            &lt;div class=&quot;visible-xs clear&quot;&gt;&lt;/div&gt;
+
+                            &lt;div class=&quot;col-xs-12&quot;&gt;
+                                &lt;p&gt;
+                                    &lt;strong class=&quot;aligner aligner--mobile&quot;&gt;Other employer contributions&lt;/strong&gt;&lt;br&gt;
+                                    If your employer contributes to your retirement plan other than through matching (for example, through profit-sharing), review or enter the amount or percentage of that contribution below. Check your statement of benefits for your
+                                    employer's rules.
+                                &lt;/p&gt;
+
+                                &lt;!-- Start Employer Contribution --&gt;
+                                {{!variation 1}}
+                                &lt;div class=&quot;row no-border no-vertical-margin&quot;&gt;
+                                    &lt;div class=&quot;col-xs-12&quot;&gt;
+                                        &lt;strong class=&quot;aligner aligner--mobile&quot;&gt;Your employer contributes&lt;/strong&gt;&lt;br&gt;
+                                        &lt;div&gt;
+                                            0 percent - Please refer to the plan document for plan rules that may apply.
+                                        &lt;/div&gt;
+                                    &lt;/div&gt;
+                                &lt;/div&gt;
+
+                                {{!variation 2}}
+                                &lt;div class=&quot;row no-border no-vertical-margin&quot;&gt;
+                                    &lt;div class=&quot;col-xs-12&quot;&gt;
+                                        &lt;strong class=&quot;aligner aligner--mobile&quot;&gt;Your employer contributes&lt;/strong&gt;&lt;br&gt;
+                                        &lt;div&gt;
+                                            Other Contribution Type - Please refer to the plan document for plan rules that may apply.
+                                        &lt;/div&gt;
+                                    &lt;/div&gt;
+                                &lt;/div&gt;
+
+                                {{!variation 3}}
+                                &lt;div class=&quot;row no-border no-vertical-margin&quot;&gt;
+                                    &lt;div class=&quot;col-xs-12&quot;&gt;
+                                        &lt;strong class=&quot;aligner aligner--mobile&quot;&gt;Your employer contributes&lt;/strong&gt;&lt;br&gt;
+                                        &lt;input type=&quot;text&quot; class=&quot;form-control currency&quot; novalidate autocorrect=&quot;off&quot; autocapitalize=&quot;off&quot; autocomplete=&quot;off&quot; value=&quot;55,555,555&quot; /&gt;
+                                        &lt;select&gt;
+                                            &lt;option value=&quot;dollar&quot;&gt;dollars&lt;/option&gt;
+                                            &lt;option value=&quot;percent&quot;&gt;percent&lt;/option&gt;
+                                        &lt;/select&gt;
+                                    &lt;/div&gt;
+                                &lt;/div&gt;
+                                &lt;!-- End Employer Contribution --&gt;
+                            &lt;/div&gt;
+                        &lt;/div&gt;
+                        &lt;!-- End Other Employer Contribution --&gt;
+
+                        &lt;div class=&quot;row row__mobile row__mobile--bg no-vertical-padding how-are-currently-invested&quot;&gt;
+                            &lt;hr class=&quot;visible-xs hr--mobile__separator&quot;&gt;
+                            &lt;div class=&quot;visible-xs clear&quot;&gt;&lt;/div&gt;
+
+                            &lt;div class=&quot;col-xs-12&quot;&gt;
+                                &lt;h4 class=&quot;sub-title margin-bottom&quot;&gt;
+                                    How are you currently invested?&lt;br class=&quot;visible-xs&quot;&gt;
+                                    &lt;a class=&quot;text-small no-bold&quot; href=&quot;javascript:void(0);&quot; data-backdrop=&quot;static&quot; data-keyboard=&quot;false&quot;&gt;(View holdings)&lt;/a&gt;
+                                &lt;/h4&gt;
+
+                                &lt;div class=&quot;panel panel-default contributions chart js-risk-output&quot;&gt;
+                                    &lt;div class=&quot;panel-body&quot;&gt;
+                                        &lt;div class=&quot;row&quot;&gt;
+                                            &lt;div class=&quot;col-xs-12 col-sm-5 allocation-graph&quot;&gt;
+                                                &lt;div class=&quot;allocation-graph-container&quot;&gt;
+                                                    &lt;div id=&quot;allocation-graph{{ uniqueId }}&quot;&gt;&lt;/div&gt;
+                                                &lt;/div&gt;
+                                            &lt;/div&gt;
+
+                                            &lt;div class=&quot;col-xs-12 col-sm-7&quot;&gt;
+                                                &lt;!--loop this--&gt;
+                                                &lt;div class=&quot;row&quot;&gt;
+                                                    &lt;div class=&quot;col-xs-12&quot;&gt;
+                                                        &lt;label class=&quot;aligner aligner--mobile pull-left&quot;&gt;
+                                                            &lt;span class=&quot;box-sm graph-color1&quot;&gt;&lt;/span&gt;
+                                                            &lt;span class=&quot;label--block&quot;&gt;&lt;em&gt;Your Retirement Outlook&lt;/em&gt;&lt;sup&gt;&amp;reg;&lt;/sup&gt;&lt;/span&gt;
+                                                        &lt;/label&gt;
+                                                        &lt;span class=&quot;aligner aligner--mobile pull-right&quot;&gt;100 %&lt;/span&gt;
+                                                    &lt;/div&gt;
+                                                &lt;/div&gt;
+                                                &lt;!--end loop this--&gt;
+                                                &lt;div class=&quot;row&quot;&gt;
+                                                    &lt;div class=&quot;col-xs-12&quot;&gt;
+                                                        &lt;label class=&quot;aligner aligner--mobile pull-left&quot;&gt;
+                                                            &lt;span class=&quot;box-sm graph-color2&quot;&gt;&lt;/span&gt;
+                                                            &lt;span class=&quot;label--block&quot;&gt;&lt;em&gt;Your Retirement Outlook&lt;/em&gt;&lt;sup&gt;&amp;reg;&lt;/sup&gt;&lt;/span&gt;
+                                                        &lt;/label&gt;
+                                                        &lt;span class=&quot;aligner aligner--mobile pull-right&quot;&gt;100 %&lt;/span&gt;
+                                                    &lt;/div&gt;
+                                                &lt;/div&gt;
+                                                &lt;div class=&quot;row&quot;&gt;
+                                                    &lt;div class=&quot;col-xs-12&quot;&gt;
+                                                        &lt;label class=&quot;aligner aligner--mobile pull-left&quot;&gt;
+                                                            &lt;span class=&quot;box-sm graph-color3&quot;&gt;&lt;/span&gt;
+                                                            &lt;span class=&quot;label--block&quot;&gt;&lt;em&gt;Your Retirement Outlook&lt;/em&gt;&lt;sup&gt;&amp;reg;&lt;/sup&gt;&lt;/span&gt;
+                                                        &lt;/label&gt;
+                                                        &lt;span class=&quot;aligner aligner--mobile pull-right&quot;&gt;100 %&lt;/span&gt;
+                                                    &lt;/div&gt;
+                                                &lt;/div&gt;
+                                                &lt;div class=&quot;row&quot;&gt;
+                                                    &lt;div class=&quot;col-xs-12&quot;&gt;
+                                                        &lt;label class=&quot;aligner aligner--mobile pull-left&quot;&gt;
+                                                            &lt;span class=&quot;box-sm graph-color4&quot;&gt;&lt;/span&gt;
+                                                            &lt;span class=&quot;label--block&quot;&gt;&lt;em&gt;Your Retirement Outlook&lt;/em&gt;&lt;sup&gt;&amp;reg;&lt;/sup&gt;&lt;/span&gt;
+                                                        &lt;/label&gt;
+                                                        &lt;span class=&quot;aligner aligner--mobile pull-right&quot;&gt;100 %&lt;/span&gt;
+                                                    &lt;/div&gt;
+                                                &lt;/div&gt;
+
+                                                {{! last row - total}}
+                                                &lt;div class=&quot;row no-vertical-margin margin-top&quot;&gt;
+                                                    &lt;div class=&quot;col-xs-12&quot;&gt;
+                                                        &lt;label class=&quot;aligner aligner--mobile pull-left&quot;&gt;
+                                                            &lt;span class=&quot;box-sm&quot;&gt;&lt;/span&gt;&lt;strong&gt;Total&lt;/strong&gt;
+                                                        &lt;/label&gt;
+                                                        &lt;span class=&quot;aligner aligner--mobile pull-right&quot;&gt;
+                                                            &lt;strong&gt;&lt;span id=&quot;riskTotal&quot;&gt;100&lt;/span&gt; %&lt;/strong&gt;
+                                                        &lt;/span&gt;
+                                                    &lt;/div&gt;
+                                                &lt;/div&gt;
+                                                {{!end last row - total}}
+                                            &lt;/div&gt;
+                                        &lt;/div&gt;
+                                    &lt;/div&gt;
+                                &lt;/div&gt;
+                            &lt;/div&gt;
+                        &lt;/div&gt;
+                    &lt;/fieldset&gt;
+                &lt;/form&gt;
+            &lt;/div&gt;
+
+            &lt;div class=&quot;modal-footer&quot;&gt;
+                &lt;div class=&quot;row&quot;&gt;
+                    &lt;div class=&quot;col-xs-12&quot;&gt;
+                        &lt;a class=&quot;btn btn-secondary pull-left&quot; href=&quot;javascript:void(0)&quot; data-dismiss=&quot;modal&quot;&gt;Cancel&lt;/a&gt;
+                        &lt;a class=&quot;btn btn-primary&quot; href=&quot;javascript:void(0)&quot;&gt;Save&lt;/a&gt;
+                    &lt;/div&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
+&lt;!-- //edit account --&gt;

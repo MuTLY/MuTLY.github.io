@@ -1,0 +1,48 @@
+
+&lt;!-- RETIREMENT OUTLOOK - SUB, NO ONTRACK --&gt;
+&lt;div class=&quot;row row-margin-fix block block-basic margin-bottom-lg try-ontrack try-ontrack__sub try-ontrack__sub--with-link js-monitor-click&quot;&gt;
+    &lt;div class=&quot;row&quot;&gt;
+        &lt;div class=&quot;col-xs-12 col-sm-5&quot;&gt;
+            &lt;span class=&quot;info-text&quot;&gt;
+                Learn if you are likely to meet your retirement income goals.&lt;br&gt;
+                &lt;a href=&quot;#&quot; class=&quot;js-skip-click&quot;&gt;Click to complete your profile&lt;/a&gt;
+            &lt;/span&gt;
+        &lt;/div&gt;
+        &lt;div class=&quot;col-xs-12 col-sm-7 blue-arrow&quot;&gt;
+            &lt;ul class=&quot;forecast-icons&quot;&gt;
+                &lt;li&gt;
+                    &lt;img src=&quot;../../images/rainy-notext.png&quot; alt=&quot;rainy forecast&quot; /&gt;
+                    &lt;span&gt;Rainy&lt;/span&gt;
+                &lt;/li&gt;&lt;!-- do not remove this
+                --&gt;&lt;li&gt;
+                    &lt;img src=&quot;../../images/cloudy-notext.png&quot; alt=&quot;cloudy forecast&quot; /&gt;
+                    &lt;span&gt;Cloudy&lt;/span&gt;
+                &lt;/li&gt;&lt;!-- do not remove this
+                --&gt;&lt;li&gt;
+                    &lt;img src=&quot;../../images/partly-sunny-notext.png&quot; alt=&quot;partly sunny forecast&quot; /&gt;
+                    &lt;span&gt;Partly Sunny&lt;/span&gt;
+                &lt;/li&gt;&lt;!-- do not remove this
+                --&gt;&lt;li&gt;
+                    &lt;img src=&quot;../../images/sunny-notext.png&quot; alt=&quot;sunny forecast&quot; /&gt;
+                    &lt;span&gt;Sunny&lt;/span&gt;
+                &lt;/li&gt;
+            &lt;/ul&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
+&lt;!-- END RETIREMENT OUTLOOK - SUB, NO ONTRACK --&gt;
+&lt;script&gt;
+$(function() {
+    // Clicking on the component
+    $('.js-monitor-click').off('click').on('click', function(e) {
+        e.preventDefault();
+        alert('You clicked the component!');
+    });
+
+    $('.js-skip-click').off('click').on('click', function(e) {
+        e.preventDefault();
+        e.stopPropagation();
+        alert('You clicked just this link!');
+    });
+});
+&lt;/script&gt;

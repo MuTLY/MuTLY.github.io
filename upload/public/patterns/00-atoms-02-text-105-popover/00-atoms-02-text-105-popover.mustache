@@ -1,0 +1,14 @@
+{{# popover }}
+&lt;a tabindex=&quot;0&quot; class=&quot;{{pop_classes}}&quot; role=&quot;button&quot; data-toggle=&quot;popover&quot; data-html=&quot;true&quot; {{# auto_close}}data-trigger=&quot;focus&quot;{{/ auto_close}} {{# position}}data-placement=&quot;{{ . }}&quot;{{/ position}} data-title=&quot;{{{pop_title}}}&quot; data-content=&quot;{{pop_text}}&quot; href=&quot;javascript:void(0);&quot; &gt;{{link_text}}&lt;/a&gt;
+{{/ popover }}
+
+&lt;script type=&quot;text/javascript&quot;&gt;
+
+$(function () {
+
+  $('[data-toggle=&quot;popover&quot;]').popover({
+	  container: 'body' 
+  });
+})
+
+&lt;/script&gt;

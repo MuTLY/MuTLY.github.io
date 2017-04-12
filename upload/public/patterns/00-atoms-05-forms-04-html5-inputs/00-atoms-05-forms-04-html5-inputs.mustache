@@ -1,0 +1,62 @@
+{{# inputs }}
+&lt;div class=&quot;field-container {{ container_classes }}&quot;&gt;
+    &lt;label for=&quot;{{id}}&quot;&gt;{{{ label }}}&lt;/label&gt;
+    {{# isUserName }}
+    &lt;input name=&quot;{{id}}&quot; id=&quot;{{id}}&quot; type=&quot;text&quot; autocapitalize=&quot;off&quot; autocorrect=&quot;off&quot; autocomplete=&quot;username&quot; {{{ input_attr }}} &gt;
+    {{/ isUserName }}
+    {{# isPassword }}
+    &lt;input name=&quot;{{id}}&quot; id=&quot;{{id}}&quot; type=&quot;password&quot; autocomplete=&quot;current-password&quot; {{{ input_attr }}} &gt;
+    {{/ isPassword }}
+    {{# isEmail }}
+    &lt;input name=&quot;{{id}}&quot; id=&quot;{{id}}&quot; type=&quot;email&quot; autocapitalize=&quot;off&quot; autocorrect=&quot;off&quot; autocomplete=&quot;email&quot; {{{ input_attr }}} &gt;
+    {{/ isEmail }}
+    {{# isTelephone }}
+    &lt;input name=&quot;{{id}}&quot; id=&quot;{{id}}&quot; type=&quot;tel&quot; autocorrect=&quot;off&quot; autocomplete=&quot;tel&quot; {{{ input_attr }}} &gt;
+    {{/ isTelephone }}
+    {{# isFullName }}
+    &lt;input name=&quot;{{id}}&quot; id=&quot;{{id}}&quot;  type=&quot;text&quot; autocapitalize=&quot;words&quot; autocorrect=&quot;off&quot; autocomplete=&quot;name&quot; {{{ input_attr }}} &gt;
+    {{/ isFullName }}
+    {{# isFirstName }}
+    &lt;input name=&quot;{{id}}&quot; id=&quot;{{id}}&quot;  type=&quot;text&quot; autocapitalize=&quot;words&quot; autocorrect=&quot;off&quot; autocomplete=&quot;given-name&quot; {{{ input_attr }}} &gt;
+    {{/ isFirstName }}
+    {{# isLastName }}
+    &lt;input name=&quot;{{id}}&quot; id=&quot;{{id}}&quot;  type=&quot;text&quot; autocapitalize=&quot;words&quot; autocorrect=&quot;off&quot; autocomplete=&quot;family-name&quot; {{{ input_attr }}} &gt;
+    {{/ isLastName }}
+    {{# isStreetAddress }}
+    &lt;input name=&quot;{{id}}&quot; id=&quot;{{id}}&quot;  type=&quot;text&quot; autocapitalize=&quot;words&quot; autocorrect=&quot;off&quot; autocomplete=&quot;street-address&quot; {{{ input_attr }}} &gt;
+    {{/ isStreetAddress }}
+    {{# isAddress1 }}
+    &lt;input name=&quot;{{id}}&quot; id=&quot;{{id}}&quot;  type=&quot;text&quot; autocapitalize=&quot;words&quot; autocorrect=&quot;off&quot; autocomplete=&quot;address-line1&quot; {{{ input_attr }}} &gt;
+    {{/ isAddress1 }}
+    {{# isAddress2 }}
+    &lt;input name=&quot;{{id}}&quot; id=&quot;{{id}}&quot;  type=&quot;text&quot; autocapitalize=&quot;words&quot; autocorrect=&quot;off&quot; autocomplete=&quot;address-line2&quot; {{{ input_attr }}} &gt;
+    {{/ isAddress2 }}
+    {{# isCity }}
+    &lt;input name=&quot;{{id}}&quot; id=&quot;{{id}}&quot;  type=&quot;text&quot; autocapitalize=&quot;words&quot; autocorrect=&quot;off&quot; autocomplete=&quot;address-level2&quot; {{{ input_attr }}} &gt;
+    {{/ isCity }}
+    {{# isState }}
+    &lt;input name=&quot;{{id}}&quot; id=&quot;{{id}}&quot;  type=&quot;text&quot; autocapitalize=&quot;words&quot; autocorrect=&quot;off&quot; autocomplete=&quot;address-level1&quot; {{{ input_attr }}}&gt;
+    {{/ isState }}
+    {{# isCountry }}
+    &lt;input name=&quot;{{id}}&quot; id=&quot;{{id}}&quot;  type=&quot;text&quot; autocapitalize=&quot;words&quot; autocorrect=&quot;on&quot; autocomplete=&quot;country&quot; {{{ input_attr }}} &gt;
+    {{/ isCountry }}
+    {{# isZipCode }}
+    &lt;input name=&quot;{{id}}&quot; id=&quot;{{id}}&quot;  type=&quot;text&quot; pattern=&quot;\d*&quot; novalidate autocorrect=&quot;off&quot; autocomplete=&quot;postal-code&quot; {{{ input_attr }}} &gt;
+    {{/ isZipCode }}
+    {{# isCreditCard }}
+    &lt;input name=&quot;{{id}}&quot; id=&quot;{{id}}&quot;  type=&quot;text&quot; pattern=&quot;\d*&quot; novalidate autocorrect=&quot;off&quot; autocomplete=&quot;cc-number&quot; {{{ input_attr }}} &gt;
+    {{/ isCreditCard }}
+    {{# isCreditSecurity }}
+    &lt;input name=&quot;{{id}}&quot; id=&quot;{{id}}&quot;  type=&quot;text&quot; pattern=&quot;\d*&quot; novalidate autocorrect=&quot;off&quot; autocomplete=&quot;cc-csc&quot; {{{ input_attr }}} &gt;
+    {{/ isCreditSecurity }}
+    {{# isQuantity }}
+    &lt;input name=&quot;{{id}}&quot; id=&quot;{{id}}&quot;  type=&quot;number&quot; min=&quot;{{minNum}}&quot; max=&quot;{{maxNum}}&quot; step=&quot;{{increment}}&quot; {{{ input_attr }}} &gt;
+    {{/ isQuantity }}
+    {{# isRange }}
+    &lt;input name=&quot;{{id}}&quot; id=&quot;{{id}}&quot;  type=&quot;range&quot; min=&quot;{{minNum}}&quot; max=&quot;{{maxNum}}&quot; step=&quot;{{# increment}}{{increment}}{{/ increment}}{{^ increment}}1{{/ increment}}&quot; value=&quot;{{value}}&quot; {{{ input_attr }}} &gt;
+    {{/ isRange }}
+    {{# input_alt_type }}
+    &lt;input type=&quot;{{input_alt_type}}&quot; id=&quot;{{id}}&quot; value=&quot;{{value}}&quot; {{{ input_attr }}} /&gt;
+    {{/ input_alt_type }}
+&lt;/div&gt;
+{{/ inputs }}

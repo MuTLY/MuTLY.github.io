@@ -1,0 +1,28 @@
+&lt;div class=&quot;col-sm-12 text-center&quot;&gt;
+	&lt;a href=&quot;tel:8007555801&quot;  class=&quot;btn btn-secondary&quot;&gt;&lt;span class='glyphicon glyphicon-earphone' role='presentation'&gt;&lt;/span&gt; &lt;span class='phone-number'&gt;1-800-755-5801&lt;/span&gt;&lt;/a&gt;
+    &lt;div id=&quot;lpbutton&quot; class=&quot;chat-button&quot;&gt;&lt;a class=&quot;btn btn-secondary btn--chat&quot; href=&quot;javascript:void(0);&quot;&gt;&lt;span class=&quot;glyphicon glyphicon-comment&quot; role=&quot;presentation&quot;&gt;&lt;/span&gt; &lt;span class=&quot;phone-number&quot;&gt;Live Chat&lt;/span&gt;&lt;/a&gt;&lt;/div&gt;
+    &lt;!-- this button has ZERO content options. It is injected by LivePerson. The only thing needed for export is &lt;div id=&quot;lpbutton&quot; class=&quot;chat-button&quot;&gt;&lt;/div&gt; --&gt;
+    &lt;script&gt;
+    (function($){
+    	
+    	$(ready);
+    	
+    	function ready(){
+    		$('.btn--chat', '#lpbutton').on('click blur', killButton);
+    	}
+    	
+    	function killButton(){
+    		var $thisButton = $(this),
+    			disabledText = &quot;live chat offline&quot;,
+    			enabledText = &quot;live chat&quot;;
+    		
+    		if (!$thisButton.hasClass('disabled')){
+    			$(this).attr('disabled', '').addClass('disabled').find('.phone-number').text(disabledText);
+    		}else{
+    			$(this).removeAttr('disabled').removeClass('disabled').find('.phone-number').text(enabledText);
+    		}
+    	}
+    	
+    })(jQuery);
+    &lt;/script&gt;
+    &lt;!-- ALERT: NEVER EXPORT THIS SCRIPT!!! IT IS FOR PL DEMO ONLY!!! --&gt;&lt;/div&gt;

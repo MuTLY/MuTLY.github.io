@@ -1,0 +1,80 @@
+&lt;div class=&quot;table--style2&quot;&gt;
+    &lt;table class=&quot;{{tbl_class}}&quot; {{tbl_att}} aria-describedby=&quot;{{table_id}}&quot;&gt;
+
+        {{# caption}}
+    	&lt;caption id=&quot;{{ table_id }}&quot; class=&quot;sr-only&quot;&gt;{{ caption }}&lt;/caption&gt;
+        {{/ caption}}
+
+        &lt;thead&gt;
+            &lt;tr&gt;
+            {{#h_th}}
+                &lt;th class=&quot;{{th_class}}&quot; {{th_att}} scope=&quot;{{#scope}}{{scope}}{{/scope}}{{^scope}}col{{/scope}}&quot; id=&quot;{{ col_id }}&quot; {{#columns}}colspan=&quot;{{columns}}&quot;{{/columns}}&gt;{{{value}}}&lt;/th&gt;
+            {{/h_th}}
+            &lt;/tr&gt;
+        &lt;/thead&gt;
+
+        &lt;tbody&gt;
+        {{# rowgroup}}
+        	{{^ no_header_row }}
+            &lt;tr&gt;
+                &lt;th data-title=&quot;{{ data_title }}&quot; class=&quot;{{ group_class }}&quot; colspan=&quot;{{ columns }}&quot; id=&quot;{{ group_id }}&quot; scope=&quot;rowgroup&quot;&gt;{{ value }}&lt;/th&gt;
+            &lt;/tr&gt;
+            {{/ no_header_row }}
+            {{# rows}}
+            &lt;tr class=&quot;{{tr_class}}&quot; {{#tr_link}}onclick=&quot;{{{tr_url}}}&quot;{{/tr_link}}&gt;
+                &lt;th class=&quot;td {{ classes }}&quot; id=&quot;{{ id }}&quot; scope=&quot;row&quot; headers=&quot;{{ group_id }} {{ h_th.0.col_id }}&quot;&gt;{{ h_value }}&lt;/th&gt;
+                {{# data.0}}
+                &lt;td class=&quot;{{ td_class }} {{ mobile_js_class.0 }}&quot; headers=&quot;{{ group_id }} {{ id }} {{ h_th.1.col_id }}&quot; {{#data_id}}id=&quot;{{data_id}}&quot;{{/data_id}}&gt;{{ . }}&lt;/td&gt;
+                {{/ data.0}}
+                {{# data.1}}
+                &lt;td class=&quot;{{ td_class }} {{ mobile_js_class.1 }}&quot; headers=&quot;{{ group_id }} {{ id }} {{ h_th.2.col_id }}&quot;&gt;{{ . }}&lt;/td&gt;
+                {{/ data.1}}
+                {{# data.2}}
+                &lt;td class=&quot;{{ td_class }} {{ mobile_js_class.2 }}&quot; headers=&quot;{{ group_id }} {{ id }} {{ h_th.3.col_id }}&quot;&gt;{{ . }}&lt;/td&gt;
+                {{/ data.2}}
+                {{# data.3}}
+                &lt;td class=&quot;{{ td_class }} {{ mobile_js_class.3 }}&quot; headers=&quot;{{ group_id }} {{ id }} {{ h_th.4.col_id }}&quot;&gt;{{ . }}&lt;/td&gt;
+                {{/ data.3}}
+                {{# data.4}}
+                &lt;td class=&quot;{{ td_class }}&quot; headers=&quot;{{ group_id }} {{ id }} {{ h_th.5.col_id }}&quot;&gt;{{ . }}&lt;/td&gt;
+                {{/ data.4}}
+                {{# data.5}}
+                &lt;td class=&quot;{{ td_class }}&quot; headers=&quot;{{ group_id }} {{ id }} {{ h_th.6.col_id }}&quot;&gt;{{ . }}&lt;/td&gt;
+                {{/ data.5}}
+                {{# data.6}}
+                &lt;td class=&quot;{{ td_class }}&quot; headers=&quot;{{ group_id }} {{ id }} {{ h_th.7.col_id }}&quot;&gt;{{ . }}&lt;/td&gt;
+                {{/ data.6}}
+                {{# data.7}}
+                &lt;td class=&quot;{{ td_class }}&quot; headers=&quot;{{ group_id }} {{ id }} {{ h_th.8.col_id }}&quot;&gt;{{ . }}&lt;/td&gt;
+                {{/ data.7}}
+            &lt;/tr&gt;
+            {{/ rows}}
+        {{/ rowgroup}}
+
+        {{#tr}}
+        &lt;tr class=&quot;{{tr_class}}&quot; {{#tr_link}}onclick=&quot;{{{tr_url}}}&quot;{{/tr_link}}&gt;
+            {{#td}}
+                &lt;td class=&quot;{{td_class}}&quot; {{td_att}} data-title=&quot;{{data_title}}&quot;&gt;{{{value}}}&lt;/td&gt;
+            {{/td}}
+        &lt;/tr&gt;
+        {{/tr}}
+        &lt;/tbody&gt;
+
+        {{#tfoot}}
+        &lt;tfoot&gt;
+            &lt;tr class=&quot;{{tr_class}}&quot;&gt;
+            {{# f_th}}
+                &lt;th class=&quot;{{th_class}}&quot; scope=&quot;row&quot; id=&quot;{{ footer_id }}&quot;{{# th_att}} colspan=&quot;{{th_att}}&quot;{{/th_att}}{{^value}} aria-hidden=&quot;true&quot;{{/value}}&gt;{{{value}}}&lt;/th&gt;
+            {{/ f_th}}
+            {{# f_td}}
+            	&lt;td class=&quot;{{td_class}} cell-with-bg&quot; headers=&quot;{{ footer_id }} {{ h_th.col_id }}&quot;&gt;{{ . }}&lt;/td&gt;
+            {{/ f_td}}
+            &lt;/tr&gt;
+        &lt;/tfoot&gt;
+        {{/tfoot}}
+    &lt;/table&gt;
+
+    {{# showNote}}
+	&lt;p class=&quot;footnote&quot;&gt;Note on complex tables: header IDs and corresponding headers do not need to be readable, just unique and coordinated. They are reference points so that screen readers can match content and purpose. Fund unique IDs already in the system would be fine to use. We inserted 'readable' content so that the developer can follow the intent.&lt;/p&gt;
+    {{/ showNote}}
+&lt;/div&gt;

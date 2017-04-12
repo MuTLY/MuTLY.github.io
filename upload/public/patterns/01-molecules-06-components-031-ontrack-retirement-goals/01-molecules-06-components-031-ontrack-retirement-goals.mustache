@@ -1,0 +1,65 @@
+
+&lt;div class=&quot;row&quot;&gt;
+    &lt;div class=&quot;col-xs-12&quot;&gt;
+        &lt;div class=&quot;panel panel-default&quot;&gt;
+            &lt;div class=&quot;panel-heading&quot;&gt;
+                &lt;h3 class=&quot;panel-title&quot;&gt;Retirement Goals&lt;/h3&gt;
+            &lt;/div&gt;
+            &lt;div class=&quot;panel-body&quot;&gt;
+                &lt;fieldset&gt;
+                    &lt;div class=&quot;row row__mobile row__mobile--bg desired-retirement-age&quot;&gt;
+                        &lt;div class=&quot;col-xs-12 col-sm-4&quot;&gt;
+                            &lt;label class=&quot;aligner aligner--mobile&quot; for=&quot;my-desired-retirement-age&quot;&gt;Desired Retirement Age&lt;/label&gt;
+                        &lt;/div&gt;
+                        &lt;div class=&quot;col-xs-12 col-sm-8&quot;&gt;
+                            {{# isMyself }}
+                            &lt;div class=&quot;form-group&quot;&gt;
+                                &lt;input class=&quot;form-control&quot; type=&quot;text&quot; pattern=&quot;\d*&quot; novalidate autocorrect=&quot;off&quot; autocapitalize=&quot;off&quot; autocomplete=&quot;off&quot; id=&quot;my-desired-retirement-age&quot; value=&quot;{{# myself.retirement-goals }}{{retirement-age}}{{/ myself.retirement-goals }}&quot;&gt;
+                            &lt;/div&gt;
+                            {{/ isMyself }}
+                            {{# isSpouse }}&lt;span class=&quot;aligner&quot;&gt;{{# spouse.retirement-goals }}{{retirement-age}}{{/ spouse.retirement-goals }}&lt;/span&gt;{{/ isSpouse }}
+                            &lt;span class=&quot;aligner text-small&quot;&gt;(retiring in 2040)&lt;/span&gt;
+                        &lt;/div&gt;
+                    &lt;/div&gt;
+                    &lt;div class=&quot;row row__mobile row__mobile--bg retirement-income-goal&quot;&gt;
+                        &lt;div class=&quot;col-xs-12 col-sm-4&quot;&gt;
+                            &lt;label class=&quot;aligner aligner--mobile&quot; for=&quot;my-retirement-income-goal&quot;&gt;Retirement Income Goal&lt;/label&gt;
+                        &lt;/div&gt;
+                        &lt;div class=&quot;col-xs-12 col-sm-8&quot;&gt;
+                            {{# isMyself }}
+                            &lt;div class=&quot;form-group [ has-feedback error ]&quot;&gt;
+                                &lt;input class=&quot;form-control&quot; type=&quot;text&quot; pattern=&quot;\d*&quot; novalidate autocorrect=&quot;off&quot; autocapitalize=&quot;off&quot; autocomplete=&quot;off&quot; id=&quot;my-retirement-income-goal&quot; value=&quot;{{# myself.retirement-goals }}{{retirement-income-goal}}{{/ myself.retirement-goals }}&quot;&gt;
+                            &lt;/div&gt;
+                            &lt;span class=&quot;aligner text-small&quot;&gt;% of current annual salary&lt;/span&gt;
+                            {{/ isMyself}}
+                            {{# isSpouse }}
+                            &lt;div class=&quot;form-group [ has-feedback error ]&quot;&gt;
+                                &lt;input class=&quot;form-control&quot; type=&quot;text&quot; pattern=&quot;\d*&quot; novalidate autocorrect=&quot;off&quot; autocapitalize=&quot;off&quot; autocomplete=&quot;off&quot; id=&quot;my-retirement-income-goal&quot; value=&quot;{{# spouse.retirement-goals }}{{retirement-income-goal}}{{/ spouse.retirement-goals }}&quot;&gt;
+                            &lt;/div&gt;
+                            &lt;span class=&quot;aligner text-small&quot;&gt;% of current annual salary&lt;/span&gt;
+                            {{/ isSpouse }}
+                        &lt;/div&gt;
+                    &lt;/div&gt;
+                    &lt;div class=&quot;row row__mobile row__mobile--bg pre-tax-income-goal&quot;&gt;
+                        &lt;div class=&quot;col-xs-7 col-sm-4&quot;&gt;
+                            &lt;span class=&quot;aligner aligner--mobile&quot;&gt;Pre-tax Income Goal&lt;/span&gt;
+                        &lt;/div&gt;
+                        &lt;div class=&quot;col-xs-5 col-sm-8&quot;&gt;
+                            {{# isMyself }}&lt;span class=&quot;aligner aligner--mobile amount&quot;&gt;$ {{# myself.retirement-goals }}{{pre-tax-income-goal}}{{/ myself.retirement-goals }}&lt;/span&gt;{{/ isMyself }}
+                            {{# isSpouse }}&lt;span class=&quot;aligner aligner--mobile amount&quot;&gt;$ {{# spouse.retirement-goals }}{{pre-tax-income-goal}}{{/ spouse.retirement-goals }}&lt;/span&gt;{{/ isSpouse }}
+                        &lt;/div&gt;
+                    &lt;/div&gt;
+                    &lt;div class=&quot;row row__mobile row__mobile--bg after-tax-income-goal&quot;&gt;
+                        &lt;div class=&quot;col-xs-7 col-sm-4&quot;&gt;
+                            &lt;span class=&quot;aligner aligner--mobile&quot;&gt;After-tax Income Goal&lt;/span&gt;
+                        &lt;/div&gt;
+                        &lt;div class=&quot;col-xs-5 col-sm-8&quot;&gt;
+                            {{# isMyself }}&lt;span class=&quot;aligner aligner--mobile amount&quot;&gt;$ {{# myself.retirement-goals }}{{after-tax-income-goal}}{{/ myself.retirement-goals }}&lt;/span&gt;{{/ isMyself }}
+                            {{# isSpouse }}&lt;span class=&quot;aligner aligner--mobile amount&quot;&gt;$ {{# spouse.retirement-goals }}{{after-tax-income-goal}}{{/ spouse.retirement-goals }}&lt;/span&gt;{{/ isSpouse }}
+                        &lt;/div&gt;
+                    &lt;/div&gt;
+                &lt;/fieldset&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+&lt;/div&gt;

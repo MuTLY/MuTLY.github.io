@@ -1,0 +1,106 @@
+{{# showModalLink }}
+&lt;p&gt;&lt;a href=&quot;#&quot; data-toggle=&quot;modal&quot; data-target=&quot;#modal-59&quot;&gt;&lt;em&gt;OnTrack&lt;/em&gt;&lt;sup&gt;&amp;reg;&lt;/sup&gt; Modal - SLIDE #59: Social Security: Manual (User)&lt;/a&gt;&lt;/p&gt;
+{{/ showModalLink }}
+
+
+&lt;!-- slide 59 --&gt;
+&lt;div class=&quot;modal fade&quot; id=&quot;modal-59&quot; tabindex=&quot;-1&quot; role=&quot;dialog&quot; aria-labelledby=&quot;section-title-59&quot;&gt;
+    &lt;div class=&quot;modal-dialog&quot; role=&quot;document&quot;&gt;{{! optional modal-lg or modal-sm can be added here }}
+        &lt;div class=&quot;modal-content&quot;&gt;
+            &lt;div class=&quot;modal-header&quot;&gt;
+                &lt;a href=&quot;#&quot; type=&quot;button&quot; class=&quot;close&quot; data-dismiss=&quot;modal&quot; aria-label=&quot;Close&quot;&gt;
+                    &lt;span aria-hidden=&quot;true&quot; class=&quot;trs-icons-close-btn&quot;&gt;&lt;/span&gt;
+                &lt;/a&gt;
+                &lt;h3 id=&quot;section-title-59&quot; class=&quot;modal-title section-title&quot;&gt;Edit Social Security Income&lt;/h3&gt;
+            &lt;/div&gt;
+
+            &lt;div class=&quot;modal-body&quot;&gt;
+                &lt;p class=&quot;text-center-xs&quot;&gt;Your Social Security income amount is an estimate based on your current salary, assumed salary growth and guidance from the Social Security Administration (SSA).&lt;/p&gt;
+
+                &lt;form role=&quot;form&quot; class=&quot;form-inline ontrack__form&quot;&gt;
+                    &lt;fieldset&gt;
+                        &lt;div class=&quot;row row__mobile row__mobile--bg&quot;&gt;
+                            &lt;div class=&quot;col-sm-4 col-xs-12&quot;&gt;
+                                &lt;input type=&quot;radio&quot; id=&quot;let-us-estimate2&quot; name=&quot;income-estimate-it2&quot;&gt;
+                                &lt;label class=&quot;aligner&quot; for=&quot;let-us-estimate2&quot;&gt;&lt;span role=&quot;radio&quot;&gt;&lt;/span&gt;Let us estimate&lt;/label&gt;
+                            &lt;/div&gt;
+                            &lt;div class=&quot;col-sm-8 col-xs-12&quot;&gt;
+                                &lt;input type=&quot;radio&quot; id=&quot;own-estimate2&quot; name=&quot;income-estimate-it2&quot; checked&gt;
+                                &lt;label class=&quot;aligner&quot; for=&quot;own-estimate2&quot;&gt;&lt;span role=&quot;radio&quot;&gt;&lt;/span&gt;Use your own estimate&lt;/label&gt;
+                            &lt;/div&gt;
+                        &lt;/div&gt;
+
+                        &lt;div class=&quot;row row__mobile row__mobile--bg&quot;&gt;
+                            &lt;hr class=&quot;visible-xs hr--mobile__separator&quot;&gt;
+                            &lt;div class=&quot;visible-xs clear&quot;&gt;&lt;/div&gt;
+
+                            &lt;div class=&quot;col-xs-12&quot;&gt;
+                                &lt;input type=&quot;checkbox&quot; checked id=&quot;retirement-outlook-as-income2&quot; name=&quot;chk-retirement-outlook-as-income2&quot;&gt;
+                                &lt;label class=&quot;aligner aligner--mobile no-vertical-margin&quot; for=&quot;retirement-outlook-as-income2&quot;&gt;
+                                    &lt;span role=&quot;checkbox&quot;&gt;&lt;/span&gt;&lt;span class=&quot;label--block&quot;&gt;
+                                        Include in &lt;em&gt;Your Retirement Outlook&lt;/em&gt;&lt;sup&gt;&amp;reg;&lt;/sup&gt; as a retirement income source.
+                                    &lt;/span&gt;
+                                &lt;/label&gt;
+                            &lt;/div&gt;
+                        &lt;/div&gt;
+
+                        &lt;div class=&quot;row row__mobile row__mobile--bg&quot;&gt;
+                            &lt;hr class=&quot;visible-xs hr--mobile__separator&quot;&gt;
+                            &lt;div class=&quot;visible-xs clear&quot;&gt;&lt;/div&gt;
+
+                            &lt;div class=&quot;col-sm-3 col-xs-12&quot;&gt;
+                                &lt;label class=&quot;aligner aligner--mobile&quot;&gt;Income Name:&lt;/label&gt;
+                            &lt;/div&gt;
+                            &lt;div class=&quot;col-sm-9 col-xs-12&quot;&gt;
+                                &lt;span class=&quot;aligner aligner--mobile&quot;&gt;Your Social Security Estimate&lt;/span&gt;
+                            &lt;/div&gt;
+                        &lt;/div&gt;
+
+                        &lt;div class=&quot;row row__mobile row__mobile--bg&quot;&gt;
+                            &lt;hr class=&quot;visible-xs hr--mobile__separator&quot;&gt;
+                            &lt;div class=&quot;visible-xs clear&quot;&gt;&lt;/div&gt;
+
+                            &lt;div class=&quot;col-sm-3 col-xs-12&quot;&gt;
+                                &lt;label class=&quot;aligner aligner--mobile&quot;&gt;Amount:&lt;/label&gt;
+                            &lt;/div&gt;
+                            &lt;div class=&quot;col-sm-9 col-xs-12&quot;&gt;
+                                &lt;span class=&quot;aligner&quot;&gt;$&lt;/span&gt;
+                                &lt;input type=&quot;text&quot; pattern=&quot;[+-]?[0-9]{1,3}(?:,?[0-9]{3})*(?:\.[0-9]{2})?&quot; novalidate autocorrect=&quot;off&quot; autocapitalize=&quot;off&quot; autocomplete=&quot;off&quot; value=&quot;9,994.88&quot; id=&quot;income-amount&quot; class=&quot;form-control currency&quot;&gt;
+                                &lt;select id=&quot;income-type&quot;&gt;
+                                    &lt;option value=&quot;annual&quot;&gt;Annual&lt;/option&gt;
+                                    &lt;option value=&quot;monthly&quot; selected&gt;Monthly&lt;/option&gt;
+                                &lt;/select&gt;
+                                &lt;span id=&quot;irs-estimate&quot; class=&quot;clear disclosure no-vertical-margin aligner aligner--mobile margin-left&quot;&gt;
+                                    &amp;nbsp; IRS estimate: $&lt;span&gt;9,994.88&lt;/span&gt;
+                                &lt;/span&gt;
+                            &lt;/div&gt;
+                        &lt;/div&gt;
+
+                        &lt;div class=&quot;row row__mobile row__mobile--bg&quot;&gt;
+                            &lt;hr class=&quot;visible-xs hr--mobile__separator&quot;&gt;
+                            &lt;div class=&quot;visible-xs clear&quot;&gt;&lt;/div&gt;
+
+                            &lt;div class=&quot;col-sm-3 col-xs-12&quot;&gt;
+                                &lt;label class=&quot;aligner aligner--mobile&quot;&gt;Start Age:&lt;/label&gt;
+                            &lt;/div&gt;
+                            &lt;div class=&quot;col-sm-9 col-xs-12&quot;&gt;
+                                &lt;select&gt;
+                                    &lt;option&gt;65&lt;/option&gt;
+                                    &lt;option selected&gt;66&lt;/option&gt;
+                                &lt;/select&gt;
+                                &lt;span class=&quot;aligner&quot;&gt;(in 2038)&lt;/span&gt;
+                            &lt;/div&gt;
+                        &lt;/div&gt;
+                    &lt;/fieldset&gt;
+                &lt;/form&gt;
+            &lt;/div&gt;
+
+            &lt;div class=&quot;modal-footer&quot;&gt;
+                &lt;a class=&quot;btn btn-secondary pull-left&quot; data-dismiss=&quot;modal&quot; href=&quot;#&quot;&gt;Cancel&lt;/a&gt;
+                &lt;a class=&quot;btn btn-primary&quot; href=&quot;javascript:void(0);&quot; onclick=&quot;return false;&quot;&gt;Save&lt;/a&gt;
+            &lt;/div&gt;
+
+        &lt;/div&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
+&lt;!-- slide 59 --&gt;

@@ -1,0 +1,583 @@
+<!DOCTYPE HTML>
+		<!-- never cache patterns -->
+		<meta http-equiv="cache-control" content="max-age=0" />
+		<meta http-equiv="cache-control" content="no-cache" />
+		<meta http-equiv="expires" content="0" />
+		<meta http-equiv="expires" content="Tue, 01 Jan 1980 1:00:00 GMT" />
+		<meta http-equiv="pragma" content="no-cache" />
+		
+		<link rel="stylesheet" href="../../styleguide/css/styleguide.css?1491944073" media="all">
+		<link rel="stylesheet" href="../../styleguide/css/styleguide-specific.css?1491944073" media="all" />
+		
+
+
+<html class="pl" lang="en-us">
+
+<head>
+    <title>Pattern Lab</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=0">
+
+    <!-- Browser Elements Colors -->
+    <meta name="theme-color" content="#3e7cab"><!-- Chrome -->
+    <meta name="msapplication-navbutton-color" content="#3e7cab"><!-- Windows -->
+    <!-- iOS -->
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+
+    <!-- console.log polyfill - do not remove, it needs to load before any scripts -->
+    <script>
+    // Console-polyfill. MIT license.
+    // https://github.com/paulmillr/console-polyfill
+    // Make it safe to do console.log() always.
+    (function(global) {
+        'use strict';
+        if (!global.console) {
+            global.console = {};
+        }
+        var con = global.console;
+        var prop, method;
+        var dummy = function() {};
+        var properties = ['memory'];
+        var methods = ('assert,clear,count,debug,dir,dirxml,error,exception,group,' +
+            'groupCollapsed,groupEnd,info,log,markTimeline,profile,profiles,profileEnd,' +
+            'show,table,time,timeEnd,timeline,timelineEnd,timeStamp,trace,warn').split(',');
+        while ( (prop = properties.pop()) ) {
+            if (!con[prop]) {
+                con[prop] = {};
+            }
+        }
+        while ( (method = methods.pop()) ) {
+            if (typeof con[method] !== 'function') {
+                con[method] = dummy;
+            }
+        }
+        // Using `this` for web workers & supports Browserify / Webpack.
+    })(typeof window === 'undefined' ? this : window);
+    </script>
+
+    <!-- Custom Modernizr -->
+    <script src="../../js/plugins/modernizr.custom.js"></script>
+
+    <!-- Fonts -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,800,300italic,400italic,600italic,700italic,800italic" type="text/css">
+    <link rel="stylesheet" media="all" href="../../css/fonts.css">
+    <link rel="stylesheet" media="all" href="../../css/trs-icon-font.css">
+
+    <!-- Latest jQuery compatible -->
+    <script src="../../js/plugins/jquery-1.12.4.min.js"></script>
+    <script src="../../js/plugins/jquery-migrate-1.3.0.min.js"></script>
+
+    <!-- jquery UI -->
+    <link rel="stylesheet" href="../../css/plugins/jquery-ui.min.css">
+    <script src="../../js/plugins/jquery-ui.min.js"></script>
+
+    <!-- jquery UI range pips -->
+    <link rel="stylesheet" href="../../css/plugins/jquery-ui-slider-pips.min.css">
+    <script src="../../js/plugins/jquery-ui-slider-pips.min.js"></script>
+
+    <!-- jquery UI touch capable -->
+    <script src="../../js/plugins/jquery.ui.touch-punch.min.js"></script>
+
+    <!-- jquery.Actual -->
+    <script src="../../js/plugins/jquery.actual.min.js"></script>
+
+    <!-- response.JS -->
+    <script src="../../js/plugins/response.min.js"></script>
+
+     <!-- Latest Bootstrap -->
+    <link rel="stylesheet" href="../../css/plugins/bootstrap.min.css">
+    <link rel="stylesheet" href="../../css/plugins/bootstrap-theme.min.css">
+    <script src="../../js/plugins/bootstrap.min.js"></script>
+
+    <!-- Primary Nav JS -->
+    <script src="../../js/primary-nav.js"></script>
+
+    <!-- HighChart JS -->
+    <script src="../../js/plugins/highcharts.js"></script>
+    <script src="../../js/plugins/data.js"></script>
+
+    <!-- DataTables JS -->
+    <link rel="stylesheet" href="../../css/plugins/jquery.dataTables.min.css">
+    <link rel="stylesheet" href="../../css/plugins/dataTables.bootstrap.min.css">
+    <script src="../../js/plugins/jquery.dataTables.min.js"></script>
+    <script src="../../js/plugins/dataTables.bootstrap.min.js"></script>
+
+    <!-- jquery mask input -->
+    <script src="../../js/plugins/jquery.mask.min.js"></script>
+
+    <!-- parser helper used with bootstrap-datepicker -->
+    <script src="../../js/plugins/date.min.js"></script>
+    <script src="../../js/plugins/moment.min.js"></script>
+
+    <!-- bootstrap-datepicker - github.com/eternicode/bootstrap-datepicker -->
+    <link rel="stylesheet" href="../../css/plugins/bootstrap-datepicker3.min.css"></link>
+    <script src="../../js/plugins/bootstrap-datepicker.min.js"></script>
+    <script src="../../js/plugins/bootstrap-datepicker.wrapper.js"></script>
+
+    <!-- bootstrap typeahead autocomplete - https://twitter.github.io/typeahead.js/examples/ -->
+    <script src="../../js/plugins/typeahead.bundle.min.js"></script>
+
+    <!-- jquery.validate -->
+    <script src="../../js/plugins/jquery.validate.min.js"></script>
+    <script src="../../js/plugins/additional-methods.min.js"></script>
+
+    <!-- jQuery Equal Height -->
+    <script src="../../js/plugins/jquery.matchHeight-min.js"></script>
+
+    <!-- Password Meter -->
+    <script src="../../js/plugins/jquery.password.js"></script>
+
+    <!-- TableSaw - tables on mobile -->
+    <link rel="stylesheet" href="../../css/plugins/tablesaw.bare.min.css">
+    <script src="../../js/plugins/tablesaw.min.js"></script>
+
+    <!-- Compiled css from style.scss for components -->
+    <link rel="stylesheet" media="all" href="../../css/style.css?1491944073">
+
+
+    <!-- Responsive tables require AngularJS - see atoms/tables/angular-mobile-table... -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.8/angular.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.8/angular-animate.min.js"></script>
+    <script src="/js/trs-angular/responsive-table.js"></script>
+</head>
+<body class="body" data-ui-compat="responsive">
+    
+    <div class="row padding-bottom">
+        <div class="col-xs-12">
+            <h2 class="padding-bottom section-title"><em>Your Retirement Outlook</em><sup>&reg;</sup></h2>
+    
+            <div class="panel panel-default modeling-area forecast display-spinner">
+                <div class="panel-body">
+                    <div class="row">
+                        <div class="col-xs-12 col-sm-8">
+                            <p>You are likely to reach <strong id="forecast-percentage" class="forecast-percentage">some</strong> of your goal based on your saving and investing strategies.</p>
+    
+                            <div class="row margin-top">
+                                <div class="col-xs-12 col-sm-5">
+                                    <div id="income-chart" class="income-chart">
+                                        <div class="graph">
+                                            <span class="graph-color4 gap"></span>
+                                            <span class="graph-color5 goal"></span>
+                                            <span class="graph-color2 estimate"></span>
+                                        </div>
+                                        <div class="range">
+                                            <span class="left">$0k</span>
+                                            <span class="right goal">$80k</span>
+                                            <span class="estimate">$50k</span>
+                                        </div>
+                                    </div>
+                                </div>
+    
+                                <div class="col-xs-12 col-sm-7">
+                                    <div class="view-by" id="view-by">
+                                        <span><strong>View By</strong></span>
+    
+                                        <div class="btn-group btn-toggle" data-toggle="buttons">
+                                            <label class="btn active">
+                                                <input type="radio" name="options" id="" value="annual" autocomplete="off">Annual
+                                            </label>
+                                            <label class="btn">
+                                                <input type="radio" name="options" id="" value="monthly" autocomplete="off" checked>Monthly
+                                            </label>
+                                        </div>
+    
+                                        <table id="income-table-monthly" class="income-table hidden">
+                                            <tbody>
+                                                <tr>
+                                                    <td><span class="box-sm graph-color2"></span>Estimated Income</td>
+                                                    <td class="text-right estimate">$50,000</td>
+                                                </tr>
+                                                <tr>
+                                                    <td><span class="box-sm graph-color5"></span>Income Goal</td>
+                                                    <td class="text-right goal">$80,000</td>
+                                                </tr>
+                                                <tr>
+                                                    <td><span class="box-sm graph-color4"></span>Income Gap</td>
+                                                    <td class="text-right gap">$30,000</td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+    
+                                        <table id="income-table-annual" class="income-table">
+                                            <tbody>
+                                                <tr>
+                                                    <td><span class="box-sm graph-color2"></span>Estimated Income</td>
+                                                    <td class="text-right estimate">$50,000</td>
+                                                </tr>
+                                                <tr>
+                                                    <td><span class="box-sm graph-color5"></span>Income Goal</td>
+                                                    <td class="text-right goal">$80,000</td>
+                                                </tr>
+                                                <tr>
+                                                    <td><span class="box-sm graph-color4"></span>Income Gap</td>
+                                                    <td class="text-right gap">$30,000</td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+    
+                        <div class="col-xs-12 col-sm-4">
+                            <div class="panel panel-default no-vertical-margin">
+                                <div class="panel-body panel-do-it align-center" id="forecast-outlook">
+                                    <span class="forecast-text"></span>
+                                    <img class="img-responsive center-block forecast-image" src="../../images/spacer.gif">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="row">
+        <div class="col-sm-12">
+            <div class="padding-bottom section-title">Try a new strategy to <em>Brighten Your Outlook</em><sup>&reg;</sup></div>
+
+            <div class="panel panel-default no-vertical-margin modeling-area choose-to-save-more">
+                <div class="panel-body">
+                    <div class="row">
+
+                        <form role="form" class="">
+                            <div class="col-xs-12 col-sm-8">
+                                <p><strong>1. Choose to Save More</strong></p>
+
+                                <fieldset>
+                                    <div class="form-group">
+                                        <div class="row">
+                                            <div class="col-xs-12 col-sm-3">
+                                                <label for="savings-rate" class="range-label">Savings rate:</label>
+                                            </div>
+                                            <div class="col-xs-12 col-sm-9">
+                                                <input type="range" min="0" max="35" value="15" step="1" id="savings-rate" data-initial-value="15" data-output="savings-rate-display" data-prefix="current " data-suffix="%" data-tooltip-active="true">
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group try">
+                                        <input type="checkbox" id="auto-increase">
+                                        <label for="auto-increase"><span role="checkbox"></span>Also try automatically increasing your savings rate by 2% each year.</label>
+                                    </div>
+                                </fieldset>
+
+                                <p class="no-vertical-margin"><a href="#"><strong>Or, try more savings options.</strong></a></p>
+                            </div>
+
+                            <div class="col-xs-12 col-sm-4">
+                                <div class="panel panel-default no-vertical-margin align-center panel-do-it">
+                                    <div class="panel-body">
+                                        <div class="form-group">
+                                            <input type="text" pattern="[+-]?[0-9]{1,3}(?:,?[0-9]{3})*(?:\.[0-9]{2})?" novalidate autocorrect="off" autocapitalize="off" autocomplete="off" placeholder="Rate (%)" id="savings-rate-display">
+                                            <span id="auto-increase-rate">+2% annually</span>
+                                        </div>
+
+                                        <div class="form-group">
+                                            <button type="button" class="btn btn-primary">Do It!</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-sm-12">
+            <p class="disclaimer">Evaluate your ability to continue the auto-increase service in the event of a prolonged market decline or unforseeable emergency.</p>
+        </div>
+    </div>
+
+
+    <div class="row">
+        <div class="col-sm-12">
+            <div class="panel panel-default modeling-area choose-new-strategy">
+                <div class="panel-body">
+                    <div class="row">
+                        <form role="form">
+                            <div class="col-xs-12 col-sm-8">
+                                <p><strong>2. Choose a New Investment Strategy</strong></p>
+                                <p>Use your current combined strategy or one based on your retirement age and risk preference.</p>
+                                <fieldset>
+                                    <div class="row">
+                                        <div class="col-xs-12 col-sm-6">
+                                            <div class="form-group">
+                                                <input type="radio" value="current" name="chkStrat" id="chkMyCurrentStrat" checked>
+                                                <label for="chkMyCurrentStrat"><span role="radio"></span>My Current Strategy</label>
+                                            </div>
+                                        </div>
+
+                                        <div class="col-xs-12 col-sm-6">
+                                            <div class="form-group">
+                                                <input type="radio" value="conservative" name="chkStrat" id="chkConservativeStrat">
+                                                <label for="chkConservativeStrat"><span role="radio"></span>Conservative</label>
+
+                                                <input type="radio" value="moderate" name="chkStrat" id="chkModerateStrat">
+                                                <label for="chkModerateStrat"><span role="radio"></span>Moderate</label>
+
+                                                <input type="radio" value="aggressive" name="chkStrat" id="chkAggressiveStrat">
+                                                <label for="chkAggressiveStrat"><span role="radio"></span>Aggressive</label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </fieldset>
+
+                                <p class="no-vertical-margin"><a href="#"><strong>Or, try more savings options.</strong></a></p>
+                            </div>
+
+                            <div class="col-xs-12 col-sm-4">
+                                <div class="panel panel-default no-vertical-margin align-center panel-do-it">
+                                    <div class="panel-body">
+                                        <table class="strat-chosen margin-bottom">
+                                            <tbody>
+                                                <tr>
+                                                    <td>Stocks</td>
+                                                    <td class="text-right strat-stocks">10%</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Bonds</td>
+                                                    <td class="text-right strat-bonds">20%</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Multi/Other</td>
+                                                    <td class="text-right strat-multi">30%</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Secure Path</td>
+                                                    <td class="text-right strat-secupath">40%</td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+
+                                        <div class="form-group">
+                                            <button type="button" class="btn btn-primary">Do It!</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="row">
+        <div class="col-sm-12">
+            <div class="panel panel-default modeling-area adjust-goals">
+                <div class="panel-body">
+                    <div class="row">
+                        <form role="form">
+                            <div class="col-xs-12 col-sm-8">
+                                <p><strong>3. Try Adjusting Your Goals</strong></p>
+                                <fieldset>
+                                    <div class="form-group">
+                                        <div class="row">
+                                            <div class="col-xs-12 col-sm-4">
+                                                <label for="desired-age" class="range-label">Desired Retirement Age:</label>
+                                            </div>
+                                            <div class="col-xs-12 col-sm-8">
+                                                <input type="range" min="55" data-min-cap="55" max="80" data-max-cap="120" value="60" step="1" id="desired-age" data-output="desired-age-display" data-prefix="current " data-tooltip-active="true" data-pips="false">
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <div class="row">
+                                            <div class="col-xs-12 col-sm-4">
+                                                <label for="retirement-income-goal" class="range-label">Retirement Income Goal:</label>
+                                                <span class="text-small no-wrap">(% of current salary)</span>
+                                            </div>
+                                            <div class="col-xs-12 col-sm-8">
+                                                <input type="range" min="0" data-min-cap="0" max="200" data-max-cap="250" value="100" step="1" id="retirement-income-goal" data-output="retirement-income-goal-display" data-prefix="current " data-suffix="%" data-tooltip-active="true">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </fieldset>
+                            </div>
+
+                            <div class="col-xs-12 col-sm-4">
+                                <div class="panel panel-default panel-do-it no-vertical-margin align-center">
+                                    <div class="panel-body">
+                                        <fieldset>
+                                            <div class="form-group">
+                                                <input type="text" placeholder="Age (y)" id="desired-age-display">
+                                            </div>
+
+                                            <div class="form-group">
+                                                <input type="text" pattern="[+-]?[0-9]{1,3}(?:,?[0-9]{3})*(?:\.[0-9]{2})?" novalidate autocorrect="off" autocapitalize="off" autocomplete="off" id="retirement-income-goal-display">
+                                            </div>
+                                        </fieldset>
+                                        <div class="form-group no-vertical-margin">
+                                            <button type="button" class="btn btn-primary">Do It!</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="row">
+        <div class="col-xs-12">
+            <div id="" class="about-probability">
+                <div class="block block-basic margin-bottom">
+                    <a class="link--black accordion-toggle collapsed" data-toggle="collapse" data-parent="#" href="#Text" aria-expanded="false">
+                        <span class="glyphicon glyphicon-plus-sign" aria-hidden="true"></span><!-- do not remove this
+                        --><span class="head-text">
+                            IMPORTANT: The projections or other information generated by  regarding the likelihood
+                            of various investment outcomes are hypothetical in nature, do not reflect actual investment results, and are
+                            not guarantees of future results. Results derived from  may vary with each use and over
+                            time. See the <span class="link--blue bold">About Probability Illustrations</span> for more information.
+                        </span>
+                    </a>
+                </div>
+                <div id="Text" class="main-text collapse no-collapsing" aria-expanded="false">
+                    <!-- everything between here is an iframe and its wrapper in the real app -->
+                    <h4 class="title">About Probability Illustration</h4>
+
+                    <p>This text is inside a boxed iframe in the real app.</p>
+
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                    <!-- everything between here is an iframe and its wrapper in the real app -->
+
+                    <a href="javascript:void(0)" class="btn btn-secondary btn-small text-xsmall pull-right" onclick=""><strong>Print version</strong></a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+<!-- advised: modals sit after content container and before js -->
+<div class="modal fade" id="onTrackModal" tabindex="-1" role="dialog" aria-labelledby="modal_title">
+    <div class="modal-dialog modal-lg" role="document"><!-- optional modal-lg or modal-sm or modal-md can be added here -->
+        <div class="modal-content">
+            <div class="modal-header no-border">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true" class="trs-icons-close-btn"></span></button>
+                <h3 class="modal-title" id="modal_title">Modal Title</h3>
+            </div>
+
+            <div class="modal-body text-small">
+                <p>Knight Rider: A shadowy flight into the dangerous world of a man who does not exist. One two three four five six seven eight Sclemeel schlemazel hasenfeffer incorporated! Space. The final frontier. These are the voyages of the Starship Enterprise. Michael Knight a young loner on a crusade to champion the cause of the innocent. The helpless. The powerless in a world of criminals who operate above the law. Why do we always come here? I guess well never know. Its like a kind of torture to have to watch the show. The ship set ground on the shore of this uncharted desert isle with Gilligan the Skipper too the millionaire and his wife. Now the world don't move to the beat of just one drum. What might be right for you may not be right for some.
+                <p>These Happy Days are yours and mine Happy Days., So this is the tale of our castaways they're here for a long long time. They'll have to make the best of things its an uphill climb. Come and knock on our door. We've been waiting for you. Where the kisses are hers and hers and his. Three's company too. No phone no lights no motor car not a single luxury. Like Robinson Crusoe it's primitive as can be. So get a witch's shawl on a broomstick you can crawl on. Were gonna pay a call on the Addams Family. It's time to put on makeup. It's time to dress up right. It's time to raise the curtain on the Muppet Show tonight. The weather started getting rough - the tiny ship was tossed. If not for the courage of the fearless crew the Minnow would be lost. the Minnow would be lost!
+                <p>Straightnin' the curves. Flatnin' the hills Someday the mountain might get ‘em but the law never will. Wouldn't you like to get away? Sometimes you want to go where everybody knows your name. And they're always glad you came. So lets make the most of this beautiful day. Since we're together. Thank you for being a friend. Travelled down the road and back again. Your heart is true you're a pal and a confidant.
+                <p>It's time to put on makeup. It's time to dress up right. It's time to raise the curtain on the Muppet Show tonight. The Love Boat soon will be making another run. The Love Boat promises something for everyone." That this group would somehow form a family that's the way we all became the Brady Bunch. The mate was a mighty sailin' man the Skipper brave and sure. Five passengers set sail that day for a three hour tour a three hour tour. black gold Wouldn't you like to get away? Sometimes you want to go where everybody knows your name. And they're always glad you came. The ship set ground on the shore of this uncharted desert isle with Gilligan the Skipper too the millionaire and his wife. The first mate and his Skipper too will do their very best to make the others comfortable in their tropic island nest.; And we'll do it our way yes our way. Make all our dreams come true for me and you.
+                <p>A man is born he's a man of means. Then along come two they got nothin' but their jeans. Now the world don't move to the beat of just one drum. What might be right for you may not be right for some. Why do we always come here? I guess well never know. Its like a kind of torture to have to watch the show. You wanna be where you can see our troubles are all the same. You wanna be where everybody knows Your name. Till the one day when the lady met this fellow and they knew it was much more than a hunch. Come and dance on our floor. Take a step that is new. We've a loveable space that needs your face threes company too. Now the world don't move to the beat of just one drum. What might be right for you may not be right for some. But they got diff'rent strokes. It takes diff'rent strokes - it takes diff'rent strokes to move the world. A man is born he's a man of means. Then along come two they got nothin' but their jeans. Got kind of tired packin' and unpackin' - town to town and up and down the dial.
+                <p>Wouldn't you like to get away? Sometimes you want to go where everybody knows your name. And they're always glad you came. Wouldn't you like to get away? Sometimes you want to go where everybody knows your name. And they're always glad you came. Boy the way Glen Miller played. Songs that made the hit parade. Guys like us we had it made. Those were the days. Movin' on up to the east side. We finally got a piece of the pie.
+                <p>Its mission - to explore strange new worlds to seek out new life and new civilizations to boldly go where no man has gone before. Texas tea., Their house is a museum where people come to see ‘em. They really are a scream the Addams Family. You wanna be where you can see our troubles are all the same. You wanna be where everybody knows Your name. The Love Boat soon will be making another run. The Love Boat promises something for everyone. And if you threw a party - invited everyone you knew. You would see the biggest gift would be from me and the card attached would say thank you for being a friend. Sunny Days sweepin' the clouds away. On my way to where the air is sweet. Can you tell me how to get how to get to Sesame Street. Were gonna do it. Give us any chance well take it. Give us any rule we'll break it. We're gonna make our dreams come true. Michael Knight a young loner on a crusade to champion the cause of the innocent. The helpless. The powerless in a world of criminals who operate above the law.
+                <p>Makin' your way in the world today takes everything you've got. Takin' a break from all your worries sure would help a lot. They call him Flipper Flipper faster than lightning. No one you see is smarter than he. That this group would somehow form a family that's the way we all became the Brady Bunch. It's time to put on makeup. It's time to dress up right. It's time to raise the curtain on the Muppet Show tonight? Today still wanted by the government they survive as soldiers of fortune! Well we're movin' on up to the east side. To a deluxe apartment in the sky. So this is the tale of our castaways they're here for a long long time. They'll have to make the best of things its an uphill climb.
+                <p>The movie star the professor and Mary Ann here on Gilligans Isle. Sunny Days sweepin' the clouds away. On my way to where the air is sweet. Can you tell me how to get how to get to Sesame Street. Michael Knight a young loner on a crusade to champion the cause of the innocent. The helpless. The powerless in a world of criminals who operate above the law.
+                <p>Doin' it our way. Nothin's gonna turn us back now. Straight ahead and on the track now. We're gonna make our dreams come true. Goodbye gray sky hello blue. There's nothing can hold me when I hold you. Feels so right it cant be wrong. Rockin' and rollin' all week long. As long as we live its you and me baby. There ain't nothin' wrong with that. And when the odds are against him and their dangers work to do. You bet your life Speed Racer he will see it through! Believe it or not I'm walking on air. I never thought I could feel so free. Here he comes Here comes Speed Racer. He's a demon on wheels. In a freak mishap Ranger 3 and its pilot Captain William Buck Rogers are blown out of their trajectory into an orbit which freezes his life support systems and returns Buck Rogers to Earth five-hundred years later.
+                <p>In a freak mishap Ranger 3 and its pilot Captain William Buck Rogers are blown out of their trajectory into an orbit which freezes his life support systems and returns Buck Rogers to Earth five-hundred years later. Here's the story of a lovely lady who was bringing up three very lovely girls. The weather started getting rough - the tiny ship was tossed. If not for the courage of the fearless crew the Minnow would be lost. the Minnow would be lost. But they got diff'rent strokes. It takes diff'rent strokes - it takes diff'rent strokes to move the world. The Love Boat soon will be making another run. The Love Boat promises something for everyone. Boy the way Glen Miller played. Songs that made the hit parade. Guys like us we had it made. Those were the days. No phone no lights no motor car not a single luxury. Like Robinson Crusoe it's primitive as can be? We're gonna do it. On your mark get set and go now. Got a dream and we just know now we're gonna make our dream come true.
+                <p>Love exciting and new. Come aboard were expecting you. Love life's sweetest reward Let it flow it floats back to you. Boy the way Glen Miller played. Songs that made the hit parade. Guys like us we had it made. Those were the days. Here's the story of a man named Brady who was busy with three boys of his own? Come and knock on our door. We've been waiting for you. Where the kisses are hers and hers and his. Three's company too. Then one day he was shootin' at some food and up through the ground came a bubblin' crude. Oil that is! Michael Knight a young loner on a crusade to champion the cause of the innocent. The helpless. The powerless in a world of criminals who operate above the law? Boy the way Glen Miller played. Songs that made the hit parade. Guys like us we had it made. Those were the days? The ship set ground on the shore of this uncharted desert isle with Gilligan the Skipper too the millionaire and his wife? It's a beautiful day in this neighborhood a beautiful day for a neighbor. Would you be mine? Could you be mine? Its a neighborly day in this beautywood a neighborly day for a beauty. Would you be mine? Could you be mine.
+                <p>Michael Knight a young loner on a crusade to champion the cause of the innocent. The helpless. The powerless in a world of criminals who operate above the law. They call him Flipper Flipper faster than lightning. No one you see is smarter than he. Come and play. Everything's A-OK. Friendly neighbors there that's where we meet. Can you tell me how to get how to get to Sesame Street.
+                <p>Baby if you've ever wondered - wondered whatever became of me. I'm living on the air in Cincinnati. Cincinnati WKRP. Sunday Monday Happy Days. Tuesday Wednesday Happy Days. Thursday Friday Happy Days.Saturday what a day. Groovin' all week with you. But they got diff'rent strokes. It takes diff'rent strokes - it takes diff'rent strokes to move the world.
+            </div>
+
+            <div class="modal-footer align-center">
+                <a type="button" class="btn btn-secondary" data-dismiss="modal">Close</a>
+                <!--a type="button" class="btn btn-primary">Continue</a-->
+            </div>
+        </div>
+    </div>
+</div>
+
+    <!-- scripts -->
+    <script src="../../js/ontrack.js"></script>
+    <script src="../../js/layoutResponsive.js"></script>
+    <script src="../../js/mobile-nav.js"></script>
+    <script src="../../js/globalFooter.js"></script>
+
+		
+	<script>
+		// handle injection of items from PHP
+		var patternPartial = "organisms-ontrack-brighten-your-outlook";
+		var lineage        = [{"lineagePattern":"molecules-ontrack-forecast","lineagePath":"..\/..\/patterns\/01-molecules-06-components-030-ontrack-forecast\/01-molecules-06-components-030-ontrack-forecast.html","lineageState":"complete"},{"lineagePattern":"molecules-ontrack-try-a-new-strategy","lineagePath":"..\/..\/patterns\/01-molecules-06-components-030-ontrack-try-a-new-strategy\/01-molecules-06-components-030-ontrack-try-a-new-strategy.html","lineageState":"complete"},{"lineagePattern":"molecules-ontrack-choose-a-new-strategy","lineagePath":"..\/..\/patterns\/01-molecules-06-components-030-ontrack-choose-a-new-strategy\/01-molecules-06-components-030-ontrack-choose-a-new-strategy.html","lineageState":"complete"},{"lineagePattern":"molecules-ontrack-adjust-goals","lineagePath":"..\/..\/patterns\/01-molecules-06-components-030-ontrack-adjust-goals\/01-molecules-06-components-030-ontrack-adjust-goals.html","lineageState":"complete"},{"lineagePattern":"molecules-about-probability-illustrations","lineagePath":"..\/..\/patterns\/01-molecules-06-components-070-about-probability-illustrations\/01-molecules-06-components-070-about-probability-illustrations.html","lineageState":"complete"}];
+		var lineageR       = [{"lineagePattern":"organisms-body","lineagePath":"..\/..\/patterns\/02-organisms-00-global-010-body\/02-organisms-00-global-010-body.html","lineageState":"inprogress"}];
+		var patternState   = "complete";
+		var cssEnabled     = false;
+	</script>
+		<script>
+		/*!
+		 * scriptLoader - v0.1
+		 *
+		 * Copyright (c) 2014 Dave Olsen, http://dmolsen.com
+		 * Licensed under the MIT license
+		 *
+		 */
+		
+		var scriptLoader = {
+			
+			run: function(js,cb,target) {
+				var s  = document.getElementById(target+'-'+cb); 
+				for (var i = 0; i < js.length; i++) {
+					var src = (typeof js[i] != "string") ? js[i].src : js[i];
+					var c   = document.createElement('script');
+					c.src   = '../../'+src+'?'+cb;
+					if (typeof js[i] != "string") {
+						if (js[i].dep !== undefined) {
+							c.onload = function(dep,cb,target) {
+								return function() {
+									scriptLoader.run(dep,cb,target);
+								}
+							}(js[i].dep,cb,target);
+						}
+					}
+					s.parentNode.insertBefore(c,s);
+				}
+			}
+			
+		}
+	</script>
+	<script id="pl-js-polyfill-insert-1491944073">
+		(function() {
+			if (self != top) {
+				var cb = '1491944073';
+				var js = [];
+				if (typeof document !== "undefined" && !("classList" in document.documentElement)) {
+					js.push("styleguide/js/vendor/classlist-polyfill.js");
+				}
+				scriptLoader.run(js,cb,'pl-js-polyfill-insert');
+			}
+		})();
+	</script>
+	<script id="pl-js-insert-1491944073">
+		(function() {
+			if (self != top) {
+				var cb = '1491944073';
+				var js = [ { "src": "styleguide/js/vendor/jwerty.js", "dep": [ "styleguide/js/postmessage.js", { "src": "data/annotations.js", "dep": [ "styleguide/js/annotations-pattern.js" ] }, "styleguide/js/code-pattern.js" ] } ];
+				scriptLoader.run(js,cb,'pl-js-insert');
+			}
+		})();
+	</script>
+	
+
+
+    <!-- Browser Update notification -->
+    <script>
+        var $buoop = {vs:{i:10,f:30,o:20,s:7},c:2};
+        function $buo_f(){
+            var e = document.createElement("script");
+            e.src = "//browser-update.org/update.min.js";
+            document.body.appendChild(e);
+        };
+        try {document.addEventListener("DOMContentLoaded", $buo_f,false)}
+        catch(e){window.attachEvent("onload", $buo_f)}
+    </script>
+	</body>
+</html>

@@ -1,0 +1,25 @@
+{{#trs-footer}}
+&lt;footer id=&quot;global_footer&quot; class=&quot;trs-footer page-footer row&quot;&gt;
+    &lt;div class=&quot;trs-footer__phone clearfix&quot;&gt;
+    {{#socialMedia}}
+        {{&gt; molecules-layout-footer-socialMedia}}
+    {{/socialMedia}}
+    	{{&gt; molecules-layout-footer-contactUs}} &lt;/div&gt;
+    &lt;div class=&quot;trs-footer__body&quot;&gt;
+        &lt;div class=&quot;row&quot;&gt;
+            &lt;nav class=&quot;col-xs-12 trs-footer__policies text-center display-table&quot;&gt;
+            {{#onlinePolicies}}
+                {{&gt; molecules-layout-footer-onlinePolicies}}
+            {{/onlinePolicies}} &lt;/nav&gt;
+        &lt;/div&gt;
+        &lt;div class=&quot;row&quot;&gt;
+            &lt;div class=&quot;col-xs-12 trs-footer__footnotes&quot;&gt;
+                &lt;div class=&quot;footer-rule&quot; role=&quot;presentation&quot;&gt;&lt;/div&gt;
+                {{#disclaimers}}
+                &lt;p&gt;{{tisc}}&lt;/p&gt;
+                &lt;p&gt;{{copyright}}&lt;/p&gt;
+                {{/disclaimers}}&lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+&lt;/footer&gt;
+{{/trs-footer}}

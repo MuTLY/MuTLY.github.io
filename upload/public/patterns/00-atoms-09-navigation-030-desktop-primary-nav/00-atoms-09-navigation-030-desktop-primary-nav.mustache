@@ -1,0 +1,34 @@
+&lt;!-- {{title}} --&gt;
+&lt;li&gt;
+	{{^no-children}}
+		&lt;a href=&quot;#nav_{{id}}&quot; class=&quot;list-group-item nav--primary__head {{^expanded}}collapsed{{/expanded}} {{#selected_title}}selected{{/selected_title}}&quot; data-toggle=&quot;collapse&quot; data-parent=&quot;#desktop_primary_nav&quot;&gt;
+			&lt;span class=&quot;icon {{menu_icon}}&quot; aria-hidden=&quot;true&quot;&gt;&lt;/span&gt;
+			{{title}}
+			&lt;span class=&quot;glyphicon chevron pull-right&quot; role=&quot;presentation&quot;&gt;&lt;/span&gt;
+		&lt;/a&gt;
+
+		&lt;ul class=&quot;{{^expanded}}collapse{{/expanded}} {{#expanded}}in{{/expanded}} nav--primary__sub submenu&quot; id=&quot;nav_{{id}}&quot;&gt;
+			{{#children}}
+				&lt;li&gt;
+					&lt;a href=&quot;{{url}}&quot; class=&quot;list-group-item {{#selected}}selected{{/selected}}&quot;&gt;
+						{{{title}}}
+					&lt;/a&gt;
+				&lt;/li&gt;
+			{{/children}}
+		&lt;/ul&gt;
+	{{/no-children}}
+
+	{{#no-children}}
+		&lt;div class=&quot;list-group-item nav--primary__head&quot;&gt;
+			&lt;span class=&quot;icon {{menu_icon}}&quot; aria-hidden=&quot;true&quot;&gt;&lt;/span&gt;
+			{{title}}
+
+			{{#has-complements}}
+				&lt;span class=&quot;trs-utility--light&quot;&gt;
+					{{# complements }} {{{.}}} {{/complements}}
+				&lt;/span&gt;
+			{{/has-complements}}
+		&lt;/div&gt;
+	{{/no-children}}
+&lt;/li&gt;
+&lt;!-- /{{title}} --&gt;

@@ -1,0 +1,116 @@
+&lt;h1&gt;&lt;em&gt;Managed Account&lt;/em&gt;&lt;/h1&gt;
+&lt;h2 class=&quot;negative-margin-top margin-bottom-lg&quot;&gt;SUMMARY&lt;/h2&gt;
+
+&lt;p&gt;Please review your new elections and click submit below.&lt;/p&gt;
+
+
+{{&gt; molecules-heading-group-icon:(hi_class: &quot;trs-icons-dollar&quot;, hi_text: &quot;Savings Rate&quot; ) }}
+
+&lt;!-- /DEPRECATED
+{{# table_savings_rate }}
+    {{&gt; atoms-table-style2 }}
+{{/ table_savings_rate }}
+/DEPRECATED --&gt;
+
+&lt;div class=&quot;table--style2&quot;&gt;
+&lt;table class=&quot;table table-inline table__savings-rate&quot; aria-describedby=&quot;savings_rate&quot;&gt;
+    &lt;caption id=&quot;savings_rate&quot; class=&quot;sr-only&quot;&gt;Comparison of old versus new savings rate.&lt;/caption&gt;
+
+    &lt;!-- a contribution type group --&gt;
+    &lt;tbody&gt;
+        &lt;!-- contribution type &quot;header&quot; --&gt;
+        &lt;tr class=&quot;tbl_subHead_bg&quot;&gt;
+            &lt;td&gt;Pre tax&lt;/td&gt;
+            &lt;td class=&quot;text-right&quot;&gt;Current&lt;/td&gt;
+            &lt;td class=&quot;text-right&quot;&gt;New&lt;/td&gt;
+        &lt;/tr&gt;
+        &lt;!-- /contribution type &quot;header&quot; --&gt;
+
+        &lt;!-- contribution type &quot;body&quot; --&gt;
+        &lt;tr&gt;
+            &lt;td&gt;
+                &lt;span&gt;Rate&lt;/span&gt;
+                &lt;!-- this appears if previously set --&gt;
+                &lt;div class=&quot;auto-increase&quot;&gt;Auto-increase 2% annually&lt;/div&gt;
+                &lt;!-- /this appears if previously set --&gt;
+            &lt;/td&gt;
+            &lt;td class=&quot;text-right&quot;&gt;4%&lt;/td&gt;
+            &lt;td class=&quot;text-right&quot;&gt;6%&lt;/td&gt;
+        &lt;/tr&gt;
+        &lt;tr&gt;
+            &lt;td&gt;
+                &lt;span&gt;Catch-up&lt;/span&gt;
+            &lt;/td&gt;
+            &lt;td class=&quot;text-right&quot;&gt;0%&lt;/td&gt;
+            &lt;td class=&quot;text-right&quot;&gt;2%&lt;/td&gt;
+        &lt;/tr&gt;
+        &lt;!-- /contribution type &quot;body&quot; --&gt;
+    &lt;/tbody&gt;
+    &lt;!-- /a contribution type group --&gt;
+
+    &lt;tbody&gt;
+        &lt;tr class=&quot;tbl_subHead_bg&quot;&gt;
+            &lt;td&gt;Post tax&lt;/td&gt;
+            &lt;td class=&quot;text-right&quot;&gt;Current&lt;/td&gt;
+            &lt;td class=&quot;text-right&quot;&gt;New&lt;/td&gt;
+        &lt;/tr&gt;
+        &lt;tr&gt;
+            &lt;td&gt;
+                &lt;span&gt;Rate&lt;/span&gt;
+            &lt;/td&gt;
+            &lt;td class=&quot;text-right&quot;&gt;2%&lt;/td&gt;
+            &lt;td class=&quot;text-right&quot;&gt;2%&lt;/td&gt;
+        &lt;/tr&gt;
+        &lt;tr&gt;
+            &lt;td&gt;
+                &lt;span&gt;Catch-up&lt;/span&gt;
+            &lt;/td&gt;
+            &lt;td class=&quot;text-right&quot;&gt;1%&lt;/td&gt;
+            &lt;td class=&quot;text-right&quot;&gt;1%&lt;/td&gt;
+        &lt;/tr&gt;
+    &lt;/tbody&gt;
+
+    &lt;!-- footer --&gt;
+    &lt;tbody class=&quot;tbl_subHead_bg table__savings-rate--footer&quot;&gt;
+        &lt;tr&gt;
+            &lt;td colspan=&quot;3&quot; scope=&quot;row&quot;&gt;
+                &lt;div class=&quot;total&quot;&gt;
+                    Total Rate&lt;br&gt;
+                    &lt;span class=&quot;regular&quot;&gt;8%&lt;/span&gt;
+                &lt;/div&gt;
+                &lt;div class=&quot;total&quot;&gt;
+                    Total Auto-increase&lt;br&gt;
+                    &lt;span class=&quot;regular&quot;&gt;2%&lt;/span&gt;
+                &lt;/div&gt;
+                &lt;div class=&quot;total&quot;&gt;
+                    Total Catch-up&lt;br&gt;
+                    &lt;span class=&quot;regular&quot;&gt;3%&lt;/span&gt;
+                &lt;/div&gt;
+            &lt;/td&gt;
+        &lt;/tr&gt;
+    &lt;/tbody&gt;
+    &lt;!-- /footer --&gt;
+&lt;/table&gt;
+&lt;/div&gt;
+
+{{&gt; molecules-heading-group-icon:(hi_class: &quot;trs-icons-target padding-top&quot;, hi_text: &quot;Retirement Goals&quot; ) }}
+
+{{# table_retirement_goals }}
+    {{&gt; atoms-table-style2 }}
+{{/ table_retirement_goals }}
+
+{{&gt; molecules-heading-group-icon:(hi_class: &quot;trs-icons-pie-chart padding-top padding-bottom&quot;, hi_text: &quot;Investment Mix for Your Current Balance and Future Contribution&quot; ) }}
+{{&gt; molecules-table-dcma-summary }}
+
+{{# table_maintain }}
+    {{&gt; atoms-table-style2 }}
+{{/ table_maintain }}
+
+
+&lt;div class=&quot;row&quot;&gt;
+    &lt;div class=&quot;col-xs-12 padding-top-lg&quot;&gt;
+        &lt;a href=&quot;#&quot; class=&quot;btn btn-secondary&quot;&gt;Back&lt;/a&gt;
+        &lt;a href=&quot;#&quot; class=&quot;btn btn-primary pull-right&quot;&gt;Submit&lt;/a&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
+

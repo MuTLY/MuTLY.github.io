@@ -1,0 +1,25 @@
+&lt;style type=&quot;text/css&quot;&gt;
+
+a[data-toggle=&quot;tooltip&quot;] {
+	display: block;
+    float: left;
+    clear: both;
+	margin: 30px 0 0 100px;
+}
+
+&lt;/style&gt;
+
+&lt;a class=&quot;tooltip-link&quot; data-toggle=&quot;tooltip&quot;  data-title=&quot;this text appears above&quot; href=&quot;javascript:void(0);&quot;&gt;default tooltip positioning&lt;/a&gt;
+&lt;a class=&quot;tooltip-link&quot; data-toggle=&quot;tooltip&quot; data-placement=&quot;left&quot; data-title=&quot;this text is on the left&quot; href=&quot;javascript:void(0);&quot;&gt;move aside, tooltip bubble!&lt;/a&gt;
+&lt;a class=&quot;tooltip-link&quot; data-toggle=&quot;tooltip&quot; data-placement=&quot;top&quot; data-title=&quot;this also appears above&quot; href=&quot;javascript:void(0);&quot;&gt;you can define top, though it's default&lt;/a&gt;
+&lt;a class=&quot;tooltip-link&quot; data-toggle=&quot;tooltip&quot; data-placement=&quot;bottom&quot; data-title=&quot;hello. I'm positioned below&quot; href=&quot;javascript:void(0);&quot;&gt;when top is a bit inconvenient&lt;/a&gt;
+&lt;a class=&quot;tooltip-link&quot; data-toggle=&quot;tooltip&quot; data-placement=&quot;right&quot; data-title=&quot;Hi! I'm on the right&quot; href=&quot;javascript:void(0);&quot;&gt;do you want the 'bubble' to appear on the right?&lt;/a&gt;
+
+&lt;script type=&quot;text/javascript&quot;&gt;
+// This is being called on globalFooter.js
+// $(function () {
+//     $('[data-toggle=&quot;tooltip&quot;]').tooltip({
+//         container: 'body' //anchors the tooltip position in case links show on two lines
+//     });
+// });
+&lt;/script&gt;

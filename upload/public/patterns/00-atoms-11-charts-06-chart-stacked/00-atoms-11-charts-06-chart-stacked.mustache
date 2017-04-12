@@ -1,0 +1,96 @@
+&lt;div id=&quot;{{chart_id}}&quot; class=&quot;{{chart_class}}&quot;&gt;&lt;/div&gt;
+
+&lt;script&gt;
+$(function() {
+    // Handling chart resize
+    var chartContainer = $('#{{chart_id}}').parent(),
+        chartDimension = chartContainer.actual('width'), // using $.actual() plugin for hidden elements e.g. chart on a hidden tab
+        chartElement = chartContainer.find('.{{chart_class}}').attr('id');
+
+    $(window).off('resize.{{chart_class}}');
+    $(window).on('resize.{{chart_class}}', function() {
+        var d = chartContainer.actual('width');
+        chart.setSize(d, null, doAnimation = false);
+    });
+
+
+    // Init chart
+    Highcharts.setOptions({
+        exporting: {
+            enabled: false
+        },
+        credits: {
+            enabled: false
+        }
+    });
+
+    var chart = new Highcharts.Chart({
+        chart: {
+            renderTo: chartElement,
+            type: 'area'
+        },
+        title: {
+            text: ''
+        },
+        subtitle: {
+            text: ''
+        },
+        xAxis: {
+            categories: ['65', '70', '75', '80', '85', '90', '95'],
+            tickmarkPlacement: 'on',
+            title: {
+                enabled: false
+            },
+            labels: {
+                formatter: function() {
+                    return &quot;age &quot; + this.value;
+                }
+            }
+        },
+        yAxis: {
+            title: {
+                text: 'Retirement Savings'
+            },
+            tickInterval: 25000,
+            labels: {
+                formatter: function() {
+                    return this.value / 1;
+                }
+            }
+        },
+        legend: {
+            symbolHeight: 12,
+            symbolWidth: 12,
+            symbolRadius: 0
+        },
+        tooltip: {
+            split: true,
+            valueSuffix: ''
+        },
+        plotOptions: {
+            area: {
+                stacking: 'normal',
+                lineColor: '#666666',
+                lineWidth: 1,
+                marker: {
+                    lineWidth: 1,
+                    lineColor: '#666666'
+                }
+            }
+        },
+        series: [{
+            name: '401(k) Plan of ABC Company',
+            data: [133000, 110000, 76000, 55000, 30000, 13000, 0],
+            color: '#27b8da'
+        }, {
+            name: 'Spouses Fidelity Account',
+            data: [45000, 33000, 22000, 13000, 11000, 4000, 0],
+            color: '#d1d1d1'
+        }]
+    }, function(chart) {
+        // callback here
+    });
+
+    $( &quot;.{{chart_class}}&quot; ).prepend( &quot;&lt;div class=\&quot;custom-label\&quot;&gt;&lt;div class=\&quot;center\&quot;&gt;Total Balance at Retirement: $1,000.000.00&lt;/div&gt;&lt;/div&gt;&quot; );
+});
+&lt;/script&gt;

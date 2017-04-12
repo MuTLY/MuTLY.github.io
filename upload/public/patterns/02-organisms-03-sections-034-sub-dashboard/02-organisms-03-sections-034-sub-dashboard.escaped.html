@@ -1,0 +1,173 @@
+&lt;h1&gt;Your &lt;em&gt;Managed Advice&lt;/em&gt;&lt;sup&gt;&amp;reg;&lt;/sup&gt; Retirement Plan&lt;/h1&gt;
+
+
+&lt;!-- HOW ARE YOU DOING? SECTION --&gt;
+&lt;h2 class=&quot;section-title margin-bottom-md&quot;&gt;How are you doing?&lt;/h2&gt;
+
+&lt;!--/HOW ARE YOU DOING? SECTION --&gt;
+
+&lt;!-- HOW ARE YOU INVESTED? SECTION --&gt;
+&lt;h2 class=&quot;section-title margin-bottom-md&quot;&gt;How are you invested?&lt;/h2&gt;
+&lt;div class=&quot;row margin-bottom ma-monitoring js-monitor-click&quot;&gt;
+    &lt;div class=&quot;col-xs-12 js-eq-ht-container&quot;&gt;
+        &lt;div class=&quot;block block-well col-xs-12 col-sm-6 block-left border-right-collapse js-eq-ht-div&quot;&gt;
+            &lt;div class=&quot;well-body&quot;&gt;
+                &lt;h3 class=&quot;regular no-vertical-margin&quot;&gt;
+                    &lt;div class=&quot;margin-top-sm&quot;&gt;
+                        &lt;strong class=&quot;semi-bold&quot;&gt;&lt;em&gt;Managed Advice&lt;/em&gt;&lt;sup&gt;&amp;reg;&lt;/sup&gt;&lt;/strong&gt; is monitoring and&lt;br class=&quot;hidden-xs&quot;&gt;
+                        updating your investment mix.
+                    &lt;/div&gt;
+                    &lt;div class=&quot;margin-top-sm&quot;&gt;&lt;a href=&quot;#&quot; class=&quot;js-skip-click&quot;&gt;Update or view details&lt;/a&gt;&lt;/div&gt;
+                &lt;/h3&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+        &lt;div class=&quot;block block-well col-xs-12 col-sm-6 block-right js-eq-ht-div&quot;&gt;
+            &lt;div class=&quot;well-body blue-arrow&quot;&gt;
+                &lt;div class=&quot;row&quot;&gt;
+                    &lt;div class=&quot;col-xs-4&quot;&gt;
+                        &lt;div id=&quot;ma-monitoring-chart&quot; class=&quot;ma-monitoring-chart&quot; data-chart-title=&quot;&quot; data-chart-subtitle=&quot;&quot;&gt;&lt;/div&gt;
+                    &lt;/div&gt;
+                    &lt;div class=&quot;col-xs-8&quot;&gt;
+                        &lt;table class=&quot;table__ma-monitoring&quot;&gt;
+                            &lt;tr&gt;
+                                &lt;td&gt;&lt;span class=&quot;box-sm graph-color2&quot;&gt;&lt;/span&gt;Bonds&lt;/td&gt;
+                                &lt;td&gt;60%&lt;/td&gt;
+                            &lt;/tr&gt;
+                            &lt;tr&gt;
+                                &lt;td&gt;&lt;span class=&quot;box-sm graph-color1&quot;&gt;&lt;/span&gt;Stocks&lt;/td&gt;
+                                &lt;td&gt;30%&lt;/td&gt;
+                            &lt;/tr&gt;
+                            &lt;tr&gt;
+                                &lt;td&gt;&lt;span class=&quot;box-sm&quot;&gt;&lt;/span&gt;Other&lt;/td&gt;
+                                &lt;td&gt;10%&lt;/td&gt;
+                            &lt;/tr&gt;
+                        &lt;/table&gt;
+                    &lt;/div&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
+
+&lt;script&gt;
+$(function() {
+    // Clicking on the component
+    $('.js-monitor-click').off('click').on('click', function(e) {
+        e.preventDefault();
+        alert('You clicked the component!');
+    });
+
+    $('.js-skip-click').off('click').on('click', function(e) {
+        e.preventDefault();
+        e.stopPropagation();
+        alert('You clicked just this link!');
+    });
+
+    // Chart
+    (function() {
+        var colors = [&quot;#006390&quot;, &quot;#2ba644&quot;, &quot;#000000&quot;]; // chart colors
+
+        var chartContainer = $('#ma-monitoring-chart').parent(),
+            chartDimension = chartContainer.actual('width'),
+            chartElement = chartContainer.find('.ma-monitoring-chart').attr('id');
+
+        Highcharts.setOptions({
+            colors: colors,
+            exporting: {
+                enabled: false
+            },
+            credits: {
+                enabled: false
+            }
+        });
+
+        $(window).off('resize.chart');
+        $(window).on('resize.chart', function() {
+            var d = chartContainer.actual('width');
+            chart.setSize(d, d, doAnimation = false);
+        });
+
+        var chart = new Highcharts.Chart({
+                series: [{
+                    data: [
+                        ['Bonds', 60.00],
+                        ['Stocks', 30.00],
+                        ['Other', 10.00]
+                    ]
+                }],
+                chart: {
+                    renderTo: chartElement,
+                    type: 'pie',
+                    margin: [0, 0, 0, 0],
+                    spacing: [0, 0, 0, 0],
+                    backgroundColor: 'transparent',
+                    width: chartDimension,
+                    height: chartDimension
+                },
+                title: false,
+                tooltip: false,
+                plotOptions: {
+                    pie: {
+                        slicedOffset: false,
+                        shadow: false,
+                        allowPointSelect: false,
+                        startAngle: 360,
+                        innerSize: '75%',
+                        size: '100%',
+                        dataLabels: false,
+                        stickyTracking: false,
+                        states: {
+                            hover: false
+                        }
+                    }
+                }
+            });
+    }());
+});
+&lt;/script&gt;
+
+&lt;!--/HOW ARE YOU INVESTED? SECTION --&gt;
+
+
+
+&lt;p&gt;
+	There are fees associated with receiving advice through the Managed Account service offered by ABC Organization Retirement Advisors. You will have an opportunity to learn more about the service or make other investment choices on the following page. For more information, please see:
+&lt;/p&gt;
+
+&lt;ul class=&quot;list-box vertical-margin&quot;&gt;
+    &lt;li&gt;&lt;a class=&quot;link--style1__rarrow full-width&quot; href=&quot;#&quot;&gt;&lt;span&gt;ABC Organization Retirement Advisors' Form ADV&lt;/span&gt;&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a class=&quot;link--style1__rarrow full-width&quot; href=&quot;#&quot;&gt;&lt;span&gt;Your Plan's Investment Managers Form ADV&lt;/span&gt;&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;div class=&quot;row&quot;&gt;
+    &lt;div class=&quot;col-xs-12&quot;&gt;
+        &lt;div id=&quot;subDashboardApi&quot; class=&quot;about-probability&quot;&gt;
+            &lt;div class=&quot;block block-basic margin-bottom&quot;&gt;
+                &lt;a class=&quot;link--black accordion-toggle collapsed&quot; data-toggle=&quot;collapse&quot; data-parent=&quot;#subDashboardApi&quot; href=&quot;#subDashboardApiText&quot; aria-expanded=&quot;false&quot;&gt;
+                    &lt;span class=&quot;glyphicon glyphicon-plus-sign&quot; aria-hidden=&quot;true&quot;&gt;&lt;/span&gt;&lt;!-- do not remove this
+                    --&gt;&lt;span class=&quot;head-text&quot;&gt;
+                        IMPORTANT: The projections or other information generated by &lt;em&gt;OnTrack&lt;/em&gt;&lt;sup&gt;&amp;reg;&lt;/sup&gt; regarding the likelihood
+                        of various investment outcomes are hypothetical in nature, do not reflect actual investment results, and are
+                        not guarantees of future results. Results derived from &lt;em&gt;OnTrack&lt;/em&gt;&lt;sup&gt;&amp;reg;&lt;/sup&gt; may vary with each use and over
+                        time. See the &lt;span class=&quot;link--blue bold&quot;&gt;About Probability Illustrations&lt;/span&gt; for more information.
+                    &lt;/span&gt;
+                &lt;/a&gt;
+            &lt;/div&gt;
+            &lt;div id=&quot;subDashboardApiText&quot; class=&quot;main-text collapse no-collapsing&quot; aria-expanded=&quot;false&quot;&gt;
+                &lt;!-- everything between here is an iframe and its wrapper in the real app --&gt;
+                &lt;h4 class=&quot;title&quot;&gt;About Probability Illustration&lt;/h4&gt;
+
+                &lt;p&gt;This text is inside a boxed iframe in the real app.&lt;/p&gt;
+
+                &lt;p&gt;Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.&lt;/p&gt;
+
+                &lt;p&gt;Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.&lt;/p&gt;
+                &lt;!-- everything between here is an iframe and its wrapper in the real app --&gt;
+
+                &lt;a href=&quot;javascript:void(0)&quot; class=&quot;btn btn-secondary btn-small text-xsmall pull-right&quot; onclick=&quot;&quot;&gt;&lt;strong&gt;Print version&lt;/strong&gt;&lt;/a&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
+
+

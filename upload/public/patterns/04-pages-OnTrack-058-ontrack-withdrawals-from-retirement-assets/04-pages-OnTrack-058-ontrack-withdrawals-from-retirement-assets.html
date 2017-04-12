@@ -1,0 +1,1032 @@
+<!DOCTYPE HTML>
+		<!-- never cache patterns -->
+		<meta http-equiv="cache-control" content="max-age=0" />
+		<meta http-equiv="cache-control" content="no-cache" />
+		<meta http-equiv="expires" content="0" />
+		<meta http-equiv="expires" content="Tue, 01 Jan 1980 1:00:00 GMT" />
+		<meta http-equiv="pragma" content="no-cache" />
+		
+		<link rel="stylesheet" href="../../styleguide/css/styleguide.css?1491944073" media="all">
+		<link rel="stylesheet" href="../../styleguide/css/styleguide-specific.css?1491944073" media="all" />
+		
+
+
+<html class="pl" lang="en-us">
+
+<head>
+    <title>Withdrawals from Retirement Assets</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=0">
+
+    <!-- Browser Elements Colors -->
+    <meta name="theme-color" content="#3e7cab"><!-- Chrome -->
+    <meta name="msapplication-navbutton-color" content="#3e7cab"><!-- Windows -->
+    <!-- iOS -->
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+
+    <!-- console.log polyfill - do not remove, it needs to load before any scripts -->
+    <script>
+    // Console-polyfill. MIT license.
+    // https://github.com/paulmillr/console-polyfill
+    // Make it safe to do console.log() always.
+    (function(global) {
+        'use strict';
+        if (!global.console) {
+            global.console = {};
+        }
+        var con = global.console;
+        var prop, method;
+        var dummy = function() {};
+        var properties = ['memory'];
+        var methods = ('assert,clear,count,debug,dir,dirxml,error,exception,group,' +
+            'groupCollapsed,groupEnd,info,log,markTimeline,profile,profiles,profileEnd,' +
+            'show,table,time,timeEnd,timeline,timelineEnd,timeStamp,trace,warn').split(',');
+        while ( (prop = properties.pop()) ) {
+            if (!con[prop]) {
+                con[prop] = {};
+            }
+        }
+        while ( (method = methods.pop()) ) {
+            if (typeof con[method] !== 'function') {
+                con[method] = dummy;
+            }
+        }
+        // Using `this` for web workers & supports Browserify / Webpack.
+    })(typeof window === 'undefined' ? this : window);
+    </script>
+
+    <!-- Custom Modernizr -->
+    <script src="../../js/plugins/modernizr.custom.js"></script>
+
+    <!-- Fonts -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,800,300italic,400italic,600italic,700italic,800italic" type="text/css">
+    <link rel="stylesheet" media="all" href="../../css/fonts.css">
+    <link rel="stylesheet" media="all" href="../../css/trs-icon-font.css">
+
+    <!-- Latest jQuery compatible -->
+    <script src="../../js/plugins/jquery-1.12.4.min.js"></script>
+    <script src="../../js/plugins/jquery-migrate-1.3.0.min.js"></script>
+
+    <!-- jquery UI -->
+    <link rel="stylesheet" href="../../css/plugins/jquery-ui.min.css">
+    <script src="../../js/plugins/jquery-ui.min.js"></script>
+
+    <!-- jquery UI range pips -->
+    <link rel="stylesheet" href="../../css/plugins/jquery-ui-slider-pips.min.css">
+    <script src="../../js/plugins/jquery-ui-slider-pips.min.js"></script>
+
+    <!-- jquery UI touch capable -->
+    <script src="../../js/plugins/jquery.ui.touch-punch.min.js"></script>
+
+    <!-- jquery.Actual -->
+    <script src="../../js/plugins/jquery.actual.min.js"></script>
+
+    <!-- response.JS -->
+    <script src="../../js/plugins/response.min.js"></script>
+
+     <!-- Latest Bootstrap -->
+    <link rel="stylesheet" href="../../css/plugins/bootstrap.min.css">
+    <link rel="stylesheet" href="../../css/plugins/bootstrap-theme.min.css">
+    <script src="../../js/plugins/bootstrap.min.js"></script>
+
+    <!-- Primary Nav JS -->
+    <script src="../../js/primary-nav.js"></script>
+
+    <!-- HighChart JS -->
+    <script src="../../js/plugins/highcharts.js"></script>
+    <script src="../../js/plugins/data.js"></script>
+
+    <!-- DataTables JS -->
+    <link rel="stylesheet" href="../../css/plugins/jquery.dataTables.min.css">
+    <link rel="stylesheet" href="../../css/plugins/dataTables.bootstrap.min.css">
+    <script src="../../js/plugins/jquery.dataTables.min.js"></script>
+    <script src="../../js/plugins/dataTables.bootstrap.min.js"></script>
+
+    <!-- jquery mask input -->
+    <script src="../../js/plugins/jquery.mask.min.js"></script>
+
+    <!-- parser helper used with bootstrap-datepicker -->
+    <script src="../../js/plugins/date.min.js"></script>
+    <script src="../../js/plugins/moment.min.js"></script>
+
+    <!-- bootstrap-datepicker - github.com/eternicode/bootstrap-datepicker -->
+    <link rel="stylesheet" href="../../css/plugins/bootstrap-datepicker3.min.css"></link>
+    <script src="../../js/plugins/bootstrap-datepicker.min.js"></script>
+    <script src="../../js/plugins/bootstrap-datepicker.wrapper.js"></script>
+
+    <!-- bootstrap typeahead autocomplete - https://twitter.github.io/typeahead.js/examples/ -->
+    <script src="../../js/plugins/typeahead.bundle.min.js"></script>
+
+    <!-- jquery.validate -->
+    <script src="../../js/plugins/jquery.validate.min.js"></script>
+    <script src="../../js/plugins/additional-methods.min.js"></script>
+
+    <!-- jQuery Equal Height -->
+    <script src="../../js/plugins/jquery.matchHeight-min.js"></script>
+
+    <!-- Password Meter -->
+    <script src="../../js/plugins/jquery.password.js"></script>
+
+    <!-- TableSaw - tables on mobile -->
+    <link rel="stylesheet" href="../../css/plugins/tablesaw.bare.min.css">
+    <script src="../../js/plugins/tablesaw.min.js"></script>
+
+    <!-- Compiled css from style.scss for components -->
+    <link rel="stylesheet" media="all" href="../../css/style.css?1491944073">
+
+
+    <!-- Responsive tables require AngularJS - see atoms/tables/angular-mobile-table... -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.8/angular.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.8/angular-animate.min.js"></script>
+    <script src="/js/trs-angular/responsive-table.js"></script>
+</head>
+<body class="ontrack" data-ui-compat="responsive">
+<div class="page-container">
+    <div class="container-fluid">
+        <!-- top navbar -->
+        <header>
+            <div class="row trs-header no-padding">
+                <!-- Page Header -->
+        <div class="print-page-header">
+        <img src="../../images/trs-logo-166px.png" class="ta-logo-print" alt="TRS Logo Desktop">
+          <div class="print-header-info">
+            <div class="print-info-line1">1-800-Pyramid (797-2643)</div>
+            <div class="print-info-line2">INSERT LAST DATA UPDATE AT: HERE.</div>
+            <div class="print-info-line3">Date Printed: 04/10/16</div>
+          </div>
+        </div>
+        <div class="subnavbar" role="navigation">
+          <div class="row"> <a class="sr-only" href="#main_content">Skip to main content</a><!-- keep this for ada compliance -->
+            
+            <div class="col-xs-2 col-sm-4 hidden-md hidden-lg">
+              <div class="btn--menu">
+                <button type="button" class="btn--menu__btn"> 
+                	<span class="sr-only">Tap to expand or collapse navigation</span>
+                	<span class="icon-bar" role="presentation"></span> <span class="icon-bar" role="presentation"></span> <span class="icon-bar" role="presentation"></span>  </button>
+                <div class="btn--menu__text">Menu</div>
+              </div>
+            </div>
+            <div class="col-xs-8 col-md-2 col-sm-4 text-center">
+            <a class="logo-link text-center" href="">
+		<img src="../../images/trs-mobile-logo.png" class="logo visible-xs" alt="TRS Logo Mobile" />		<img src="../../images/trs-logo-166px.png" class="logo hidden-xs" alt="TRS Logo Desktop" />            </a>
+            </div>
+            <div class="hidden-xs hidden-sm col-md-8">
+              <div class="pull-right"> 
+        <a  class="link link--style1__larrow"  href="http://www.transamerica.com"><span>My Transamerica Products</span></a>
+        <ul>
+            <li class="dropdown">
+                <a id="hdr_dd_comm" href="#" class="dropdown-toggle" data-target="#" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" aria-label="Communications Menu">
+                	<span class="glyphicon glyphicon-envelope" role="presentation"></span>  <span class="glyphicon glyphicon-menu-down" role="presentation"></span></a>
+                <ul class="dropdown-menu" role="menu" aria-labelledby="hdr_dd_comm">
+               <li><a href="#" title="Action" role="menuitem">Action</a></li>
+
+               <li><a href="#" title="Another Action" role="menuitem">Another Action</a></li>
+
+               <li><a href="#" title="Something else here" role="menuitem">Something else here</a></li>
+
+               <li><a href="#" title="Separated link" role="menuitem">Separated link</a></li>
+
+               <li><a href="#" title="One more separated link" role="menuitem">One more separated link</a></li>
+
+                </ul>
+            </li>
+        </ul>        <ul>
+            <li class="dropdown">
+                <a id="hdr_dd_usr" href="#" class="dropdown-toggle" data-target="#" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" aria-label="User Options Menu">
+                	<span class="glyphicon glyphicon-user" role="presentation"></span>  <span class="glyphicon glyphicon-menu-down" role="presentation"></span></a>
+                <ul class="dropdown-menu" role="menu" aria-labelledby="hdr_dd_usr">
+               <li><a href="#" title="Action" role="menuitem">Action</a></li>
+
+               <li><a href="#" title="Another Action" role="menuitem">Another Action</a></li>
+
+               <li><a href="#" title="Something else here" role="menuitem">Something else here</a></li>
+
+               <li><a href="#" title="Separated link" role="menuitem">Separated link</a></li>
+
+               <li><a href="#" title="One more separated link" role="menuitem">One more separated link</a></li>
+
+                </ul>
+            </li>
+        </ul>                 </div>
+            </div>
+            <div class="col-xs-2 col-sm-4 col-md-2"> 
+      <button type="button" class="btn btn-logout "><span class="trs-icons-lock hidden-xs" role="presentation"></span>LOG OUT</button>
+               </div>
+          </div>
+        </div>
+                <!-- /Page Header -->
+            </div>
+            <div class="row hidden-xs">
+<ul class="breadcrumbs clearfix" id="crumb_box" aria-label="Summary of account">
+</ul>            </div>
+        </header>
+        <!-- /top navbar -->
+
+        <div class="row">
+
+            <!-- sidebar -->
+            <div class="col-xs-12 col-sm-3 left_sidebar sidebar-offcanvas  [ hidden-xs hidden-sm ]" id="sidebar" role="navigation">
+                <nav id="myNavmenu" class="trs-nav navmenu navmenu-default" role="navigation">
+
+                        <menu role="menu" class="trs-utility vertical">
+                            <a role="menuitem" href="javascript:void(0);" data-toggle="modal" data-target="#help_window">
+                                <span class="icon trs-icons-help" role="presentation"></span> 
+                                Help
+</a>
+                            <a role="menuitem" href="tel:18007555801" >
+                                <span class="trs-icons-phone-ring" role="presentation"></span> 
+                                Contact Us
+                                <span class="trs-utility--light">1-800-755-5801</span>
+                                </a>
+                        </menu>                </nav>
+            </div>
+			<!-- /sidebar -->
+
+            <!-- main area & col-xs-12 -->
+            <div class="non-responsive-swipe">
+                <div class="col-xs-12 col-sm-12 col-md-9 left-content-border right_panel">
+
+                    <main class="row" id="main_content">
+                        <!-- Begin "body" -->
+                        <div class="col-xs-12 ">
+
+                            <!-- YOUR CODE STARTS HERE. REMOVE THIS COMMENT AFTERWARDS. -->
+        <p class="status-note text-right">
+            <span class="status-note__name display-inline-block">Welcome Sophia MacGreagor</span><span class="status-note__separator" role="presentation"> | </span>
+            <span class="display-inline-block">Last sign-in: April 11, 2016</span><span class="status-note__separator" role="presentation"> | </span>
+            <span class="display-inline-block">7:58 PM CST</span>
+        </p>
+
+                                <h1>Withdrawals from Retirement Assets</h1>
+        <p class="text-center-xs">Do you plan to withdraw non-standard expenses from your retirement assets at any point in your retirement?</p>
+        
+<div class="table--style2">
+    <table class="table table-inline tbl-mobile"  aria-describedby="">
+
+
+        <thead>
+            <tr>
+                <th class=""  scope="col" id="" >Name</th>
+                <th class="text-right"  scope="col" id="" >Frequency</th>
+                <th class="text-right"  scope="col" id="" >Amount</th>
+                <th class=""  scope="col" id="" ></th>
+            </tr>
+        </thead>
+
+        <tbody>
+
+        <tr class="tbl-td-noborder click-action" onclick="javascript:void(0)">
+                <td class=""  data-title="">Daughters Wedding</td>
+                <td class="text-right"  data-title="Frequency:">One-Time</td>
+                <td class="text-right"  data-title="Amount:">$12,000.00</td>
+                <td class="text-right tbl-mobile-hide text-nowrap"  data-title=""><a role='button' href='javascript:void(0);' class='sr-only'>Access this plan</a><button type="button" class="btn btn-secondary btn-short" aria-hidden="true">DELETE</button> <a role='button' href='javascript:void(0);' class='sr-only'>Access this plan</a><button type="button" class="btn btn-secondary btn-short" aria-hidden="true">VIEW/EDIT</button></td>
+        </tr>
+        <tr class="tbl-td-noborder click-action" onclick="javascript:void(0)">
+                <td class=""  data-title="">Daughters College</td>
+                <td class="text-right"  data-title="Frequency:">Annual</td>
+                <td class="text-right"  data-title="Amount:">$15,000.00</td>
+                <td class="text-right tbl-mobile-hide text-nowrap"  data-title=""><a role='button' href='javascript:void(0);' class='sr-only'>Access this plan</a><button type="button" class="btn btn-secondary btn-short" aria-hidden="true">DELETE</button> <a role='button' href='javascript:void(0);' class='sr-only'>Access this plan</a><button type="button" class="btn btn-secondary btn-short" aria-hidden="true">VIEW/EDIT</button></td>
+        </tr>
+        </tbody>
+
+    </table>
+
+</div>
+        
+<div class="row clearfix">
+    <div class="col-xs-12 padding-top padding-bottom">
+        <div class="btn-unit btn-unit-primary-action">
+            <a href="#"  class="btn btn-primary">Add a new withdrawal</a>
+        </div>
+        <div class="btn-unit btn-unit-secondary-action">
+            <a href="#"  class="btn btn-secondary">View <em>Your Retirement Outlook</em>&reg;</a>
+        </div>
+    </div>
+</div>
+                            <!-- /YOUR CODE ENDS HERE. REMOVE THIS COMMENT AFTERWARDS. -->
+
+                        </div>
+                        <!-- End "body" -->
+                    </main>
+
+                    <footer id="global_footer" class="trs-footer page-footer row">
+                        <div class="trs-footer__phone clearfix">
+        <div class="col-xs-12 text-center trs-footer__social">
+		<a class="trs-icon-circle" href="http://www.facebook.com/transamerica"><span class="trs-icons-fb" role="presentation"></span><span class="sr-only">Facebook</span></a>		<a class="trs-icon-circle" href="http://www.youtube.com/transamerica"><span class="trs-icons-youtube" role="presentation"></span><span class="sr-only">Youtube</span></a>        </div>                        	<div class="col-sm-12 text-center">
+	<a href="tel:8007555801"  class="btn btn-secondary"><span class='glyphicon glyphicon-earphone' role='presentation'></span> <span class='phone-number'>1-800-755-5801</span></a>
+    <div id="lpbutton" class="chat-button"><a class="btn btn-secondary btn--chat" href="javascript:void(0);"><span class="glyphicon glyphicon-comment" role="presentation"></span> <span class="phone-number">Live Chat</span></a></div>
+    <!-- this button has ZERO content options. It is injected by LivePerson. The only thing needed for export is <div id="lpbutton" class="chat-button"></div> -->
+    <script>
+    (function($){
+    	
+    	$(ready);
+    	
+    	function ready(){
+    		$('.btn--chat', '#lpbutton').on('click blur', killButton);
+    	}
+    	
+    	function killButton(){
+    		var $thisButton = $(this),
+    			disabledText = "live chat offline",
+    			enabledText = "live chat";
+    		
+    		if (!$thisButton.hasClass('disabled')){
+    			$(this).attr('disabled', '').addClass('disabled').find('.phone-number').text(disabledText);
+    		}else{
+    			$(this).removeAttr('disabled').removeClass('disabled').find('.phone-number').text(enabledText);
+    		}
+    	}
+    	
+    })(jQuery);
+    </script>
+    <!-- ALERT: NEVER EXPORT THIS SCRIPT!!! IT IS FOR PL DEMO ONLY!!! --></div> </div>
+                        <div class="trs-footer__body">
+                            <div class="row">
+                                <nav class="col-xs-12 trs-footer__policies text-center display-table">
+<h3 class="trs-footer__subhead" >Online policies</h3>                <ul class="trs-footer__nav-list">
+                    <li><a class="" href="">Website Privacy Statement <span class='divider' aria-hidden="true">|</span></a>
+</li>
+                    <li><a class="" href="">Terms and Conditions of Use <span class='divider' aria-hidden="true">|</span></a>
+</li>
+                    <li><a class="" href="">Business Continuity Plan Summary <span class='divider' aria-hidden="true">|</span></a>
+</li>
+                    <li><a class="" href="">Security Measures</a>
+</li>
+                </ul>                                 </nav>
+                            </div>
+                            <div class="row">
+                                <div class="col-xs-12 trs-footer__footnotes">
+                                    <div class="footer-rule" role="presentation"></div>
+                                    <p>Securities offered by Transamerica Investors Securities Corporation (TISC), 440 Mamaroneck Avenue, Harrison, N.Y. 10528. Transamerica Retirement Solutions Corporation is an affiliate of TISC.</p>
+                                    <p>Transamerica companies are part of the worldwide group of AEGON companies. Copyright 2011 - 2014 Transamerica Corporation, 4333 Edgewood Road NE, Cedar Rapids, IA 52499—All Rights Reserved.</p>
+                                    </div>
+                            </div>
+                        </div>
+                    </footer>
+
+                </div>
+            </div>
+            <!-- /main area & col-xs-12 -->
+
+        </div><!--/.row-->
+    </div><!--/.container-->
+</div><!--/.page-container-->
+
+<style type="text/css">
+
+.panel__glossary dd:not(:last-of-type) {
+	margin-bottom:15px;
+}
+
+</style>
+
+<!-- HELP! modal -->
+<div class="modal" id="help_window" tabindex="-1" role="dialog" aria-labelledby="lg_modal_title">
+    <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-content">
+            <div class="modal-header no-border">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"> <span aria-hidden="true" class="trs-icons-close-btn"></span></button>
+                <img class="modal-title" id="lg_modal_title" alt="Custom Company Logo" style="height:65px;" src="http://ddol.divinvest.com/ddol/servlet/CustomizedClientProxyServlet?accountNumber=GT62178LY+00001&amp;division=&amp;coBrandID=generic&amp;allianceCode=01&amp;LOB=CORP"> </div>
+            <div class="modal-body">
+
+                <div class="nav-tabs-wrapper">
+                    <ul class="nav nav-tabs" role="tablist" id="help_nav">
+                        <li class="active"> <a href="#contact_tab" aria-controls="contact_tab" role="tab" data-toggle="tab">Contact Us</a></li>
+                        <li> <a href="#faq_tab" aria-controls="faq_tab" role="tab" data-toggle="tab">FAQs</a></li>
+                        <li> <a href="#glossary_tab" aria-controls="glossary_tab" role="tab" data-toggle="tab">Glossary</a></li>
+                    </ul>
+                </div>
+                <div class="nav-tabs-mobile-border visible-xs" role="presentation"></div>
+
+                <div class="tab-content">
+                    <div role="tabpanel" class="tab-pane active" id="contact_tab">
+                        <div class="alert  alert-info">
+                            <div class="alert-icon"> <span class="trs-icons-alert-info  alert-icon-size" role="presentation"></span></div>
+                            <div class="alert-message">
+                                <p>Before you send an e-mail, you may want to review our <a href="#" data-target="#faq_tab" class="alert-link js-tab-link">Frequently Asked Questions</a>. To send an email, fill out the fields below and select SEND. For your protection, please do not include sensitive personal information such as social security numbers in your comments.</p>
+                            </div>
+                        </div>
+                        <h3>Financial Transactions &amp; Account Inquiries</h3>
+                        <p>Please note: Certain requests cannot be made through e-mail. Representatives are available: Monday through Friday: 8:00 a.m. to 9:00 p.m. ET</p>
+                        <p>If you would like to make an account transaction, please call to speak with a representative: <a href="tel:+18007555801">800-755-5801</a></p>
+                        <p>If you have lost or forgotten your password, or you need your password reset, you must call for assistance: <a href="tel:+18773483365">877-348-3365</a></p>
+                        <h3>General or Technical Information &amp; Questions</h3>
+                        <p>For questions about our web site or to report a technical problem, please use our email form below.</p>
+                        <div class="alert  alert-info margin-bottom">
+                            <div class="alert-icon"> <span class="trs-icons-alert-info  alert-icon-size" role="presentation"></span></div>
+                            <div class="alert-message">
+                                <p>In order to help us respond to your technical web questions as quickly and thoroughly as possible, please provide answers to the following questions below:</p>
+                                <ul class="bullet-list">
+                                    <li>What PC model are you using?</li>
+                                    <li>What error message are you getting or what is the message at the bottom of the screen?</li>
+                                    <li>Are you accessing from home or work?</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <form class="form-horizontal">
+                            <div class="form-group">
+                                <div class="col-xs-12 col-sm-7">
+                                    <label for="firstNameInput">First Name:</label>
+                                    <input name="firstNameInput" id="firstNameInput" type="text" autocapitalize="words" autocorrect="off" autocomplete="given-name" disabled value="John">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <div class="col-xs-12 col-sm-7">
+                                    <label for="lastNameInput">Last Name: </label>
+                                    <input name="lastNameInput" id="lastNameInput" type="text" autocapitalize="words" autocorrect="off" autocomplete="family-name" disabled value="Tester">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <div class="col-xs-7 col-sm-5">
+                                    <label for="telInput">Daytime Phone: </label>
+                                    <input name="telInput" id="telInput" type="tel" autocorrect="off" autocomplete="tel">
+                                </div>
+                                <div class="col-xs-5 col-sm-2">
+                                    <label for="phoneExt">ext.</label>
+                                    <input name="phoneExt" id="phoneExt" type="text" pattern="\d*" novalidate autocorrect="off" autocomplete="tel-extension">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <div class="col-xs-12 col-sm-7">
+                                    <label for="emailInput">Email Address:</label>
+                                    <input name="emailInput" id="emailInput" type="email" autocapitalize="off" autocorrect="off" autocomplete="email" value="test-user@transamerica.com" disabled>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <div class="col-xs-12 col-sm-7">
+                                    <label for="updateEmail">Verify Email Address:</label>
+                                    <input name="updateEmail" id="updateEmail" type="email" autocapitalize="off" autocorrect="off" autocomplete="email" placeholder="test-user@transamerica.com" disabled>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <div class="checkbox-inline">
+                                    <input type="checkbox" id="updateEmailCheck" name="check">
+                                    <label for="updateEmailCheck"><span role="checkbox"></span>Update my account(s) with this email address</label>
+                                </div>
+                                <p class="horizontal-padding">Check the box for all future email correspondence to be sent to this email address, including electronic notifications for any services in which you are enrolled.</p>
+                            </div>
+
+                            <div class="form-group">
+                                <div class="col-xs-12 col-sm-7">
+                                    <label for="company">Employer:</label>
+                                    <input name="company" id="company" type="text" autocapitalize="off" autocorrect="off" autocomplete="organization" value="Milwaukee Electric Tool Corporation" disabled>
+                                </div>
+                            </div>
+                            <div class="form-inline">
+                                <fieldset><legend class="label">Are you still employed here?</legend>
+                                	<input type="radio" id="employedYes" name="activeEmployment">
+                                	<label for="employedYes" class="radio-inline"> <span role="radio"></span> Yes</label>
+                                	<input type="radio" id="employedNo" name="activeEmployment">
+                                	<label for="employedNo" class="radio-inline"> <span role="radio"></span> No</label>
+                              	</fieldset>
+                            </div>
+                            <div class="form-group">
+                                <div class="col-xs-12 col-sm-7">
+                                    <label for="acctNum">Account Number:</label>
+                                    <input name="acctNum" id="acctNum" type="text" autocapitalize="off" autocorrect="off" autocomplete="" pattern="\d*">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <div class="col-xs-12">
+                                    <label for="comments">Your Question:</label>
+                                    <textarea class="form-control" rows="5" id="comments" maxlength="500"></textarea>
+                                </div>
+                            </div>
+                            <div class="form-group modal-footer">
+                                <button type="reset" class="btn btn-secondary left" data-dismiss="modal" href="#">Reset</button>
+                                <a type="button" class="btn btn-primary left" href="javascript:window.print();"><span class="glyphicon glyphicon-print" role="presentation"></span> Print</a> <a type="button" class="btn btn-secondary" data-dismiss="modal" href="#">Back</a> <a type="button" class="btn btn-primary js-helpform-submit" href="#">Send</a> </div>
+                        </form>
+                    </div>
+                    <div role="tabpanel" class="tab-pane" id="faq_tab">
+                        <div class="alert  alert-info">
+                            <div class="alert-icon"> <span class="trs-icons-alert-info  alert-icon-size" role="presentation"></span></div>
+                            <div class="alert-message">
+                                <p>To view the answers to the following questions, select the link for that question.</p>
+                            </div>
+                        </div>
+                        <ol class="alpha-list panel-group" role="tablist" aria-multiselectable="true">
+                            <li class="js-faq-group">
+                                <h3>Access</h3>
+                                <ol class="number-list" id="faq_list_1">
+                                    <li class="panel"> <a href="#ans_1" data-toggle="collapse" data-parent="#faq_list_1" role="button" aria-expanded="false" aria-controls="ans_1" id="q_1">Are there any special browser requirements to use My TRSRetire?</a>
+                                        <div role="tab" class="collapse" id="ans_1" aria-labelledby="q_1">
+                                            <p>My TRSRetire has been optimized to work best in Microsoft Internet Explorer (version 8.0 or higher), as well as Google Chrome, Mozilla Firefox, and Apple Safari. To check the current version of Internet Explorer, select HELP in your browser menu, then choose ABOUT INTERNET EXPLORER. You can download a free copy of the latest version of Microsoft Internet Explorer, Firefox, Safari or Chrome by clicking on the appropriate button below.</p>
+                                            <ul class="inline-list">
+                                                <li><a href="#" target="_blank"> <img src="http://ddol.divinvest.com/ddol/tiles/generic/images/misc/but_explorer.gif" alt="Get Internet Explorer"></a></li>
+                                                <li><a href="#" target="_blank"> <img src="http://ddol.divinvest.com/ddol/tiles/generic/images/misc/but_firefox.gif" alt="Get Firefox"></a></li>
+                                                <li><a href="#" target="_blank"> <img src="http://ddol.divinvest.com/ddol/tiles/generic/images/misc/but_safari.gif" alt="Get Safari"></a></li>
+                                                <li><a href="#" target="_blank"> <img src="http://ddol.divinvest.com/ddol/tiles/generic/images/misc/but_chrome_logo.gif" alt="Get Chrome"></a></li>
+                                            </ul>
+                                            <p>Additionally, this website works best with a minimum version of Adobe Flash Player 9 and a browser with JavaScript enabled.</p>
+                                            <a href="#" target="_blank"> <img src="http://www.liveauctioneers.com/help/bidders/images/get_adobe_flash_player.png" alt="Get Flash"></a> </div>
+                                    </li>
+                                    <li class="panel"> <a href="#ans_2" data-toggle="collapse" data-parent="#faq_list_1" role="button" aria-expanded="false" aria-controls="ans_2" id="q_2">If I am going to dial into the Internet, how do I disable call waiting?</a>
+                                        <div role="tab" class="collapse" id="ans_2" aria-labelledby="q_2">
+                                            <p>Insert *70 in front of the telephone number in the phone number dialogue box on your computer prior to dialing OR press *70 on your telephone and hang up the phone. Call waiting will be disabled for the next outgoing call made on the phone line. Call waiting will not be disabled for any further calls unless *70, is dialed again.</p>
+                                        </div>
+                                    </li>
+                                    <li class="panel"> <a href="#ans_3" data-toggle="collapse" data-parent="#faq_list_1" role="button" aria-expanded="false" aria-controls="ans_3" id="q_3">Why do I have trouble signing in from work?</a>
+                                        <div role="tab" class="collapse" id="ans_3" aria-labelledby="q_3">
+                                            <p>You may be behind a corporate firewall at work. The firewall serves to enforce security policy on your network. Often, administrators restrict encrypted information, like your Transamerica account information, from entering networks. Verify your restrictions by contacting your network administrator.</p>
+                                        </div>
+                                    </li>
+                                </ol>
+                            </li>
+                            <li class="js-faq-group">
+                                <h3>Signing In</h3>
+                                <ol class="number-list"  id="faq_list_2">
+                                    <li class="panel"> <a href="#ans_4" data-toggle="collapse" data-parent="#faq_list_2" role="button" aria-expanded="false" aria-controls="ans_4">I haven't established a Username/Password. How do I create one?</a>
+                                        <div role="tabpanel" class="collapse" id="ans_4">
+                                            <p>If you are a first time user select the GET STARTED button on the Sign In screen, it will take you to the Welcome Screen to create your Username and Password.</p>
+                                        </div>
+                                    </li>
+                                    <li class="panel"> <a href="#ans_5" data-toggle="collapse" data-parent="#faq_list_2" role="button" aria-expanded="false" aria-controls="ans_5">Why does My TRSRetire offer the option to use Username or Social Security Number for Sign In?</a>
+                                        <div role="tabpanel" class="collapse" id="ans_5">
+                                            <p>Your personal information is very important to us. My TRSRetire offers the option of using either Username or Social Security Number for additional security.</p>
+                                        </div>
+                                    </li>
+                                    <li class="panel"> <a href="#ans_9" data-toggle="collapse" data-parent="#faq_list_2" role="button" aria-expanded="false" aria-controls="ans_9">How can I change my Username?</a>
+                                        <div role="tabpanel" class="collapse" id="ans_9">
+                                            <p>Select the change Username option in the Manage Profile section. You will be able to create a new Username or use your Social Security Number as your Username.</p>
+                                        </div>
+                                    </li>
+                                    <li class="panel"> <a href="#ans_10" data-toggle="collapse" data-parent="#faq_list_2" role="button" aria-expanded="false" aria-controls="ans_10">What if I forgot my Username?</a>
+                                        <div role="tabpanel" class="collapse" id="ans_10">
+                                            <p>Use your Social Security Number if you do not remember your Username.</p>
+                                        </div>
+                                    </li>
+                                    <li class="panel"> <a href="#ans_6" data-toggle="collapse" data-parent="#faq_list_2" role="button" aria-expanded="false" aria-controls="ans_6">What if I forgot my password?</a>
+                                        <div role="tabpanel" class="collapse" id="ans_6">
+                                            <p>Select the 'Lost your ID or password?' link on the Sign In screen. You will be required to enter your social security or username to have your password hint emailed to you. If you still do not remember your password, please call 800-755-5801 to speak with a Transamerica Retirement Solutions Representative.</p>
+                                        </div>
+                                    </li>
+                                    <li class="panel"> <a href="#ans_7" data-toggle="collapse" data-parent="#faq_list_2" role="button" aria-expanded="false" aria-controls="ans_7">How do I change my password?</a>
+                                        <div role="tabpanel" class="collapse" id="ans_7">
+                                            <p>Select the 'Change Password' option in the Manage Profile section.</p>
+                                        </div>
+                                    </li>
+                                    <li class="panel"> <a href="#ans_8" data-toggle="collapse" data-parent="#faq_list_2" role="button" aria-expanded="false" aria-controls="ans_8">Why doesn't my password work when I try to Sign In?</a>
+                                        <div role="tabpanel" class="collapse" id="ans_8">
+                                            <p>Make sure that you are entering your correct Username or Social Security Number and Password. If you are still unable to Sign In, please call 800-755-5801 to speak with a Transamerica Retirement Solutions Representative or send us an email using Contact Us in Help.</p>
+                                            <div class="alert alert-caution">
+                                                <div class="alert-icon"><span class="trs-icons-alert-caution  alert-icon-size" role="presentation"></span></div>
+                                                <div class="alert-message"> <strong>Note:</strong>
+                                                    <p>After three unsuccessful Sign In attempts, your account will be disabled.</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </li>
+                                </ol>
+                            </li>
+                            <li class="js-faq-group">
+                                <h3>Service</h3>
+                                <ol class="number-list"  id="faq_list_3">
+                                    <li class="panel"> <a href="#ans_11" data-toggle="collapse" data-parent="#faq_list_3" role="button" aria-expanded="false" aria-controls="ans_11">What services does My TRSRetire provide?</a>
+                                        <div role="tabpanel" class="collapse" id="ans_11">
+                                            <p>My TRSRetire provides you with detailed fund information, transaction history, historical account balances and unit values. You also have access to online investment fund transfers and investment fund allocation changes as long as your plan doesn't have any special fund restrictions.</p>
+                                        </div>
+                                    </li>
+                                    <li class="panel"> <a href="#ans_12" data-toggle="collapse" data-parent="#faq_list_3" role="button" aria-expanded="false" aria-controls="ans_12">When is My TRSRetire available?</a>
+                                        <div role="tabpanel" class="collapse" id="ans_12">
+                                            <p>My TRSRetire is accessible 24 hours a day, 7 days a week.</p>
+                                        </div>
+                                    </li>
+                                    <li class="panel"> <a href="#ans_13" data-toggle="collapse" data-parent="#faq_list_3" role="button" aria-expanded="false" aria-controls="ans_13">Can I print the information from My TRSRetire that appears on my monitor?</a>
+                                        <div role="tabpanel" class="collapse" id="ans_13">
+                                            <p>Yes, you can print any screen using the supported Internet browsers. In Internet Explorer or Netscape, select FILE in your browser menu and then select PRINT. Make sure that you have the right printer selected before sending the file to the printer. If there is a print button available on the page, use the print button.</p>
+                                            <div class="alert alert-info">
+                                                <div class="alert-icon"><span class="trs-icons-alert-info alert-icon-size" role="presentation"></span></div>
+                                                <div class="alert-message"> <strong>Note:</strong>
+                                                    <p>Some screens will require you to print landscape in order to view all of the information on the screen. To do this in Internet Explorer, simply select File and Page Setup, and select the Landscape option. If you are using Netscape, select File and Print and then the Properties button. Select the Landscape option and then OK.</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li class="panel"> <a href="#ans_14" data-toggle="collapse" data-parent="#faq_list_3" role="button" aria-expanded="false" aria-controls="ans_14">Why does the page cut off when I print?</a>
+                                        <div role="tabpanel" class="collapse" id="ans_14">
+                                            <p>Some pages may be too wide to print with your paper orientation set to PORTRAIT.</p>
+                                            <p>To change your paper orientation in Internet Explorer, select FILE on your browser menu and then select PAGE SETUP. In the lower left corner select LANDSCAPE and then select OK. When you are ready to print, select FILE on your browser menu then select PRINT. This setting should remain in effect until you change it.</p>
+                                            <p>To change your paper orientation in Netscape, wait until you are ready to print. When ready, select FILE on your browser menu and then select PRINT. After choosing your printer from the dropdown box, select PROPERTIES. Make sure that the PAPER tab is selected at the  Select LANDSCAPE and then select OK. Select OK to print. This setting should remain in effect until you change it.</p>
+                                        </div>
+                                    </li>
+                                    <li class="panel"> <a href="#ans_15" data-toggle="collapse" data-parent="#faq_list_3" role="button" aria-expanded="false" aria-controls="ans_15">When I select the Fund Hyperlinks, why do I get a blank screen?</a>
+                                        <div role="tabpanel" class="collapse" id="ans_15">
+                                            <p>If you double-click on the Fund Hyperlinks, the linked screen might be behind the current screen. All hyperlinks should be selected with a single mouse click.</p>
+                                        </div>
+                                    </li>
+                                    <li class="panel"> <a href="#ans_16" data-toggle="collapse" data-parent="#faq_list_3" role="button" aria-expanded="false" aria-controls="ans_16">When I request changes to my account how can I ensure my request has been processed?</a>
+                                        <div role="tabpanel" class="collapse" id="ans_16">
+                                            <p>When you are requesting financial changes to your account, there will be a confirmation number displayed when the transaction is complete. Please make a note of the confirmation number.</p>
+                                        </div>
+                                    </li>
+                                    <li class="panel"> <a href="#ans_17" data-toggle="collapse" data-parent="#faq_list_3" role="button" aria-expanded="false" aria-controls="ans_17">Whom do I contact for questions?</a>
+                                        <div role="tabpanel" class="collapse" id="ans_17">
+                                            <p>If you have any questions about this Web site please contact a Transamerica Retirement Solutions  Representative at <a href="tel:+18007555801">800-755-5801</a> or send us an e-mail by using Contact Us in Help.</p>
+                                        </div>
+                                    </li>
+                                    <li class="panel"> <a href="#ans_18" data-toggle="collapse" data-parent="#faq_list_3" role="button" aria-expanded="false" aria-controls="ans_18">How soon can I expect a response from using Contact Us?</a>
+                                        <div role="tabpanel" class="collapse" id="ans_18">
+                                            <p>Our standard response for most inquiries is within 24 hours.</p>
+                                        </div>
+                                    </li>
+                                </ol>
+                            </li>
+                            <li class="js-faq-group">
+                                <h3>Security</h3>
+                                <ol class="number-list"  id="faq_list_4">
+                                    <li class="panel"> <a href="#ans_19" data-toggle="collapse" data-parent="#faq_list_4" role="button" aria-expanded="false" aria-controls="ans_19">How safe are Internet transmissions between my computer and My TRSRetire?</a>
+                                        <div role="tabpanel" class="collapse" id="ans_19">
+                                            <p>Using advanced encryption technologies, My TRSRetire ensures that your account information is protected from unauthorized access or alteration. However, this does not apply to questions sent via e-mail (regular Internet e-mail is not secure and should not be used to send confidential information to My TRSRetire).</p>
+                                            <p>As security technology advances, My TRSRetire will continue to use updated technology to protect the integrity and security of information and transactions.</p>
+                                        </div>
+                                    </li>
+                                    <li class="panel"> <a href="#ans_20" data-toggle="collapse" data-parent="#faq_list_4" role="button" aria-expanded="false" aria-controls="ans_20">What is 128-bit encryption or U.S. Security?</a>
+                                        <div role="tabpanel" class="collapse" id="ans_20">
+                                            <p>To encrypt means to encode using a public-key cryptography system developed by RSA. 128-bit encryption is the strongest form of data encryption commercially available. A higher number of bits mean more security.</p>
+                                        </div>
+                                    </li>
+                                    <li class="panel"> <a href="#ans_21" data-toggle="collapse" data-parent="#faq_list_4" role="button" aria-expanded="false" aria-controls="ans_21">What are digital certificates?</a>
+                                        <div role="tabpanel" class="collapse" id="ans_21">
+                                            <p>Digital certificates are electronic means of authenticating a user. Transamerica uses digital certificates to complement other features of My TRSRetire security architecture.</p>
+                                        </div>
+                                    </li>
+                                    <li class="panel"> <a href="#ans_22" data-toggle="collapse" data-parent="#faq_list_4" role="button" aria-expanded="false" aria-controls="ans_22">What is Secure Socket Layer (SSL)?</a>
+                                        <div role="tabpanel" class="collapse" id="ans_22">
+                                            <p>Secure Socket Layer (SSL) is another security convention used by My TRSRetire. SSL establishes a secure session by electronically authenticating each end of an encrypted transmission. This way, you know exactly with whom you are communicating before sending any sensitive information.</p>
+                                        </div>
+                                    </li>
+                                    <li class="panel"> <a href="#ans_23" data-toggle="collapse" data-parent="#faq_list_4" role="button" aria-expanded="false" aria-controls="ans_23">What is https://?</a>
+                                        <div role="tabpanel" class="collapse" id="ans_23">
+                                            <p>While using My TRSRetire, note in the Web address bar of your browser, that the URL starts with HTTPS rather than HTTP. The 'S' stands for secure which means encrypted.</p>
+                                        </div>
+                                    </li>
+                                    <li class="panel"> <a href="#ans_24" data-toggle="collapse" data-parent="#faq_list_4" role="button" aria-expanded="false" aria-controls="ans_24">Please explain the safety of My TRSRetire on the Internet in greater detail.</a>
+                                        <div role="tabpanel" class="collapse" id="ans_24">
+                                            <p>Your Social Security Number/Username and My TRSRetire password are used to protect your account information from unauthorized access. A corporate firewall protects the My TRSRetire database from Internet hackers.</p>
+                                            <p>All communication with My TRSRetire is conducted as a "secure" activity. Transamerica Retirement Solutions, like other top financial service firms doing business on the Internet, has taken extra precaution to ensure confidentiality. Data about a participant account is encrypted in both directions as it travels over the Internet between your computer and My TRSRetire.</p>
+                                            <p>Any serious security problem concerning transfer of confidential information would most likely be an Internet-wide problem. The public would know immediately about such a problem from the business media. Transamerica Retirement Solutions would take prompt action to further protect the confidentiality of participant and plan data.</p>
+                                            <p>My TRSRetire uses browser-based security technology to encrypt the transmission of data and information between your PC and Transamerica's computer networks. By using browser based security systems, you can always verify the security status of your connection by the presence of a security icon on your browser.</p>
+                                            <p>Transamerica Retirement Solutions utilizes 128-bit encryption technology to establish a secure end-to-end connection.  Currently, 128-bit encryption, which is also known as "U.S. domestic encryption," provides the highest level of Internet security commercially available.</p>
+                                        </div>
+                                    </li>
+                                    <li class="panel"> <a href="#ans_25" data-toggle="collapse" data-parent="#faq_list_4" role="button" aria-expanded="false" aria-controls="ans_25">Why is it important to use the Sign Out button to exit your account?</a>
+                                        <div role="tabpanel" class="collapse" id="ans_25">
+                                            <p>Using the Sign Out button to exit will ensure the confidentially of your account.</p>
+                                        </div>
+                                    </li>
+                                </ol>
+                            </li>
+                        </ol>
+                        <div class="modal-footer"> <a type="button" class="btn btn-secondary left" data-dismiss="modal" href="#">Back</a> <a type="button" class="btn btn-primary left" href="javascript:window.print();"><span class="glyphicon glyphicon-print" role="presentation"></span> Print</a> </div>
+                    </div>
+                    <div role="tabpanel" class="tab-pane panel__glossary" id="glossary_tab">
+                        <p> This glossary of investment and retirement related terms provides simple definitions of terms that you may need to know.</p>
+                        <div class="alert alert-info">
+                            <div class="alert-icon"><span class="trs-icons-alert-info alert-icon-size" role="presentation"></span></div>
+                            <div class="alert-message">
+                                <p>To see a word and its's definition, select a letter <span class="hidden-sm hidden-md hidden-lg">from the menu </span>to go to that section of the alphabet.</p>
+                            </div>
+                        </div>
+                        <nav class="navbar navbar-default">
+                            <div class="navbar-header">
+                                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#glossary_nav" aria-expanded="false"> <span class="sr-only">Toggle navigation</span> <span class="trs-icons-hamburger" aria-hidden="true"></span> </button>
+                            </div>
+                            <div class="collapse navbar-collapse" id="glossary_nav">
+                                <ul class="nav navbar-nav">
+                                    <li><a href="#gloss_a" role="navigation" class="navbar-btn js-gloss-scroll">A</a></li>
+                                    <li><a href="#gloss_b" role="navigation" class="navbar-btn js-gloss-scroll">B</a></li>
+                                    <li><a href="#gloss_c" role="navigation" class="navbar-btn js-gloss-scroll">C</a></li>
+                                    <li><a href="#gloss_d" role="navigation" class="navbar-btn js-gloss-scroll">D</a></li>
+                                    <li><a href="#gloss_e" role="navigation" class="navbar-btn js-gloss-scroll">E</a></li>
+                                    <li><a href="#gloss_f" role="navigation" class="navbar-btn js-gloss-scroll">F</a></li>
+                                    <li><a href="#gloss_g" role="navigation" class="navbar-btn js-gloss-scroll">G</a></li>
+                                    <li><a href="#gloss_h" role="navigation" class="navbar-btn js-gloss-scroll">H</a></li>
+                                    <li><a href="#gloss_i" role="navigation" class="navbar-btn js-gloss-scroll">I</a></li>
+                                    <li><a href="#gloss_j" role="navigation" class="navbar-btn js-gloss-scroll">J</a></li>
+                                    <li><a href="#gloss_k" role="navigation" class="navbar-btn js-gloss-scroll">K</a></li>
+                                    <li><a href="#gloss_l" role="navigation" class="navbar-btn js-gloss-scroll">L</a></li>
+                                    <li><a href="#gloss_m" role="navigation" class="navbar-btn js-gloss-scroll">M</a></li>
+                                    <li><a href="#gloss_n" role="navigation" class="navbar-btn js-gloss-scroll">N</a></li>
+                                    <li><a href="#gloss_o" role="navigation" class="navbar-btn js-gloss-scroll">O</a></li>
+                                    <li><a href="#gloss_p" role="navigation" class="navbar-btn js-gloss-scroll">P</a></li>
+                                    <li><a href="#gloss_q" role="navigation" class="navbar-btn js-gloss-scroll">Q</a></li>
+                                    <li><a href="#gloss_r" role="navigation" class="navbar-btn js-gloss-scroll">R</a></li>
+                                    <li><a href="#gloss_s" role="navigation" class="navbar-btn js-gloss-scroll">S</a></li>
+                                    <li><a href="#gloss_t" role="navigation" class="navbar-btn js-gloss-scroll">T</a></li>
+                                    <li><a href="#gloss_u" role="navigation" class="navbar-btn js-gloss-scroll">U</a></li>
+                                    <li><a href="#gloss_v" role="navigation" class="navbar-btn js-gloss-scroll">V</a></li>
+                                    <li><a href="#gloss_w" role="navigation" class="navbar-btn js-gloss-scroll">W</a></li>
+                                    <li><a href="#gloss_x" role="navigation" class="navbar-btn js-gloss-scroll">X</a></li>
+                                    <li><a href="#gloss_y" role="navigation" class="navbar-btn js-gloss-scroll">Y</a></li>
+                                    <li><a href="#gloss_z" role="navigation" class="navbar-btn js-gloss-scroll">Z</a></li>
+                                    <li><a href="#gloss_num" role="navigation" class="navbar-btn js-gloss-scroll">#</a></li>
+                                </ul>
+                            </div>
+                        </nav>
+                        <dl>
+                            <dt id="gloss_a">A</dt>
+                            <dt><dfn>(Future) Allocations</dfn></dt>
+                            <dd>To distribute a percentage of money to one or more funds.</dd>
+                            <dt id="gloss_b">B</dt>
+                            <dt><dfn>Back End Load</dfn></dt>
+                            <dd>A sales charge or commission paid when an individual sells an investment, such as a mutual funds or an annuity. Intended to discourage withdrawals. Also called redemption fee or deferred sales charge.</dd>
+                            <dt><dfn>Bear Market</dfn></dt>
+                            <dd>A prolonged period in which investment prices fall, accompanied by widespread pessimism. If the period of falling stock prices is short and immediately follows a period of rising stock prices, it is instead called a correction. Bear markets usually occur when the economy is in a recession and unemployment is high, or when inflation is rising quickly. The most famous bear market in U.S. history was the Great Depression of the 1930s. A bear market is the opposite of a bull market.</dd>
+                            <dt><dfn>Benefits Administration</dfn></dt>
+                            <dd>The implementation and coordination of an employee benefits plan.</dd>
+                            <dt id="gloss_c">C <span class="pull-right"><a href="#glossary_tab" class="js-gloss-scroll">back to top</a></span></dt>
+                            <dt><dfn>Capital Gain</dfn></dt>
+                            <dd>The amount by which an asset's selling price exceeds its initial purchase price. A realized capital gain is an investment that has been sold at a profit. An unrealized capital gain is an investment that hasn't been sold yet but would result in a profit if sold. Capital gain is often used to mean realized capital gain. For most investments sold at a profit, including mutual funds, bonds, options, collectibles, homes, and businesses, the IRS is owed money called capital gains tax. Opposite of capital loss.</dd>
+                            <dt><dfn>Closing Price</dfn></dt>
+                            <dd>The price of the last transaction for a given security at the end of a given trading session.</dd>
+                            <dt><dfn>Confirmation</dfn></dt>
+                            <dd>A letter sent to an employee / participant confirming their transaction ( e.g. Loan, Transfers).</dd>
+                            <dt><dfn>Contribution Types</dfn></dt>
+                            <dd>The transfer of funds or property by either and employer or an employee to an employee retirement plan. Transamerica has identified eight contribution types relating to employee or employer contribution.</dd>
+                            <dt><dfn>Contributions (Saving Rate)</dfn></dt>
+                            <dd>A portion of an employee / participant's current salary that is invested in a retirement plan.</dd>
+                            <dt id="gloss_d">D</dt>
+                            <dt><dfn>Defined Contribution Plan</dfn></dt>
+                            <dd>A company retirement plan, such as a 401(k) or 403(b) plan, in which the employee elects to defer some amount of his/her salary into the plan.</dd>
+                            <dt><dfn>Defined Benefit Plan</dfn></dt>
+                            <dd>A company retirement plan, such as a pension plan, in which a retired employee receives a specific amount based on salary history and years of service, and in which the employer bears the investment risk. Contributions may be made by the employee, the employer, or both.</dd>
+                            <dt><dfn>Diversification</dfn></dt>
+                            <dd>Diversification simply means not putting all your investment 'eggs in one basket.' The key to diversification is that each chosen investment exhibits a low correlation, or dissimilar volatility and price movement, in order to achieve the optimal risk / return tradeoff. The goal of diversification is to reduce overall portfolio risk given a desired level of return.</dd>
+                            <dt id="gloss_e">E</dt>
+                            <dt><dfn>Employee Stock Ownership Plan</dfn></dt>
+                            <dd>A trust established by a corporation which acts as a tax-qualified, defined-contribution retirement plan by making the corporation's employees partial owners. Contributions are made by the sponsoring employer, and can grow tax-deferred, just as with an IRA or 401(k). The benefits for the company include increased cash flow, tax savings, and increased productivity from highly motivated workers. The main benefit for the employees is the ability to share in the company's success. Due to the tax benefits, the administration of ESOPs is regulated, and numerous restrictions apply. Also called stock purchase plan.</dd>
+                            <dt id="gloss_f">F <span class="pull-right"><a href="#glossary_tab" class="js-gloss-scroll">back to top</a></span></dt>
+                            <dt><dfn>Fiduciary</dfn></dt>
+                            <dd>An individual, corporation or association holding assets for another party, often with the legal authority and duty to make decisions regarding financial matters on behalf of the other party.</dd>
+                            <dt><dfn>Front-End Load</dfn></dt>
+                            <dd>A sales charge paid when an individual buys an investment, such as a mutual fund, limited partnership, annuity, or insurance policy. The load is clubbed with the first payment made by an investor, so the total initial payment is higher than the later payments. The purpose of a load is to cover administrative expenses and transaction costs and sometimes to discourage asset turnover. Opposite of back-end load.</dd>
+                            <dt id="gloss_g">G</dt>
+                            <dt><dfn>General Obligation Bond</dfn></dt>
+                            <dd>A municipal bond secured by the taxing and borrowing power of the municipality issuing it.</dd>
+                            <dt><dfn><abbr>GIC</abbr></dfn></dt>
+                            <dd>Guaranteed Investment Contract. A debt instrument issued by an insurance company, usually in a large denomination, and often bought for retirement plans. The interest rate paid is guaranteed, but the principal is not. Also called guaranteed interest contract.</dd>
+                            <dt id="gloss_h">H</dt>
+                            <dt><dfn>High-Grade Bond</dfn></dt>
+                            <dd>A bond with a rating of AAA or AA, the two highest ratings.</dd>
+                            <dt><dfn>Hedge Fund</dfn></dt>
+                            <dd>A fund, usually used by wealthy individuals and institutions, which is allowed to use aggressive strategies that are unavailable to mutual funds, including selling short, leverage, program trading, swaps, arbitrage, and derivatives. Hedge funds are exempt from many of the rules and regulations governing other mutual funds, which allows them to accomplish aggressive investing goals. They are restricted by law to no more than 100 investors per fund, and as a result most hedge funds set extremely high minimum investment amounts, ranging anywhere from $250,000 to over $1 million. As with traditional mutual funds, investors in hedge funds pay a management fee; however, hedge funds also collect a percentage of the profits (usually 20%).</dd>
+                            <dt id="gloss_i">I <span class="pull-right"><a href="#glossary_tab" class="js-gloss-scroll">back to top</a></span></dt>
+                            <dt><dfn><abbr>IRA</abbr></dfn></dt>
+                            <dd>Individual Retirement Account- A retirement savings program for indiviuals to which yearly tax deductible contributions up to a specified limit can be made. The amounts contributed are not taxed until withdrawal. Withdrawal is not permitted, without penalty, until the individual reaches age 59 &frac12;.</dd>
+                            <dt><dfn>Investment Mix</dfn></dt>
+                            <dd>The combination of all the funds in your investment portfolio.</dd>
+                            <dt id="gloss_j">J</dt>
+                            <dt><dfn>January Effect</dfn></dt>
+                            <dd>Tendency of the stock market to rise between December 31 and the end of the first week in January. The January Effect occurs because many investors choose to sell some of their stock right before the end of the year in order to claim a capital loss for tax purposes. Once the tax calendar rolls over to a new year on January 1st these same investors quickly reinvest their money in the market, causing stock prices to rise. Although the January Effect has been observed numerous times throughout history, it is difficult for investors to profit from it since the market as a whole expects it to happen and therefore adjusts its prices accordingly.</dd>
+                            <dt><dfn>Joint Life Annuity</dfn></dt>
+                            <dd>An annuity issued on two individuals under which payments continue in whole or in part until both individuals die. Also called joint and survivor annuity.</dd>
+                            <dt><dfn>Junk Bond</dfn></dt>
+                            <dd>A high-risk, non-investment-grade bond with a low credit rating, usually BB or lower; as a consequence, it usually has a high yield . Opposite of investment-grade bond.</dd>
+                            <dt id="gloss_k">K</dt>
+                            <dt><dfn>Kappa</dfn></dt>
+                            <dd>A value representing the expected change in the price of an option in response to a 1% change in the volatility of the underlying stock.</dd>
+                            <dt><dfn>Keogh Plan</dfn></dt>
+                            <dd>A tax-deferred qualified retirement plan for self-empoyed individuals and unincorporated businesses. Also called self-employed pension.</dd>
+                            <dt><dfn>Key Person Insurance</dfn></dt>
+                            <dd>Life insurance purchased by a company or investor on the life of a key executive. Usually the company is the policy's beneficiary. Also called business life insurance.</dd>
+                            <dt><dfn>Krugerrand</dfn></dt>
+                            <dd>Gold coin minted by the Republic of South Africa.</dd>
+                            <dt id="gloss_l">L <span class="pull-right"><a href="#glossary_tab" class="js-gloss-scroll">back to top</a></span></dt>
+                            <dt><dfn>Loan Note</dfn></dt>
+                            <dd>A form of vendor finance or deferred payment, in which the purchaser acts as a borrower, agreeing to make payments to the holder of the transferable loan note at a specified future date.</dd>
+                            <dt><dfn>Loan Schedule</dfn></dt>
+                            <dd>A listing of the amounts of principal and interest, due dates, and balance after payment for a given loan.</dd>
+                            <dt id="gloss_m">M</dt>
+                            <dt><dfn>Matching Funds</dfn></dt>
+                            <dd>A type of employer contribution to an employee retirement fund in which employee contributions up to a maximum limit are accompanied by identical, or at least proportional, contributions by the employer.</dd>
+                            <dt><dfn>Money Market Fund</dfn></dt>
+                            <dd>A mutual fund that seeks maximum current income through Investment in securities may include bank CD, bankers acceptances, T-bills, repurchase agreements (repos), and commercial paper.</dd>
+                            <dt><dfn>Mutual Funds</dfn></dt>
+                            <dd>Type of investment vehicle in which many investors / employee money is pooled for specific investment purposes. Participants own shares in an investment portfolio, rather than individual securities.</dd>
+                            <dt id="gloss_n">N</dt>
+                            <dt><dfn>Nasdaq Composite Index</dfn></dt>
+                            <dd>A market-value weighted index of all common stocks listed on Nasdaq. The Nasdaq Composite dates back to 1971, which is when the Nasdaq exchange was first formalized. The index is used mainly to track technology stocks, and thus it is not a good indicator of the market as a whole. Unlike the Dow Jones Industrial Average (DJIA), the Nasdaq is market value-weighted, so it takes into account the total market capitalization of the companies it tracks and not just their share prices.</dd>
+                            <dt><dfn>New York Stock Exchange (NYSE)</dfn></dt>
+                            <dd>The oldest and largest stock exchange in the U.S., located on Wall Street in New York City. The NYSE is responsible for setting policy, supervising member activities, listing securities, overseeing the transfer of member seats, and evaluating applicants. It traces its origins back to 1792, when a group of brokers met under a tree at the tip of Manhattan and signed an agreement to trade securities. Unlike some of the newer exchanges , the NYSE still uses a large trading floor in order to conduct its transactions. It is here that the representatives of buyers and sellers, professionals known as brokers, meet and shout out prices at one another in order to strike a deal. This is called the open outcry system and it usually produces fair market pricing. In order to facilitate the exchange of stocks, the NYSE employs individuals called specialists who are assigned to manage the buying and selling of specific stocks and to buy those stocks when no one else will. Of the exchanges, the NYSE has the most stringent set of requirements in place for the companies whose stocks it lists, and even meeting these requirements is not a guarantee that the NYSE will list the company. The NYSE is also called Big Board.</dd>
+                            <dt id="gloss_o">O <span class="pull-right"><a href="#glossary_tab" class="js-gloss-scroll">back to top</a></span></dt>
+                            <dt><dfn>Obligation Bond</dfn></dt>
+                            <dd>Mortgage bond whose face value exceeds the value of the underlying property, and for which a personal obligation is created to compensate the lender for any costs that may exceed the value of the mortgage.</dd>
+                            <dt><dfn>Offering</dfn></dt>
+                            <dd>The making available of a new securities to the public through an underwriting. Also called public offering.</dd>
+                            <dt><dfn>Online Trading</dfn></dt>
+                            <dd>The increasingly popular activity of buying and selling securities over the Internet, or to a lesser extent, through a broker's proprietary software.</dd>
+                            <dt><dfn>Option</dfn></dt>
+                            <dd>The right, but not the obligation, to buy (for a call option) or sell (for a put option) a specific amount of a given stock, commodity, currency,index, or debt, at a specified price (the strike price) during a specified period of time. For stock options, the amount is usually 100 shares. Each option has a buyer, called the holder, and a seller, known as the writer. If the option contract is exercised, the writer is responsible for fulfilling the terms of the contract by delivering the shares to the appropriate party. In the case of a security that cannot be delivered such as an index, the contract is settled in cash. For the holder, the potential loss is limited to the price paid to acquire the option. When an option is not exercised, it expires. No shares change hands and the money spent to purchase the option is lost. For the buyer, the upside is unlimited. Options, like stocks, are therefore said to have an asymmetrical payoff pattern. For the writer, the potential loss is unlimited unless the contract is covered, meaning that the writer already owns the security underlying the option. Options are most frequently as either leverage or protection. As leverage, options allow the holder to control equity in a limited capacity for a fraction of what the shares would cost. The difference can be invested elsewhere until the option is exercised. As protection, options can guard against price fluctuations in the near term because they provide the right acquire the underlying stock at a fixed price for a limited time. risk is limited to the option premium (except when writing options for a security that is not already owned). However, the costs of trading options (including both commissions and the bid/ask spread) is higher on a percentage basis than trading the underlying stock. In addition, options are very complex and require a great deal of observation and maintenance. Aso called option contract.</dd>
+                            <dt id="gloss_p">P</dt>
+                            <dt><dfn><abbr>PCRA</abbr></dfn></dt>
+                            <dd>(Personal choice retirement account) is an investment option that allows participants to invest directly into a individual stocks or bonds, or a mutual fund not offered in their retirement plan.</dd>
+                            <dt><dfn>Pending Transfer</dfn></dt>
+                            <dd>A pending transfer is a transfer that has not been processed. This transfer will be valued using today's market closing unit values provided the transaction is completed prior to 4:00 PM ET. Transfer requests completed after 4:00 PM ET will be valued using the market closing unit values for the following business day.</dd>
+                            <dt id="gloss_q">Q</dt>
+                            <dt><dfn>Qualified Retirement Plan</dfn></dt>
+                            <dd>A plan that meets the requirements of Internal Revenue Code Section 401(a) and the Employee Retirement Income Security Act of 1974(ERISA) and is thus eligible for favorable tax treatment. These plans offer several tax benefits: they allow employers to deduct annual allowable contributions for each participant; contributions and earnings on those contributions are tax-deferred until withdrawn for each participant; and some of the taxes can be deferred even further through a transfer into an IRA.</dd>
+                            <dt><dfn>Quarterly Report</dfn></dt>
+                            <dd>Unaudited document required by the SEC for all U.S. public companies, reporting the financial results for the quarter and noting any significant changes or events in the quarter. Quarterly reports contain financial statements, a discussion from the management, and a list of &ldquo;material events&rdquo; that have occurred with the company (such as a stock split or acquisition). Also called Form 10-Q.</dd>
+                            <dt id="gloss_r">R <span class="pull-right"><a href="#glossary_tab" class="js-gloss-scroll">back to top</a></span></dt>
+                            <dt><dfn>Rate of Return</dfn></dt>
+                            <dd>The rate of return on an investment, expressed as a percent of the total amount invested.</dd>
+                            <dt><dfn>Rebalance (Investment Mix)</dfn></dt>
+                            <dd>The process of changing your current investment mix to a new Investment Mix.</dd>
+                            <dt><dfn>Rollover</dfn></dt>
+                            <dd>A tax-free reinvestment of a distribution from a qualified retirement plan into a IRA or other qualified plan within a specific time frame, usually 60 days.</dd>
+                            <dt id="gloss_s">S</dt>
+                            <dt><dfn>Savings Bond</dfn></dt>
+                            <dd>A registered, non-callable, non-transferable bond issued by the U.S. Government, and backed by its full faith and credit. Savings bonds differ from other treasury securities in several ways. Savings bonds are non-marketable, meaning that they cannot be bought and sold after they are purchased from the government; therefore, there is no secondary market for savings bonds. The tax benefits associated with savings bonds are significant. Like all treasury securities, they are exempt from state and local taxes, but in the specific case of savings bonds, all federal taxes may be deferred until the bond is redeemed. Therefore, even though interest will accrue, no taxes will be due until that money can be accessed. Additionally, if the money received at redemption is used to pay tuition expenses for the holder, a spouse or a dependent in the same year, the interest earned may be exempt from federal taxes as well. Face values range from $50 to $10,000. Also called U.S. Savings bond.</dd>
+                            <dt><dfn>Sector Fund</dfn></dt>
+                            <dd>A mutual fund which invests entirely or predominantly in a single sector of the stock market. A sector funds tend to be riskier and more volatile than the broad market because they are less diversified, although the risk level depends on the specific sector. Some investors choose sector funds when they believe that a specific sector will outperform the overall market, while others choose sector funds to hedge against other holdings in a portfolio. Some common sector funds include financial services funds, gold and precious metals funds, health care funds, and real estate funds, but sector funds exist for just about every sector.</dd>
+                            <dt><dfn>Strategic Allocation Fund (Multi asset class)</dfn></dt>
+                            <dd>A &ldquo;fund of funds&rdquo; that invests in an array of mutual funds to obtain a stated investment objective. Also known as &ldquo;lifestyle funds&rdquo;.</dd>
+                            <dt id="gloss_t">T</dt>
+                            <dt><dfn>Tender Offer</dfn></dt>
+                            <dd>A take over bid in the form of a public invitation to shareholders to sell their stock, generally at a price above the market price.</dd>
+                            <dt><dfn>Time Horizon</dfn></dt>
+                            <dd>The length of time a sum of money is expected to be invested. Also called investment horizon or horizon.</dd>
+                            <dt><dfn>Transfer</dfn></dt>
+                            <dd>A function that moves account balances between various funds.</dd>
+                            <dt><dfn>Transreferance Number</dfn></dt>
+                            <dd>A number assigned to each transaction, consisting of a current date and a sequential number within that date.</dd>
+                            <dt id="gloss_u">U <span class="pull-right"><a href="#glossary_tab" class="js-gloss-scroll">back to top</a></span></dt>
+                            <dt><dfn>Undervalued</dfn></dt>
+                            <dd>Something whose price is below its perceived value.</dd>
+                            <dt><dfn>Unit Value (NAV)</dfn></dt>
+                            <dd>The value of a mutual fund share determined by deducting the fund's liabilities from the total asset of the portfolio and dividing this amount by the number of shares outstanding. This is calculated once a day, based on the closing market price for each security in the fund portfolio.</dd>
+                            <dt><dfn>Unrealized Loss</dfn></dt>
+                            <dd>Loss which has occurred but has not yet been realized through a transaction, such as a stock which has fallen in value but is still being held. also called paper loss.</dd>
+                            <dt><dfn>U.S. Treasury Securities</dfn></dt>
+                            <dd>Negotiable U.S. Government debt obligations, backed by its full faith and credit. Exempt from state and local taxes. U.S. Treasury Securities are issued by the U.S. government in order to pay for government projects. The money paid out for a Treasury bond is essentially a loan to the government. As with any loan, repayment of principal is accompanied by a specified interest rate. These bonds are guaranteed by the &ldquo;full faith and credit&rdquo; of the U.S. government, meaning that they are extremely low risk (since the government can simply print money to pay back the loan). Additionally, interest earned on U.S. Treasury Securities is exempt from state and local taxes. Federal taxes, however, are still due on the earned interest. The government sells U.S. Treasury Securities by auction in the primary market, but they are marketable securities and therefore can be purchased through a broker in the very active secondary market. A broker will charge a fee for such a transaction, but the government charges no fee to participate in auctions. Prices on the secondary market and at auction are determined by interest rates. U.S. Treasury Securities issued today are not callable, so they will continue to accrue interest until the maturity date. One possible downside to U.S. Treasury Securities is that if interest rates increase during the term of the bond, the money invested will be earning less interest than it could earn elsewhere. Accordingly, the resale value of the bond will decrease as well. Because there is almost no risk of default by the government, the return on Treasury bonds is relatively low, and a high inflation rate can erase most of the gains by reducing the value of the principal and interest payments. There are three types of securities issued by the U.S. Treasury (bonds, bills,and notes), which are distinguished by the amount of time from the initial sale of the bond to maturity. Also called Treasuries.</dd>
+                            <dt id="gloss_v">V</dt>
+                            <dt><dfn>Value Fund</dfn></dt>
+                            <dd>A mutual fund that invests in companies which it determines to be underpriced by fundamental measures. Assuming that a company's share price will not remain undervalue indefinitely, the fund looks to make money by buying before the expected upturn. Value funds tend to focus on safety rather than growth, and often choose investments providing dividends as well as capital appreciation. They invest in companies that have low P/E ratio, and stocks that have fallen out of favor with mainstream investors, either due to changing investor preferences, a poor quarterly earnings report, or hard times in a particular industry. Value stocks are often mature companies that have stopped growing and that use their earnigs to pay dividends. Thus value funds produce current income (from the dividends) as well as long-term growth (from capital appreciation once the stocks become popular again).</dd>
+                            <dt><dfn>Vesting</dfn></dt>
+                            <dd>Represents the percent of ownership of employer contribution to a participant / employee account in a retirement saving plan. This is based on various eligibility factors.</dd>
+                            <dt id="gloss_w">W</dt>
+                            <dt><dfn>Weak Dollar</dfn></dt>
+                            <dd>Dollar that can be exchanged for only a small or decreasing amount of foreign currency. A weak dollar means that the U.S. dollar cannot buy very much of another currency. The strength of the dollar has an impact on imports and exports because goods and services from a foreign nation are usually purchased in the currency of the producing nation. A weak dollar usually leads to high exports and low imports. Opposite of strong dollar.</dd>
+                            <dt><dfn>Windfall</dfn></dt>
+                            <dd>Money received which was not expected and not a direct result of something the recipient did.</dd>
+                            <dt><dfn>World Bank</dfn></dt>
+                            <dd>An organization whose focus is on foreign exchange reserves and the balance of trade.</dd>
+                            <dt id="gloss_x">X <span class="pull-right"><a href="#glossary_tab" class="js-gloss-scroll">back to top</a></span></dt>
+                            <dt><dfn><abbr>X</abbr> or <abbr>XD</abbr></dfn></dt>
+                            <dd>A symbol used by newspapers to signify that a stock is trading ex-dividend, or that a bond is trading without interest, or that a mutual fund recently paid a capital gain or dividend.</dd>
+                            <dt><dfn><abbr>XR</abbr></dfn></dt>
+                            <dd>A symbol used by newspapers to signify that a stock is trading without rights attached. Those rights remain with the seller.</dd>
+                            <dt><dfn><abbr>XW</abbr></dfn></dt>
+                            <dd>A symbol used by newspapers to signify that a stock is ex-warrants.</dd>
+                            <dt id="gloss_y">Y</dt>
+                            <dt><dfn>Yield to Maturity</dfn></dt>
+                            <dd>Yield that would be realized on a bond or other fixed income security if the bond was held until the maturity date. It is greater than the current yield if the bond is selling at a discount and less than the current yield if the bond is selling at a premium.</dd>
+                            <dt><dfn>Yankee Bond Market</dfn></dt>
+                            <dd>Market for dollar-denominated bonds issued in the U.S. by foreign corporations, banks and governments.</dd>
+                            <dt id="gloss_z">Z </dt>
+                            <dt><dfn>Zero-Coupon Bond</dfn></dt>
+                            <dd>A bond which pays no coupons , is sold at a deep discount to its face value, and matures at its face value. A zero-coupon bond has the important advantage of being free of reinvestment risk, though the downside is that there is no opportunity to enjoy the effects of a rise in market interest rates. Also, such bonds tend to be very sensitive to changes in interest rates, since there are no coupon payments to reduce the impact of interest rate changes. In addition, markets for zero-coupon bonds are relatively illiquid. Under U.S. tax law, the imputed interest on a zero-coupon bond is taxable as it accrues, even though there is no cash flow.</dd>
+                            <dt><dfn>Zero-Coupon Convertible</dfn></dt>
+                            <dd>A zero-coupon issued by a corporation which can be converted into that corporation's common stock at a certain price, or a zero-coupon bond issued by a municipality which can be converted into an interest-bearing bond under certain circumstances. Also called split coupon bond.</dd>
+                            <dt id="gloss_num"># <span class="pull-right"><a href="#glossary_tab" class="js-gloss-scroll">back to top</a></span></dt>
+                            <dt><dfn>401(k) Plan</dfn></dt>
+                            <dd>A defined contribution plan, established by an employer. It enables employees to make pretax contributions by salary reduction agreements structured within the format of a cash or deferred plan.</dd>
+                            <dt><dfn>403(b) Plan</dfn></dt>
+                            <dd>A defined contribution plan established by certain tax exempt organizations and public schools for their employees.</dd>
+                            <dt><dfn>457 Plan</dfn></dt>
+                            <dd>A tax-exempt deferred compensation program made available to employees of state and federal governments and agencies. A 457 plan is similar to a 401(k) plan, except there are never employer matching contributions and the IRS does not consider it a qualified retirement plan. Participants can defer some of their annual income (up to an annual limit), and contributions and earnings are tax-deferred until withdrawal. Distributions start at retirement age but participants can also take distributions if they change jobs or in certain emergencies. Participants can choose to take distributions as a lump sum, annual installments or as an annuity. Distributions are subject to ordinary income taxes and the amounts cannot be transferred into an IRA.</dd>
+                        </dl>
+                        <div class="modal-footer"> <a type="button" class="btn btn-secondary left" data-dismiss="modal" href="#">Back</a> <a type="button" class="btn btn-primary left" href="javascript:window.print();"><span class="glyphicon glyphicon-print" role="presentation"></span> Print</a> </div>
+                    </div>
+                </div>
+                <div class="clearfix" aria-hidden="true"></div>
+            </div>
+        </div>
+        <!-- /.modal-content -->
+    </div>
+    <!-- /.modal-dialog -->
+</div>
+<!-- /.modal -->
+
+
+<script type="text/javascript">
+(function($){
+	$(ready);
+
+	function ready(){
+		$('.collapse', '#faq_tab').on('show.bs.collapse', faqAccordionEnhance);
+		$('.js-gloss-scroll', '#glossary_tab').on('click', glossaryGlider);
+		$('.js-tab-link').on('click', tabLinks);
+	}
+
+	function faqAccordionEnhance(){
+		var group = $(this).closest('.js-faq-group'),
+			groupMembers = $(this).closest('.panel').siblings(),
+			members = groupMembers.find('.collapse');
+			others = group.siblings('.js-faq-group').find('.collapse');
+
+		$(others).collapse('hide');
+		$(members).collapse('hide');
+	}
+
+	function glossaryGlider(e){
+		var goTo = $(this).attr('href');
+		e.preventDefault();
+		$('#glossary_nav').collapse('hide');
+		$('#help_window').animate( { scrollTop: $(goTo).offset().top - 10 });
+	}
+	function tabLinks() {
+		var targetTab = $(this).data('target');
+		$('#help_nav li a[href="'+targetTab+'"]').tab('show');
+	}
+
+
+
+})(jQuery);
+</script>
+
+    <!-- scripts -->
+    <script src="../../js/ontrack.js"></script>
+    <script src="../../js/layoutResponsive.js"></script>
+    <script src="../../js/mobile-nav.js"></script>
+    <script src="../../js/globalFooter.js"></script>
+
+		
+	<script>
+		// handle injection of items from PHP
+		var patternPartial = "pages-ontrack-withdrawals-from-retirement-assets";
+		var lineage        = [{"lineagePattern":"templates-main-layout","lineagePath":"..\/..\/patterns\/03-templates-000-main-layout\/03-templates-000-main-layout.html","lineageState":"inprogress"}];
+		var lineageR       = [];
+		var patternState   = "inprogress";
+		var cssEnabled     = false;
+	</script>
+		<script>
+		/*!
+		 * scriptLoader - v0.1
+		 *
+		 * Copyright (c) 2014 Dave Olsen, http://dmolsen.com
+		 * Licensed under the MIT license
+		 *
+		 */
+		
+		var scriptLoader = {
+			
+			run: function(js,cb,target) {
+				var s  = document.getElementById(target+'-'+cb); 
+				for (var i = 0; i < js.length; i++) {
+					var src = (typeof js[i] != "string") ? js[i].src : js[i];
+					var c   = document.createElement('script');
+					c.src   = '../../'+src+'?'+cb;
+					if (typeof js[i] != "string") {
+						if (js[i].dep !== undefined) {
+							c.onload = function(dep,cb,target) {
+								return function() {
+									scriptLoader.run(dep,cb,target);
+								}
+							}(js[i].dep,cb,target);
+						}
+					}
+					s.parentNode.insertBefore(c,s);
+				}
+			}
+			
+		}
+	</script>
+	<script id="pl-js-polyfill-insert-1491944073">
+		(function() {
+			if (self != top) {
+				var cb = '1491944073';
+				var js = [];
+				if (typeof document !== "undefined" && !("classList" in document.documentElement)) {
+					js.push("styleguide/js/vendor/classlist-polyfill.js");
+				}
+				scriptLoader.run(js,cb,'pl-js-polyfill-insert');
+			}
+		})();
+	</script>
+	<script id="pl-js-insert-1491944073">
+		(function() {
+			if (self != top) {
+				var cb = '1491944073';
+				var js = [ { "src": "styleguide/js/vendor/jwerty.js", "dep": [ "styleguide/js/postmessage.js", { "src": "data/annotations.js", "dep": [ "styleguide/js/annotations-pattern.js" ] }, "styleguide/js/code-pattern.js" ] } ];
+				scriptLoader.run(js,cb,'pl-js-insert');
+			}
+		})();
+	</script>
+	
+
+
+    <!-- Browser Update notification -->
+    <script>
+        var $buoop = {vs:{i:10,f:30,o:20,s:7},c:2};
+        function $buo_f(){
+            var e = document.createElement("script");
+            e.src = "//browser-update.org/update.min.js";
+            document.body.appendChild(e);
+        };
+        try {document.addEventListener("DOMContentLoaded", $buo_f,false)}
+        catch(e){window.attachEvent("onload", $buo_f)}
+    </script>
+	</body>
+</html>

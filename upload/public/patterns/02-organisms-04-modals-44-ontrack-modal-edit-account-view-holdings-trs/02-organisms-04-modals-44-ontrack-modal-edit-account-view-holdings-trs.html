@@ -1,0 +1,426 @@
+<!DOCTYPE HTML>
+		<!-- never cache patterns -->
+		<meta http-equiv="cache-control" content="max-age=0" />
+		<meta http-equiv="cache-control" content="no-cache" />
+		<meta http-equiv="expires" content="0" />
+		<meta http-equiv="expires" content="Tue, 01 Jan 1980 1:00:00 GMT" />
+		<meta http-equiv="pragma" content="no-cache" />
+		
+		<link rel="stylesheet" href="../../styleguide/css/styleguide.css?1491944073" media="all">
+		<link rel="stylesheet" href="../../styleguide/css/styleguide-specific.css?1491944073" media="all" />
+		
+
+
+<html class="pl" lang="en-us">
+
+<head>
+    <title>Pattern Lab</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=0">
+
+    <!-- Browser Elements Colors -->
+    <meta name="theme-color" content="#3e7cab"><!-- Chrome -->
+    <meta name="msapplication-navbutton-color" content="#3e7cab"><!-- Windows -->
+    <!-- iOS -->
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+
+    <!-- console.log polyfill - do not remove, it needs to load before any scripts -->
+    <script>
+    // Console-polyfill. MIT license.
+    // https://github.com/paulmillr/console-polyfill
+    // Make it safe to do console.log() always.
+    (function(global) {
+        'use strict';
+        if (!global.console) {
+            global.console = {};
+        }
+        var con = global.console;
+        var prop, method;
+        var dummy = function() {};
+        var properties = ['memory'];
+        var methods = ('assert,clear,count,debug,dir,dirxml,error,exception,group,' +
+            'groupCollapsed,groupEnd,info,log,markTimeline,profile,profiles,profileEnd,' +
+            'show,table,time,timeEnd,timeline,timelineEnd,timeStamp,trace,warn').split(',');
+        while ( (prop = properties.pop()) ) {
+            if (!con[prop]) {
+                con[prop] = {};
+            }
+        }
+        while ( (method = methods.pop()) ) {
+            if (typeof con[method] !== 'function') {
+                con[method] = dummy;
+            }
+        }
+        // Using `this` for web workers & supports Browserify / Webpack.
+    })(typeof window === 'undefined' ? this : window);
+    </script>
+
+    <!-- Custom Modernizr -->
+    <script src="../../js/plugins/modernizr.custom.js"></script>
+
+    <!-- Fonts -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,800,300italic,400italic,600italic,700italic,800italic" type="text/css">
+    <link rel="stylesheet" media="all" href="../../css/fonts.css">
+    <link rel="stylesheet" media="all" href="../../css/trs-icon-font.css">
+
+    <!-- Latest jQuery compatible -->
+    <script src="../../js/plugins/jquery-1.12.4.min.js"></script>
+    <script src="../../js/plugins/jquery-migrate-1.3.0.min.js"></script>
+
+    <!-- jquery UI -->
+    <link rel="stylesheet" href="../../css/plugins/jquery-ui.min.css">
+    <script src="../../js/plugins/jquery-ui.min.js"></script>
+
+    <!-- jquery UI range pips -->
+    <link rel="stylesheet" href="../../css/plugins/jquery-ui-slider-pips.min.css">
+    <script src="../../js/plugins/jquery-ui-slider-pips.min.js"></script>
+
+    <!-- jquery UI touch capable -->
+    <script src="../../js/plugins/jquery.ui.touch-punch.min.js"></script>
+
+    <!-- jquery.Actual -->
+    <script src="../../js/plugins/jquery.actual.min.js"></script>
+
+    <!-- response.JS -->
+    <script src="../../js/plugins/response.min.js"></script>
+
+     <!-- Latest Bootstrap -->
+    <link rel="stylesheet" href="../../css/plugins/bootstrap.min.css">
+    <link rel="stylesheet" href="../../css/plugins/bootstrap-theme.min.css">
+    <script src="../../js/plugins/bootstrap.min.js"></script>
+
+    <!-- Primary Nav JS -->
+    <script src="../../js/primary-nav.js"></script>
+
+    <!-- HighChart JS -->
+    <script src="../../js/plugins/highcharts.js"></script>
+    <script src="../../js/plugins/data.js"></script>
+
+    <!-- DataTables JS -->
+    <link rel="stylesheet" href="../../css/plugins/jquery.dataTables.min.css">
+    <link rel="stylesheet" href="../../css/plugins/dataTables.bootstrap.min.css">
+    <script src="../../js/plugins/jquery.dataTables.min.js"></script>
+    <script src="../../js/plugins/dataTables.bootstrap.min.js"></script>
+
+    <!-- jquery mask input -->
+    <script src="../../js/plugins/jquery.mask.min.js"></script>
+
+    <!-- parser helper used with bootstrap-datepicker -->
+    <script src="../../js/plugins/date.min.js"></script>
+    <script src="../../js/plugins/moment.min.js"></script>
+
+    <!-- bootstrap-datepicker - github.com/eternicode/bootstrap-datepicker -->
+    <link rel="stylesheet" href="../../css/plugins/bootstrap-datepicker3.min.css"></link>
+    <script src="../../js/plugins/bootstrap-datepicker.min.js"></script>
+    <script src="../../js/plugins/bootstrap-datepicker.wrapper.js"></script>
+
+    <!-- bootstrap typeahead autocomplete - https://twitter.github.io/typeahead.js/examples/ -->
+    <script src="../../js/plugins/typeahead.bundle.min.js"></script>
+
+    <!-- jquery.validate -->
+    <script src="../../js/plugins/jquery.validate.min.js"></script>
+    <script src="../../js/plugins/additional-methods.min.js"></script>
+
+    <!-- jQuery Equal Height -->
+    <script src="../../js/plugins/jquery.matchHeight-min.js"></script>
+
+    <!-- Password Meter -->
+    <script src="../../js/plugins/jquery.password.js"></script>
+
+    <!-- TableSaw - tables on mobile -->
+    <link rel="stylesheet" href="../../css/plugins/tablesaw.bare.min.css">
+    <script src="../../js/plugins/tablesaw.min.js"></script>
+
+    <!-- Compiled css from style.scss for components -->
+    <link rel="stylesheet" media="all" href="../../css/style.css?1491944073">
+
+
+    <!-- Responsive tables require AngularJS - see atoms/tables/angular-mobile-table... -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.8/angular.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.8/angular-animate.min.js"></script>
+    <script src="/js/trs-angular/responsive-table.js"></script>
+</head>
+<body class="body" data-ui-compat="responsive">
+
+
+<!-- Slide 44 -->
+<div class="modal fade" id="modal-44" tabindex="-1" role="dialog" aria-labelledby="section-title-44">
+    <div class="modal-dialog" role="document">
+
+        <div class="modal-content">
+
+            <div class="modal-header no-border">
+                <a href="#" type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true" class="trs-icons-close-btn"></span>
+                </a>
+                <h3 class="modal-title" id="modal_title">View Holdings</h3>
+            </div>
+
+            <div class="modal-body">
+
+                <div id="errorHoldings" class="row">
+                    <div class="col-xs-12">
+                        <div class="alert alert-error" id="errorBox">
+                            <div class="alert-icon"><span role="presentation" class="glyphicon glyphicon-remove-sign glyph-white alert-icon-size"></span></div>
+                            <div class="alert-message">
+                                <strong>Error</strong><br>
+                                <ul>
+                                    <li>Your holdings information is not available at this time. Please try again later.</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <form id="viewHoldingForm" role="form" class="form-inline ontrack__form">
+                    <fieldset>
+                        <div class="row row__mobile row__mobile--bg no-border no-vertical-margin no-vertical-padding padding-top">
+                            <div class="col-sm-3 col-xs-12">
+                                <span class="aligner aligner--mobile">Name:</span>
+                            </div>
+                            <div class="col-sm-9 col-xs-12">
+                                <span class="aligner aligner--mobile">Techtronic Industries 401(k) Retirement Plan</span>
+                            </div>
+                        </div>
+
+                        <div class="row row__mobile row__mobile--bg">
+                            <div class="col-sm-3 col-xs-12">
+                                <span class="aligner aligner--mobile">Account Number:</span>
+                            </div>
+                            <div class="col-sm-9 col-xs-12">
+                                <span class="aligner aligner--mobile">QK62838LY 00001</span>
+                            </div>
+                        </div>
+
+                        <div class="row row__mobile row__mobile--bg">
+                            <hr class="visible-xs hr--mobile__separator">
+                            <div class="visible-xs clear"></div>
+
+                            <div class="col-xs-12">
+                                <h4 class="sub-title margin-bottom">How are you currently invested?</h4>
+
+                                <div id="holdingsTable">
+                                    <table class="tbl-style1 tbl-style1--row-separator table--holdings">
+                                        <tr class="tbl-style1--row-separator__th">
+                                            <th colspan="2">Short Bonds/Stable/MMkt</th>
+                                        </tr>
+                                        <tr>
+                                            <td><a title="Morley Stable V Class 25 I" href="#" target="new">Morley Stable V Class 25 I</a></td>
+                                            <td>1%</td>
+                                        </tr>
+                                        <tr class="tbl-style1--row-separator__th">
+                                            <th colspan="2">Interm./Long-Term Bonds</th>
+                                        </tr>
+                                        <tr>
+                                            <td><a title="PIMCO Total Ret" href="#" target="new">PIMCO Total Ret</a></td>
+                                            <td>2%</td>
+                                        </tr>
+                                        <tr>
+                                            <td><a title="Vanguard Total Market Index I" href="#" target="new">Vanguard Total Market Index I</a></td>
+                                            <td>3%</td>
+                                        </tr>
+                                        <tr class="tbl-style1--row-separator__th">
+                                            <th colspan="2">Large-Cap Stocks</th>
+                                        </tr>
+                                        <tr>
+                                            <td><a title="American Beacon Value Inst" href="#" target="new">American Beacon Value Inst</a></td>
+                                            <td>4%</td>
+                                        </tr>
+                                        <tr>
+                                            <td><a title="Vanguard Instit Index I" href="#" target="new">Vanguard Instit Index I</a></td>
+                                            <td>5%</td>
+                                        </tr>
+                                        <tr>
+                                            <td><a title="T. Rowe Price B Growth" href="#" target="new">T. Rowe Price B Growth</a></td>
+                                            <td>6%</td>
+                                        </tr>
+                                        <tr class="tbl-style1--row-separator__th">
+                                            <th colspan="2">Small/Mid-Cap Stocks</th>
+                                        </tr>
+                                        <tr>
+                                            <td><a title="Vanguard Select Inv" href="#" target="new">Vanguard Select Inv</a></td>
+                                            <td>7%</td>
+                                        </tr>
+                                        <tr>
+                                            <td><a title="Vanguard Mid Ca Adm" href="#" target="new">Vanguard Mid Ca Adm</a></td>
+                                            <td>8%</td>
+                                        </tr>
+                                        <tr>
+                                            <td><a title="Vanguard Mid Ca Inv" href="#" target="new">Vanguard Mid Ca Inv</a></td>
+                                            <td>9%</td>
+                                        </tr>
+                                        <tr>
+                                            <td><a title="JPMorgan Small R6" href="#" target="new">JPMorgan Small R6</a></td>
+                                            <td>10%</td>
+                                        </tr>
+                                        <tr>
+                                            <td><a title="Vanguard Small Adm" href="#" target="new">Vanguard Small Adm</a></td>
+                                            <td>11%</td>
+                                        </tr>
+                                        <tr>
+                                            <td><a title="T. Rowe Price S Stock" href="#" target="new">T. Rowe Price S Stock</a></td>
+                                            <td>12%</td>
+                                        </tr>
+                                        <tr>
+                                            <td><a title="Vanguard REIT I" href="#" target="new">Vanguard REIT I</a></td>
+                                            <td>0%</td>
+                                        </tr>
+                                        <tr class="tbl-style1--row-separator__th">
+                                            <th colspan="2">International Stocks</th>
+                                        </tr>
+                                        <tr>
+                                            <td><a title="American Funds EuroPacific Gr" href="#" target="new">American Funds EuroPacific Gr</a></td>
+                                            <td>0%</td>
+                                        </tr>
+                                        <tr class="tbl-style1--row-separator__th">
+                                            <th colspan="2">Multi-Asset/Other</th>
+                                        </tr>
+                                        <tr>
+                                            <td><a title="Vanguard Target Retirement Inc." href="#" target="new">Vanguard Target Retirement Inc.</a></td>
+                                            <td>13%</td>
+                                        </tr>
+                                        <tr>
+                                            <td><a title="Vanguard Target Retirement 2010" href="#" target="new">Vanguard Target Retirement 2010</a></td>
+                                            <td>0%</td>
+                                        </tr>
+                                        <tr>
+                                            <td><a title="Vanguard Target Retirement 2015" href="#" target="new">Vanguard Target Retirement 2015</a></td>
+                                            <td>0%</td>
+                                        </tr>
+                                        <tr>
+                                            <td><a title="Vanguard Target Retirement 2020" href="#" target="new">Vanguard Target Retirement 2020</a></td>
+                                            <td>0%</td>
+                                        </tr>
+                                        <tr>
+                                            <td><a title="Vanguard Target Retirement 2025" href="#" target="new">Vanguard Target Retirement 2025</a></td>
+                                            <td>0%</td>
+                                        </tr>
+                                        <tr>
+                                            <td><a title="Vanguard Target Retirement 2030" href="#" target="new">Vanguard Target Retirement 2030</a></td>
+                                            <td>0%</td>
+                                        </tr>
+                                        <tr>
+                                            <td><a title="Vanguard Target Retirement 2035" href="#" target="new">Vanguard Target Retirement 2035</a></td>
+                                            <td>0%</td>
+                                        </tr>
+                                        <tr>
+                                            <td><a title="Vanguard Target Retirement 2040" href="#" target="new">Vanguard Target Retirement 2040</a></td>
+                                            <td>0%</td>
+                                        </tr>
+                                        <tr>
+                                            <td><a title="Vanguard Target Retirement 2045" href="#" target="new">Vanguard Target Retirement 2045</a></td>
+                                            <td>0%</td>
+                                        </tr>
+                                        <tr>
+                                            <td><a title="Vanguard Target Retirement 2050" href="#" target="new">Vanguard Target Retirement 2050</a></td>
+                                            <td>0%</td>
+                                        </tr>
+                                        <tr>
+                                            <td><a title="Vanguard Target Retirement 2055" href="#" target="new">Vanguard Target Retirement 2055</a></td>
+                                            <td>0%</td>
+                                        </tr>
+                                        <tr>
+                                            <td><a title="Vanguard Target Retirement 2060" href="#" target="new">Vanguard Target Retirement 2060</a></td>
+                                            <td>0%</td>
+                                        </tr>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </fieldset>
+                </form>
+            </div>
+
+            <div class="modal-footer align-center">
+                <a class="btn btn-secondary" data-dismiss="modal" href="#">Back</a>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- /slide 44 -->
+
+    <!-- scripts -->
+    <script src="../../js/ontrack.js"></script>
+    <script src="../../js/layoutResponsive.js"></script>
+    <script src="../../js/mobile-nav.js"></script>
+    <script src="../../js/globalFooter.js"></script>
+
+		
+	<script>
+		// handle injection of items from PHP
+		var patternPartial = "organisms-ontrack-modal-edit-account-view-holdings-trs";
+		var lineage        = [];
+		var lineageR       = [{"lineagePattern":"organisms-ontrack-modal","lineagePath":"..\/..\/patterns\/02-organisms-03-sections-035-ontrack-modal\/02-organisms-03-sections-035-ontrack-modal.html","lineageState":"inprogress"}];
+		var patternState   = "inprogress";
+		var cssEnabled     = false;
+	</script>
+		<script>
+		/*!
+		 * scriptLoader - v0.1
+		 *
+		 * Copyright (c) 2014 Dave Olsen, http://dmolsen.com
+		 * Licensed under the MIT license
+		 *
+		 */
+		
+		var scriptLoader = {
+			
+			run: function(js,cb,target) {
+				var s  = document.getElementById(target+'-'+cb); 
+				for (var i = 0; i < js.length; i++) {
+					var src = (typeof js[i] != "string") ? js[i].src : js[i];
+					var c   = document.createElement('script');
+					c.src   = '../../'+src+'?'+cb;
+					if (typeof js[i] != "string") {
+						if (js[i].dep !== undefined) {
+							c.onload = function(dep,cb,target) {
+								return function() {
+									scriptLoader.run(dep,cb,target);
+								}
+							}(js[i].dep,cb,target);
+						}
+					}
+					s.parentNode.insertBefore(c,s);
+				}
+			}
+			
+		}
+	</script>
+	<script id="pl-js-polyfill-insert-1491944073">
+		(function() {
+			if (self != top) {
+				var cb = '1491944073';
+				var js = [];
+				if (typeof document !== "undefined" && !("classList" in document.documentElement)) {
+					js.push("styleguide/js/vendor/classlist-polyfill.js");
+				}
+				scriptLoader.run(js,cb,'pl-js-polyfill-insert');
+			}
+		})();
+	</script>
+	<script id="pl-js-insert-1491944073">
+		(function() {
+			if (self != top) {
+				var cb = '1491944073';
+				var js = [ { "src": "styleguide/js/vendor/jwerty.js", "dep": [ "styleguide/js/postmessage.js", { "src": "data/annotations.js", "dep": [ "styleguide/js/annotations-pattern.js" ] }, "styleguide/js/code-pattern.js" ] } ];
+				scriptLoader.run(js,cb,'pl-js-insert');
+			}
+		})();
+	</script>
+	
+
+
+    <!-- Browser Update notification -->
+    <script>
+        var $buoop = {vs:{i:10,f:30,o:20,s:7},c:2};
+        function $buo_f(){
+            var e = document.createElement("script");
+            e.src = "//browser-update.org/update.min.js";
+            document.body.appendChild(e);
+        };
+        try {document.addEventListener("DOMContentLoaded", $buo_f,false)}
+        catch(e){window.attachEvent("onload", $buo_f)}
+    </script>
+	</body>
+</html>

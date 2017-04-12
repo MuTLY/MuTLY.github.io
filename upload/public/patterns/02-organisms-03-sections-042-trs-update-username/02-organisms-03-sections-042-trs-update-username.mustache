@@ -1,0 +1,65 @@
+&lt;div class=&quot;margin-bottom text-center-sm&quot;&gt;
+{{# page_heading }}
+	{{&gt; atoms-heading }}
+{{/ page_heading }}
+{{# page_intro }}
+    &lt;p&gt;{{ . }}&lt;/p&gt;  
+{{/ page_intro }}                  
+&lt;/div&gt;
+
+&lt;div class=&quot;row clearfix&quot;&gt;
+	&lt;div class=&quot;col-xs-12 col-sm-5 col-sm-push-7 no-pad-xs&quot;&gt;
+    {{# aside }}
+        &lt;aside class=&quot;panel panel-{{style}} js-panel-2-accordion__mbl&quot;&gt;
+            &lt;div class=&quot;panel-heading&quot;&gt;
+                &lt;h3 class=&quot;panel-title clearfix&quot;&gt;
+                    &lt;div class=&quot;hidden-xs&quot;&gt;{{panel_title}}&lt;/div&gt;
+                    &lt;div data-target=&quot;#{{p_content.id}}&quot; class=&quot;visible-xs accordion-toggle&quot; data-toggle=&quot;collapse&quot; aria-controls=&quot;{{p_content.id}}&quot;&gt;
+                        {{panel_title}}
+						&lt;span class=&quot;glyphicon glyphicon-plus-sign alert-icon-size pull-right&quot; aria-hidden=&quot;true&quot;&gt;&lt;/span&gt;&lt;/div&gt;
+                &lt;/h3&gt;
+            &lt;/div&gt;
+            {{# p_content }}
+            &lt;div class=&quot;panel-body {{class}} js-mbl-accordion__pnl&quot; id=&quot;{{id}}&quot;&gt;
+                {{# content}}&lt;p class=&quot;{{p_subclass}}&quot;&gt;{{ . }}&lt;/p&gt;{{/ content}}
+                {{# list }}
+				&lt;ul class=&quot;{{l_class}}&quot;&gt;
+                    {{# list_items }}
+                    &lt;li&gt;{{ . }}&lt;/li&gt;
+                    {{/ list_items }}
+                &lt;/ul&gt;
+                {{/ list }}
+                {{# secondary_content}}&lt;p&gt;{{ . }}&lt;/p&gt;{{/ secondary_content}}
+            &lt;/div&gt;
+            {{/ p_content }}
+        &lt;/aside&gt;
+    {{/ aside }}
+    &lt;/div&gt;
+
+    &lt;div class=&quot;col-xs-12 col-sm-7 col-sm-pull-5 margin-bottom mobile-content-panel&quot;&gt;
+        {{# fields_note }}&lt;p class=&quot;{{p_class}}&quot;&gt;{{p_content}}&lt;/p&gt;{{/ fields_note }}
+        {{# form_sections }}
+            {{# form_fields }}
+            &lt;div class=&quot;row&quot;&gt;
+                {{# date }}
+                {{&gt; atoms-input-date }}
+                {{/ date }}
+                {{^ date }}
+                {{&gt; atoms-html5-inputs }}
+                {{/ date }}
+            &lt;/div&gt;
+            {{/ form_fields }}
+            
+            {{# hr }}&lt;hr class=&quot;hidden-xs&quot; /&gt;{{/ hr }}
+        {{/ form_sections }}
+                
+     
+    {{# caution_note }}
+        {{&gt; molecules-alert-messages }}
+    {{/ caution_note }}
+        
+        &lt;div class=&quot;text-center-sm&quot;&gt;
+            &lt;button type=&quot;button&quot; class=&quot;btn btn-primary btn-wide margin-top&quot;&gt;Submit&lt;/button&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+&lt;/div&gt;

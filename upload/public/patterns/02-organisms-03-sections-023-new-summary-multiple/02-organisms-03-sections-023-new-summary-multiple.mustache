@@ -1,0 +1,59 @@
+&lt;!-- PAGE BANNER --&gt;
+{{&gt; molecules-splash-banner-generic }}
+
+&lt;!-- PAGE METER --&gt;
+{{# page-meter }}
+    {{&gt; molecules-page-meter }}
+{{/ page-meter }}
+
+&lt;p&gt;Based on the information you provided, here is your proposed investment mix for your current balance and future contributions.&lt;/p&gt;
+
+&lt;div class=&quot;row margin-top margin-bottom-lg&quot;&gt;
+    &lt;div class=&quot;col-xs-12&quot;&gt;
+        &lt;label for=&quot;plan_select&quot; class=&quot;bold&quot;&gt;This is going to apply to the following plans (select each to see the investment mix):&lt;/label&gt;
+    &lt;/div&gt;
+    &lt;div class=&quot;col-xs-12&quot;&gt;
+        &lt;div class=&quot;form-inline text-center bold&quot;&gt;
+            &lt;div class=&quot;form-group&quot;&gt;
+                &lt;select id=&quot;plan_select&quot;&gt;
+                    &lt;option value=&quot;&quot;&gt;401(k) Retirement Plan of ABC Company&lt;/option&gt;
+                    &lt;option value=&quot;&quot;&gt;403 Retirement Plan of ABC Company&lt;/option&gt;
+                    &lt;option value=&quot;&quot;&gt;Some other retirement plan of ABC Company&lt;/option&gt;
+                &lt;/select&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
+
+{{&gt; atoms-chart-mixed }}
+
+&lt;div class=&quot;row margin-top-lg margin-bottom-lg&quot;&gt;
+    &lt;div class=&quot;col-xs-12&quot;&gt;
+        &lt;a href=&quot;#&quot; class=&quot;btn btn-secondary&quot;&gt;Back&lt;/a&gt;
+        &lt;a href=&quot;#&quot; class=&quot;btn btn-primary pull-right&quot;&gt;Next&lt;/a&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div class=&quot;table__dcma--no-current-mix&quot;&gt;
+{{&gt; molecules-table-dcma-summary }}
+&lt;/div&gt;
+
+{{&gt; organisms-managed-account-maintain-stock(walledFunds: false) }}
+
+&lt;div class=&quot;row margin-bottom-lg&quot;&gt;
+    &lt;div class=&quot;col-xs-12&quot;&gt;
+        &lt;p class=&quot;disclaimer&quot;&gt;
+            Balances in a Self-Directed Brokerage Account are not available for investment in the Managed Account service. Should you choose to maintain these assets in SDBA, you will be restricted from making any additional transfers into SDBA. The assets in your SDBA account will remain, and will not be included in the investment strategy provided through this service. If you choose to liquidate your SDBA account, please contact a representative.
+        &lt;/p&gt;
+        &lt;p class=&quot;disclaimer&quot;&gt;
+            If you wish to impose restrictions on the investment of your account please contact a representative. Please note, if you have imposed restrictions the investment mix above my not precislely match how you will be allocated.
+        &lt;/p&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div class=&quot;row&quot;&gt;
+    &lt;div class=&quot;col-xs-12&quot;&gt;
+        &lt;a href=&quot;#&quot; class=&quot;btn btn-secondary&quot;&gt;Back&lt;/a&gt;
+        &lt;a href=&quot;#&quot; class=&quot;btn btn-primary pull-right&quot;&gt;Next&lt;/a&gt;
+    &lt;/div&gt;
+&lt;/div&gt;

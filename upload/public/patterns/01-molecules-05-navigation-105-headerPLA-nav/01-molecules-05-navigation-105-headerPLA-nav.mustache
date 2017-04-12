@@ -1,0 +1,34 @@
+
+&lt;div class=&quot;subnavbar&quot; role=&quot;navigation&quot;&gt;	
+
+        &lt;div class=&quot;row&quot;&gt;
+            &lt;a class=&quot;sr-only&quot; href=&quot;#main_content&quot;&gt;Skip to main content&lt;/a&gt;&lt;!-- keep this for ada compliance --&gt;
+            &lt;div class=&quot;col-xs-4 col-sm-4  hidden-md hidden-lg&quot;&gt;
+                &lt;div class=&quot;btn--menu&quot;&gt;
+                    &lt;button type=&quot;button&quot; class=&quot;btn--menu__btn&quot;&gt;
+                        &lt;span class=&quot;icon-bar&quot;&gt;&lt;/span&gt;
+                        &lt;span class=&quot;icon-bar&quot;&gt;&lt;/span&gt;
+                        &lt;span class=&quot;icon-bar&quot;&gt;&lt;/span&gt;
+                    &lt;/button&gt;
+                    &lt;div class=&quot;btn--menu__text&quot;&gt;Menu&lt;/div&gt;
+                &lt;/div&gt;
+
+            &lt;/div&gt;
+            &lt;div class=&quot;col-xs-4 visible-xs text-center&quot;&gt;
+                {{&gt; atoms-pla-logo-mobile }}
+            &lt;/div&gt;
+            &lt;div class=&quot;hidden-xs  col-lg-2 col-md-2 col-sm-4 text-center&quot;&gt;
+                {{&gt; atoms-pla-logo-desktop }}
+            &lt;/div&gt;
+            &lt;div class=&quot;hidden-xs hidden-sm col-md-8&quot; &gt; 
+                &lt;div class=&quot;pull-right&quot;&gt;
+				{{#pla-menus}}
+                    {{&gt; atoms-pla-dropdown }}
+                {{/pla-menus}}
+				&lt;/div&gt;
+            &lt;/div&gt;
+            &lt;div class=&quot;col-lg-2 col-md-2&quot;&gt;
+                {{&gt; atoms-pla-logout }}
+            &lt;/div&gt;
+        &lt;/div&gt;
+&lt;/div&gt;

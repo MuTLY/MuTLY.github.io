@@ -1,0 +1,1451 @@
+<!DOCTYPE HTML>
+		<!-- never cache patterns -->
+		<meta http-equiv="cache-control" content="max-age=0" />
+		<meta http-equiv="cache-control" content="no-cache" />
+		<meta http-equiv="expires" content="0" />
+		<meta http-equiv="expires" content="Tue, 01 Jan 1980 1:00:00 GMT" />
+		<meta http-equiv="pragma" content="no-cache" />
+		
+		<link rel="stylesheet" href="../../styleguide/css/styleguide.css?1491944073" media="all">
+		<link rel="stylesheet" href="../../styleguide/css/styleguide-specific.css?1491944073" media="all" />
+		
+
+
+<html class="pl" lang="en-us">
+
+<head>
+    <title>Pattern Lab</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=0">
+
+    <!-- Browser Elements Colors -->
+    <meta name="theme-color" content="#3e7cab"><!-- Chrome -->
+    <meta name="msapplication-navbutton-color" content="#3e7cab"><!-- Windows -->
+    <!-- iOS -->
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+
+    <!-- console.log polyfill - do not remove, it needs to load before any scripts -->
+    <script>
+    // Console-polyfill. MIT license.
+    // https://github.com/paulmillr/console-polyfill
+    // Make it safe to do console.log() always.
+    (function(global) {
+        'use strict';
+        if (!global.console) {
+            global.console = {};
+        }
+        var con = global.console;
+        var prop, method;
+        var dummy = function() {};
+        var properties = ['memory'];
+        var methods = ('assert,clear,count,debug,dir,dirxml,error,exception,group,' +
+            'groupCollapsed,groupEnd,info,log,markTimeline,profile,profiles,profileEnd,' +
+            'show,table,time,timeEnd,timeline,timelineEnd,timeStamp,trace,warn').split(',');
+        while ( (prop = properties.pop()) ) {
+            if (!con[prop]) {
+                con[prop] = {};
+            }
+        }
+        while ( (method = methods.pop()) ) {
+            if (typeof con[method] !== 'function') {
+                con[method] = dummy;
+            }
+        }
+        // Using `this` for web workers & supports Browserify / Webpack.
+    })(typeof window === 'undefined' ? this : window);
+    </script>
+
+    <!-- Custom Modernizr -->
+    <script src="../../js/plugins/modernizr.custom.js"></script>
+
+    <!-- Fonts -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,800,300italic,400italic,600italic,700italic,800italic" type="text/css">
+    <link rel="stylesheet" media="all" href="../../css/fonts.css">
+    <link rel="stylesheet" media="all" href="../../css/trs-icon-font.css">
+
+    <!-- Latest jQuery compatible -->
+    <script src="../../js/plugins/jquery-1.12.4.min.js"></script>
+    <script src="../../js/plugins/jquery-migrate-1.3.0.min.js"></script>
+
+    <!-- jquery UI -->
+    <link rel="stylesheet" href="../../css/plugins/jquery-ui.min.css">
+    <script src="../../js/plugins/jquery-ui.min.js"></script>
+
+    <!-- jquery UI range pips -->
+    <link rel="stylesheet" href="../../css/plugins/jquery-ui-slider-pips.min.css">
+    <script src="../../js/plugins/jquery-ui-slider-pips.min.js"></script>
+
+    <!-- jquery UI touch capable -->
+    <script src="../../js/plugins/jquery.ui.touch-punch.min.js"></script>
+
+    <!-- jquery.Actual -->
+    <script src="../../js/plugins/jquery.actual.min.js"></script>
+
+    <!-- response.JS -->
+    <script src="../../js/plugins/response.min.js"></script>
+
+     <!-- Latest Bootstrap -->
+    <link rel="stylesheet" href="../../css/plugins/bootstrap.min.css">
+    <link rel="stylesheet" href="../../css/plugins/bootstrap-theme.min.css">
+    <script src="../../js/plugins/bootstrap.min.js"></script>
+
+    <!-- Primary Nav JS -->
+    <script src="../../js/primary-nav.js"></script>
+
+    <!-- HighChart JS -->
+    <script src="../../js/plugins/highcharts.js"></script>
+    <script src="../../js/plugins/data.js"></script>
+
+    <!-- DataTables JS -->
+    <link rel="stylesheet" href="../../css/plugins/jquery.dataTables.min.css">
+    <link rel="stylesheet" href="../../css/plugins/dataTables.bootstrap.min.css">
+    <script src="../../js/plugins/jquery.dataTables.min.js"></script>
+    <script src="../../js/plugins/dataTables.bootstrap.min.js"></script>
+
+    <!-- jquery mask input -->
+    <script src="../../js/plugins/jquery.mask.min.js"></script>
+
+    <!-- parser helper used with bootstrap-datepicker -->
+    <script src="../../js/plugins/date.min.js"></script>
+    <script src="../../js/plugins/moment.min.js"></script>
+
+    <!-- bootstrap-datepicker - github.com/eternicode/bootstrap-datepicker -->
+    <link rel="stylesheet" href="../../css/plugins/bootstrap-datepicker3.min.css"></link>
+    <script src="../../js/plugins/bootstrap-datepicker.min.js"></script>
+    <script src="../../js/plugins/bootstrap-datepicker.wrapper.js"></script>
+
+    <!-- bootstrap typeahead autocomplete - https://twitter.github.io/typeahead.js/examples/ -->
+    <script src="../../js/plugins/typeahead.bundle.min.js"></script>
+
+    <!-- jquery.validate -->
+    <script src="../../js/plugins/jquery.validate.min.js"></script>
+    <script src="../../js/plugins/additional-methods.min.js"></script>
+
+    <!-- jQuery Equal Height -->
+    <script src="../../js/plugins/jquery.matchHeight-min.js"></script>
+
+    <!-- Password Meter -->
+    <script src="../../js/plugins/jquery.password.js"></script>
+
+    <!-- TableSaw - tables on mobile -->
+    <link rel="stylesheet" href="../../css/plugins/tablesaw.bare.min.css">
+    <script src="../../js/plugins/tablesaw.min.js"></script>
+
+    <!-- Compiled css from style.scss for components -->
+    <link rel="stylesheet" media="all" href="../../css/style.css?1491944073">
+
+
+    <!-- Responsive tables require AngularJS - see atoms/tables/angular-mobile-table... -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.8/angular.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.8/angular-animate.min.js"></script>
+    <script src="/js/trs-angular/responsive-table.js"></script>
+</head>
+<body class="body" data-ui-compat="responsive">
+		
+		<!-- View All Patterns in a Pattern Sub-Type -->
+		<div class="sg-main" role="main">
+			
+			<!-- Patterns -->
+			<div id="sg-patterns">
+					<div id="molecules-modal-basic" class="sg-pattern">
+						<h2 class="sg-pattern-head" ><a href="../../patterns/01-molecules-02-blocks-020-modal-basic/01-molecules-02-blocks-020-modal-basic.html" class="patternLink" data-patternpartial="molecules-modal-basic">Modal Basic</a></h2>
+						<div class="sg-pattern-body">
+							<p>Lorem ipsum textification with a <a href="#" class="" data-toggle="modal" data-target="#modal-1" >modal link</a>
+</p>
+<!-- advised: modals sit after content container and before js -->
+<div class="modal fade" id="modal-1" tabindex="-1" role="dialog" aria-labelledby="">
+    <div class="modal-dialog " role="document"><!-- optional modal-lg or modal-sm can be added here -->
+        <div class="modal-content">
+            <div class="modal-header no-border">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true" class="trs-icons-close-btn"></span>
+                </button>
+                <h3 class="modal-title" id="modal_title">Open Elections Period</h3>            </div>
+            <div class="modal-body">
+                <p>Your annual election for:<br><strong>ABC Company Deferred Compensation Plan</strong> is open!</p><p>You can make annual elections for your plan between 00/00/0000 and 00/00/0000. Elections cannot be made after this period.</p>
+                <div class="clearfix" role="presentation"></div>
+            </div>
+            <div class="modal-footer align-center">
+                <a type="button" class="btn__cancel-action left"  data-dismiss="modal" href="javascript:void(0);">Not Now</a>
+                <a type="button" class="btn btn-primary"  href="javascript:void(0);">Continue</a>            </div>
+        </div>
+    </div>
+</div>
+
+							<div class="sg-code" style="display: none">
+								<h3 class="sg-code-head">HTML</h3>
+								<pre class="sg-code-html">
+									<code>
+										&lt;p&gt;Lorem ipsum textification with a &lt;a href=&quot;#&quot; class=&quot;&quot; data-toggle=&quot;modal&quot; data-target=&quot;#modal-1&quot; &gt;modal link&lt;/a&gt;
+&lt;/p&gt;
+&lt;!-- advised: modals sit after content container and before js --&gt;
+&lt;div class=&quot;modal fade&quot; id=&quot;modal-1&quot; tabindex=&quot;-1&quot; role=&quot;dialog&quot; aria-labelledby=&quot;&quot;&gt;
+    &lt;div class=&quot;modal-dialog &quot; role=&quot;document&quot;&gt;&lt;!-- optional modal-lg or modal-sm can be added here --&gt;
+        &lt;div class=&quot;modal-content&quot;&gt;
+            &lt;div class=&quot;modal-header no-border&quot;&gt;
+                &lt;button type=&quot;button&quot; class=&quot;close&quot; data-dismiss=&quot;modal&quot; aria-label=&quot;Close&quot;&gt;
+                    &lt;span aria-hidden=&quot;true&quot; class=&quot;trs-icons-close-btn&quot;&gt;&lt;/span&gt;
+                &lt;/button&gt;
+                &lt;h3 class=&quot;modal-title&quot; id=&quot;modal_title&quot;&gt;Open Elections Period&lt;/h3&gt;            &lt;/div&gt;
+            &lt;div class=&quot;modal-body&quot;&gt;
+                &lt;p&gt;Your annual election for:&lt;br&gt;&lt;strong&gt;ABC Company Deferred Compensation Plan&lt;/strong&gt; is open!&lt;/p&gt;&lt;p&gt;You can make annual elections for your plan between 00/00/0000 and 00/00/0000. Elections cannot be made after this period.&lt;/p&gt;
+                &lt;div class=&quot;clearfix&quot; role=&quot;presentation&quot;&gt;&lt;/div&gt;
+            &lt;/div&gt;
+            &lt;div class=&quot;modal-footer align-center&quot;&gt;
+                &lt;a type=&quot;button&quot; class=&quot;btn__cancel-action left&quot;  data-dismiss=&quot;modal&quot; href=&quot;javascript:void(0);&quot;&gt;Not Now&lt;/a&gt;
+                &lt;a type=&quot;button&quot; class=&quot;btn btn-primary&quot;  href=&quot;javascript:void(0);&quot;&gt;Continue&lt;/a&gt;            &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
+
+									</code>
+								</pre>
+							</div>
+						</div>
+					</div>
+					<div id="molecules-modal-examples" class="sg-pattern">
+						<h2 class="sg-pattern-head" ><a href="../../patterns/01-molecules-02-blocks-022-modal-examples/01-molecules-02-blocks-022-modal-examples.html" class="patternLink" data-patternpartial="molecules-modal-examples">Modal Examples</a></h2>
+						<div class="sg-pattern-body">
+								<p>Lorem ipsum textification with a <a href="#" class="" data-toggle="modal" data-target="#modal-1" >modal link</a>
+</p>
+	<!-- advised: modals sit after content container and before js -->
+	<div class="modal fade" id="modal-1" tabindex="-1" role="dialog" aria-labelledby="">
+	    <div class="modal-dialog " role="document"><!-- optional modal-lg or modal-sm can be added here -->
+	        <div class="modal-content">
+	            <div class="modal-header no-border">
+                <h3 class="modal-title" id="modal_title">Open Elections Period</h3>	            </div>
+	            <div class="modal-body">
+	                <p>Your annual election for:<br><strong>ABC Company Deferred Compensation Plan</strong> is open!</p><p>You can make annual elections for your plan between 00/00/0000 and 00/00/0000. Elections cannot be made after this period.</p><p>This modal has no close button, forcing you to take an action, rather than dismissing or ignoring.</p>
+	                <div class="clearfix" role="presentation"></div>
+	            </div>
+	            <div class="modal-footer ">
+                <a type="button" class="btn btn-secondary"  data-dismiss="modal" href="javascript:void(0);">Not Now</a>
+                <a type="button" class="btn btn-primary"  href="javascript:void(0);">Continue</a>	            </div>
+	        </div>
+	    </div>
+	</div>
+
+	<p>Lorem ipsum textification with a <a href="#" class="btn btn-primary" data-toggle="modal" data-target="#modal-2" >small modal</a>
+</p>
+	<!-- advised: modals sit after content container and before js -->
+	<div class="modal fade" id="modal-2" tabindex="-1" role="dialog" aria-labelledby="">
+	    <div class="modal-dialog modal-sm" role="document"><!-- optional modal-lg or modal-sm can be added here -->
+	        <div class="modal-content">
+	            <div class="modal-header no-border">
+	                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+	                    <span aria-hidden="true" class="trs-icons-close-btn"></span>
+	                </button>
+                <h3 class="modal-title" id="sm_modal_title">Open Elections</h3>	            </div>
+	            <div class="modal-body">
+	                <p>You can make annual elections for your plan between 00/00/0000 and 00/00/0000. Elections cannot be made after this period.</p>
+	                <div class="clearfix" role="presentation"></div>
+	            </div>
+	            <div class="modal-footer ">
+                <a type="button" class="btn__cancel-action left"  data-dismiss="modal" href="javascript:void(0);">Not Now</a>
+                <a type="button" class="btn btn-primary"  href="javascript:void(0);">Continue</a>	            </div>
+	        </div>
+	    </div>
+	</div>
+
+	<p>Lorem ipsum textification with a <a href="#" class="btn btn-secondary" data-toggle="modal" data-target="#modal-3" data-keyboard="false">button for a big honkin modal that doesn't close on escape</a>
+</p>
+	<!-- advised: modals sit after content container and before js -->
+	<div class="modal fade" id="modal-3" tabindex="-1" role="dialog" aria-labelledby="">
+	    <div class="modal-dialog modal-lg" role="document"><!-- optional modal-lg or modal-sm can be added here -->
+	        <div class="modal-content">
+	            <div class="modal-header no-border">
+	                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+	                    <span aria-hidden="true" class="trs-icons-close-btn"></span>
+	                </button>
+                <h3 class="modal-title" id="lg_modal_title">Open Elections Period</h3>	            </div>
+	            <div class="modal-body">
+	                <p>Your annual election for:<br><strong>ABC Company Deferred Compensation Plan</strong> is open!</p><p>You can make annual elections for your plan between 00/00/0000 and 00/00/0000. Elections cannot be made after this period.</p><p>The buttons presented are in default alignment for modals</p>
+	                <div class="clearfix" role="presentation"></div>
+	            </div>
+	            <div class="modal-footer ">
+                <a type="button" class="btn btn-secondary"  data-dismiss="modal" href="javascript:void(0);">Not Now</a>
+                <a type="button" class="btn btn-primary"  href="javascript:void(0);">Continue</a>	            </div>
+	        </div>
+	    </div>
+	</div>
+
+	<p>Lorem ipsum textification with a <a href="#" class="" data-toggle="modal" data-target="#modal-4" >updated modal (default size)</a>
+</p>
+	<!-- advised: modals sit after content container and before js -->
+	<div class="modal fade" id="modal-4" tabindex="-1" role="dialog" aria-labelledby="">
+	    <div class="modal-dialog " role="document"><!-- optional modal-lg or modal-sm can be added here -->
+	        <div class="modal-content">
+	            <div class="modal-header no-border">
+	                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+	                    <span aria-hidden="true" class="trs-icons-close-btn"></span>
+	                </button>
+	            </div>
+	            <div class="modal-body">
+	                <p>This modal, like the others, can contain various content. The Title is now optional, as is the closing 'X' (but should be present in almost all cases.) The action buttons on the bottom default to a right alignment; however, if a left side button or link is needed (often the case), simply add class 'left' to that link, not the entire container.</p><p>Also, note that the cancel link ('button') is a new class "btn__cancel-action". This is important to align the link to the corresponding action 'btn' class button, but without the borders and a new text behavior 'capitalize' vs button 'uppercase'.</p>
+	                <div class="clearfix" role="presentation"></div>
+	            </div>
+	            <div class="modal-footer ">
+                <a type="button" class="btn__cancel-action left"  data-dismiss="modal" href="javascript:void(0);">Remind me later</a>
+                <a type="button" class="btn btn-primary"  href="javascript:void(0);">Continue</a>	            </div>
+	        </div>
+	    </div>
+	</div>
+
+<p>Lorem ipsum textification with a <a href="javavoid:void(0);" class="btn btn-primary" data-toggle="modal" data-target="#modal-c">Non-cancellable modal</a></p>
+<div class="modal fade" id="modal-c" tabindex="-1" role="dialog" aria-labelledby="myModal" aria-hidden="true" data-keyboard="false" data-backdrop="static">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header no-border">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true" class="trs-icons-close-btn"></span>
+                </button>
+                <h3 class="modal-title" id="lg_modal_title">Non-Cancellable Modal</h3>
+            </div>
+            <div class="modal-body">
+                <p>Add <code>data-keyboard="false" data-backdrop="static"</code> to create non-cancellable modal. Single centered button.</p>
+                <div class="clearfix" role="presentation"></div>
+            </div>
+            <div class="modal-footer align-center">
+                <a type="button" class="btn btn-primary center-block" data-dismiss="modal" href="javascript:void(0);">Close</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+							<div class="sg-code" style="display: none">
+								<h3 class="sg-code-head">HTML</h3>
+								<pre class="sg-code-html">
+									<code>
+											&lt;p&gt;Lorem ipsum textification with a &lt;a href=&quot;#&quot; class=&quot;&quot; data-toggle=&quot;modal&quot; data-target=&quot;#modal-1&quot; &gt;modal link&lt;/a&gt;
+&lt;/p&gt;
+	&lt;!-- advised: modals sit after content container and before js --&gt;
+	&lt;div class=&quot;modal fade&quot; id=&quot;modal-1&quot; tabindex=&quot;-1&quot; role=&quot;dialog&quot; aria-labelledby=&quot;&quot;&gt;
+	    &lt;div class=&quot;modal-dialog &quot; role=&quot;document&quot;&gt;&lt;!-- optional modal-lg or modal-sm can be added here --&gt;
+	        &lt;div class=&quot;modal-content&quot;&gt;
+	            &lt;div class=&quot;modal-header no-border&quot;&gt;
+                &lt;h3 class=&quot;modal-title&quot; id=&quot;modal_title&quot;&gt;Open Elections Period&lt;/h3&gt;	            &lt;/div&gt;
+	            &lt;div class=&quot;modal-body&quot;&gt;
+	                &lt;p&gt;Your annual election for:&lt;br&gt;&lt;strong&gt;ABC Company Deferred Compensation Plan&lt;/strong&gt; is open!&lt;/p&gt;&lt;p&gt;You can make annual elections for your plan between 00/00/0000 and 00/00/0000. Elections cannot be made after this period.&lt;/p&gt;&lt;p&gt;This modal has no close button, forcing you to take an action, rather than dismissing or ignoring.&lt;/p&gt;
+	                &lt;div class=&quot;clearfix&quot; role=&quot;presentation&quot;&gt;&lt;/div&gt;
+	            &lt;/div&gt;
+	            &lt;div class=&quot;modal-footer &quot;&gt;
+                &lt;a type=&quot;button&quot; class=&quot;btn btn-secondary&quot;  data-dismiss=&quot;modal&quot; href=&quot;javascript:void(0);&quot;&gt;Not Now&lt;/a&gt;
+                &lt;a type=&quot;button&quot; class=&quot;btn btn-primary&quot;  href=&quot;javascript:void(0);&quot;&gt;Continue&lt;/a&gt;	            &lt;/div&gt;
+	        &lt;/div&gt;
+	    &lt;/div&gt;
+	&lt;/div&gt;
+
+	&lt;p&gt;Lorem ipsum textification with a &lt;a href=&quot;#&quot; class=&quot;btn btn-primary&quot; data-toggle=&quot;modal&quot; data-target=&quot;#modal-2&quot; &gt;small modal&lt;/a&gt;
+&lt;/p&gt;
+	&lt;!-- advised: modals sit after content container and before js --&gt;
+	&lt;div class=&quot;modal fade&quot; id=&quot;modal-2&quot; tabindex=&quot;-1&quot; role=&quot;dialog&quot; aria-labelledby=&quot;&quot;&gt;
+	    &lt;div class=&quot;modal-dialog modal-sm&quot; role=&quot;document&quot;&gt;&lt;!-- optional modal-lg or modal-sm can be added here --&gt;
+	        &lt;div class=&quot;modal-content&quot;&gt;
+	            &lt;div class=&quot;modal-header no-border&quot;&gt;
+	                &lt;button type=&quot;button&quot; class=&quot;close&quot; data-dismiss=&quot;modal&quot; aria-label=&quot;Close&quot;&gt;
+	                    &lt;span aria-hidden=&quot;true&quot; class=&quot;trs-icons-close-btn&quot;&gt;&lt;/span&gt;
+	                &lt;/button&gt;
+                &lt;h3 class=&quot;modal-title&quot; id=&quot;sm_modal_title&quot;&gt;Open Elections&lt;/h3&gt;	            &lt;/div&gt;
+	            &lt;div class=&quot;modal-body&quot;&gt;
+	                &lt;p&gt;You can make annual elections for your plan between 00/00/0000 and 00/00/0000. Elections cannot be made after this period.&lt;/p&gt;
+	                &lt;div class=&quot;clearfix&quot; role=&quot;presentation&quot;&gt;&lt;/div&gt;
+	            &lt;/div&gt;
+	            &lt;div class=&quot;modal-footer &quot;&gt;
+                &lt;a type=&quot;button&quot; class=&quot;btn__cancel-action left&quot;  data-dismiss=&quot;modal&quot; href=&quot;javascript:void(0);&quot;&gt;Not Now&lt;/a&gt;
+                &lt;a type=&quot;button&quot; class=&quot;btn btn-primary&quot;  href=&quot;javascript:void(0);&quot;&gt;Continue&lt;/a&gt;	            &lt;/div&gt;
+	        &lt;/div&gt;
+	    &lt;/div&gt;
+	&lt;/div&gt;
+
+	&lt;p&gt;Lorem ipsum textification with a &lt;a href=&quot;#&quot; class=&quot;btn btn-secondary&quot; data-toggle=&quot;modal&quot; data-target=&quot;#modal-3&quot; data-keyboard=&quot;false&quot;&gt;button for a big honkin modal that doesn't close on escape&lt;/a&gt;
+&lt;/p&gt;
+	&lt;!-- advised: modals sit after content container and before js --&gt;
+	&lt;div class=&quot;modal fade&quot; id=&quot;modal-3&quot; tabindex=&quot;-1&quot; role=&quot;dialog&quot; aria-labelledby=&quot;&quot;&gt;
+	    &lt;div class=&quot;modal-dialog modal-lg&quot; role=&quot;document&quot;&gt;&lt;!-- optional modal-lg or modal-sm can be added here --&gt;
+	        &lt;div class=&quot;modal-content&quot;&gt;
+	            &lt;div class=&quot;modal-header no-border&quot;&gt;
+	                &lt;button type=&quot;button&quot; class=&quot;close&quot; data-dismiss=&quot;modal&quot; aria-label=&quot;Close&quot;&gt;
+	                    &lt;span aria-hidden=&quot;true&quot; class=&quot;trs-icons-close-btn&quot;&gt;&lt;/span&gt;
+	                &lt;/button&gt;
+                &lt;h3 class=&quot;modal-title&quot; id=&quot;lg_modal_title&quot;&gt;Open Elections Period&lt;/h3&gt;	            &lt;/div&gt;
+	            &lt;div class=&quot;modal-body&quot;&gt;
+	                &lt;p&gt;Your annual election for:&lt;br&gt;&lt;strong&gt;ABC Company Deferred Compensation Plan&lt;/strong&gt; is open!&lt;/p&gt;&lt;p&gt;You can make annual elections for your plan between 00/00/0000 and 00/00/0000. Elections cannot be made after this period.&lt;/p&gt;&lt;p&gt;The buttons presented are in default alignment for modals&lt;/p&gt;
+	                &lt;div class=&quot;clearfix&quot; role=&quot;presentation&quot;&gt;&lt;/div&gt;
+	            &lt;/div&gt;
+	            &lt;div class=&quot;modal-footer &quot;&gt;
+                &lt;a type=&quot;button&quot; class=&quot;btn btn-secondary&quot;  data-dismiss=&quot;modal&quot; href=&quot;javascript:void(0);&quot;&gt;Not Now&lt;/a&gt;
+                &lt;a type=&quot;button&quot; class=&quot;btn btn-primary&quot;  href=&quot;javascript:void(0);&quot;&gt;Continue&lt;/a&gt;	            &lt;/div&gt;
+	        &lt;/div&gt;
+	    &lt;/div&gt;
+	&lt;/div&gt;
+
+	&lt;p&gt;Lorem ipsum textification with a &lt;a href=&quot;#&quot; class=&quot;&quot; data-toggle=&quot;modal&quot; data-target=&quot;#modal-4&quot; &gt;updated modal (default size)&lt;/a&gt;
+&lt;/p&gt;
+	&lt;!-- advised: modals sit after content container and before js --&gt;
+	&lt;div class=&quot;modal fade&quot; id=&quot;modal-4&quot; tabindex=&quot;-1&quot; role=&quot;dialog&quot; aria-labelledby=&quot;&quot;&gt;
+	    &lt;div class=&quot;modal-dialog &quot; role=&quot;document&quot;&gt;&lt;!-- optional modal-lg or modal-sm can be added here --&gt;
+	        &lt;div class=&quot;modal-content&quot;&gt;
+	            &lt;div class=&quot;modal-header no-border&quot;&gt;
+	                &lt;button type=&quot;button&quot; class=&quot;close&quot; data-dismiss=&quot;modal&quot; aria-label=&quot;Close&quot;&gt;
+	                    &lt;span aria-hidden=&quot;true&quot; class=&quot;trs-icons-close-btn&quot;&gt;&lt;/span&gt;
+	                &lt;/button&gt;
+	            &lt;/div&gt;
+	            &lt;div class=&quot;modal-body&quot;&gt;
+	                &lt;p&gt;This modal, like the others, can contain various content. The Title is now optional, as is the closing 'X' (but should be present in almost all cases.) The action buttons on the bottom default to a right alignment; however, if a left side button or link is needed (often the case), simply add class 'left' to that link, not the entire container.&lt;/p&gt;&lt;p&gt;Also, note that the cancel link ('button') is a new class &quot;btn__cancel-action&quot;. This is important to align the link to the corresponding action 'btn' class button, but without the borders and a new text behavior 'capitalize' vs button 'uppercase'.&lt;/p&gt;
+	                &lt;div class=&quot;clearfix&quot; role=&quot;presentation&quot;&gt;&lt;/div&gt;
+	            &lt;/div&gt;
+	            &lt;div class=&quot;modal-footer &quot;&gt;
+                &lt;a type=&quot;button&quot; class=&quot;btn__cancel-action left&quot;  data-dismiss=&quot;modal&quot; href=&quot;javascript:void(0);&quot;&gt;Remind me later&lt;/a&gt;
+                &lt;a type=&quot;button&quot; class=&quot;btn btn-primary&quot;  href=&quot;javascript:void(0);&quot;&gt;Continue&lt;/a&gt;	            &lt;/div&gt;
+	        &lt;/div&gt;
+	    &lt;/div&gt;
+	&lt;/div&gt;
+
+&lt;p&gt;Lorem ipsum textification with a &lt;a href=&quot;javavoid:void(0);&quot; class=&quot;btn btn-primary&quot; data-toggle=&quot;modal&quot; data-target=&quot;#modal-c&quot;&gt;Non-cancellable modal&lt;/a&gt;&lt;/p&gt;
+&lt;div class=&quot;modal fade&quot; id=&quot;modal-c&quot; tabindex=&quot;-1&quot; role=&quot;dialog&quot; aria-labelledby=&quot;myModal&quot; aria-hidden=&quot;true&quot; data-keyboard=&quot;false&quot; data-backdrop=&quot;static&quot;&gt;
+    &lt;div class=&quot;modal-dialog&quot; role=&quot;document&quot;&gt;
+        &lt;div class=&quot;modal-content&quot;&gt;
+            &lt;div class=&quot;modal-header no-border&quot;&gt;
+                &lt;button type=&quot;button&quot; class=&quot;close&quot; data-dismiss=&quot;modal&quot; aria-label=&quot;Close&quot;&gt;
+                    &lt;span aria-hidden=&quot;true&quot; class=&quot;trs-icons-close-btn&quot;&gt;&lt;/span&gt;
+                &lt;/button&gt;
+                &lt;h3 class=&quot;modal-title&quot; id=&quot;lg_modal_title&quot;&gt;Non-Cancellable Modal&lt;/h3&gt;
+            &lt;/div&gt;
+            &lt;div class=&quot;modal-body&quot;&gt;
+                &lt;p&gt;Add &lt;code&gt;data-keyboard=&quot;false&quot; data-backdrop=&quot;static&quot;&lt;/code&gt; to create non-cancellable modal. Single centered button.&lt;/p&gt;
+                &lt;div class=&quot;clearfix&quot; role=&quot;presentation&quot;&gt;&lt;/div&gt;
+            &lt;/div&gt;
+            &lt;div class=&quot;modal-footer align-center&quot;&gt;
+                &lt;a type=&quot;button&quot; class=&quot;btn btn-primary center-block&quot; data-dismiss=&quot;modal&quot; href=&quot;javascript:void(0);&quot;&gt;Close&lt;/a&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
+
+
+									</code>
+								</pre>
+							</div>
+						</div>
+					</div>
+					<div id="molecules-modal-noncancellable" class="sg-pattern">
+						<h2 class="sg-pattern-head" ><a href="../../patterns/01-molecules-02-blocks-023-modal-noncancellable/01-molecules-02-blocks-023-modal-noncancellable.html" class="patternLink" data-patternpartial="molecules-modal-noncancellable">Modal Noncancellable</a></h2>
+						<div class="sg-pattern-body">
+							<p>Lorem ipsum textification with a <a href="javavoid:void(0);" class="btn btn-primary" data-toggle="modal" data-target="#modal-c">Non-cancellable modal</a></p>
+<div class="modal fade" id="modal-c" tabindex="-1" role="dialog" aria-labelledby="myModal" aria-hidden="true" data-keyboard="false" data-backdrop="static">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header no-border">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true" class="trs-icons-close-btn"></span>
+                </button>
+                <h3 class="modal-title" id="lg_modal_title">Non-Cancellable Modal</h3>
+            </div>
+            <div class="modal-body">
+                <p>Add <code>data-keyboard="false" data-backdrop="static"</code> to create non-cancellable modal. Single centered button.</p>
+                <div class="clearfix" role="presentation"></div>
+            </div>
+            <div class="modal-footer align-center">
+                <a type="button" class="btn btn-primary center-block" data-dismiss="modal" href="javascript:void(0);">Close</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+							<div class="sg-code" style="display: none">
+								<h3 class="sg-code-head">HTML</h3>
+								<pre class="sg-code-html">
+									<code>
+										&lt;p&gt;Lorem ipsum textification with a &lt;a href=&quot;javavoid:void(0);&quot; class=&quot;btn btn-primary&quot; data-toggle=&quot;modal&quot; data-target=&quot;#modal-c&quot;&gt;Non-cancellable modal&lt;/a&gt;&lt;/p&gt;
+&lt;div class=&quot;modal fade&quot; id=&quot;modal-c&quot; tabindex=&quot;-1&quot; role=&quot;dialog&quot; aria-labelledby=&quot;myModal&quot; aria-hidden=&quot;true&quot; data-keyboard=&quot;false&quot; data-backdrop=&quot;static&quot;&gt;
+    &lt;div class=&quot;modal-dialog&quot; role=&quot;document&quot;&gt;
+        &lt;div class=&quot;modal-content&quot;&gt;
+            &lt;div class=&quot;modal-header no-border&quot;&gt;
+                &lt;button type=&quot;button&quot; class=&quot;close&quot; data-dismiss=&quot;modal&quot; aria-label=&quot;Close&quot;&gt;
+                    &lt;span aria-hidden=&quot;true&quot; class=&quot;trs-icons-close-btn&quot;&gt;&lt;/span&gt;
+                &lt;/button&gt;
+                &lt;h3 class=&quot;modal-title&quot; id=&quot;lg_modal_title&quot;&gt;Non-Cancellable Modal&lt;/h3&gt;
+            &lt;/div&gt;
+            &lt;div class=&quot;modal-body&quot;&gt;
+                &lt;p&gt;Add &lt;code&gt;data-keyboard=&quot;false&quot; data-backdrop=&quot;static&quot;&lt;/code&gt; to create non-cancellable modal. Single centered button.&lt;/p&gt;
+                &lt;div class=&quot;clearfix&quot; role=&quot;presentation&quot;&gt;&lt;/div&gt;
+            &lt;/div&gt;
+            &lt;div class=&quot;modal-footer align-center&quot;&gt;
+                &lt;a type=&quot;button&quot; class=&quot;btn btn-primary center-block&quot; data-dismiss=&quot;modal&quot; href=&quot;javascript:void(0);&quot;&gt;Close&lt;/a&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
+
+
+									</code>
+								</pre>
+							</div>
+						</div>
+					</div>
+					<div id="molecules-panels" class="sg-pattern">
+						<h2 class="sg-pattern-head" ><a href="../../patterns/01-molecules-02-blocks-030-panels/01-molecules-02-blocks-030-panels.html" class="patternLink" data-patternpartial="molecules-panels">Panels</a></h2>
+						<div class="sg-pattern-body">
+							<div class="panel panel-default"> 
+    <div class="panel-body"> <p>This is a basic panel with the only required component, panel-body.</p> </div>
+ </div>
+<div class="panel panel-default"> 
+    <div class="panel-heading"> 
+        <h3 class="panel-title">Panel Heading (h3)</h3>
+    </div>
+    <div class="panel-body"> <p>This is a fully dressed panel. It has</p><ul><li>A true &lt;h3&gt; heading</li><li>Panel-body</li><li>Footer</li></ul> </div>
+    <div class="panel-footer">Panel Footer</div>
+     </div>
+<div class="panel panel-default"> 
+    <div class="panel-heading"> 
+        Panel Heading (minor)
+    </div>
+    <div class="panel-body"> <p>This is a panel with a minor heading. A minor heading would be used for less SEO impact.</p> </div>
+    <div class="panel-footer">Panel Footer</div>
+     </div>
+<div class="panel panel-default"> 
+    <div class="panel-body"> <p>This panel has content and footer only.</p> </div>
+    <div class="panel-footer">Panel Footer</div>
+     </div>
+<div class="panel panel-primary"> 
+    <div class="panel-heading"> 
+        <h3 class="panel-title">Primary Title Heading</h3>
+    </div>
+    <div class="panel-body"> <p>This is a 'primary' style panel, fully dressed, with:</p><ul><li>An &lt;h3&gt; heading</li><li>Content</li><li>Footer</li></ul> </div>
+    <div class="panel-footer">Panel Footer</div>
+     </div>
+<div class="panel panel-primary"> 
+    <div class="panel-heading"> 
+        Primary minor heading
+    </div>
+    <div class="panel-body"> <p>Normal version of 'primary' style panel.</p> </div>
+ </div>
+<div class="panel panel-success"> 
+    <div class="panel-heading"> 
+        Success minor heading
+    </div>
+    <div class="panel-body"> <p>Normal version of 'success' style panel.</p> </div>
+ </div>
+<div class="panel panel-info"> 
+    <div class="panel-heading"> 
+        Info minor heading
+    </div>
+    <div class="panel-body"> <p>Normal version of 'info' style panel.</p> </div>
+ </div>
+<div class="panel panel-warning"> 
+    <div class="panel-heading"> 
+        Warning minor heading
+    </div>
+    <div class="panel-body"> <p>Normal version of 'warning' style panel.</p> </div>
+ </div>
+<div class="panel panel-danger"> 
+    <div class="panel-heading"> 
+        Danger minor heading
+    </div>
+    <div class="panel-body"> <p>Normal version of 'danger' style panel.</p> </div>
+ </div>
+
+							<div class="sg-code" style="display: none">
+								<h3 class="sg-code-head">HTML</h3>
+								<pre class="sg-code-html">
+									<code>
+										&lt;div class=&quot;panel panel-default&quot;&gt; 
+    &lt;div class=&quot;panel-body&quot;&gt; &lt;p&gt;This is a basic panel with the only required component, panel-body.&lt;/p&gt; &lt;/div&gt;
+ &lt;/div&gt;
+&lt;div class=&quot;panel panel-default&quot;&gt; 
+    &lt;div class=&quot;panel-heading&quot;&gt; 
+        &lt;h3 class=&quot;panel-title&quot;&gt;Panel Heading (h3)&lt;/h3&gt;
+    &lt;/div&gt;
+    &lt;div class=&quot;panel-body&quot;&gt; &lt;p&gt;This is a fully dressed panel. It has&lt;/p&gt;&lt;ul&gt;&lt;li&gt;A true &amp;lt;h3&amp;gt; heading&lt;/li&gt;&lt;li&gt;Panel-body&lt;/li&gt;&lt;li&gt;Footer&lt;/li&gt;&lt;/ul&gt; &lt;/div&gt;
+    &lt;div class=&quot;panel-footer&quot;&gt;Panel Footer&lt;/div&gt;
+     &lt;/div&gt;
+&lt;div class=&quot;panel panel-default&quot;&gt; 
+    &lt;div class=&quot;panel-heading&quot;&gt; 
+        Panel Heading (minor)
+    &lt;/div&gt;
+    &lt;div class=&quot;panel-body&quot;&gt; &lt;p&gt;This is a panel with a minor heading. A minor heading would be used for less SEO impact.&lt;/p&gt; &lt;/div&gt;
+    &lt;div class=&quot;panel-footer&quot;&gt;Panel Footer&lt;/div&gt;
+     &lt;/div&gt;
+&lt;div class=&quot;panel panel-default&quot;&gt; 
+    &lt;div class=&quot;panel-body&quot;&gt; &lt;p&gt;This panel has content and footer only.&lt;/p&gt; &lt;/div&gt;
+    &lt;div class=&quot;panel-footer&quot;&gt;Panel Footer&lt;/div&gt;
+     &lt;/div&gt;
+&lt;div class=&quot;panel panel-primary&quot;&gt; 
+    &lt;div class=&quot;panel-heading&quot;&gt; 
+        &lt;h3 class=&quot;panel-title&quot;&gt;Primary Title Heading&lt;/h3&gt;
+    &lt;/div&gt;
+    &lt;div class=&quot;panel-body&quot;&gt; &lt;p&gt;This is a 'primary' style panel, fully dressed, with:&lt;/p&gt;&lt;ul&gt;&lt;li&gt;An &amp;lt;h3&amp;gt; heading&lt;/li&gt;&lt;li&gt;Content&lt;/li&gt;&lt;li&gt;Footer&lt;/li&gt;&lt;/ul&gt; &lt;/div&gt;
+    &lt;div class=&quot;panel-footer&quot;&gt;Panel Footer&lt;/div&gt;
+     &lt;/div&gt;
+&lt;div class=&quot;panel panel-primary&quot;&gt; 
+    &lt;div class=&quot;panel-heading&quot;&gt; 
+        Primary minor heading
+    &lt;/div&gt;
+    &lt;div class=&quot;panel-body&quot;&gt; &lt;p&gt;Normal version of 'primary' style panel.&lt;/p&gt; &lt;/div&gt;
+ &lt;/div&gt;
+&lt;div class=&quot;panel panel-success&quot;&gt; 
+    &lt;div class=&quot;panel-heading&quot;&gt; 
+        Success minor heading
+    &lt;/div&gt;
+    &lt;div class=&quot;panel-body&quot;&gt; &lt;p&gt;Normal version of 'success' style panel.&lt;/p&gt; &lt;/div&gt;
+ &lt;/div&gt;
+&lt;div class=&quot;panel panel-info&quot;&gt; 
+    &lt;div class=&quot;panel-heading&quot;&gt; 
+        Info minor heading
+    &lt;/div&gt;
+    &lt;div class=&quot;panel-body&quot;&gt; &lt;p&gt;Normal version of 'info' style panel.&lt;/p&gt; &lt;/div&gt;
+ &lt;/div&gt;
+&lt;div class=&quot;panel panel-warning&quot;&gt; 
+    &lt;div class=&quot;panel-heading&quot;&gt; 
+        Warning minor heading
+    &lt;/div&gt;
+    &lt;div class=&quot;panel-body&quot;&gt; &lt;p&gt;Normal version of 'warning' style panel.&lt;/p&gt; &lt;/div&gt;
+ &lt;/div&gt;
+&lt;div class=&quot;panel panel-danger&quot;&gt; 
+    &lt;div class=&quot;panel-heading&quot;&gt; 
+        Danger minor heading
+    &lt;/div&gt;
+    &lt;div class=&quot;panel-body&quot;&gt; &lt;p&gt;Normal version of 'danger' style panel.&lt;/p&gt; &lt;/div&gt;
+ &lt;/div&gt;
+
+									</code>
+								</pre>
+							</div>
+						</div>
+					</div>
+					<div id="molecules-tbl-panels" class="sg-pattern">
+						<h2 class="sg-pattern-head" ><a href="../../patterns/01-molecules-02-blocks-032-tbl-panels/01-molecules-02-blocks-032-tbl-panels.html" class="patternLink" data-patternpartial="molecules-tbl-panels">Tbl Panels</a></h2>
+						<div class="sg-pattern-body">
+							<div class="panel panel-default"> 
+    <div class="panel-heading"> 
+        <h3 class="panel-title">Panel Heading (h3)</h3>
+    </div>
+    <div class="panel-body"> <p>This is an example of a table nested inside a panel. The table appears outside the 'pnael-body' in order to take the full width of the panel. Either heading style may be used, or none; and footers are most likely not included as the table would provide its own.</p> </div>
+<div class="table--style2">
+    <table class="table tbl-mobile"  aria-describedby="">
+
+
+        <thead>
+            <tr>
+                <th class=""  scope="col" id="" >Source Type</th>
+                <th class="text-right"  scope="col" id="" >Opening Balance</th>
+                <th class="text-right"  scope="col" id="" >Money In </th>
+                <th class="text-right"  scope="col" id="" >Money Out</th>
+                <th class="text-right"  scope="col" id="" >Credits /&nbsp;Fees</th>
+                <th class="text-right"  scope="col" id="" >Gain /&nbsp;Loss</th>
+                <th class="text-right"  scope="col" id="" >Closing Balance</th>
+            </tr>
+        </thead>
+
+        <tbody>
+
+        <tr class="click-action tbl-td-noborder" onclick="document.location='test.html'">
+                <td class=""  data-title="Source Type">EE Contribution</td>
+                <td class="text-right"  data-title="Opening Balance">$1000.00</td>
+                <td class="text-right"  data-title="Money In">$1000.00</td>
+                <td class="text-right"  data-title="Money Out">$1000.00</td>
+                <td class="text-right"  data-title="Credits /&amp;nbsp;Fees">$1000.00</td>
+                <td class="text-right"  data-title="Gain /&amp;nbsp;Loss">$1000.00</td>
+                <td class="text-right"  data-title="Closing Balance">$1000.00</td>
+        </tr>
+        <tr class="click-action tbl-td-noborder" onclick="document.location='test.html'">
+                <td class=""  data-title="Source Type">EE Roth Contribution</td>
+                <td class="text-right"  data-title="Opening Balance">$1000.00</td>
+                <td class="text-right"  data-title="Money In">$1000.00</td>
+                <td class="text-right"  data-title="Money Out">$1000.00</td>
+                <td class="text-right"  data-title="Credits /&amp;nbsp;Fees">$1000.00</td>
+                <td class="text-right"  data-title="Gain /&amp;nbsp;Loss">$1000.00</td>
+                <td class="text-right"  data-title="Closing Balance">$1000.00</td>
+        </tr>
+        <tr class="click-action tbl-td-noborder" onclick="document.location='test.html'">
+                <td class=""  data-title="Source Type">Company Match</td>
+                <td class="text-right"  data-title="Opening Balance">$1000.00</td>
+                <td class="text-right"  data-title="Money In">$1000.00</td>
+                <td class="text-right"  data-title="Money Out">$1000.00</td>
+                <td class="text-right"  data-title="Credits /&amp;nbsp;Fees">$1000.00</td>
+                <td class="text-right"  data-title="Gain /&amp;nbsp;Loss">$1000.00</td>
+                <td class="text-right"  data-title="Closing Balance">$1000.00</td>
+        </tr>
+        </tbody>
+
+        <tfoot>
+            <tr class="">
+            </tr>
+        </tfoot>
+    </table>
+
+</div>
+</div>
+							<div class="sg-code" style="display: none">
+									<div class="sg-code-contains">
+										This pattern contains: 
+											<a href="../../patterns/01-molecules-07-tables-01-table-style-2/01-molecules-07-tables-01-table-style-2.html"><code>molecules-table-style-2</code></a>
+									</div>
+								<h3 class="sg-code-head">HTML</h3>
+								<pre class="sg-code-html">
+									<code>
+										&lt;div class=&quot;panel panel-default&quot;&gt; 
+    &lt;div class=&quot;panel-heading&quot;&gt; 
+        &lt;h3 class=&quot;panel-title&quot;&gt;Panel Heading (h3)&lt;/h3&gt;
+    &lt;/div&gt;
+    &lt;div class=&quot;panel-body&quot;&gt; &lt;p&gt;This is an example of a table nested inside a panel. The table appears outside the 'pnael-body' in order to take the full width of the panel. Either heading style may be used, or none; and footers are most likely not included as the table would provide its own.&lt;/p&gt; &lt;/div&gt;
+&lt;div class=&quot;table--style2&quot;&gt;
+    &lt;table class=&quot;table tbl-mobile&quot;  aria-describedby=&quot;&quot;&gt;
+
+
+        &lt;thead&gt;
+            &lt;tr&gt;
+                &lt;th class=&quot;&quot;  scope=&quot;col&quot; id=&quot;&quot; &gt;Source Type&lt;/th&gt;
+                &lt;th class=&quot;text-right&quot;  scope=&quot;col&quot; id=&quot;&quot; &gt;Opening Balance&lt;/th&gt;
+                &lt;th class=&quot;text-right&quot;  scope=&quot;col&quot; id=&quot;&quot; &gt;Money In &lt;/th&gt;
+                &lt;th class=&quot;text-right&quot;  scope=&quot;col&quot; id=&quot;&quot; &gt;Money Out&lt;/th&gt;
+                &lt;th class=&quot;text-right&quot;  scope=&quot;col&quot; id=&quot;&quot; &gt;Credits /&amp;nbsp;Fees&lt;/th&gt;
+                &lt;th class=&quot;text-right&quot;  scope=&quot;col&quot; id=&quot;&quot; &gt;Gain /&amp;nbsp;Loss&lt;/th&gt;
+                &lt;th class=&quot;text-right&quot;  scope=&quot;col&quot; id=&quot;&quot; &gt;Closing Balance&lt;/th&gt;
+            &lt;/tr&gt;
+        &lt;/thead&gt;
+
+        &lt;tbody&gt;
+
+        &lt;tr class=&quot;click-action tbl-td-noborder&quot; onclick=&quot;document.location='test.html'&quot;&gt;
+                &lt;td class=&quot;&quot;  data-title=&quot;Source Type&quot;&gt;EE Contribution&lt;/td&gt;
+                &lt;td class=&quot;text-right&quot;  data-title=&quot;Opening Balance&quot;&gt;$1000.00&lt;/td&gt;
+                &lt;td class=&quot;text-right&quot;  data-title=&quot;Money In&quot;&gt;$1000.00&lt;/td&gt;
+                &lt;td class=&quot;text-right&quot;  data-title=&quot;Money Out&quot;&gt;$1000.00&lt;/td&gt;
+                &lt;td class=&quot;text-right&quot;  data-title=&quot;Credits /&amp;amp;nbsp;Fees&quot;&gt;$1000.00&lt;/td&gt;
+                &lt;td class=&quot;text-right&quot;  data-title=&quot;Gain /&amp;amp;nbsp;Loss&quot;&gt;$1000.00&lt;/td&gt;
+                &lt;td class=&quot;text-right&quot;  data-title=&quot;Closing Balance&quot;&gt;$1000.00&lt;/td&gt;
+        &lt;/tr&gt;
+        &lt;tr class=&quot;click-action tbl-td-noborder&quot; onclick=&quot;document.location='test.html'&quot;&gt;
+                &lt;td class=&quot;&quot;  data-title=&quot;Source Type&quot;&gt;EE Roth Contribution&lt;/td&gt;
+                &lt;td class=&quot;text-right&quot;  data-title=&quot;Opening Balance&quot;&gt;$1000.00&lt;/td&gt;
+                &lt;td class=&quot;text-right&quot;  data-title=&quot;Money In&quot;&gt;$1000.00&lt;/td&gt;
+                &lt;td class=&quot;text-right&quot;  data-title=&quot;Money Out&quot;&gt;$1000.00&lt;/td&gt;
+                &lt;td class=&quot;text-right&quot;  data-title=&quot;Credits /&amp;amp;nbsp;Fees&quot;&gt;$1000.00&lt;/td&gt;
+                &lt;td class=&quot;text-right&quot;  data-title=&quot;Gain /&amp;amp;nbsp;Loss&quot;&gt;$1000.00&lt;/td&gt;
+                &lt;td class=&quot;text-right&quot;  data-title=&quot;Closing Balance&quot;&gt;$1000.00&lt;/td&gt;
+        &lt;/tr&gt;
+        &lt;tr class=&quot;click-action tbl-td-noborder&quot; onclick=&quot;document.location='test.html'&quot;&gt;
+                &lt;td class=&quot;&quot;  data-title=&quot;Source Type&quot;&gt;Company Match&lt;/td&gt;
+                &lt;td class=&quot;text-right&quot;  data-title=&quot;Opening Balance&quot;&gt;$1000.00&lt;/td&gt;
+                &lt;td class=&quot;text-right&quot;  data-title=&quot;Money In&quot;&gt;$1000.00&lt;/td&gt;
+                &lt;td class=&quot;text-right&quot;  data-title=&quot;Money Out&quot;&gt;$1000.00&lt;/td&gt;
+                &lt;td class=&quot;text-right&quot;  data-title=&quot;Credits /&amp;amp;nbsp;Fees&quot;&gt;$1000.00&lt;/td&gt;
+                &lt;td class=&quot;text-right&quot;  data-title=&quot;Gain /&amp;amp;nbsp;Loss&quot;&gt;$1000.00&lt;/td&gt;
+                &lt;td class=&quot;text-right&quot;  data-title=&quot;Closing Balance&quot;&gt;$1000.00&lt;/td&gt;
+        &lt;/tr&gt;
+        &lt;/tbody&gt;
+
+        &lt;tfoot&gt;
+            &lt;tr class=&quot;&quot;&gt;
+            &lt;/tr&gt;
+        &lt;/tfoot&gt;
+    &lt;/table&gt;
+
+&lt;/div&gt;
+&lt;/div&gt;
+									</code>
+								</pre>
+							</div>
+						</div>
+					</div>
+					<div id="molecules-list-panels" class="sg-pattern">
+						<h2 class="sg-pattern-head" ><a href="../../patterns/01-molecules-02-blocks-034-list-panels/01-molecules-02-blocks-034-list-panels.html" class="patternLink" data-patternpartial="molecules-list-panels">List Panels</a></h2>
+						<div class="sg-pattern-body">
+							<div class="panel panel-primary">
+    <div class="panel-heading">
+        <h3 class="panel-title">Panel Heading (h3)</h3>
+    </div>
+    <div class="panel-body"><p>This is an example of a list nested inside a panel. The list appears outside the 'panel-body' in order to take the full width of the panel. Either heading style may be used, or none; and footers are most likely not included, but can be.</p></div>
+    <!-- List group -->
+    <ul class="list-group">
+        <li class="list-group-item">Cras justo odio</li>
+        <li class="list-group-item">Dapibus ac facilisis in</li>
+        <li class="list-group-item">Morbi leo risus</li>
+        <li class="list-group-item">Porta ac consectetur ac</li>
+        <li class="list-group-item">Vestibulum at eros</li>
+    </ul>
+    <div class="panel-footer">Optional footer</div>
+    </div>
+
+							<div class="sg-code" style="display: none">
+								<h3 class="sg-code-head">HTML</h3>
+								<pre class="sg-code-html">
+									<code>
+										&lt;div class=&quot;panel panel-primary&quot;&gt;
+    &lt;div class=&quot;panel-heading&quot;&gt;
+        &lt;h3 class=&quot;panel-title&quot;&gt;Panel Heading (h3)&lt;/h3&gt;
+    &lt;/div&gt;
+    &lt;div class=&quot;panel-body&quot;&gt;&lt;p&gt;This is an example of a list nested inside a panel. The list appears outside the 'panel-body' in order to take the full width of the panel. Either heading style may be used, or none; and footers are most likely not included, but can be.&lt;/p&gt;&lt;/div&gt;
+    &lt;!-- List group --&gt;
+    &lt;ul class=&quot;list-group&quot;&gt;
+        &lt;li class=&quot;list-group-item&quot;&gt;Cras justo odio&lt;/li&gt;
+        &lt;li class=&quot;list-group-item&quot;&gt;Dapibus ac facilisis in&lt;/li&gt;
+        &lt;li class=&quot;list-group-item&quot;&gt;Morbi leo risus&lt;/li&gt;
+        &lt;li class=&quot;list-group-item&quot;&gt;Porta ac consectetur ac&lt;/li&gt;
+        &lt;li class=&quot;list-group-item&quot;&gt;Vestibulum at eros&lt;/li&gt;
+    &lt;/ul&gt;
+    &lt;div class=&quot;panel-footer&quot;&gt;Optional footer&lt;/div&gt;
+    &lt;/div&gt;
+
+									</code>
+								</pre>
+							</div>
+						</div>
+					</div>
+					<div id="molecules-ads-banners" class="sg-pattern">
+						<h2 class="sg-pattern-head" ><a href="../../patterns/01-molecules-02-blocks-040-ads-banners/01-molecules-02-blocks-040-ads-banners.html" class="patternLink" data-patternpartial="molecules-ads-banners">Ads Banners</a></h2>
+						<div class="sg-pattern-body">
+							<div class="ad__bg--ontrack margin-top margin-bottom">
+    <div class="row  clearfix rel">
+        <div class="col-xs-12 col-sm-5">
+            <h3 class="ad__title--ontrack">Simplify</h3>
+            <p class="no-vertical-margin  ad__content--ontrack">Take control of your retirement assets. One account &mdash; instead of many &mdash; can help!</p>
+        </div>
+        <div class="col-xs-12 col-sm-7">
+            <p class=" ad__content--ontrack"><strong>Good news:</strong> Combining all your assets into a single retirement account makes it easier to manage your money.</p>
+            <p class=" ad__content--ontrack"><strong>Better news:</strong> Transamerica Retirement Solutions' transfer specialists can help you explore your options and guide you through the consolidation process.</p>
+            <p class="bold  ad__content--ontrack">Call <a href="tel:18002758714">800-275-8714</a> or email <a href="mailto:consolidate@transamerica.com">consolidate@transamerica.com</a>.</p>
+        </div>
+    </div>
+</div><!-- /.ad__bg--ontrack -->
+
+							<div class="sg-code" style="display: none">
+								<h3 class="sg-code-head">HTML</h3>
+								<pre class="sg-code-html">
+									<code>
+										&lt;div class=&quot;ad__bg--ontrack margin-top margin-bottom&quot;&gt;
+    &lt;div class=&quot;row  clearfix rel&quot;&gt;
+        &lt;div class=&quot;col-xs-12 col-sm-5&quot;&gt;
+            &lt;h3 class=&quot;ad__title--ontrack&quot;&gt;Simplify&lt;/h3&gt;
+            &lt;p class=&quot;no-vertical-margin  ad__content--ontrack&quot;&gt;Take control of your retirement assets. One account &amp;mdash; instead of many &amp;mdash; can help!&lt;/p&gt;
+        &lt;/div&gt;
+        &lt;div class=&quot;col-xs-12 col-sm-7&quot;&gt;
+            &lt;p class=&quot; ad__content--ontrack&quot;&gt;&lt;strong&gt;Good news:&lt;/strong&gt; Combining all your assets into a single retirement account makes it easier to manage your money.&lt;/p&gt;
+            &lt;p class=&quot; ad__content--ontrack&quot;&gt;&lt;strong&gt;Better news:&lt;/strong&gt; Transamerica Retirement Solutions' transfer specialists can help you explore your options and guide you through the consolidation process.&lt;/p&gt;
+            &lt;p class=&quot;bold  ad__content--ontrack&quot;&gt;Call &lt;a href=&quot;tel:18002758714&quot;&gt;800-275-8714&lt;/a&gt; or email &lt;a href=&quot;mailto:consolidate@transamerica.com&quot;&gt;consolidate@transamerica.com&lt;/a&gt;.&lt;/p&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+&lt;/div&gt;&lt;!-- /.ad__bg--ontrack --&gt;
+
+									</code>
+								</pre>
+							</div>
+						</div>
+					</div>
+					<div id="molecules-wyro-banner" class="sg-pattern">
+						<h2 class="sg-pattern-head" ><a href="../../patterns/01-molecules-02-blocks-041-wyro-banner/01-molecules-02-blocks-041-wyro-banner.html" class="patternLink" data-patternpartial="molecules-wyro-banner">Wyro Banner</a></h2>
+						<div class="sg-pattern-body">
+							<!--<img class="img-responsive center-block forecast-image" src="../../images/WYRO-banner.png" alt="What's Your Retirement Outlook®"> -->
+<!-- no sense in splitting this into json & mustache. It's a very specific banner. If the same design is used for other banners, then we'll split it up for reuse. -->
+<div class="ad__bg--outlook margin-top margin-bottom">
+    <div class="ad__bg2--outlook" role="presentation"></div>
+    <div class="row clearfix rel">
+        <div class="col-xs-12">
+            <h3 class="ad__title--outlook">What's <em>Your Retirement Outlook</em><sup>&reg;</sup>?</h3>
+            <ul class="ad__forecast--outlook">
+                <li><img class="img-responsive center-block forecast-image" src="../../images/rainy-notext.png"><span class="forecast-text">Rainy</span></li><!--
+             --><li class="sep"><hr></li><!--
+             --><li><img class="img-responsive center-block forecast-image" src="../../images/cloudy-notext.png"><span class="forecast-text">Cloudy</span></li><!--
+             --><li class="sep"><hr></li><!--
+             --><li><img class="img-responsive center-block forecast-image" src="../../images/partly-sunny-notext.png"><span class="forecast-text">Partly Sunny</span></li><!--
+             --><li class="sep"><hr></li><!--
+             --><li><img class="img-responsive center-block forecast-image" src="../../images/sunny-notext.png"><span class="forecast-text">Sunny</span></li>
+            </ul>
+            <p class="align-center no-vertical-margin ad__content--outlook">Want to know if you're on course for a sunny retirement? <br>It's easy to find out!</p>
+        </div>
+    </div>
+</div><!-- /.ad__bg--outlook -->
+
+							<div class="sg-code" style="display: none">
+								<h3 class="sg-code-head">HTML</h3>
+								<pre class="sg-code-html">
+									<code>
+										&lt;!--&lt;img class=&quot;img-responsive center-block forecast-image&quot; src=&quot;../../images/WYRO-banner.png&quot; alt=&quot;What's Your Retirement Outlook&reg;&quot;&gt; --&gt;
+&lt;!-- no sense in splitting this into json &amp; mustache. It's a very specific banner. If the same design is used for other banners, then we'll split it up for reuse. --&gt;
+&lt;div class=&quot;ad__bg--outlook margin-top margin-bottom&quot;&gt;
+    &lt;div class=&quot;ad__bg2--outlook&quot; role=&quot;presentation&quot;&gt;&lt;/div&gt;
+    &lt;div class=&quot;row clearfix rel&quot;&gt;
+        &lt;div class=&quot;col-xs-12&quot;&gt;
+            &lt;h3 class=&quot;ad__title--outlook&quot;&gt;What's &lt;em&gt;Your Retirement Outlook&lt;/em&gt;&lt;sup&gt;&amp;reg;&lt;/sup&gt;?&lt;/h3&gt;
+            &lt;ul class=&quot;ad__forecast--outlook&quot;&gt;
+                &lt;li&gt;&lt;img class=&quot;img-responsive center-block forecast-image&quot; src=&quot;../../images/rainy-notext.png&quot;&gt;&lt;span class=&quot;forecast-text&quot;&gt;Rainy&lt;/span&gt;&lt;/li&gt;&lt;!--
+             --&gt;&lt;li class=&quot;sep&quot;&gt;&lt;hr&gt;&lt;/li&gt;&lt;!--
+             --&gt;&lt;li&gt;&lt;img class=&quot;img-responsive center-block forecast-image&quot; src=&quot;../../images/cloudy-notext.png&quot;&gt;&lt;span class=&quot;forecast-text&quot;&gt;Cloudy&lt;/span&gt;&lt;/li&gt;&lt;!--
+             --&gt;&lt;li class=&quot;sep&quot;&gt;&lt;hr&gt;&lt;/li&gt;&lt;!--
+             --&gt;&lt;li&gt;&lt;img class=&quot;img-responsive center-block forecast-image&quot; src=&quot;../../images/partly-sunny-notext.png&quot;&gt;&lt;span class=&quot;forecast-text&quot;&gt;Partly Sunny&lt;/span&gt;&lt;/li&gt;&lt;!--
+             --&gt;&lt;li class=&quot;sep&quot;&gt;&lt;hr&gt;&lt;/li&gt;&lt;!--
+             --&gt;&lt;li&gt;&lt;img class=&quot;img-responsive center-block forecast-image&quot; src=&quot;../../images/sunny-notext.png&quot;&gt;&lt;span class=&quot;forecast-text&quot;&gt;Sunny&lt;/span&gt;&lt;/li&gt;
+            &lt;/ul&gt;
+            &lt;p class=&quot;align-center no-vertical-margin ad__content--outlook&quot;&gt;Want to know if you're on course for a sunny retirement? &lt;br&gt;It's easy to find out!&lt;/p&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+&lt;/div&gt;&lt;!-- /.ad__bg--outlook --&gt;
+
+									</code>
+								</pre>
+							</div>
+						</div>
+					</div>
+					<div id="molecules-ma-banner-with-video" class="sg-pattern">
+						<h2 class="sg-pattern-head" ><a href="../../patterns/01-molecules-02-blocks-045-ma-banner-with-video/01-molecules-02-blocks-045-ma-banner-with-video.html" class="patternLink" data-patternpartial="molecules-ma-banner-with-video">Ma Banner With Video</a></h2>
+						<div class="sg-pattern-body">
+							<div class="ad__bg--advice margin-top margin-bottom clearfix rel">
+    <div class="ad__content--advice">
+        <h2 class="h3 ad-advice__title">Get the personalized advice you need to achieve your retirement goals</h2>
+        <p class="text-center-xs">
+            <span class="glyphicon glyphicon-facetime-video" role="presentation"></span>
+            <a role="button" data-toggle="collapse" href="#embeddedVideoSection" id="watchVideoLink" aria-expanded="false" aria-controls="embeddedVideoSection">
+                Watch a short video!
+            </a>
+        </p>
+    </div>
+</div><!-- /.ad__bg--advice -->
+
+<div class="row collapse margin-bottom" id="embeddedVideoSection">
+    <div class="col-xs-12">
+        <div class="embed-responsive embed-responsive-16by9">
+            <!-- No src on purpose lest it plays before requested -->
+            <iframe id="embeddedVideo" data-src="https://www.youtube.com/embed/NpEaa2P7qZI?autoplay=1&fs=1&iv_load_policy=3&showinfo=0&rel=0" class="embed-responsive-item" frameborder="0" allowfullscreen></iframe>
+        </div>
+    </div>
+</div>
+
+<script>
+    // Only load video when requested, and only once
+    $("#watchVideoLink").on('click', function(){
+        var iframe = $("#embeddedVideo");
+        if (!!iframe.attr('src')) {
+            iframe.attr('src', '');
+        } else {
+            iframe.attr('src', iframe.data('src'));
+        }
+    });
+</script>
+
+							<div class="sg-code" style="display: none">
+								<h3 class="sg-code-head">HTML</h3>
+								<pre class="sg-code-html">
+									<code>
+										&lt;div class=&quot;ad__bg--advice margin-top margin-bottom clearfix rel&quot;&gt;
+    &lt;div class=&quot;ad__content--advice&quot;&gt;
+        &lt;h2 class=&quot;h3 ad-advice__title&quot;&gt;Get the personalized advice you need to achieve your retirement goals&lt;/h2&gt;
+        &lt;p class=&quot;text-center-xs&quot;&gt;
+            &lt;span class=&quot;glyphicon glyphicon-facetime-video&quot; role=&quot;presentation&quot;&gt;&lt;/span&gt;
+            &lt;a role=&quot;button&quot; data-toggle=&quot;collapse&quot; href=&quot;#embeddedVideoSection&quot; id=&quot;watchVideoLink&quot; aria-expanded=&quot;false&quot; aria-controls=&quot;embeddedVideoSection&quot;&gt;
+                Watch a short video!
+            &lt;/a&gt;
+        &lt;/p&gt;
+    &lt;/div&gt;
+&lt;/div&gt;&lt;!-- /.ad__bg--advice --&gt;
+
+&lt;div class=&quot;row collapse margin-bottom&quot; id=&quot;embeddedVideoSection&quot;&gt;
+    &lt;div class=&quot;col-xs-12&quot;&gt;
+        &lt;div class=&quot;embed-responsive embed-responsive-16by9&quot;&gt;
+            &lt;!-- No src on purpose lest it plays before requested --&gt;
+            &lt;iframe id=&quot;embeddedVideo&quot; data-src=&quot;https://www.youtube.com/embed/NpEaa2P7qZI?autoplay=1&amp;fs=1&amp;iv_load_policy=3&amp;showinfo=0&amp;rel=0&quot; class=&quot;embed-responsive-item&quot; frameborder=&quot;0&quot; allowfullscreen&gt;&lt;/iframe&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
+
+&lt;script&gt;
+    // Only load video when requested, and only once
+    $(&quot;#watchVideoLink&quot;).on('click', function(){
+        var iframe = $(&quot;#embeddedVideo&quot;);
+        if (!!iframe.attr('src')) {
+            iframe.attr('src', '');
+        } else {
+            iframe.attr('src', iframe.data('src'));
+        }
+    });
+&lt;/script&gt;
+
+									</code>
+								</pre>
+							</div>
+						</div>
+					</div>
+					<div id="molecules-splash-banner-generic" class="sg-pattern">
+						<h2 class="sg-pattern-head" ><a href="../../patterns/01-molecules-02-blocks-046-splash-banner-generic/01-molecules-02-blocks-046-splash-banner-generic.html" class="patternLink" data-patternpartial="molecules-splash-banner-generic">Splash Banner Generic</a></h2>
+						<div class="sg-pattern-body">
+							<div class="primary-banner__wrapper" style="background-image: url(../../../../images/dcma/dcma-banner.png);">
+    
+    <h1 class="primary-banner__title"><em>Managed Advice <sup>&reg;</sup></em></h1>
+    <h2 class="primary-banner__subtitle">Let's Get Started</h2>
+	
+</div>
+<hr />
+<div class="primary-banner__wrapper" style="background-image: url(../../../../images/dcma/dcma-banner.png);">
+    
+    <h2 class="primary-banner__title"><em>Brighten Your Outlook <sup>&reg;</sup></em> with <em>Managed Advice <sup>&reg;</sup></em></h2>
+    
+	<p>Get the personalized advice you need to achieve your retirement goals &ndash; including a detailed, long-term investment strategy through our comprehensive retirement planning solution. <a href="#" class="bold">Learn More</a>.</p>
+</div>
+
+
+							<div class="sg-code" style="display: none">
+								<h3 class="sg-code-head">HTML</h3>
+								<pre class="sg-code-html">
+									<code>
+										&lt;div class=&quot;primary-banner__wrapper&quot; style=&quot;background-image: url(../../../../images/dcma/dcma-banner.png);&quot;&gt;
+    
+    &lt;h1 class=&quot;primary-banner__title&quot;&gt;&lt;em&gt;Managed Advice &lt;sup&gt;&amp;reg;&lt;/sup&gt;&lt;/em&gt;&lt;/h1&gt;
+    &lt;h2 class=&quot;primary-banner__subtitle&quot;&gt;Let's Get Started&lt;/h2&gt;
+	
+&lt;/div&gt;
+&lt;hr /&gt;
+&lt;div class=&quot;primary-banner__wrapper&quot; style=&quot;background-image: url(../../../../images/dcma/dcma-banner.png);&quot;&gt;
+    
+    &lt;h2 class=&quot;primary-banner__title&quot;&gt;&lt;em&gt;Brighten Your Outlook &lt;sup&gt;&amp;reg;&lt;/sup&gt;&lt;/em&gt; with &lt;em&gt;Managed Advice &lt;sup&gt;&amp;reg;&lt;/sup&gt;&lt;/em&gt;&lt;/h2&gt;
+    
+	&lt;p&gt;Get the personalized advice you need to achieve your retirement goals &amp;ndash; including a detailed, long-term investment strategy through our comprehensive retirement planning solution. &lt;a href=&quot;#&quot; class=&quot;bold&quot;&gt;Learn More&lt;/a&gt;.&lt;/p&gt;
+&lt;/div&gt;
+
+
+									</code>
+								</pre>
+							</div>
+						</div>
+					</div>
+					<div id="molecules-splash-banner-vert" class="sg-pattern">
+						<h2 class="sg-pattern-head" ><a href="../../patterns/01-molecules-02-blocks-047-splash-banner-vert/01-molecules-02-blocks-047-splash-banner-vert.html" class="patternLink" data-patternpartial="molecules-splash-banner-vert">Splash Banner Vert</a></h2>
+						<div class="sg-pattern-body">
+							<h2>Vertical ad/banner example</h2>
+<div class="row clearfix">
+    <div class="col-xs-12 col-sm-6 col-sm-push-6">
+        <div class="secondary-banner">
+            <h2 class="secondary-banner__title"><em>Brighten Your Outlook <sup>&reg;</sup></em> with <em>Managed Advice <sup>&reg;</sup></em></h2>
+            <div class="secondary-banner__hero embed-responsive-4by3" style="background-image:url(../../../../images/dcma/dcma-banner-hero.png);" role="presentation"></div>
+            <p>Get the personalized advice you need to achieve your retirement goals &mdash; including a detailed, long-term investment strategy &mdash; through our comprehensive retirement planning solution.</p>
+			<div class="text-center js-bottom-aligned"><a href="#"  class="btn btn-primary">Learn More</a>
+</div><!-- js-bottom-aligned is optional and needs js in cases of eq-ht-cols and desiring the buttons to align along the bottom of the box -->
+        </div>
+    </div>
+</div>
+							<div class="sg-code" style="display: none">
+									<div class="sg-code-contains">
+										This pattern contains: 
+											<a href="../../patterns/00-atoms-06-buttons-020-button-link/00-atoms-06-buttons-020-button-link.html"><code>atoms-button-link</code></a>
+									</div>
+								<h3 class="sg-code-head">HTML</h3>
+								<pre class="sg-code-html">
+									<code>
+										&lt;h2&gt;Vertical ad/banner example&lt;/h2&gt;
+&lt;div class=&quot;row clearfix&quot;&gt;
+    &lt;div class=&quot;col-xs-12 col-sm-6 col-sm-push-6&quot;&gt;
+        &lt;div class=&quot;secondary-banner&quot;&gt;
+            &lt;h2 class=&quot;secondary-banner__title&quot;&gt;&lt;em&gt;Brighten Your Outlook &lt;sup&gt;&amp;reg;&lt;/sup&gt;&lt;/em&gt; with &lt;em&gt;Managed Advice &lt;sup&gt;&amp;reg;&lt;/sup&gt;&lt;/em&gt;&lt;/h2&gt;
+            &lt;div class=&quot;secondary-banner__hero embed-responsive-4by3&quot; style=&quot;background-image:url(../../../../images/dcma/dcma-banner-hero.png);&quot; role=&quot;presentation&quot;&gt;&lt;/div&gt;
+            &lt;p&gt;Get the personalized advice you need to achieve your retirement goals &amp;mdash; including a detailed, long-term investment strategy &amp;mdash; through our comprehensive retirement planning solution.&lt;/p&gt;
+			&lt;div class=&quot;text-center js-bottom-aligned&quot;&gt;&lt;a href=&quot;#&quot;  class=&quot;btn btn-primary&quot;&gt;Learn More&lt;/a&gt;
+&lt;/div&gt;&lt;!-- js-bottom-aligned is optional and needs js in cases of eq-ht-cols and desiring the buttons to align along the bottom of the box --&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
+									</code>
+								</pre>
+							</div>
+						</div>
+					</div>
+					<div id="molecules-buttons-block" class="sg-pattern">
+						<h2 class="sg-pattern-head" ><a href="../../patterns/01-molecules-02-blocks-050-buttons-block/01-molecules-02-blocks-050-buttons-block.html" class="patternLink" data-patternpartial="molecules-buttons-block">Buttons Block</a></h2>
+						<div class="sg-pattern-body">
+							<div class="row clearfix">
+    <div class="col-xs-12 padding-top padding-bottom">
+        <h4>2 Button Set (standard)</h4>
+        <div class="btn-unit btn-unit-primary-action">
+            <a href="#"  class="btn btn-primary">Positive Action</a>
+        </div>
+        <div class="btn-unit btn-unit-secondary-action">
+            <a href="#"  class="btn btn-secondary">Negative Action</a>
+        </div>
+    </div>
+</div>
+<div class="row clearfix">
+    <div class="col-xs-12 padding-top padding-bottom">
+        <h4>3 Button Set (not uncommon)</h4>
+        <div class="btn-unit btn-unit-primary-action">
+            <a href="#"  class="btn btn-primary"><span class="glyphicon glyphicon-floppy-save" role="presentation"></span> Save Profile</a>
+        </div>
+        <div class="btn-unit btn-unit-primary-action">
+            <a href="#"  class="btn btn-secondary"><span class="glyphicon glyphicon-ban-circle" role="presentation"></span> Delete Profile</a>
+        </div>
+        <div class="btn-unit btn-unit-secondary-action">
+            <a href="#"  class="btn btn-secondary">View <em>Your Retirement Outlook</em><sup>&reg;</sup> <span class="trs-icons-search" role="presentation"></span></a>
+        </div>
+    </div>
+</div>
+<div class="row clearfix">
+    <div class="col-xs-12 padding-top padding-bottom">
+        <h4>4 Button Set (rare)</h4>
+        <div class="btn-unit btn-unit-primary-action">
+            <a href="#"  class="btn btn-primary">Send <span class="trs-icons-email" role="presentation"></span></a>
+        </div>
+        <div class="btn-unit btn-unit-primary-action">
+            <a href="#"  class="btn btn-secondary"><span class="trs-icons-lf-arrow" role="presentation"></span> Back</a>
+        </div>
+        <div class="btn-unit btn-unit-secondary-action">
+            <a href="#"  class="btn btn-secondary"><span class="glyphicon glyphicon-refresh" role="presentation"></span> Reset</a>
+        </div>
+        <div class="btn-unit btn-unit-secondary-action">
+            <a href="#"  class="btn btn-primary"><span class="trs-icons-print" role="presentation"></span> Print</a>
+        </div>
+    </div>
+</div>
+
+							<div class="sg-code" style="display: none">
+								<h3 class="sg-code-head">HTML</h3>
+								<pre class="sg-code-html">
+									<code>
+										&lt;div class=&quot;row clearfix&quot;&gt;
+    &lt;div class=&quot;col-xs-12 padding-top padding-bottom&quot;&gt;
+        &lt;h4&gt;2 Button Set (standard)&lt;/h4&gt;
+        &lt;div class=&quot;btn-unit btn-unit-primary-action&quot;&gt;
+            &lt;a href=&quot;#&quot;  class=&quot;btn btn-primary&quot;&gt;Positive Action&lt;/a&gt;
+        &lt;/div&gt;
+        &lt;div class=&quot;btn-unit btn-unit-secondary-action&quot;&gt;
+            &lt;a href=&quot;#&quot;  class=&quot;btn btn-secondary&quot;&gt;Negative Action&lt;/a&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&quot;row clearfix&quot;&gt;
+    &lt;div class=&quot;col-xs-12 padding-top padding-bottom&quot;&gt;
+        &lt;h4&gt;3 Button Set (not uncommon)&lt;/h4&gt;
+        &lt;div class=&quot;btn-unit btn-unit-primary-action&quot;&gt;
+            &lt;a href=&quot;#&quot;  class=&quot;btn btn-primary&quot;&gt;&lt;span class=&quot;glyphicon glyphicon-floppy-save&quot; role=&quot;presentation&quot;&gt;&lt;/span&gt; Save Profile&lt;/a&gt;
+        &lt;/div&gt;
+        &lt;div class=&quot;btn-unit btn-unit-primary-action&quot;&gt;
+            &lt;a href=&quot;#&quot;  class=&quot;btn btn-secondary&quot;&gt;&lt;span class=&quot;glyphicon glyphicon-ban-circle&quot; role=&quot;presentation&quot;&gt;&lt;/span&gt; Delete Profile&lt;/a&gt;
+        &lt;/div&gt;
+        &lt;div class=&quot;btn-unit btn-unit-secondary-action&quot;&gt;
+            &lt;a href=&quot;#&quot;  class=&quot;btn btn-secondary&quot;&gt;View &lt;em&gt;Your Retirement Outlook&lt;/em&gt;&lt;sup&gt;&amp;reg;&lt;/sup&gt; &lt;span class=&quot;trs-icons-search&quot; role=&quot;presentation&quot;&gt;&lt;/span&gt;&lt;/a&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&quot;row clearfix&quot;&gt;
+    &lt;div class=&quot;col-xs-12 padding-top padding-bottom&quot;&gt;
+        &lt;h4&gt;4 Button Set (rare)&lt;/h4&gt;
+        &lt;div class=&quot;btn-unit btn-unit-primary-action&quot;&gt;
+            &lt;a href=&quot;#&quot;  class=&quot;btn btn-primary&quot;&gt;Send &lt;span class=&quot;trs-icons-email&quot; role=&quot;presentation&quot;&gt;&lt;/span&gt;&lt;/a&gt;
+        &lt;/div&gt;
+        &lt;div class=&quot;btn-unit btn-unit-primary-action&quot;&gt;
+            &lt;a href=&quot;#&quot;  class=&quot;btn btn-secondary&quot;&gt;&lt;span class=&quot;trs-icons-lf-arrow&quot; role=&quot;presentation&quot;&gt;&lt;/span&gt; Back&lt;/a&gt;
+        &lt;/div&gt;
+        &lt;div class=&quot;btn-unit btn-unit-secondary-action&quot;&gt;
+            &lt;a href=&quot;#&quot;  class=&quot;btn btn-secondary&quot;&gt;&lt;span class=&quot;glyphicon glyphicon-refresh&quot; role=&quot;presentation&quot;&gt;&lt;/span&gt; Reset&lt;/a&gt;
+        &lt;/div&gt;
+        &lt;div class=&quot;btn-unit btn-unit-secondary-action&quot;&gt;
+            &lt;a href=&quot;#&quot;  class=&quot;btn btn-primary&quot;&gt;&lt;span class=&quot;trs-icons-print&quot; role=&quot;presentation&quot;&gt;&lt;/span&gt; Print&lt;/a&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
+
+									</code>
+								</pre>
+							</div>
+						</div>
+					</div>
+					<div id="molecules-block-basic" class="sg-pattern">
+						<h2 class="sg-pattern-head" ><a href="../../patterns/01-molecules-02-blocks-06-block-basic/01-molecules-02-blocks-06-block-basic.html" class="patternLink" data-patternpartial="molecules-block-basic">Block Basic</a></h2>
+						<div class="sg-pattern-body">
+							<div class="block block-basic">
+    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras euismod tortor eget mauris sodales, sed pharetra enim mattis. Curabitur dapibus maximus consectetur. Quisque molestie et nisi ac pretium. Sed scelerisque tristique finibus. Maecenas fermentum suscipit turpis, pulvinar elementum urna dapibus vel. Donec vitae venenatis dui, tincidunt sagittis orci. Donec suscipit arcu libero, vitae rhoncus nulla pretium non. In hac habitasse platea dictumst. Nam at sagittis nisi. Nunc gravida arcu eu lectus pharetra, quis dictum sem blandit.</p>
+</div>
+							<div class="sg-code" style="display: none">
+								<h3 class="sg-code-head">HTML</h3>
+								<pre class="sg-code-html">
+									<code>
+										&lt;div class=&quot;block block-basic&quot;&gt;
+    &lt;p&gt;Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras euismod tortor eget mauris sodales, sed pharetra enim mattis. Curabitur dapibus maximus consectetur. Quisque molestie et nisi ac pretium. Sed scelerisque tristique finibus. Maecenas fermentum suscipit turpis, pulvinar elementum urna dapibus vel. Donec vitae venenatis dui, tincidunt sagittis orci. Donec suscipit arcu libero, vitae rhoncus nulla pretium non. In hac habitasse platea dictumst. Nam at sagittis nisi. Nunc gravida arcu eu lectus pharetra, quis dictum sem blandit.&lt;/p&gt;
+&lt;/div&gt;
+									</code>
+								</pre>
+							</div>
+						</div>
+					</div>
+					<div id="molecules-block-columns" class="sg-pattern">
+						<h2 class="sg-pattern-head" ><a href="../../patterns/01-molecules-02-blocks-07-block-columns/01-molecules-02-blocks-07-block-columns.html" class="patternLink" data-patternpartial="molecules-block-columns">Block Columns</a></h2>
+						<div class="sg-pattern-body">
+							<div class="block block-basic col-sm-4 block-left">
+ <p>Lorem ipsum dolor sit amet, <a class="link--inline-link" href="#">Sample Inline Link Text Here</a> consectetur adipiscing elit. Cras euismod tortor eget mauris sodales, sed pharetra enim mattis. Curabitur dapibus maximus consectetur. Quisque molestie et nisi ac pretium. Sed scelerisque tristique finibus. Maecenas fermentum suscipit turpis, pulvinar elementum urna dapibus vel. Donec vitae venenatis dui, tincidunt sagittis orci. Donec suscipit arcu libero, vitae rhoncus nulla pretium non. In hac habitasse platea dictumst. Nam at sagittis nisi. Nunc gravida arcu eu lectus pharetra, quis dictum sem blandit.</p>
+</div>
+<div class="block block-basic col-sm-4 block-middle">
+ <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras euismod tortor eget mauris sodales, sed pharetra enim mattis. Curabitur dapibus maximus consectetur. Quisque molestie et nisi ac pretium. Sed scelerisque tristique finibus. Maecenas fermentum suscipit turpis, pulvinar elementum urna dapibus vel. Donec vitae venenatis dui, tincidunt sagittis orci. Donec suscipit arcu libero, vitae rhoncus nulla pretium non. In hac habitasse platea dictumst. Nam at sagittis nisi. Nunc gravida arcu eu lectus pharetra, quis dictum sem blandit.</p>
+</div>
+<div class="block block-basic col-sm-4 block-right">
+ <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras euismod tortor eget mauris sodales, sed pharetra enim mattis. Curabitur dapibus maximus consectetur. Quisque molestie et nisi ac pretium. Sed scelerisque tristique finibus. Maecenas fermentum suscipit turpis, pulvinar elementum urna dapibus vel. Donec vitae venenatis dui, tincidunt sagittis orci. Donec suscipit arcu libero, vitae rhoncus nulla pretium non. In hac habitasse platea dictumst. Nam at sagittis nisi. Nunc gravida arcu eu lectus pharetra, quis dictum sem blandit.</p>
+</div>
+							<div class="sg-code" style="display: none">
+								<h3 class="sg-code-head">HTML</h3>
+								<pre class="sg-code-html">
+									<code>
+										&lt;div class=&quot;block block-basic col-sm-4 block-left&quot;&gt;
+ &lt;p&gt;Lorem ipsum dolor sit amet, &lt;a class=&quot;link--inline-link&quot; href=&quot;#&quot;&gt;Sample Inline Link Text Here&lt;/a&gt; consectetur adipiscing elit. Cras euismod tortor eget mauris sodales, sed pharetra enim mattis. Curabitur dapibus maximus consectetur. Quisque molestie et nisi ac pretium. Sed scelerisque tristique finibus. Maecenas fermentum suscipit turpis, pulvinar elementum urna dapibus vel. Donec vitae venenatis dui, tincidunt sagittis orci. Donec suscipit arcu libero, vitae rhoncus nulla pretium non. In hac habitasse platea dictumst. Nam at sagittis nisi. Nunc gravida arcu eu lectus pharetra, quis dictum sem blandit.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&quot;block block-basic col-sm-4 block-middle&quot;&gt;
+ &lt;p&gt;Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras euismod tortor eget mauris sodales, sed pharetra enim mattis. Curabitur dapibus maximus consectetur. Quisque molestie et nisi ac pretium. Sed scelerisque tristique finibus. Maecenas fermentum suscipit turpis, pulvinar elementum urna dapibus vel. Donec vitae venenatis dui, tincidunt sagittis orci. Donec suscipit arcu libero, vitae rhoncus nulla pretium non. In hac habitasse platea dictumst. Nam at sagittis nisi. Nunc gravida arcu eu lectus pharetra, quis dictum sem blandit.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&quot;block block-basic col-sm-4 block-right&quot;&gt;
+ &lt;p&gt;Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras euismod tortor eget mauris sodales, sed pharetra enim mattis. Curabitur dapibus maximus consectetur. Quisque molestie et nisi ac pretium. Sed scelerisque tristique finibus. Maecenas fermentum suscipit turpis, pulvinar elementum urna dapibus vel. Donec vitae venenatis dui, tincidunt sagittis orci. Donec suscipit arcu libero, vitae rhoncus nulla pretium non. In hac habitasse platea dictumst. Nam at sagittis nisi. Nunc gravida arcu eu lectus pharetra, quis dictum sem blandit.&lt;/p&gt;
+&lt;/div&gt;
+									</code>
+								</pre>
+							</div>
+						</div>
+					</div>
+					<div id="molecules-block-well" class="sg-pattern">
+						<h2 class="sg-pattern-head" ><a href="../../patterns/01-molecules-02-blocks-08-block-well/01-molecules-02-blocks-08-block-well.html" class="patternLink" data-patternpartial="molecules-block-well">Block Well</a></h2>
+						<div class="sg-pattern-body">
+							<div class="block block-well">
+    <div class="well-title">Example well</div>
+    <div class="well-body"><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras euismod tortor eget mauris sodales, sed pharetra enim mattis. Curabitur dapibus maximus consectetur. Quisque molestie et nisi ac pretium. Sed scelerisque tristique finibus. Maecenas fermentum suscipit turpis, pulvinar elementum urna dapibus vel. Donec vitae venenatis dui, tincidunt sagittis orci. Donec suscipit arcu libero, vitae rhoncus nulla pretium non. In hac habitasse platea dictumst. Nam at sagittis nisi. Nunc gravida arcu eu lectus pharetra, quis dictum sem blandit.</p></div>
+</div>
+
+							<div class="sg-code" style="display: none">
+								<h3 class="sg-code-head">HTML</h3>
+								<pre class="sg-code-html">
+									<code>
+										&lt;div class=&quot;block block-well&quot;&gt;
+    &lt;div class=&quot;well-title&quot;&gt;Example well&lt;/div&gt;
+    &lt;div class=&quot;well-body&quot;&gt;&lt;p&gt;Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras euismod tortor eget mauris sodales, sed pharetra enim mattis. Curabitur dapibus maximus consectetur. Quisque molestie et nisi ac pretium. Sed scelerisque tristique finibus. Maecenas fermentum suscipit turpis, pulvinar elementum urna dapibus vel. Donec vitae venenatis dui, tincidunt sagittis orci. Donec suscipit arcu libero, vitae rhoncus nulla pretium non. In hac habitasse platea dictumst. Nam at sagittis nisi. Nunc gravida arcu eu lectus pharetra, quis dictum sem blandit.&lt;/p&gt;&lt;/div&gt;
+&lt;/div&gt;
+
+									</code>
+								</pre>
+							</div>
+						</div>
+					</div>
+					<div id="molecules-block-well-columns" class="sg-pattern">
+						<h2 class="sg-pattern-head" ><a href="../../patterns/01-molecules-02-blocks-09-block-well-columns/01-molecules-02-blocks-09-block-well-columns.html" class="patternLink" data-patternpartial="molecules-block-well-columns">Block Well Columns</a></h2>
+						<div class="sg-pattern-body">
+							<div class="block block-well col-sm-4 block-left">
+    <div class="well-title">Example well</div>
+    <div class="well-body"><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras euismod tortor eget mauris sodales, sed pharetra enim mattis. Curabitur dapibus maximus consectetur. Quisque molestie et nisi ac pretium. Sed scelerisque tristique finibus. Maecenas fermentum suscipit turpis, pulvinar elementum urna dapibus vel. Donec vitae venenatis dui, tincidunt sagittis orci. Donec suscipit arcu libero, vitae rhoncus nulla pretium non. In hac habitasse platea dictumst. Nam at sagittis nisi. Nunc gravida arcu eu lectus pharetra, quis dictum sem blandit.</p></div>
+</div>
+<div class="block block-well col-sm-4 block-middle">
+    <div class="well-title">Example well</div>
+    <div class="well-body"><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras euismod tortor eget mauris sodales, sed pharetra enim mattis. Curabitur dapibus maximus consectetur. Quisque molestie et nisi ac pretium. Sed scelerisque tristique finibus. Maecenas fermentum suscipit turpis, pulvinar elementum urna dapibus vel. Donec vitae venenatis dui, tincidunt sagittis orci. Donec suscipit arcu libero, vitae rhoncus nulla pretium non. In hac habitasse platea dictumst. Nam at sagittis nisi. Nunc gravida arcu eu lectus pharetra, quis dictum sem blandit.</p></div>
+</div>
+<div class="block block-well col-sm-4 block-right">
+    <div class="well-title">Example well</div>
+    <div class="well-body"><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras euismod tortor eget mauris sodales, sed pharetra enim mattis. Curabitur dapibus maximus consectetur. Quisque molestie et nisi ac pretium. Sed scelerisque tristique finibus. Maecenas fermentum suscipit turpis, pulvinar elementum urna dapibus vel. Donec vitae venenatis dui, tincidunt sagittis orci. Donec suscipit arcu libero, vitae rhoncus nulla pretium non. In hac habitasse platea dictumst. Nam at sagittis nisi. Nunc gravida arcu eu lectus pharetra, quis dictum sem blandit.</p></div>
+</div>
+
+							<div class="sg-code" style="display: none">
+								<h3 class="sg-code-head">HTML</h3>
+								<pre class="sg-code-html">
+									<code>
+										&lt;div class=&quot;block block-well col-sm-4 block-left&quot;&gt;
+    &lt;div class=&quot;well-title&quot;&gt;Example well&lt;/div&gt;
+    &lt;div class=&quot;well-body&quot;&gt;&lt;p&gt;Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras euismod tortor eget mauris sodales, sed pharetra enim mattis. Curabitur dapibus maximus consectetur. Quisque molestie et nisi ac pretium. Sed scelerisque tristique finibus. Maecenas fermentum suscipit turpis, pulvinar elementum urna dapibus vel. Donec vitae venenatis dui, tincidunt sagittis orci. Donec suscipit arcu libero, vitae rhoncus nulla pretium non. In hac habitasse platea dictumst. Nam at sagittis nisi. Nunc gravida arcu eu lectus pharetra, quis dictum sem blandit.&lt;/p&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&quot;block block-well col-sm-4 block-middle&quot;&gt;
+    &lt;div class=&quot;well-title&quot;&gt;Example well&lt;/div&gt;
+    &lt;div class=&quot;well-body&quot;&gt;&lt;p&gt;Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras euismod tortor eget mauris sodales, sed pharetra enim mattis. Curabitur dapibus maximus consectetur. Quisque molestie et nisi ac pretium. Sed scelerisque tristique finibus. Maecenas fermentum suscipit turpis, pulvinar elementum urna dapibus vel. Donec vitae venenatis dui, tincidunt sagittis orci. Donec suscipit arcu libero, vitae rhoncus nulla pretium non. In hac habitasse platea dictumst. Nam at sagittis nisi. Nunc gravida arcu eu lectus pharetra, quis dictum sem blandit.&lt;/p&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&quot;block block-well col-sm-4 block-right&quot;&gt;
+    &lt;div class=&quot;well-title&quot;&gt;Example well&lt;/div&gt;
+    &lt;div class=&quot;well-body&quot;&gt;&lt;p&gt;Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras euismod tortor eget mauris sodales, sed pharetra enim mattis. Curabitur dapibus maximus consectetur. Quisque molestie et nisi ac pretium. Sed scelerisque tristique finibus. Maecenas fermentum suscipit turpis, pulvinar elementum urna dapibus vel. Donec vitae venenatis dui, tincidunt sagittis orci. Donec suscipit arcu libero, vitae rhoncus nulla pretium non. In hac habitasse platea dictumst. Nam at sagittis nisi. Nunc gravida arcu eu lectus pharetra, quis dictum sem blandit.&lt;/p&gt;&lt;/div&gt;
+&lt;/div&gt;
+
+									</code>
+								</pre>
+							</div>
+						</div>
+					</div>
+					<div id="molecules-block-well-columns-rows" class="sg-pattern">
+						<h2 class="sg-pattern-head" ><a href="../../patterns/01-molecules-02-blocks-10-block-well-columns-rows/01-molecules-02-blocks-10-block-well-columns-rows.html" class="patternLink" data-patternpartial="molecules-block-well-columns-rows">Block Well Columns Rows</a></h2>
+						<div class="sg-pattern-body">
+							<div class="block block-well col-sm-4 block-left">
+    <div class="well-title">Example well</div>
+    <div class="block-row">Average Savings Rate</div>
+    <div class="block-row">Average Savings Rate</div>
+    <div class="block-row">Average Savings Rate</div>
+    <div class="block-row">Average Savings Rate</div>
+</div>
+<div class="block block-well col-sm-4 block-middle">
+    <div class="well-title">Example well</div>
+    <div class="block-row">Average Savings Rate</div>
+    <div class="block-row">Average Savings Rate</div>
+    <div class="block-row">Average Savings Rate</div>
+    <div class="block-row">Average Savings Rate</div>
+</div>
+<div class="block block-well col-sm-4 block-right">
+    <div class="well-title">Example well</div>
+    <div class="block-row">Average Savings Rate</div>
+    <div class="block-row">Average Savings Rate</div>
+    <div class="block-row">Average Savings Rate</div>
+    <div class="block-row">Average Savings Rate</div>
+</div>
+
+							<div class="sg-code" style="display: none">
+								<h3 class="sg-code-head">HTML</h3>
+								<pre class="sg-code-html">
+									<code>
+										&lt;div class=&quot;block block-well col-sm-4 block-left&quot;&gt;
+    &lt;div class=&quot;well-title&quot;&gt;Example well&lt;/div&gt;
+    &lt;div class=&quot;block-row&quot;&gt;Average Savings Rate&lt;/div&gt;
+    &lt;div class=&quot;block-row&quot;&gt;Average Savings Rate&lt;/div&gt;
+    &lt;div class=&quot;block-row&quot;&gt;Average Savings Rate&lt;/div&gt;
+    &lt;div class=&quot;block-row&quot;&gt;Average Savings Rate&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&quot;block block-well col-sm-4 block-middle&quot;&gt;
+    &lt;div class=&quot;well-title&quot;&gt;Example well&lt;/div&gt;
+    &lt;div class=&quot;block-row&quot;&gt;Average Savings Rate&lt;/div&gt;
+    &lt;div class=&quot;block-row&quot;&gt;Average Savings Rate&lt;/div&gt;
+    &lt;div class=&quot;block-row&quot;&gt;Average Savings Rate&lt;/div&gt;
+    &lt;div class=&quot;block-row&quot;&gt;Average Savings Rate&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&quot;block block-well col-sm-4 block-right&quot;&gt;
+    &lt;div class=&quot;well-title&quot;&gt;Example well&lt;/div&gt;
+    &lt;div class=&quot;block-row&quot;&gt;Average Savings Rate&lt;/div&gt;
+    &lt;div class=&quot;block-row&quot;&gt;Average Savings Rate&lt;/div&gt;
+    &lt;div class=&quot;block-row&quot;&gt;Average Savings Rate&lt;/div&gt;
+    &lt;div class=&quot;block-row&quot;&gt;Average Savings Rate&lt;/div&gt;
+&lt;/div&gt;
+
+									</code>
+								</pre>
+							</div>
+						</div>
+					</div>
+					<div id="molecules-block-account-header" class="sg-pattern">
+						<h2 class="sg-pattern-head" ><a href="../../patterns/01-molecules-02-blocks-11-block-account-header/01-molecules-02-blocks-11-block-account-header.html" class="patternLink" data-patternpartial="molecules-block-account-header">Block Account Header</a></h2>
+						<div class="sg-pattern-body">
+							<div class="block-basic block-header-account">
+<div class="block-text-bold">Account#</div> <div class="divider"></div> <div class="block-text-serif">QA999999 00001</div><div class="btn-account"><button type="button" class="btn btn-primary">LATEST STATEMENT</button></div>
+</div>
+							<div class="sg-code" style="display: none">
+								<h3 class="sg-code-head">HTML</h3>
+								<pre class="sg-code-html">
+									<code>
+										&lt;div class=&quot;block-basic block-header-account&quot;&gt;
+&lt;div class=&quot;block-text-bold&quot;&gt;Account#&lt;/div&gt; &lt;div class=&quot;divider&quot;&gt;&lt;/div&gt; &lt;div class=&quot;block-text-serif&quot;&gt;QA999999 00001&lt;/div&gt;&lt;div class=&quot;btn-account&quot;&gt;&lt;button type=&quot;button&quot; class=&quot;btn btn-primary&quot;&gt;LATEST STATEMENT&lt;/button&gt;&lt;/div&gt;
+&lt;/div&gt;
+									</code>
+								</pre>
+							</div>
+						</div>
+					</div>
+					<div id="molecules-block-well-columns-one-title" class="sg-pattern">
+						<h2 class="sg-pattern-head" ><a href="../../patterns/01-molecules-02-blocks-11-block-well-columns-one-title/01-molecules-02-blocks-11-block-well-columns-one-title.html" class="patternLink" data-patternpartial="molecules-block-well-columns-one-title">Block Well Columns One Title</a></h2>
+						<div class="sg-pattern-body">
+							<div class="block block-well block-well__one-title block-well__one-title--3col js-eq-ht-container">
+    <div class="well-title">Example well with a really, really big title on top that spans all of the columns</div>
+
+    <div class="well-body js-eq-ht-div"><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras euismod tortor eget mauris sodales, sed pharetra enim mattis. Curabitur dapibus maximus consectetur. Quisque molestie et nisi ac pretium. Sed scelerisque tristique finibus. Maecenas fermentum suscipit turpis, pulvinar elementum urna dapibus vel. Donec vitae venenatis dui, tincidunt sagittis orci. Donec suscipit arcu libero, vitae rhoncus nulla pretium non. In hac habitasse platea dictumst. Nam at sagittis nisi. Nunc gravida arcu eu lectus pharetra, quis dictum sem blandit.</p></div>
+
+    <div class="well-body js-eq-ht-div"><p>Lorem ipsum.</p></div>
+
+    <div class="well-body js-eq-ht-div"><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras euismod tortor eget mauris sodales, sed pharetra enim mattis. Curabitur dapibus maximus consectetur. Quisque molestie et nisi ac pretium.</p></div>
+</div>
+
+							<div class="sg-code" style="display: none">
+								<h3 class="sg-code-head">HTML</h3>
+								<pre class="sg-code-html">
+									<code>
+										&lt;div class=&quot;block block-well block-well__one-title block-well__one-title--3col js-eq-ht-container&quot;&gt;
+    &lt;div class=&quot;well-title&quot;&gt;Example well with a really, really big title on top that spans all of the columns&lt;/div&gt;
+
+    &lt;div class=&quot;well-body js-eq-ht-div&quot;&gt;&lt;p&gt;Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras euismod tortor eget mauris sodales, sed pharetra enim mattis. Curabitur dapibus maximus consectetur. Quisque molestie et nisi ac pretium. Sed scelerisque tristique finibus. Maecenas fermentum suscipit turpis, pulvinar elementum urna dapibus vel. Donec vitae venenatis dui, tincidunt sagittis orci. Donec suscipit arcu libero, vitae rhoncus nulla pretium non. In hac habitasse platea dictumst. Nam at sagittis nisi. Nunc gravida arcu eu lectus pharetra, quis dictum sem blandit.&lt;/p&gt;&lt;/div&gt;
+
+    &lt;div class=&quot;well-body js-eq-ht-div&quot;&gt;&lt;p&gt;Lorem ipsum.&lt;/p&gt;&lt;/div&gt;
+
+    &lt;div class=&quot;well-body js-eq-ht-div&quot;&gt;&lt;p&gt;Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras euismod tortor eget mauris sodales, sed pharetra enim mattis. Curabitur dapibus maximus consectetur. Quisque molestie et nisi ac pretium.&lt;/p&gt;&lt;/div&gt;
+&lt;/div&gt;
+
+									</code>
+								</pre>
+							</div>
+						</div>
+					</div>
+			</div> <!--end #sg-patterns-->
+	
+		</div><!--end .sg-main-->
+		
+		<!-- JS to hook everything together and do annotations -->
+		<script>
+			// handle injection of items from PHP
+			var patternPartial = "viewall-molecules-blocks";
+			var lineage = "";
+		</script>
+		
+
+    <!-- scripts -->
+    <script src="../../js/ontrack.js"></script>
+    <script src="../../js/layoutResponsive.js"></script>
+    <script src="../../js/mobile-nav.js"></script>
+    <script src="../../js/globalFooter.js"></script>
+
+		<script>
+		/*!
+		 * scriptLoader - v0.1
+		 *
+		 * Copyright (c) 2014 Dave Olsen, http://dmolsen.com
+		 * Licensed under the MIT license
+		 *
+		 */
+		
+		var scriptLoader = {
+			
+			run: function(js,cb,target) {
+				var s  = document.getElementById(target+'-'+cb); 
+				for (var i = 0; i < js.length; i++) {
+					var src = (typeof js[i] != "string") ? js[i].src : js[i];
+					var c   = document.createElement('script');
+					c.src   = '../../'+src+'?'+cb;
+					if (typeof js[i] != "string") {
+						if (js[i].dep !== undefined) {
+							c.onload = function(dep,cb,target) {
+								return function() {
+									scriptLoader.run(dep,cb,target);
+								}
+							}(js[i].dep,cb,target);
+						}
+					}
+					s.parentNode.insertBefore(c,s);
+				}
+			}
+			
+		}
+	</script>
+	<script id="pl-js-polyfill-insert-1491944073">
+		(function() {
+			if (self != top) {
+				var cb = '1491944073';
+				var js = [];
+				if (typeof document !== "undefined" && !("classList" in document.documentElement)) {
+					js.push("styleguide/js/vendor/classlist-polyfill.js");
+				}
+				scriptLoader.run(js,cb,'pl-js-polyfill-insert');
+			}
+		})();
+	</script>
+	<script id="pl-js-insert-1491944073">
+		(function() {
+			if (self != top) {
+				var cb = '1491944073';
+				var js = [ { "src": "styleguide/js/vendor/jwerty.js", "dep": [ "styleguide/js/postmessage.js", { "src": "data/annotations.js", "dep": [ "styleguide/js/annotations-pattern.js" ] }, "styleguide/js/code-pattern.js" ] } ];
+				scriptLoader.run(js,cb,'pl-js-insert');
+			}
+		})();
+	</script>
+	
+
+
+    <!-- Browser Update notification -->
+    <script>
+        var $buoop = {vs:{i:10,f:30,o:20,s:7},c:2};
+        function $buo_f(){
+            var e = document.createElement("script");
+            e.src = "//browser-update.org/update.min.js";
+            document.body.appendChild(e);
+        };
+        try {document.addEventListener("DOMContentLoaded", $buo_f,false)}
+        catch(e){window.attachEvent("onload", $buo_f)}
+    </script>
+	</body>
+</html>

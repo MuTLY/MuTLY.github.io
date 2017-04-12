@@ -1,0 +1,343 @@
+&lt;p class=&quot;padding-bottom&quot;&gt;With Managed Account, not only do our retirement advisors help you create a sound savings strategy while you're still working, but they also help you create a plan for turning your savings into income you can use to enjoy life in retirement.&lt;/p&gt;
+
+&lt;strong&gt;Savings growth during your working years.&lt;/strong&gt;
+&lt;p&gt;Ideally, you were able to start saving early in life. The earlier you start, the more time your money has to grow and benefit from the power of compounding interest. This chart illustrates how your invested savings grows with compounded interest compared to regular contributions alone. &lt;/p&gt;
+
+&lt;div class=&quot;padding-bottom padding-top&quot;&gt;&lt;div id=&quot;containerChartStacked&quot; class=&quot;containerChartStacked&quot;&gt;&lt;/div&gt;
+
+&lt;script&gt;
+$(function() {
+    // Handling chart resize
+    var chartContainer = $('#containerChartStacked').parent(),
+        chartDimension = chartContainer.actual('width'), // using $.actual() plugin for hidden elements e.g. chart on a hidden tab
+        chartElement = chartContainer.find('.containerChartStacked').attr('id');
+
+    $(window).off('resize.containerChartStacked');
+    $(window).on('resize.containerChartStacked', function() {
+        var d = chartContainer.actual('width');
+        chart.setSize(d, null, doAnimation = false);
+    });
+
+
+    // Init chart
+    Highcharts.setOptions({
+        exporting: {
+            enabled: false
+        },
+        credits: {
+            enabled: false
+        }
+    });
+
+    var chart = new Highcharts.Chart({
+        chart: {
+            renderTo: chartElement,
+            type: 'area'
+        },
+        title: {
+            text: ''
+        },
+        subtitle: {
+            text: ''
+        },
+        xAxis: {
+            categories: ['65', '70', '75', '80', '85', '90', '95'],
+            tickmarkPlacement: 'on',
+            title: {
+                enabled: false
+            },
+            labels: {
+                formatter: function() {
+                    return &quot;age &quot; + this.value;
+                }
+            }
+        },
+        yAxis: {
+            title: {
+                text: 'Retirement Savings'
+            },
+            tickInterval: 25000,
+            labels: {
+                formatter: function() {
+                    return this.value / 1;
+                }
+            }
+        },
+        legend: {
+            symbolHeight: 12,
+            symbolWidth: 12,
+            symbolRadius: 0
+        },
+        tooltip: {
+            split: true,
+            valueSuffix: ''
+        },
+        plotOptions: {
+            area: {
+                stacking: 'normal',
+                lineColor: '#666666',
+                lineWidth: 1,
+                marker: {
+                    lineWidth: 1,
+                    lineColor: '#666666'
+                }
+            }
+        },
+        series: [{
+            name: '401(k) Plan of ABC Company',
+            data: [133000, 110000, 76000, 55000, 30000, 13000, 0],
+            color: '#27b8da'
+        }, {
+            name: 'Spouses Fidelity Account',
+            data: [45000, 33000, 22000, 13000, 11000, 4000, 0],
+            color: '#d1d1d1'
+        }]
+    }, function(chart) {
+        // callback here
+    });
+
+    $( &quot;.containerChartStacked&quot; ).prepend( &quot;&lt;div class=\&quot;custom-label\&quot;&gt;&lt;div class=\&quot;center\&quot;&gt;Total Balance at Retirement: $1,000.000.00&lt;/div&gt;&lt;/div&gt;&quot; );
+});
+&lt;/script&gt;
+&lt;/div&gt;
+
+&lt;strong&gt;Sources for your retirement income.&lt;/strong&gt;
+&lt;p&gt;Re-creating your salary in retirement can be a bit of a puzzle. But our retirement advisors can help you see how all of the pieces can fit together.&lt;/p&gt;
+
+&lt;div class=&quot;padding-bottom padding-top&quot;&gt;&lt;div id=&quot;stackedBar&quot; class=&quot;stackedBar&quot;&gt;&lt;/div&gt;
+
+&lt;script&gt;
+$(function() {
+    // Handling chart resize
+    var chartContainer = $('#stackedBar').parent(),
+        chartDimension = chartContainer.actual('width'), // using $.actual() plugin for hidden elements e.g. chart on a hidden tab
+        chartElement = chartContainer.find('.stackedBar').attr('id');
+
+    $(window).off('resize.stackedBar');
+    $(window).on('resize.stackedBar', function() {
+        var d = chartContainer.actual('width');
+        chart.setSize(d, null, doAnimation = false);
+    });
+
+    // Init chart
+    Highcharts.setOptions({
+        exporting: {
+            enabled: false
+        },
+        credits: {
+            enabled: false
+        }
+    });
+
+    var chart = new Highcharts.Chart({
+        chart: {
+            renderTo: chartElement,
+            type: 'column'
+        },
+        title: {
+            text: ''
+        },
+        xAxis: {
+            categories: ['age 65', 'age 70', 'age 75', 'age 80', 'age 85', 'age 90']
+        },
+        yAxis: {
+            min: 0,
+            title: {
+                text: ''
+            },
+            stackLabels: {
+                enabled: true,
+                style: {
+                    fontWeight: 'bold',
+                    color: (Highcharts.theme &amp;&amp; Highcharts.theme.textColor) || 'gray'
+                }
+            }
+        },
+        legend: {
+            align: 'center',
+            itemMarginTop: 10,
+            verticalAlign: 'bottom',
+            floating: false,
+            backgroundColor: (Highcharts.theme &amp;&amp; Highcharts.theme.background2) || 'white',
+            borderColor: '#CCC',
+            borderWidth: 0,
+            shadow: false,
+            symbolHeight: 12,
+            symbolWidth: 12,
+            symbolRadius: 0
+        },
+        tooltip: {
+            headerFormat: '&lt;b&gt;{point.x}&lt;/b&gt;&lt;br&gt;',
+            pointFormat: '{series.name}: {point.y}&lt;br&gt;Total: {point.stackTotal}'
+        },
+        plotOptions: {
+            column: {
+                stacking: 'normal',
+                dataLabels: {
+                    enabled: true,
+                    color: (Highcharts.theme &amp;&amp; Highcharts.theme.dataLabelsColor) || 'white'
+                }
+            }
+        },
+        series: [{
+            name: '401(k) Plan of ABC Company',
+            data: [10000, 10000, 10000, 10000, 0, 0]
+        }, {
+            name: 'Spouses Fidelity Account',
+            data: [0, 0, 0, 0, 10000, 10000]
+        }, {
+            name: 'Spouses Social Security',
+            data: [21000, 21000, 21000, 21000, 21000, 21000]
+        }, {
+            name: 'Social Security',
+            data: [23000, 23000, 23000, 23000, 23000, 23000]
+        }, {
+            name: 'Pension Plan of ABC Company',
+            data: [11000, 11000, 11000, 11000, 11000, 11000]
+        }]
+    }, function(chart) {
+        // callback
+    });
+
+    $( &quot;.stackedBar&quot; ).prepend( &quot;&lt;div class=\&quot;custom-label\&quot;&gt;&lt;div class=\&quot;right\&quot;&gt;Total Balance at Retirement: $1,000.000.00&lt;/div&gt;&lt;/div&gt;&quot; );
+});
+&lt;/script&gt;
+&lt;/div&gt;
+
+&lt;strong&gt;Spending your money in retirement.&lt;/strong&gt;
+&lt;p&gt;It took decades to build your nest egg; now how do you wisely continue to save for your years of retirement? Our retirement advisors can show you how to smartly withdraw from your various savings accounts in order to help your money last as long as possible.&lt;/p&gt;
+
+&lt;div class=&quot;padding-bottom padding-top&quot;&gt;&lt;div id=&quot;containerChartStacked_spending&quot; class=&quot;containerChartStacked_spending&quot;&gt;&lt;/div&gt;
+
+&lt;script&gt;
+$(function() {
+    // Handling chart resize
+    var chartContainer = $('#containerChartStacked_spending').parent(),
+        chartDimension = chartContainer.actual('width'), // using $.actual() plugin for hidden elements e.g. chart on a hidden tab
+        chartElement = chartContainer.find('.containerChartStacked_spending').attr('id');
+
+    $(window).off('resize.containerChartStacked_spending');
+    $(window).on('resize.containerChartStacked_spending', function() {
+        var d = chartContainer.actual('width');
+        chart.setSize(d, null, doAnimation = false);
+    });
+
+
+    // Init chart
+    Highcharts.setOptions({
+        exporting: {
+            enabled: false
+        },
+        credits: {
+            enabled: false
+        }
+    });
+
+    var chart = new Highcharts.Chart({
+        chart: {
+            renderTo: chartElement,
+            type: 'area'
+        },
+        title: {
+            text: ''
+        },
+        subtitle: {
+            text: ''
+        },
+        xAxis: {
+            categories: ['65', '70', '75', '80', '85', '90', '95'],
+            tickmarkPlacement: 'on',
+            title: {
+                enabled: false
+            },
+            labels: {
+                formatter: function() {
+                    return &quot;age &quot; + this.value;
+                }
+            }
+        },
+        yAxis: {
+            title: {
+                text: 'Retirement Savings'
+            },
+            tickInterval: 25000,
+            labels: {
+                formatter: function() {
+                    return this.value / 1;
+                }
+            }
+        },
+        legend: {
+            symbolHeight: 12,
+            symbolWidth: 12,
+            symbolRadius: 0
+        },
+        tooltip: {
+            split: true,
+            valueSuffix: ''
+        },
+        plotOptions: {
+            area: {
+                stacking: 'normal',
+                lineColor: '#666666',
+                lineWidth: 1,
+                marker: {
+                    lineWidth: 1,
+                    lineColor: '#666666'
+                }
+            }
+        },
+        series: [{
+            name: '401(k) Plan of ABC Company',
+            data: [133000, 110000, 76000, 55000, 30000, 13000, 0],
+            color: '#27b8da'
+        }, {
+            name: 'Spouses Fidelity Account',
+            data: [45000, 33000, 22000, 13000, 11000, 4000, 0],
+            color: '#d1d1d1'
+        }]
+    }, function(chart) {
+        // callback here
+    });
+
+    $( &quot;.containerChartStacked_spending&quot; ).prepend( &quot;&lt;div class=\&quot;custom-label\&quot;&gt;&lt;div class=\&quot;center\&quot;&gt;Total Balance at Retirement: $1,000.000.00&lt;/div&gt;&lt;/div&gt;&quot; );
+});
+&lt;/script&gt;
+&lt;/div&gt;
+
+&lt;div class=&quot;text-center padding-bottom&quot;&gt;
+    &lt;button type=&quot;button&quot; class=&quot;btn btn-primary&quot;&gt;Speak to an advisor&lt;/button&gt;
+    &lt;button type=&quot;button&quot; class=&quot;btn btn-primary margin-top-md__mobile&quot;&gt;Start your income plan&lt;/button&gt;
+&lt;/div&gt;
+
+&lt;div class=&quot;row&quot;&gt;
+    &lt;div class=&quot;col-xs-12&quot;&gt;
+        &lt;div id=&quot;maIncomeApi&quot; class=&quot;about-probability&quot;&gt;
+            &lt;div class=&quot;block block-basic margin-bottom&quot;&gt;
+                &lt;a class=&quot;link--black accordion-toggle collapsed&quot; data-toggle=&quot;collapse&quot; data-parent=&quot;#maIncomeApi&quot; href=&quot;#maIncomeApiText&quot; aria-expanded=&quot;false&quot;&gt;
+                    &lt;span class=&quot;glyphicon glyphicon-plus-sign&quot; aria-hidden=&quot;true&quot;&gt;&lt;/span&gt;&lt;!-- do not remove this
+                    --&gt;&lt;span class=&quot;head-text&quot;&gt;
+                        IMPORTANT: The projections or other information generated by &lt;em&gt;Managed Advice&lt;/em&gt;&lt;sup&gt;&amp;reg;&lt;/sup&gt; regarding the likelihood
+                        of various investment outcomes are hypothetical in nature, do not reflect actual investment results, and are
+                        not guarantees of future results. Results derived from &lt;em&gt;Managed Advice&lt;/em&gt;&lt;sup&gt;&amp;reg;&lt;/sup&gt; may vary with each use and over
+                        time. See the &lt;span class=&quot;link--blue bold&quot;&gt;About Probability Illustrations&lt;/span&gt; for more information.
+                    &lt;/span&gt;
+                &lt;/a&gt;
+            &lt;/div&gt;
+            &lt;div id=&quot;maIncomeApiText&quot; class=&quot;main-text collapse no-collapsing&quot; aria-expanded=&quot;false&quot;&gt;
+                &lt;!-- everything between here is an iframe and its wrapper in the real app --&gt;
+                &lt;h4 class=&quot;title&quot;&gt;About Probability Illustration&lt;/h4&gt;
+
+                &lt;p&gt;This text is inside a boxed iframe in the real app.&lt;/p&gt;
+
+                &lt;p&gt;Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.&lt;/p&gt;
+
+                &lt;p&gt;Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.&lt;/p&gt;
+                &lt;!-- everything between here is an iframe and its wrapper in the real app --&gt;
+
+                &lt;a href=&quot;javascript:void(0)&quot; class=&quot;btn btn-secondary btn-small text-xsmall pull-right&quot; onclick=&quot;&quot;&gt;&lt;strong&gt;Print version&lt;/strong&gt;&lt;/a&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
+

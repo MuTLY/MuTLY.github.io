@@ -1,0 +1,34 @@
+&lt;div class=&quot;col-xs-12 col-sm-6 no-pad-xs trs-login__column&quot;&gt;
+    {{# block-1-heading}}
+        {{&gt; atoms-heading }}
+    {{/ block-1-heading}}
+    {{# block-1-subheading}}
+        {{&gt; atoms-heading }}
+    {{/ block-1-subheading}}
+   &lt;fieldset class=&quot;trs-login__block  {{ block-1-style }}&quot;&gt;     
+        {{# block-1-fields}}
+            {{&gt; atoms-html5-inputs }}
+        {{/ block-1-fields}}
+        
+        {{# block-1-link}}
+        &lt;p&gt;{{&gt; atoms-text-link }}&lt;/p&gt;
+        {{/ block-1-link}}
+
+        {{# block-1-button}}
+        &lt;a type=&quot;{{ button-type }}&quot; class=&quot;btn {{ button-class }}&quot; href=&quot;{{ link.pages-select-an-account }}&quot;&gt;
+            &lt;span class=&quot;{{ button-icon }}&quot; role=&quot;presentation&quot;&gt; &lt;/span&gt; 
+            {{ button-text }}&lt;/a&gt;
+        {{/ block-1-button}}
+    &lt;/fieldset&gt;
+&lt;/div&gt;
+&lt;div class=&quot;col-xs-12 col-sm-6 no-pad-xs trs-login__column&quot;&gt;
+    {{# block-2-heading}}
+        {{&gt; atoms-heading }}
+    {{/ block-2-heading}}
+    &lt;div class=&quot;trs-login__block  {{ block-2-style }}&quot;&gt;
+        &lt;p&gt;{{ block-2-text }}&lt;/p&gt;
+        {{# block-2-button}}
+            {{&gt; atoms-button-link }}
+        {{/ block-2-button}}
+    &lt;/div&gt;
+&lt;/div&gt;

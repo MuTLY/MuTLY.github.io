@@ -1,0 +1,38 @@
+&lt;div class=&quot;print-page-header&quot;&gt;
+&lt;img src=&quot;../../images/trs-logo-166px.png&quot; class=&quot;ta-logo-print&quot; alt=&quot;TRS Logo Desktop&quot;&gt;
+  &lt;div class=&quot;print-header-info&quot;&gt;
+    &lt;div class=&quot;print-info-line1&quot;&gt;1-800-Pyramid (797-2643)&lt;/div&gt;
+    &lt;div class=&quot;print-info-line2&quot;&gt;INSERT LAST DATA UPDATE AT: HERE.&lt;/div&gt;
+    &lt;div class=&quot;print-info-line3&quot;&gt;Date Printed: 04/10/16&lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&quot;subnavbar&quot; role=&quot;navigation&quot;&gt;
+  &lt;div class=&quot;row&quot;&gt; &lt;a class=&quot;sr-only&quot; href=&quot;#main_content&quot;&gt;Skip to main content&lt;/a&gt;&lt;!-- keep this for ada compliance --&gt;
+    
+    &lt;div class=&quot;col-xs-2 col-sm-4 hidden-md hidden-lg&quot;&gt;
+      &lt;div class=&quot;btn--menu&quot;&gt;
+        &lt;button type=&quot;button&quot; class=&quot;btn--menu__btn&quot;&gt; 
+        	&lt;span class=&quot;sr-only&quot;&gt;Tap to expand or collapse navigation&lt;/span&gt;
+        	&lt;span class=&quot;icon-bar&quot; role=&quot;presentation&quot;&gt;&lt;/span&gt; &lt;span class=&quot;icon-bar&quot; role=&quot;presentation&quot;&gt;&lt;/span&gt; &lt;span class=&quot;icon-bar&quot; role=&quot;presentation&quot;&gt;&lt;/span&gt; {{! &amp;#8801; }} &lt;/button&gt;
+        &lt;div class=&quot;btn--menu__text&quot;&gt;Menu&lt;/div&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+    &lt;div class=&quot;col-xs-8 col-md-2 col-sm-4 text-center&quot;&gt;
+    &lt;a class=&quot;logo-link text-center&quot; href=&quot;{{ url }}&quot;&gt;
+		{{&gt; atoms-logo-mobile }}
+		{{&gt; atoms-logo-desktop }}
+    &lt;/a&gt;
+    &lt;/div&gt;
+    &lt;div class=&quot;hidden-xs hidden-sm col-md-8&quot;&gt;
+      &lt;div class=&quot;pull-right&quot;&gt; {{# headerMenuVisible }}
+        {{&gt; atoms-text-link-left-arrow }}
+        {{#menus}}
+        {{&gt; atoms-dropdown }}
+        {{/menus}}
+        {{/ headerMenuVisible }} &lt;/div&gt;
+    &lt;/div&gt;
+    &lt;div class=&quot;col-xs-2 col-sm-4 col-md-2&quot;&gt; {{# loginStatus }}
+      {{&gt; atoms-button-logout }}
+      {{/ loginStatus }} &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;

@@ -1,0 +1,370 @@
+
+
+
+
+
+&lt;!--WELL--&gt;
+
+&lt;div class=&quot;trs-activity-details&quot;&gt;
+  &lt;div class=&quot;row row-margin-fix eq-container&quot;&gt;
+    &lt;div class=&quot;block block-well col-sm-7 col-lg-7 padding-bottom-lg block-left border-right-collapse trs-activity-select_left &quot;&gt;
+        &lt;div class=&quot;well-title hidden-xs&quot;&gt;Dynamic Report&lt;/div&gt;
+        &lt;div class=&quot;well-body&quot;&gt;
+          &lt;p class=&quot;hidden-xs text-center&quot;&gt;To view a dynamic report of your transaction history, select the information you want from the filters below and click UPDATE&lt;/p&gt;
+          &lt;div class=&quot;row no-border padding-bottom&quot;&gt;
+            &lt;div class=&quot;col-xs-12&quot;&gt;
+              &lt;div class=&quot;row activity-date&quot;&gt;
+                &lt;div class=&quot;col-xs-12 col-sm-2&quot;&gt;
+                  &lt;label class=&quot;aligner&quot; for=&quot;rangeSelect&quot;&gt;View By&lt;/label&gt;
+                &lt;/div&gt;
+                &lt;div class=&quot;col-xs-12 col-sm-9 select-date&quot;&gt;
+                  &lt;select id=&quot;rangeSelect&quot;&gt;
+                    &lt;option value=&quot;Yearly&quot;&gt;Year To Date&lt;/option&gt;
+                    &lt;option value=&quot;Monthly&quot;&gt;Month To Date&lt;/option&gt;
+                    &lt;option value=&quot;Quarterly&quot; selected=&quot;&quot;&gt;Quarter To Date&lt;/option&gt;
+                    &lt;option value=&quot;specific&quot;&gt;Specific Date&lt;/option&gt;
+                  &lt;/select&gt;
+                &lt;/div&gt;
+              &lt;/div&gt;
+            &lt;/div&gt;
+            &lt;!--end col--&gt;
+          &lt;/div&gt;
+          &lt;!-- end row--&gt;
+
+
+          &lt;div class=&quot;row no-border dateRange&quot; id=&quot;dateRangeReadOnly&quot;&gt;
+            &lt;div class=&quot;col-xs-12&quot;&gt;
+              &lt;p class=&quot;text-center&quot; id=&quot;dateRangeText&quot;&gt;&lt;/p&gt;
+            &lt;/div&gt;
+          &lt;/div&gt;
+
+
+          &lt;!-- end row dateReangeReadOnly--&gt;
+          &lt;div class=&quot;dateRange padding-bottom&quot; id=&quot;dateRangeField&quot;&gt;
+            &lt;div class=&quot;row no-border no-vertical-padding&quot;&gt;
+              &lt;div class=&quot;col-xs-12 col-sm-6&quot;&gt;
+                &lt;div class=&quot;row no-border&quot;&gt;
+                  &lt;div class=&quot;col-xs-12&quot;&gt;
+                    &lt;label class=&quot;control-label FromDatepicker&quot; for=&quot;startDateDP&quot;&gt;From&lt;/label&gt;
+                  &lt;/div&gt;
+                &lt;/div&gt;
+                &lt;div class=&quot;row no-border&quot;&gt;
+                  &lt;div class=&quot;col-xs-12&quot;&gt;
+                    &lt;!-- DDOL USERS: this exists as &lt;core-ui:datePicker /&gt;, use the JST instead of the code below --&gt;
+
+                    &lt;!-- if you need validation feedback, add the classes 'has-feedback' and 'success' or 'error' along with the 'input-group date' below after the validation --&gt;
+                    &lt;div class=&quot;input-group date &quot;&gt;
+                        &lt;!-- DEPRECATED! the below span is used for visual feedback of validation. add the classes 'glyphicon-ok' or 'glyphicon-remove' along with the 'glyphicon', depending on the results of the validation. you can also omit the &lt;span&gt; enterely; in this case, the feedback would be only colored borders without the icon on the left side --&gt;
+                        &lt;!--&lt;span role=&quot;presentation&quot; class=&quot;glyphicon  icon-left form-control-feedback&quot;&gt;&lt;/span&gt;--&gt;
+
+                        &lt;!-- the extra label is for the date range component, you can remove it if this is not a date range (meaning two date pickers, e.g. &quot;from&quot; &amp; &quot;to&quot;) --&gt;
+                        &lt;label class=&quot;extra-label&quot; for=&quot;startDateDP&quot; aria-hidden=&quot;true&quot;&gt;startDateDP&lt;/label&gt;
+
+                        &lt;!-- min &amp; max values are helpful to limit how far a user can 'play' with the calendar, and can change according to your needs. i.e. for DOB, you would want to limit the max to today (or before); also, for retirement planning you would limit the min to today or later. --&gt;
+                        &lt;input type=&quot;date&quot; class=&quot;form-control&quot; id=&quot;startDateDP&quot; name=&quot;startDateDP&quot; value=&quot;2016-05-18&quot; min=&quot;1970-01-01&quot; max=&quot;2099-01-01&quot; required  placeholder=&quot;MM/DD/YYYY&quot; title=&quot;Pattern Lab&quot; /&gt;
+                        &lt;label for=&quot;startDateDP&quot; class=&quot;input-group-addon&quot;&gt;
+                            &lt;span class=&quot;glyphicon glyphicon-calendar&quot; role=&quot;presentation&quot;&gt;&lt;/span&gt;
+                        &lt;/label&gt;
+                    &lt;/div&gt;
+                    &lt;!-- start date --&gt;
+                  &lt;/div&gt;
+                &lt;/div&gt;
+              &lt;/div&gt;
+              &lt;!--end from col--&gt;
+              &lt;div class=&quot;col-xs-12 col-sm-6&quot;&gt;
+                &lt;div class=&quot;row no-border&quot;&gt;
+                  &lt;div class=&quot;col-xs-12&quot;&gt;
+                    &lt;label class=&quot;control-label ToDatepicker&quot; for=&quot;endDateDP&quot;&gt;
+                      &lt;span&gt;To&lt;/span&gt;
+                    &lt;/label&gt;
+                  &lt;/div&gt;
+                &lt;/div&gt;
+                &lt;div class=&quot;row no-border&quot;&gt;
+                  &lt;div class=&quot;col-xs-12&quot;&gt;
+                    &lt;!-- DDOL USERS: this exists as &lt;core-ui:datePicker /&gt;, use the JST instead of the code below --&gt;
+
+                    &lt;!-- if you need validation feedback, add the classes 'has-feedback' and 'success' or 'error' along with the 'input-group date' below after the validation --&gt;
+                    &lt;div class=&quot;input-group date &quot;&gt;
+                        &lt;!-- DEPRECATED! the below span is used for visual feedback of validation. add the classes 'glyphicon-ok' or 'glyphicon-remove' along with the 'glyphicon', depending on the results of the validation. you can also omit the &lt;span&gt; enterely; in this case, the feedback would be only colored borders without the icon on the left side --&gt;
+                        &lt;!--&lt;span role=&quot;presentation&quot; class=&quot;glyphicon  icon-left form-control-feedback&quot;&gt;&lt;/span&gt;--&gt;
+
+                        &lt;!-- the extra label is for the date range component, you can remove it if this is not a date range (meaning two date pickers, e.g. &quot;from&quot; &amp; &quot;to&quot;) --&gt;
+                        &lt;label class=&quot;extra-label&quot; for=&quot;endDateDP&quot; aria-hidden=&quot;true&quot;&gt;endDateDP&lt;/label&gt;
+
+                        &lt;!-- min &amp; max values are helpful to limit how far a user can 'play' with the calendar, and can change according to your needs. i.e. for DOB, you would want to limit the max to today (or before); also, for retirement planning you would limit the min to today or later. --&gt;
+                        &lt;input type=&quot;date&quot; class=&quot;form-control&quot; id=&quot;endDateDP&quot; name=&quot;endDateDP&quot; value=&quot;2016-05-18&quot; min=&quot;1970-01-01&quot; max=&quot;2099-01-01&quot; required  placeholder=&quot;MM/DD/YYYY&quot; title=&quot;Pattern Lab&quot; /&gt;
+                        &lt;label for=&quot;endDateDP&quot; class=&quot;input-group-addon&quot;&gt;
+                            &lt;span class=&quot;glyphicon glyphicon-calendar&quot; role=&quot;presentation&quot;&gt;&lt;/span&gt;
+                        &lt;/label&gt;
+                    &lt;/div&gt;
+                    &lt;!-- end date --&gt;
+                  &lt;/div&gt;
+                &lt;/div&gt;
+              &lt;/div&gt;
+              &lt;!--end to col--&gt;
+            &lt;/div&gt;
+            &lt;!-- end from to row --&gt;
+          &lt;/div&gt;
+          &lt;!-- end dateRangeFields --&gt;
+
+          &lt;div class=&quot;form-group padding-top-sm hidden-xs&quot;&gt;
+            &lt;input class=&quot;secondary-input&quot; type=&quot;checkbox&quot; id=&quot;coupon_question&quot;/&gt;
+            &lt;label for=&quot;coupon_question&quot;&gt;
+              &lt;span role=&quot;checkbox&quot;&gt;&lt;/span&gt;
+              &lt;strong&gt;Use additonals details ?&lt;/strong&gt;
+            &lt;/label&gt;
+          &lt;/div&gt;
+
+
+          &lt;form class=&quot;answer hide hidden-xs&quot;&gt;
+            &lt;div class=&quot;row&quot;&gt;
+              &lt;div class=&quot;col-xs-12&quot;&gt;
+                &lt;div class=&quot;filter-by-fund margin-bottom padding-bottom-sm form-inline&quot;&gt;
+                  &lt;label class=&quot;details-aligner&quot; for=&quot;filter_by_fund&quot;&gt;
+                    Filter By Fund
+                  &lt;/label&gt;
+
+                  &lt;select id=&quot;filter_by_fund&quot;&gt;
+                    &lt;option value=&quot;0&quot;&gt;Show All&lt;/option&gt;
+                    &lt;option value=&quot;1&quot;&gt;Show All 1&lt;/option&gt;
+                    &lt;option value=&quot;2&quot;&gt;Show All 2&lt;/option&gt;
+                    &lt;option value=&quot;3&quot;&gt;Show All 3&lt;/option&gt;
+                  &lt;/select&gt;
+                &lt;/div&gt;
+              &lt;/div&gt;
+            &lt;/div&gt;
+
+            &lt;div class=&quot;row&quot;&gt;
+              &lt;div class=&quot;col-xs-12&quot;&gt;
+                &lt;div class=&quot;filter-by-contribution margin-bottom padding-bottom-sm form-inline&quot;&gt;
+                  &lt;label class=&quot;details-aligner&quot; for=&quot;filter_by_contribution&quot;&gt;
+                    Filter By Contribution Type
+                  &lt;/label&gt;
+
+                  &lt;select id=&quot;filter_by_contribution&quot;&gt;
+                    &lt;option value=&quot;0&quot;&gt;Show All&lt;/option&gt;
+                    &lt;option value=&quot;1&quot;&gt;Show All 1&lt;/option&gt;
+                    &lt;option value=&quot;2&quot;&gt;Show All 2&lt;/option&gt;
+                    &lt;option value=&quot;3&quot;&gt;Show All 3&lt;/option&gt;
+                  &lt;/select&gt;
+                &lt;/div&gt;
+              &lt;/div&gt;
+            &lt;/div&gt;
+            &lt;div class=&quot;row&quot;&gt;
+              &lt;div class=&quot;col-xs-12&quot;&gt;
+                &lt;div class=&quot;filter-by-activity margin-bottom padding-bottom-sm form-inline&quot;&gt;
+                  &lt;label class=&quot;details-aligner&quot; for=&quot;filter_by_activity&quot;&gt;
+                    Filter By Activity
+                  &lt;/label&gt;
+
+                  &lt;select id=&quot;filter_by_activity&quot;&gt;
+                    &lt;option value=&quot;0&quot;&gt;Show All&lt;/option&gt;
+                    &lt;option value=&quot;1&quot;&gt;Show All 1&lt;/option&gt;
+                    &lt;option value=&quot;2&quot;&gt;Show All 2&lt;/option&gt;
+                    &lt;option value=&quot;3&quot;&gt;Show All 3&lt;/option&gt;
+                  &lt;/select&gt;
+                &lt;/div&gt;
+              &lt;/div&gt;
+            &lt;/div&gt;
+          &lt;/form&gt;
+
+          &lt;div class=&quot;text-center padding margin-bottom &quot;&gt;
+            &lt;button type=&quot;button&quot; class=&quot;btn btn-primary&quot;&gt;Update&lt;/button&gt;
+          &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+
+    &lt;div class=&quot;block block-well col-sm-5 col-lg-5 block-right trs-activity-select_right hidden-xs&quot;&gt;
+      &lt;div class=&quot;well-title&quot;&gt;History Report&lt;/div&gt;
+      &lt;div class=&quot;well-body&quot;&gt;
+        &lt;p&gt;The Transaction History Report for your plan is available as a Quicken file or Comma Separated Value (CSV) file for you to download.&lt;/p&gt;
+        &lt;p&gt;Please run a Transaction History report before downloading.&lt;/p&gt;
+        &lt;p&gt;For more information click here: &lt;/p&gt;
+        &lt;div class=&quot;padding-bottom padding-top&quot;&gt;
+          &lt;button type=&quot;button&quot; class=&quot;btn btn-primary&quot;&gt;DOWNLOAD CSV&lt;/button&gt;
+        &lt;/div&gt;
+        &lt;div&gt;
+          &lt;button type=&quot;button&quot; class=&quot;btn btn-primary&quot;&gt;DOWNLOAD QUICKEN&lt;/button&gt;
+        &lt;/div&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+  &lt;!--/WELL--&gt;
+&lt;/div&gt;
+&lt;div class=&quot;row hidden-xs&quot;&gt;
+  &lt;span class=&quot;sr-only&quot;&gt;ACTIVITY BY CONTRIBUTION TYPE&lt;/span&gt;
+  &lt;div class=&quot;col-xs-12&quot;&gt;
+    &lt;div class=&quot;row&quot;&gt;
+      &lt;div class=&quot;col-md-7 col-sm-7 padding section-title&quot;&gt;CONTRIBUTIONS (TOTAL: $962.04)&lt;/div&gt;
+      &lt;div class=&quot;col-md-5 col-sm-5 no-padding&quot;&gt;
+        &lt;!-- Toggle buttons --&gt;
+        &lt;div class=&quot;text-right padding&quot;&gt;
+          &lt;span&gt;View By:&lt;/span&gt;
+          &lt;div class=&quot;btn-group btn-toggle&quot; data-toggle=&quot;buttons&quot;&gt;
+            &lt;label class=&quot;btn active&quot;&gt;
+              &lt;input type=&quot;radio&quot; name=&quot;options&quot; id=&quot;option2&quot; autocomplete=&quot;off&quot; checked=&quot;&quot;&gt;
+          Contribution &lt;/label&gt;
+            &lt;label class=&quot;btn&quot;&gt;
+              &lt;input type=&quot;radio&quot; name=&quot;options&quot; id=&quot;option3&quot; autocomplete=&quot;off&quot;&gt;
+          Fund &lt;/label&gt;
+          &lt;/div&gt;
+        &lt;/div&gt;
+        &lt;!-- /Toggle buttons --&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div class=&quot;row hidden-xs&quot;&gt;
+  &lt;div class=&quot;col-xs-12&quot;&gt;
+    &lt;div class=&quot;row&quot;&gt;
+      &lt;span class=&quot;sr-only&quot;&gt;ACTIVITY BY CONTRIBUTION TYPE&lt;/span&gt;
+      &lt;div class=&quot;col-md-7 col-sm-7 padding section-title&quot;&gt;INTEREST (TOTAL: $5,000)&lt;/div&gt;
+      &lt;div class=&quot;col-md-5 col-sm-5 no-padding&quot;&gt;
+        &lt;!-- Toggle buttons --&gt;
+        &lt;div class=&quot;text-right padding&quot;&gt;
+          &lt;span&gt;View By:&lt;/span&gt;
+          &lt;div class=&quot;btn-group btn-toggle&quot; data-toggle=&quot;buttons&quot;&gt;
+            &lt;label class=&quot;btn active&quot;&gt;
+              &lt;input type=&quot;radio&quot; name=&quot;options&quot; id=&quot;option2&quot; autocomplete=&quot;off&quot; checked=&quot;&quot;&gt;
+          Contribution &lt;/label&gt;
+            &lt;label class=&quot;btn&quot;&gt;
+              &lt;input type=&quot;radio&quot; name=&quot;options&quot; id=&quot;option3&quot; autocomplete=&quot;off&quot;&gt;
+          Fund &lt;/label&gt;
+          &lt;/div&gt;
+        &lt;/div&gt;
+        &lt;!-- /Toggle buttons --&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+
+
+&lt;div class=&quot;visible-xs trs-activity-details-tbl-mobile &quot;&gt;
+  &lt;div class=&quot;row&quot;&gt;
+    &lt;div class=&quot;col-xs-12&quot;&gt;
+      &lt;div class=&quot; padding-top-sm padding-bottom-sm&quot;&gt;
+        &lt;span&gt;Contributions&lt;/span&gt;
+      &lt;/div&gt;
+
+    &lt;/div&gt;
+  &lt;/div&gt;
+
+  &lt;div class=&quot;row&quot;&gt;
+    &lt;div class=&quot;col-xs-12&quot;&gt;
+
+      &lt;div class=&quot;padding-top-sm padding-bottom-sm&quot;&gt;
+        &lt;span&gt;Transfer into Fund&lt;/span&gt;
+      &lt;/div&gt;
+
+    &lt;/div&gt;
+  &lt;/div&gt;
+
+  &lt;div class=&quot;row&quot;&gt;
+    &lt;div class=&quot;col-xs-12&quot;&gt;
+
+      &lt;div class=&quot;padding-top-sm padding-bottom-sm&quot;&gt;
+        &lt;span&gt;Transfer Out of Fund&lt;/span&gt;
+      &lt;/div&gt;
+
+    &lt;/div&gt;
+  &lt;/div&gt;
+
+  &lt;div class=&quot;row&quot;&gt;
+    &lt;div class=&quot;col-xs-12&quot;&gt;
+
+      &lt;div class=&quot;padding-top-sm padding-bottom-sm&quot;&gt;
+        &lt;span&gt;Periodic Dividends&lt;/span&gt;
+      &lt;/div&gt;
+
+    &lt;/div&gt;
+  &lt;/div&gt;
+
+  &lt;div class=&quot;row&quot;&gt;
+    &lt;div class=&quot;col-xs-12&quot;&gt;
+
+      &lt;div class=&quot;padding-top-sm padding-bottom-sm&quot;&gt;
+        &lt;span&gt;Plan Service Credit&lt;/span&gt;
+      &lt;/div&gt;
+
+    &lt;/div&gt;
+  &lt;/div&gt;
+
+
+&lt;/div&gt;
+
+&lt;script type=&quot;text/javascript&quot;&gt;
+
+
+  $(document).ready(function() {
+
+  $('#coupon_question').change(function(){
+  if($(this).is(&quot;:checked&quot;)) {
+  $('.answer').addClass('clicked').removeClass(&quot;hide&quot;).show(200);
+
+  } else {
+  $('.answer').removeClass(&quot;clicked&quot;).addClass('hide').hide(200);
+
+  }
+  });
+  $('#dateRangeField').hide();
+  $(&quot;select&quot;).change(function(){
+  $(this).find(&quot;option:selected&quot;).each(function(){
+  if($(this).attr(&quot;value&quot;)==&quot;Monthly&quot;){
+  MonthToDate();
+  $('#dateRangeField').hide();
+  }
+  else if($(this).attr(&quot;value&quot;)==&quot;Yearly&quot;){
+  YearToDate();
+  $('#dateRangeField').hide();
+
+  }
+  else if($(this).attr(&quot;value&quot;)==&quot;Quarterly&quot;){
+  QuarterToDate();
+  $('#dateRangeField').hide();
+
+  }
+  else if($(this).attr(&quot;value&quot;)==&quot;specific&quot;){
+  $(&quot;#dateRangeReadOnly p&quot;).hide();
+  $('#dateRangeField').show();
+
+  }
+  else{
+
+  }
+  });
+  }).change();
+  });
+
+  var today = new Date();
+  thisYear = today.getFullYear();
+  thisMonth = today.getMonth() + 1;
+  var quarter = Math.floor((today.getMonth() + 3) / 3);
+  if( thisMonth == 1){ lastMonth = 12; thisYear = thisYear -1;} else{ lastMonth = thisMonth - 1}
+  today = today.getDate();
+  //Month To Date conversion
+  MonthToDate = function(){
+  var start = thisMonth + &quot;/1/&quot; + thisYear;
+  var end = thisMonth + &quot;/&quot; + today + &quot;/&quot; + thisYear;
+  $(&quot;#dateRangeReadOnly p&quot;).replaceWith(&quot;&lt;p class='text-center' id='dateRangeText'&gt;&quot; + start + &quot;-&quot; + end + &quot;&lt;/p&gt;&quot;);
+  };
+  //Year To Date Conversion
+  YearToDate = function(){
+  var start = &quot;1/1/&quot; + thisYear;
+  var end = thisMonth + &quot;/&quot; + today + &quot;/&quot; + thisYear;
+  $(&quot;#dateRangeReadOnly p&quot;).replaceWith(&quot;&lt;p class='text-center' id='dateRangeText'&gt;&quot; + start + &quot;-&quot; + end + &quot;&lt;/p&gt;&quot;);
+  };
+  //Quarter to date conversion
+  QuarterToDate = function(){
+  var nextq;
+  if (quarter == 4) {
+  var start = thisMonth + &quot;/&quot; + today + &quot;/&quot; + thisYear;
+  var previousMonth = thisMonth - 3;
+  var end = previousMonth + &quot;/&quot; + today + &quot;/&quot; + thisYear;
+  $(&quot;#dateRangeReadOnly p&quot;).replaceWith(&quot;&lt;p class='text-center' id='dateRangeText'&gt;&quot; + end + &quot;-&quot; + start + &quot;&lt;/p&gt;&quot;);
+  } else {
+
+  }
+
+  }
+&lt;/script&gt;

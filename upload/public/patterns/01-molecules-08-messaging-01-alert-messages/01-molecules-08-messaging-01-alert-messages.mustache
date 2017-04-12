@@ -1,0 +1,27 @@
+{{# alerts }}
+&lt;div class=&quot;alert {{# isError}} alert-error {{/ isError}}{{# isSuccess}} alert-success {{/ isSuccess}}{{# isCaution}} alert-caution {{/ isCaution}}{{# isInfo}} alert-info {{/ isInfo}}{{# isDismissible}} alert-dismissible {{/ isDismissible}}
+{{alert_styles}}
+{{# animate}} fade in {{/ animate}}&quot;&gt;
+{{# isDismissible }}
+    &lt;button type=&quot;button&quot; class=&quot;close&quot; data-dismiss=&quot;alert&quot; aria-label=&quot;Close&quot;&gt;&lt;span aria-hidden=&quot;true&quot;&gt;&amp;times;&lt;/span&gt;&lt;/button&gt;
+{{/ isDismissible }}
+    &lt;div class=&quot;alert-icon&quot;&gt;
+    	&lt;span class=&quot;
+        {{# isError}} trs-icons-alert-error {{/ isError}}{{# isSuccess}} trs-icons-alert-ok {{/ isSuccess}}{{# isCaution}} trs-icons-alert-caution {{/ isCaution}}{{# isInfo}} trs-icons-alert-info {{/ isInfo}} alert-icon-size&quot; role=&quot;presentation&quot;&gt;&lt;/span&gt;
+        &lt;/div&gt;
+    &lt;div class=&quot;alert-message&quot;&gt; 
+    	{{# alertmsg.title}}
+        &lt;strong&gt;{{# isError}}Error{{/ isError}}{{# isSuccess}}Success{{/ isSuccess}}{{# isCaution}}Caution{{/ isCaution}}{{# isInfo}}Information{{/ isInfo}}&lt;/strong&gt;
+        {{/ alertmsg.title}}
+        {{# alertmsg.customTitle}}&lt;strong&gt;{{ . }}&lt;/strong&gt;{{/ alertmsg.customTitle}}
+        {{{ alertmsg.para }}}
+        {{# alertmsg.list }}
+        &lt;ul&gt;
+            {{# list_items }}
+            &lt;li&gt;{{ . }}&lt;/li&gt;
+            {{/ list_items }}
+        &lt;/ul&gt;
+        {{/ alertmsg.list }}
+    &lt;/div&gt;
+&lt;/div&gt;
+{{/ alerts }}

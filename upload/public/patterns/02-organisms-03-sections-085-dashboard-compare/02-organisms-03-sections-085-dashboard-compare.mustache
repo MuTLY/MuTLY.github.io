@@ -1,0 +1,82 @@
+&lt;h2 class=&quot;section-title padding-bottom-md&quot; id=&quot;compare_table_title&quot;&gt;{{heading}}&lt;/h2&gt;
+&lt;p class=&quot;align-right&quot;&gt;&lt;a href=&quot;javascript:void(0);&quot; class=&quot;js-toggle-ot-overlay dotted&quot;&gt;Click this little link to turn on/off the &lt;em&gt;OnTrack&lt;/em&gt;&lt;sup&gt;&amp;reg;&lt;/sup&gt; overlay.&lt;/a&gt;&lt;/p&gt;&lt;!-- for demo only! not to be live code --&gt;
+&lt;div class=&quot;table-responsive compare-table__container&quot;&gt;
+    &lt;div class=&quot;not_ontrack__overlay js-vert-container&quot; style=&quot;display: none;&quot;&gt;&lt;!-- style attribute just for demonstration, as is toggle link above --&gt;
+        &lt;p class=&quot;bold text-center&quot;&gt;&lt;a href=&quot;javascript:void(0);&quot;&gt;Try &lt;em&gt;OnTrack&lt;/em&gt;&lt;sup&gt;&amp;reg;&lt;/sup&gt;&lt;/a&gt; to view this feature.&lt;/p&gt;
+    &lt;/div&gt;
+
+    {{# table }}
+    &lt;table class=&quot;table table-bordered compare-table&quot; aria-labelled-by=&quot;compare_table_title&quot;&gt;
+        &lt;caption class=&quot;sr-only&quot;&gt;{{{caption}}}&lt;/caption&gt;
+        &lt;thead&gt;
+            &lt;tr&gt;
+            {{# table_head }}
+                &lt;th id=&quot;{{id}}&quot;{{#class}} class=&quot;{{.}}&quot;{{/class}}&gt;&lt;span class=&quot;{{icon}}&quot; role=&quot;presentation&quot;&gt;&lt;/span&gt;
+                    {{{text}}}&lt;/th&gt;
+            {{/ table_head }}
+            &lt;/tr&gt;
+        &lt;/thead&gt;
+        &lt;tbody&gt;
+        {{# table_body }}
+            {{# row }}
+            &lt;tr&gt;
+                {{# data }}
+                &lt;td headers=&quot;{{#isCol1}}{{table_head.0.id}}{{/isCol1}}{{#isCol2}}{{table_head.1.id}}{{/isCol2}}&quot;&gt;
+                    &lt;div class=&quot;row&quot;&gt;
+                        &lt;div class=&quot;col-xs-12 col-sm-6&quot;&gt;{{{title}}}&lt;/div&gt;
+                        &lt;div class=&quot;col-xs-12 col-sm-6&quot;&gt;&lt;span class=&quot;compare-table__value h4&quot;&gt;{{value}}&lt;/span&gt;&lt;/div&gt;
+                    &lt;/div&gt;
+                &lt;/td&gt;
+                {{/ data }}
+                {{# action }}
+                &lt;td headers=&quot;{{table_head.2.id}}&quot; class=&quot;compare-table__action-link hidden-xs&quot;&gt;
+                    &lt;a href=&quot;{{actionURL}}&quot;&gt;{{.}}&lt;span class=&quot;glyphicon glyphicon-menu-right pull-right&quot; role=&quot;presentation&quot;&gt;&lt;/span&gt;&lt;/a&gt;
+                &lt;/td&gt;
+                {{/ action }}
+            &lt;/tr&gt;
+            {{/ row }}
+        {{/ table_body }}
+        {{# table_body_last }}
+            &lt;tr&gt;
+                {{# data }}
+                &lt;td headers=&quot;{{#isCol1}}{{table_head.0.id}}{{/isCol1}}{{#isCol2}}{{table_head.1.id}}{{/isCol2}}&quot;&gt;
+                    {{{ heading_text }}}
+                    &lt;div class=&quot;progress progress--mini pull-right&quot;&gt;
+                          &lt;div class=&quot;progress-bar progress-bar-success&quot; role=&quot;progressbar&quot; aria-valuenow=&quot;{{value}}&quot; aria-valuemin=&quot;0&quot; aria-valuemax=&quot;100&quot; style=&quot;width:{{value}}%;&quot; aria-labelledby=&quot;{{id}}&quot;&gt;
+                                &lt;span class=&quot;h4 progress--mini__label&quot; id=&quot;{{id}}&quot;&gt;{{value}}%&lt;/span&gt;
+                          &lt;/div&gt;
+                    &lt;/div&gt;
+                    &lt;div class=&quot;clearfix visible-xs&quot; aria-hidden=&quot;true&quot;&gt;&lt;/div&gt;
+                    &lt;em class=&quot;progress--mini__caption&quot;&gt;(percent of income &lt;wbr&gt;goal achieved)&lt;/em&gt;
+                &lt;/td&gt;
+                {{/ data }}
+                {{# action }}
+                &lt;td headers=&quot;{{table_head.2.id}}&quot; class=&quot;compare-table__action-link hidden-xs&quot;&gt;
+                    &lt;a href=&quot;{{actionURL}}&quot;&gt;{{.}}&lt;span class=&quot;glyphicon glyphicon-menu-right pull-right&quot; role=&quot;presentation&quot;&gt;&lt;/span&gt;&lt;/a&gt;
+                &lt;/td&gt;
+                {{/ action }}
+            &lt;/tr&gt;
+        {{/ table_body_last }}
+        &lt;/tbody&gt;
+    &lt;/table&gt;
+    {{/ table }}
+&lt;/div&gt;
+&lt;p class=&quot;footnote compare-table__footnote&quot;&gt;{{footnote}}&lt;/p&gt;
+
+&lt;script type=&quot;text/javascript&quot;&gt;
+
+(function($){
+	$(ready);
+
+	function ready(){
+		$('.js-toggle-ot-overlay').on('click', toggleOTOverlay);
+	}
+
+	function toggleOTOverlay(){
+		$('#on_track_comparison').toggleClass('not-on-track');
+		$('.not_ontrack__overlay').toggle();
+		$('p', '.js-vert-container').setVerticalCenter();
+	}
+
+})(jQuery);
+&lt;/script&gt;

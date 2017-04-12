@@ -1,0 +1,56 @@
+&lt;h1&gt;Your &lt;em&gt;Managed Advice&lt;/em&gt;&lt;sup&gt;&amp;reg;&lt;/sup&gt; Retirement Plan&lt;/h1&gt;
+
+{{# ontrack_data }}
+&lt;div id=&quot;&quot; class=&quot;alert alert-warning margin-bottom-lg&quot; style=&quot;[display: none]&quot;&gt;
+    &lt;div class=&quot;alert-icon&quot;&gt;&lt;span class=&quot;trs-icons-alert-caution alert-icon-size&quot; role=&quot;presentation&quot;&gt;&lt;/span&gt;&lt;/div&gt;
+    &lt;div class=&quot;alert-message&quot;&gt;
+        &lt;strong&gt;Your forecast is cloudy. See recommendations below on how you can do better.&lt;/strong&gt;&lt;br&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
+{{/ ontrack_data }}
+
+&lt;!-- HOW ARE YOU DOING? SECTION --&gt;
+&lt;h2 class=&quot;section-title margin-bottom-md&quot;&gt;How are you doing?&lt;/h2&gt;
+{{# ontrack_data }}
+{{&gt; organisms-managed-account-how-are-you-doing }}
+{{/ ontrack_data }}
+
+{{# no_ontrack_data }}
+{{&gt; organisms-sub-dashboard-no-ontrack-with-link }}
+{{/ no_ontrack_data }}
+&lt;!--/HOW ARE YOU DOING? SECTION --&gt;
+
+&lt;!-- HOW ARE YOU INVESTED? SECTION --&gt;
+&lt;h2 class=&quot;section-title margin-bottom-md&quot;&gt;How are you invested?&lt;/h2&gt;
+{{&gt; molecules-managed-advice-monitoring }}
+&lt;!--/HOW ARE YOU INVESTED? SECTION --&gt;
+
+{{# ontrack_data }}
+&lt;!-- HOW CAN YOU DO BETTER? SECTION --&gt;
+&lt;h2 class=&quot;section-title margin-bottom-md&quot;&gt;How can you do better?&lt;/h2&gt;
+{{&gt; organisms-managed-account-how-can-you-do-better }}
+&lt;!--/HOW CAN YOU DO BETTER? SECTION --&gt;
+{{/ ontrack_data }}
+
+{{# ontrack_data }}
+&lt;!-- OTHER THINGS TO CONSIDER SECTION --&gt;
+&lt;h2 class=&quot;section-title margin-bottom-md&quot;&gt;Other things to consider&lt;/h2&gt;
+
+&lt;ul class=&quot;list-box vertical-margin&quot;&gt;
+    &lt;li&gt;&lt;a class=&quot;link--style1__rarrow full-width&quot; href=&quot;#&quot;&gt;&lt;span&gt;&lt;strong&gt;Get help with income planning&lt;/strong&gt;&lt;/span&gt;&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a class=&quot;link--style1__rarrow full-width&quot; href=&quot;#&quot;&gt;&lt;span&gt;&lt;strong&gt;Manage your retirement profile&lt;/strong&gt;&lt;/span&gt;&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;!--/OTHER THINGS TO CONSIDER SECTION --&gt;
+{{/ ontrack_data }}
+
+&lt;p&gt;
+	There are fees associated with receiving advice through the Managed Account service offered by ABC Organization Retirement Advisors. You will have an opportunity to learn more about the service or make other investment choices on the following page. For more information, please see:
+&lt;/p&gt;
+
+&lt;ul class=&quot;list-box vertical-margin&quot;&gt;
+    &lt;li&gt;&lt;a class=&quot;link--style1__rarrow full-width&quot; href=&quot;#&quot;&gt;&lt;span&gt;ABC Organization Retirement Advisors' Form ADV&lt;/span&gt;&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a class=&quot;link--style1__rarrow full-width&quot; href=&quot;#&quot;&gt;&lt;span&gt;Your Plan's Investment Managers Form ADV&lt;/span&gt;&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+{{&gt; molecules-about-probability-illustrations(api-id: &quot;subDashboardApi&quot;, api-brandservice: &quot;&lt;em&gt;OnTrack&lt;/em&gt;&lt;sup&gt;&amp;reg;&lt;/sup&gt;&quot;) }}
+

@@ -1,0 +1,70 @@
+{{# page_heading }}
+	{{&gt; atoms-heading }}
+{{/ page_heading }}
+    &lt;div id=&quot;errors&quot; style=&quot;display:none;&quot;&gt;
+{{# error_box }}
+    {{&gt; molecules-alert-messages }}
+{{/ error_box }}
+    &lt;/div&gt;
+
+&lt;div class=&quot;row clearfix&quot;&gt;
+	&lt;div class=&quot;js-panel-group&quot; id=&quot;panels-container&quot; role=&quot;tablist&quot; aria-multiselectable=&quot;true&quot;&gt;&lt;!-- panels wrapper --&gt;
+    	
+        {{# accordion_panels }}
+        &lt;section class=&quot;panel panel--accordion-placeholder clearfix&quot;&gt;
+        
+        	&lt;h2 data-toggle=&quot;collapse&quot; class=&quot;h3 accordion-toggle col-xs-12&quot; data-target=&quot;#{{pnl_id}}&quot; data-parent=&quot;#panels-container&quot; aria-expanded=&quot;false&quot; aria-controls=&quot;{{pnl_id}}&quot;&gt;
+                {{sct_heading}}
+                &lt;span class=&quot;glyphicon glyphicon-plus-sign alert-icon-size margin-left&quot; aria-hidden=&quot;true&quot;&gt;&lt;/span&gt;&lt;/h2&gt;
+
+            &lt;div id=&quot;{{pnl_id}}&quot; class=&quot;col-xs-12 collapse js-sliding-panel mobile-content-panel&quot;&gt;
+                {{{ pnl_text }}}
+                {{# pnl_alert }}
+                {{&gt; molecules-alert-messages }}
+                {{/ pnl_alert }}
+                {{# pnl_fields }}
+                &lt;div class=&quot;row&quot;&gt;
+                    {{&gt; atoms-html5-inputs }}
+                &lt;/div&gt;
+                {{/ pnl_fields }}
+                &lt;div class=&quot;text-center-sm&quot;&gt;
+                    &lt;a type=&quot;submit&quot; class=&quot;btn btn-primary btn-wide&quot; value=&quot;Submit&quot; href=&quot;{{pnl_submit}}&quot;&gt;Submit&lt;/a&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+        &lt;/section&gt;
+        {{# addLine }}
+        
+        &lt;hr class=&quot;hidden-xs margin-left margin-right&quot; /&gt;
+        
+        {{/ addLine }}
+        {{/ accordion_panels }}
+    &lt;/div&gt;
+&lt;/div&gt;
+
+&lt;script type=&quot;text/javascript&quot;&gt;
+
+(function($){
+	
+	$(ready);
+	
+	function ready(){
+		$('.js-panel-group').each(setPanelGroupView);
+		$('.accordion-toggle[data-target=&quot;#panel-2&quot;]').on('click', closeErrors);
+	}
+	
+	function setPanelGroupView(){
+		$('#panels-container').on('shown.bs.collapse', focusInput);
+	}
+	
+	function focusInput(e) {
+		$(e.target)
+			.find('input:first')
+			.focus();	
+	}
+	
+	function closeErrors(){
+		$('#errors:visible').hide(250);	
+	}
+
+})(jQuery);
+&lt;/script&gt;
