@@ -1,0 +1,5 @@
+AuthUserFile .htpasswd
+AuthName "Patter Lab Login Area"
+AuthType Basic
+
+require user negaodapiroca
