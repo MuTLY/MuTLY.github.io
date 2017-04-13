@@ -31,10 +31,10 @@ Response.action(function() {
         return;
     }
 
-    //function used across several pages. prevents collapsing if a user's device crosses the mobile threshold to tablet size in landscape (7" android tablets).
+    // function used across several pages. prevents collapsing if a user's device crosses the mobile threshold to tablet size in landscape (7" android tablets).
     $('.js-panel-2-accordion__mbl').each(mobileAccordionActions);
 
-    //function used on all post-login pages, creates dropdown if content wider than space available.
+    // function used on all post-login pages, creates dropdown if content wider than space available.
     crumbAcctViewer();
 
     // Handle wide tables.
@@ -140,7 +140,6 @@ Response.ready(function() {
     fixPageTitle();
 
     // Select all on input field focus
-        // Select all on input field focus
     $.fn.selectRange = function(s,e) {
         if (!s || !e) {
             s = 0;
@@ -196,7 +195,7 @@ Response.ready(function() {
 
 // On orientation change...
 $(window).on('orientationchange', function(){
-    //function used on all post-login pages, creates dropdown if content wider than space available.
+    // function used on all post-login pages, creates dropdown if content wider than space available.
     crumbAcctViewer();
 
     // Tab scrolling on smartphones
@@ -207,10 +206,10 @@ $(window).on('orientationchange', function(){
 $(window).on('load', function() {
     'use strict';
 
-    //fix sidebar on tablet/mobile
+    // fix sidebar on tablet/mobile
     fixSidebar();
 
-    //function used on all post-login pages, creates dropdown if content wider than space available.
+    // function used on all post-login pages, creates dropdown if content wider than space available.
     crumbAcctViewer();
 
     // Set maxlength for specific "percentage" input fields
@@ -237,15 +236,15 @@ $(window).on('load', function() {
     // Initialize alternate eq height plugin
     initEqHeight();
 
-    // Haptic feedback
+    // Haptic feedback for mobile
     if (supportsVibrate && isMobile.any()) {
         (function initHaptics() {
-            $(document).on('touchstart', '.btn--menu, .nav--primary__head, .nav--primary__sub li a, .click-action, .btn', function(e) {
+            $(document).on('touchstart', '.click-action, form .btn, [role=button]', function(e) {
                 e.stopImmediatePropagation();
                 navigator.vibrate(0); // stops current vibration
-                navigator.vibrate(75); // vibration in milisseconds
+                navigator.vibrate(35); // ms vibration
             });
-            $(document).on('touchcancel touchmove', '.btn--menu, .nav--primary__head, .nav--primary__sub li a, .click-action, .btn', function(e) {
+            $(document).on('touchcancel touchmove', '.click-action, form .btn, [role=button]', function(e) {
                 e.stopImmediatePropagation();
                 navigator.vibrate(0); // stops current vibration
             });
@@ -256,7 +255,7 @@ $(window).on('load', function() {
 /***********************************************
 /* General Functions / Plugins
 */
-//Custom Dropdown (<SELECT>)
+// Custom Dropdown - <SELECT>
 function initCustomDropDown() {
     // Non-responsive? Do nothing!
     if ($('body').hasClass('layout-non-responsive') || $('body').attr('data-ui-compat') == 'non-responsive') {
@@ -536,7 +535,7 @@ function setBodyClass(bodyClass) {
 function startPopovers() {
     'use strict';
 
-    //anchors the popover position in case links show on two lines
+    // anchors the popover position in case links show on two lines
     $('[data-toggle="popover"]').popover({
         container: 'body'
     });
@@ -545,10 +544,10 @@ function startPopovers() {
 function startTooltips() {
     'use strict';
 
-    //anchors the tooltip position in case links show on two lines
+    // anchors the tooltip position in case links show on two lines
     $('[data-toggle="tooltip"]').tooltip({
         container: 'body',
-        trigger: 'hover' //'click hover focus manual'
+        trigger: 'hover' // 'click hover focus manual'
     });
 }
 
@@ -613,7 +612,7 @@ function crumbAcctViewer() {
         $planId.hide();
         $planName.after(_template);
         var g = $('.breadcrumb__dropdown').outerWidth(),
-            h = a - (b + e + g + 35); //35px margin totals?
+            h = a - (b + e + g + 35); // 35px margin totals?
         $planName.width(h);
         $('.breadcrumb__dropdown .dropdown-list').width(h * 0.6);
     } else {
@@ -955,102 +954,106 @@ function initSimpleResponsiveTable() {
         })
         .promise()
         .done(function() {
-            // INIT FIXED ROWS
-            var $fixedRow = $('.tbl-responsive__fixedRow'),
-                $fixedHeader = $('.tbl-responsive__mainHeader'),
-                fixedRowWidth,
-                fixedHeaderWidth;
+            initSRTFixedHeaders();
+        });
+}
 
-            // create the main header holder
-            // TODO: create function to stick main header above all fixed rows
-            var $fixedHeaderHolder = $fixedHeader.clone();
+// Fixed headers for Simple Responsive Tables
+function initSRTFixedHeaders() {
+    // INIT FIXED ROWS
+    var $fixedRow = $('.tbl-responsive__fixedRow'),
+        $fixedHeader = $('.tbl-responsive__mainHeader'),
+        fixedRowWidth,
+        fixedHeaderWidth; // TODO: width for main header
 
-            // create the row holders
-            var $fixedRowHolder = $fixedRow.first().clone();
-            $fixedRowHolder.removeClass().addClass('tbl-responsive__rowHolder').attr('role','presentation').find('td').removeAttr('class data-label scope').html('');
+    // get the table width
+    function getTableWidth() {
+        var w = $fixedRow.closest('table').width();
+        return w;
+    }
 
-            // add the holders to the table
-            $fixedRow.before($fixedRowHolder);
+    // create the main header holder
+    // TODO: create function to stick main header above all fixed rows
+    var $fixedHeaderHolder = $fixedHeader.clone();
 
-            // get the table width
-            function getTableWidth() {
-                var w = $fixedRow.closest('table').width();
-                return w;
-            }
+    // create the row holders
+    var $fixedRowHolder = $fixedRow.first().clone();
+    $fixedRowHolder.removeClass().addClass('tbl-responsive__rowHolder').attr('role','presentation').find('td').removeAttr('class data-label scope').html('');
 
-            // stack rows
-            function stackRows() {
-                fixedRowWidth = getTableWidth();
+    // add the holders to the table
+    $fixedRow.before($fixedRowHolder);
 
-                $fixedRow.each(function(idx, el) {
-                    var $row = $(el),
-                        $nextRow = $row.parent().next('tbody').find('.tbl-responsive__fixedRow').eq(0),
-                        $rowHolder = $row.prev();
+    // set row width
+    fixedRowWidth = getTableWidth();
 
-                    var rowHeight = $row.outerHeight(),
-                        nextRowOffset = $nextRow.offset(),
-                        rowHolderOffset = $rowHolder.offset();
+    // stack rows
+    function stackRows() {
+        var $fixedRow = $('.tbl-responsive__fixedRow'); // necessary because of window resize
+        $fixedRow.each(function(idx, el) {
+            var $row = $(el),
+                $nextRow = $row.parent().next('tbody').find('.tbl-responsive__fixedRow').eq(0),
+                $rowHolder = $row.prev();
 
-                    if (window.pageYOffset > rowHolderOffset.top) {
-                        if (typeof $nextRow !== 'undefined') {
-                            var diff = nextRowOffset.top - window.pageYOffset;
-                            if (diff < rowHeight) {
-                                $row
-                                    .addClass('freezeIt')
-                                    .css({
-                                        width: fixedRowWidth,
-                                        top: -(rowHeight - diff)
-                                    });
-                            } else {
-                                $rowHolder
-                                    .css({
-                                        height: rowHeight
-                                    });
+            var rowHeight = $row.outerHeight(),
+                nextRowOffset = $nextRow.offset(),
+                rowHolderOffset = $rowHolder.offset();
 
-                                $row
-                                    .addClass('freezeIt')
-                                    .css({
-                                        width: fixedRowWidth,
-                                        top: 0
-                                    });
-                            }
-                        } else {
-                            $rowHolder
-                                .css({
-                                    height: rowHeight
-                                });
-
-                            $row
-                                .addClass('freezeIt')
-                                .css({
-                                    width: fixedRowWidth,
-                                    top: 0
-                                });
-                        }
+            if (window.pageYOffset > rowHolderOffset.top) {
+                if (typeof $nextRow !== 'undefined') {
+                    var diff = nextRowOffset.top - window.pageYOffset;
+                    if (diff < rowHeight) {
+                        $row
+                            .addClass('freezeIt')
+                            .css({
+                                width: fixedRowWidth,
+                                top: -(rowHeight - diff)
+                            });
                     } else {
                         $rowHolder
                             .css({
-                                height: ''
+                                height: rowHeight
                             });
 
                         $row
-                            .removeClass('freezeIt')
+                            .addClass('freezeIt')
                             .css({
-                                width: '',
-                                top: ''
+                                width: fixedRowWidth,
+                                top: 0
                             });
                     }
-                });
+                } else {
+                    $rowHolder
+                        .css({
+                            height: rowHeight
+                        });
+
+                    $row
+                        .addClass('freezeIt')
+                        .css({
+                            width: fixedRowWidth,
+                            top: 0
+                        });
+                }
+            } else {
+                $rowHolder
+                    .css({
+                        height: ''
+                    });
+
+                $row
+                    .removeClass('freezeIt')
+                    .css({
+                        width: '',
+                        top: ''
+                    });
             }
-
-            // init listeners
-            $(window).on('scroll.fixedRows', stackRows);
-            $(window).on('resize.fixedRows', function() {
-                $fixedRow.removeClass('freezeIt').css({width:'', top:''});
-                fixedRowWidth = getTableWidth();
-            });
-
-            // HANDLE FONT-SIZE FOR REALLY BIG TABLES
-            handleWideTables();
         });
+    }
+
+    // init listeners
+    $(window).on('scroll.fixedRows', stackRows);
+    $(window).on('resize.fixedRows orientationchange.fixedRows', function() {
+        $fixedRow.removeClass('freezeIt').css({width:'', top:''});
+        fixedRowWidth = getTableWidth();
+    });
 }
