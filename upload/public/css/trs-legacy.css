@@ -3006,15 +3006,14 @@ td.tbl_link {
     .table__fe .light-blue {
         background: #19a1c9;
         border-right: 1px #19a1c9 solid;
-        border-top: 1px #19a1c9 solid !important;
-        color: #fff; }
+        border-top: 1px #19a1c9 solid !important; }
     .table__fe .dark-blue {
         background: #017fa5;
         border-right: 1px #017fa5 solid;
-        border-top: 1px #017fa5 solid !important;
-        color: #fff; }
+        border-top: 1px #017fa5 solid !important; }
     .table__fe .light-blue,
     .table__fe .dark-blue {
+        color: #fff;
         width: 25%;
         min-width: 200px;
         padding-top: 20px;

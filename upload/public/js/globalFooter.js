@@ -1002,7 +1002,12 @@ function initSRTFixedHeaders() {
                 if (typeof $nextRow !== 'undefined') {
                     var diff = nextRowOffset.top - window.pageYOffset;
                     if (diff < rowHeight) {
-                        $row
+                        $rowHolder
+                            .css({
+                                height: rowHeight
+                            });
+
+                       $row
                             .addClass('freezeIt')
                             .css({
                                 width: fixedRowWidth,
