@@ -8481,7 +8481,7 @@ a[data-toggle="popover"] {
             height: 35px;
             top: -35px;
             left: 8.7%;
-            background: url("../../images/sunny-notext.png") no-repeat 0 0;
+            background: url("../images/sunny-notext.png") no-repeat 0 0;
             background-size: cover; }
             @media screen and (max-width: 767px) {
                 .ad__bg--outlook.ad__bg--outlook-blue::before {
@@ -8547,11 +8547,11 @@ a[data-toggle="popover"] {
                 text-shadow: none; }
                 @media screen and (max-width: 568px) {
                     .ad__bg--outlook.ad__bg--outlook-blue .ad__title--outlook h3 {
-                        font-size: 22px;
+                        font-size: 21px;
                         text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.5); } }
-                @media screen and (max-width: 320px) {
+                @media screen and (max-width: 375px) {
                     .ad__bg--outlook.ad__bg--outlook-blue .ad__title--outlook h3 {
-                        font-size: 18px;
+                        font-size: 16px;
                         text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.5); } }
                 .ad__bg--outlook.ad__bg--outlook-blue .ad__title--outlook h3 span {
                     position: relative; }
