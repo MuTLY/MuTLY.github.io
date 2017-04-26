@@ -542,7 +542,19 @@ p q r s t u v w x y z { | } ~
 					<div id="atoms-icon-font" class="sg-pattern">
 						<h2 class="sg-pattern-head" ><a href="../../patterns/00-atoms-02-text-075-icon-font/00-atoms-02-text-075-icon-font.html" class="patternLink" data-patternpartial="atoms-icon-font">Icon Font</a></h2>
 						<div class="sg-pattern-body">
-							<div style="font-size: 2em;">
+							<style>
+.wrapper {
+    font-size: 2em;
+    padding: 15px;
+}
+.wrapper h3 {
+    margin: 1em 0 .3em;
+}
+.wrapper h3:first-child {
+    margin-top: 0;
+}
+</style>
+<div class="wrapper">
     <h3>Navigation</h3>
     <span role="presentation" class="trs-icons-hamburger"></span>
     <span role="presentation" class="trs-icons-home"></span>
@@ -617,13 +629,28 @@ p q r s t u v w x y z { | } ~
     <span role="presentation" class="trs-icons-dollar"></span>
     <span role="presentation" class="trs-icons-target"></span>
     <span role="presentation" class="trs-icons-pie-chart"></span>
+
+    <h3>Financial Engine</h3>
+    <span role="presentation" class="trs-icons-stoplight"></span>
 </div>
 
 							<div class="sg-code" style="display: none">
 								<h3 class="sg-code-head">HTML</h3>
 								<pre class="sg-code-html">
 									<code>
-										&lt;div style=&quot;font-size: 2em;&quot;&gt;
+										&lt;style&gt;
+.wrapper {
+    font-size: 2em;
+    padding: 15px;
+}
+.wrapper h3 {
+    margin: 1em 0 .3em;
+}
+.wrapper h3:first-child {
+    margin-top: 0;
+}
+&lt;/style&gt;
+&lt;div class=&quot;wrapper&quot;&gt;
     &lt;h3&gt;Navigation&lt;/h3&gt;
     &lt;span role=&quot;presentation&quot; class=&quot;trs-icons-hamburger&quot;&gt;&lt;/span&gt;
     &lt;span role=&quot;presentation&quot; class=&quot;trs-icons-home&quot;&gt;&lt;/span&gt;
@@ -698,6 +725,9 @@ p q r s t u v w x y z { | } ~
     &lt;span role=&quot;presentation&quot; class=&quot;trs-icons-dollar&quot;&gt;&lt;/span&gt;
     &lt;span role=&quot;presentation&quot; class=&quot;trs-icons-target&quot;&gt;&lt;/span&gt;
     &lt;span role=&quot;presentation&quot; class=&quot;trs-icons-pie-chart&quot;&gt;&lt;/span&gt;
+
+    &lt;h3&gt;Financial Engine&lt;/h3&gt;
+    &lt;span role=&quot;presentation&quot; class=&quot;trs-icons-stoplight&quot;&gt;&lt;/span&gt;
 &lt;/div&gt;
 
 									</code>

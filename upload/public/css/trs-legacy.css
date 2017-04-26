@@ -647,6 +647,14 @@ header, footer, nav, section, article, hgroup, figure {
         border: 0;
         outline: 0; }
 
+@media screen and (max-width: 568px) {
+    .pull-left-xs {
+        float: left !important; }
+    .pull-right-xs {
+        float: right !important; }
+    .pull-none-xs {
+        float: none !important; } }
+
 html {
     font-size: 14px; }
 
@@ -1009,7 +1017,7 @@ abbr {
     .text-center-lg {
         text-align: center; } }
 
-@media screen and (max-width: 567px) {
+@media screen and (max-width: 568px) {
     .text-small-xs {
         font-size: smaller; }
     .text-center-xs {
@@ -8454,8 +8462,128 @@ a[data-toggle="popover"] {
     margin: 15px auto;
     background: #00aeef;
     background: linear-gradient(to right, #00aeef 0%, #68cff6 100%); }
-    .ad__bg--outlook * {
+    .ad__bg--outlook .ad__forecast--outlook,
+    .ad__bg--outlook .ad__title--outlook,
+    .ad__bg--outlook .ad__content--outlook {
         color: #fff; }
+    .ad__bg--outlook.ad__bg--outlook-blue {
+        background: linear-gradient(to right, #194487 0%, #00aeef 100%);
+        margin-top: 35px;
+        position: relative; }
+        .ad__bg--outlook.ad__bg--outlook-blue .btn {
+            position: relative;
+            z-index: 1; }
+        .ad__bg--outlook.ad__bg--outlook-blue::before {
+            content: '';
+            position: absolute;
+            display: block;
+            width: 100px;
+            height: 35px;
+            top: -35px;
+            left: 8.7%;
+            background: url("../../images/sunny-notext.png") no-repeat 0 0;
+            background-size: cover; }
+            @media screen and (max-width: 767px) {
+                .ad__bg--outlook.ad__bg--outlook-blue::before {
+                    left: 50%;
+                    margin-left: -50px; } }
+        .ad__bg--outlook.ad__bg--outlook-blue .ad__header--outlook {
+            position: relative;
+            color: #fff;
+            font-size: 18px;
+            background: radial-gradient(circle at 50% 50%, #014890 0%, #002c62 100%);
+            margin: -15px -15px 0;
+            padding: 5px 15px;
+            margin-bottom: 15px; }
+            .ad__bg--outlook.ad__bg--outlook-blue .ad__header--outlook i {
+                color: #fcb716; }
+            .ad__bg--outlook.ad__bg--outlook-blue .ad__header--outlook::after {
+                content: '';
+                position: absolute;
+                left: 13.4%;
+                bottom: -15px;
+                display: block;
+                width: 0;
+                height: 0;
+                border-left: 15px solid transparent;
+                border-right: 15px solid transparent;
+                border-top: 15px solid #003571; }
+                @media screen and (max-width: 767px) {
+                    .ad__bg--outlook.ad__bg--outlook-blue .ad__header--outlook::after {
+                        left: 50%;
+                        margin-left: -15px;
+                        border-top-color: #014890; } }
+        .ad__bg--outlook.ad__bg--outlook-blue .ad__forecast--outlook {
+            margin: 60px auto; }
+            @media screen and (max-width: 568px) {
+                .ad__bg--outlook.ad__bg--outlook-blue .ad__forecast--outlook {
+                    margin: 40px auto; } }
+            .ad__bg--outlook.ad__bg--outlook-blue .ad__forecast--outlook img {
+                min-width: 0;
+                width: 60px; }
+                @media screen and (max-width: 568px) {
+                    .ad__bg--outlook.ad__bg--outlook-blue .ad__forecast--outlook img {
+                        width: 50px; } }
+            .ad__bg--outlook.ad__bg--outlook-blue .ad__forecast--outlook li {
+                position: relative; }
+                .ad__bg--outlook.ad__bg--outlook-blue .ad__forecast--outlook li::before {
+                    display: none;
+                    position: absolute;
+                    top: -6px;
+                    left: 0;
+                    content: '';
+                    width: 100%;
+                    height: 100%;
+                    background: radial-gradient(ellipse at 50% 50%, #fff 0%, transparent 60%); }
+        .ad__bg--outlook.ad__bg--outlook-blue .ad__title--outlook {
+            position: relative; }
+            .ad__bg--outlook.ad__bg--outlook-blue .ad__title--outlook h3 {
+                font-size: 40px;
+                font-weight: 400;
+                line-height: 1;
+                letter-spacing: normal;
+                margin-bottom: 30px;
+                text-align: center;
+                text-shadow: none; }
+                @media screen and (max-width: 568px) {
+                    .ad__bg--outlook.ad__bg--outlook-blue .ad__title--outlook h3 {
+                        font-size: 22px;
+                        text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.5); } }
+                @media screen and (max-width: 320px) {
+                    .ad__bg--outlook.ad__bg--outlook-blue .ad__title--outlook h3 {
+                        font-size: 18px;
+                        text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.5); } }
+                .ad__bg--outlook.ad__bg--outlook-blue .ad__title--outlook h3 span {
+                    position: relative; }
+                    .ad__bg--outlook.ad__bg--outlook-blue .ad__title--outlook h3 span i {
+                        color: #fcb716; }
+            .ad__bg--outlook.ad__bg--outlook-blue .ad__title--outlook::before {
+                position: absolute;
+                top: -9px;
+                left: -15px;
+                content: '';
+                width: 100%;
+                height: 60px;
+                z-index: 0;
+                opacity: .3;
+                background: linear-gradient(to right, #fff 0%, transparent 50%); }
+                @media screen and (max-width: 568px) {
+                    .ad__bg--outlook.ad__bg--outlook-blue .ad__title--outlook::before {
+                        height: 40px; } }
+                @media screen and (max-width: 320px) {
+                    .ad__bg--outlook.ad__bg--outlook-blue .ad__title--outlook::before {
+                        height: 36px; } }
+        .ad__bg--outlook.ad__bg--outlook-blue .ad__content--outlook {
+            position: absolute;
+            width: 100%;
+            font-size: 18px;
+            padding-top: 5px;
+            margin-left: -15px; }
+            @media screen and (max-width: 568px) {
+                .ad__bg--outlook.ad__bg--outlook-blue .ad__content--outlook {
+                    position: static;
+                    font-size: 16px;
+                    margin: 0 auto 30px !important; } }
 
 .ad__bg2--outlook {
     position: absolute;

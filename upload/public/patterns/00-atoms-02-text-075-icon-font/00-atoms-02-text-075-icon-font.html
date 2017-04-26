@@ -145,7 +145,19 @@
     <script src="/js/trs-angular/responsive-table.js"></script>
 </head>
 <body class="body" data-ui-compat="responsive">
-<div style="font-size: 2em;">
+<style>
+.wrapper {
+    font-size: 2em;
+    padding: 15px;
+}
+.wrapper h3 {
+    margin: 1em 0 .3em;
+}
+.wrapper h3:first-child {
+    margin-top: 0;
+}
+</style>
+<div class="wrapper">
     <h3>Navigation</h3>
     <span role="presentation" class="trs-icons-hamburger"></span>
     <span role="presentation" class="trs-icons-home"></span>
@@ -220,6 +232,9 @@
     <span role="presentation" class="trs-icons-dollar"></span>
     <span role="presentation" class="trs-icons-target"></span>
     <span role="presentation" class="trs-icons-pie-chart"></span>
+
+    <h3>Financial Engine</h3>
+    <span role="presentation" class="trs-icons-stoplight"></span>
 </div>
 
     <!-- scripts -->

@@ -11,7 +11,7 @@ The base CSS of this file is contained on the TRS codebase
 into the styles.css file.
 
 Only new character codes should be added to this file.
-ABR 03/31/16
+ABR 04/20/17
 ----------------------------------------------------*/
 
 .trs-icons-home:before {
@@ -172,4 +172,7 @@ ABR 03/31/16
 }
 .trs-icons-separator:before {
   content: "\30";
+}
+.trs-icons-stoplight:before {
+  content: "\31";
 }
