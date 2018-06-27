@@ -76,7 +76,7 @@
         return dayNames[now.getDay()];
     };
 
-    var css = "background-image: url('https://mutly.github.io/images/Leandro-R-Barbosa.jpg'); background-repeat: no-repeat; background-size: 205px 205px; border:1px #ccc solid; margin: 0; padding: 0 205px 205px 0; font-size: 0;";
+    var css = "background-image: url('https://mutly.github.io/images/Leandro-R-Barbosa.jpg'); background-repeat: no-repeat; background-size: 205px 255px; border:1px #ccc solid; margin: 0; padding: 0 205px 255px 0; font-size: 0;";
     console.log("%c", css);
 
     css = "font-size: 28px; color: #0055FF;";
