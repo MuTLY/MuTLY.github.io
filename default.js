@@ -36,7 +36,12 @@
             return navigator.userAgent.match(/Silk/i);
         },
         any: function() {
-            return isMobile.Windows() || isMobile.Android() || isMobile.BlackBerry() || isMobile.iOS() || isMobile.Opera() || isMobile.Kindle();
+            return isMobile.Windows() ||
+                   isMobile.Android() ||
+                   isMobile.BlackBerry() ||
+                   isMobile.iOS() ||
+                   isMobile.Opera() ||
+                   isMobile.Kindle();
         }
     };
 
@@ -48,8 +53,9 @@
         str = "Ctrl + Shift + J";
     }
 
-    if (navigator.userAgent.indexOf('Firefox') !== -1 && !isMobile.iOS()) {
+    if (navigator.userAgent.indexOf('Firefox') !== -1) {
         str = "Ctrl + Shift + K";
+        var isFF = true;
     }
     
     if (navigator.userAgent.indexOf('Mac OS X') !== -1 && !isMobile.iOS()) {
@@ -57,7 +63,10 @@
         str = "Command + Option + J";
     }
     
-    if (navigator.userAgent.indexOf('Mac OS X') !== -1 && navigator.userAgent.indexOf('Safari') !== -1 && navigator.userAgent.indexOf('Chrome') === -1 && !isMobile.iOS()) {
+    if (navigator.userAgent.indexOf('Mac OS X') !== -1 
+        && navigator.userAgent.indexOf('Safari') !== -1
+        && navigator.userAgent.indexOf('Chrome') === -1
+        && !isMobile.iOS()) {
         str = "Command + Option + I";
     }
 
@@ -80,8 +89,19 @@
         return dayNames[now.getDay()];
     };
 
-    var css = "background-image: url('https://mutly.github.io/images/Leandro-R-Barbosa.jpg'); background-repeat: no-repeat; background-size: 205px 255px; border:1px #ccc solid; margin: 0; padding: 0 205px 255px 0; font-size: 0;";
-    console.log("%c", css);
+    var css;
+
+    if (!isFF) {
+        css = [
+            "background-image: url('https://mutly.github.io/images/Leandro-R-Barbosa.jpg')",
+            "background-repeat: no-repeat",
+            "background-size: 205px 255px",
+            "margin: 0",
+            "padding: 0 205px 255px 0",
+            "font-size: 0"
+        ].join(';')
+        console.log("%c ", css);
+    }
 
     css = "font-size: 28px; color: #0055FF;";
     console.log('%cLeandro R. Barbosa', css);
