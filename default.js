@@ -48,6 +48,10 @@
         str = "Ctrl + Shift + J";
     }
 
+    if (navigator.userAgent.indexOf('Firefox') !== -1 && !isMobile.iOS()) {
+        str = "Ctrl + Shift + K";
+    }
+    
     if (navigator.userAgent.indexOf('Mac OS X') !== -1 && !isMobile.iOS()) {
         //str = "⌘ + ⌥ + J";
         str = "Command + Option + J";
