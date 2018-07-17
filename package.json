@@ -1,0 +1,19 @@
+{
+  "name": "mutly.github.io",
+  "version": "1.0.0",
+  "description": "My personal GitHub page. Check the logs.",
+  "main": "default.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/MuTLY/MuTLY.github.io.git"
+  },
+  "author": "Leandro R. Barbosa",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/MuTLY/MuTLY.github.io/issues"
+  },
+  "homepage": "https://github.com/MuTLY/MuTLY.github.io#readme"
+}
