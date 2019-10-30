@@ -14,12 +14,10 @@ body {
 }
 
 body {
-    padding: 2.5%;
-    font-size: 100%;
     background: #1E4558;
     color: #fff;
     position: relative;
-    touch-action: auto;
+	font-size: 14px;
 }
 
 img {
@@ -62,6 +60,16 @@ li {
     margin: 0 0 2%;
 }
 
+.clearfix::after {
+    display: block;
+    content: '';
+    clear: both;
+}
+
+.main {
+	padding: 15px;
+}
+	
 .what {
     clear: left;
     float: left;
@@ -88,16 +96,13 @@ li {
 
 .command {
     position: absolute;
-    top: 50%;
+    top: 0;
     right: 0;
     bottom: 0;
     left: 0;
     margin: auto;
     width: 100%;
-    max-height: 0;
-    font-size: 1vw;
-    line-height: 1vh;
-    margin-top: -0.5vh;
+    height: 30px;
     color: #ff9900;
     text-align: center;
 }
@@ -132,11 +137,11 @@ li {
     body img,
     body section {
         position: absolute;
-        clip: rect(1px, 1px, 1px, 1px);
+        top: -9999px;
+		left: -9999px;
         overflow: hidden;
     }
     body .command {
-        clip: initial;
         overflow: visible;
         display: block;
     }
@@ -144,7 +149,6 @@ li {
     body.tablet img,
     body.tablet section {
         position: static;
-        clip: initial;
     }
     body.tablet .command {
         display: none;
