@@ -112,13 +112,13 @@
     var c1 = 'color: #ff9900;',
         c2 = 'color: #666';
 
-    console.log('');
+    console.log(' ');
     
     console.log('%cWHat I do:', c1);
 
     console.log('%c  ★ Front end developer;\n  ★ UX/UI;\n  ★ HTML5;\n  ★ JavaScript/jQuery;\n  ★ CSS3.', c2);
 
-    console.log('');
+    console.log(' ');
 
     console.log('You can reach me on...');
 
@@ -127,11 +127,11 @@
     console.log('%cfb.com/MuTLY', css);
     console.log('%cleandro.barbosa@live.com', css);
 
-    console.log('');
+    console.log(' ');
 
     css = 'color: #FF0000';
     console.log('Hope you\'re having a nice '+ weekday() +'.');
     console.log('%c\u2764', css, 'Leandro');
 
-    console.log('');
+    console.log(' ');
 }());
