@@ -116,7 +116,7 @@
     
     console.log('%cWHat I do:', c1);
 
-    console.log('%c  ★ Front end developer;\n  ★ UX/UI;\n  ★ HTML5;\n  ★ JavaScript/jQuery;\n  ★ CSS3.', c2);
+    console.log('%c  ★ Front end developer;\n  ★ UX/UI;\n  ★ HTML5;\n  ★ JavaScript;\n  ★ CSS3.', c2);
 
     console.log(' ');
 
