@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>ZX Spectrum</title>
+    <style>
+      * {
+        box-sizing: border-box;
+      }
+
+      html,
+      body {
+        height: 100%;
+      }
+
+      body {
+        background: #1a1a1a;
+        margin: 0;
+        overflow: hidden;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      div {
+        position: relative;
+        display: inline-block;
+        margin: 50px;
+      }
+
+      /* rainbow
+      ff7463 red
+      fcde5c yellow
+      add45f green
+      41caf0 cyan
+      */
+      .rainbow {
+        position: absolute;
+        z-index: -1;
+        top: -25px;
+        right: -20px;
+        content: "";
+        display: block;
+        overflow: hidden;
+        width: 60px;
+        height: 100px;
+        background: #add45f;
+        border: 15px #41caf0 solid;
+        border-top: 0;
+        border-bottom: 0;
+        border-left: 0;
+        border-radius: 0;
+        box-shadow: none;
+        transform: skew(-30deg);
+      }
+      .rainbow::after {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: auto;
+        content: "";
+        display: block;
+        width: 15px;
+        height: 100px;
+        background: #ff7463;
+      }
+      .rainbow::before {
+        position: absolute;
+        top: 0;
+        left: 15px;
+        right: auto;
+        content: "";
+        display: block;
+        width: 15px;
+        height: 100px;
+        background: #fcde5c;
+      }
+
+      /* button */
+      span {
+        display: inline-block;
+        width: 65px;
+        height: 50px;
+        color: #fdfeff;
+        background: #69727c;
+        border: 1px solid #1e2123;
+        border-radius: 5px;
+        padding: 3px 0 0 5px;
+        margin: 6px 2px;
+        font-family: sans-serif, Arial;
+        font-size: 26px;
+        text-transform: uppercase;
+        text-align: left;
+        box-shadow: inset -1px 1px 2px 1px rgba(0, 0, 0, 0.65);
+        position: relative;
+      }
+      span::before,
+      span::after {
+        color: #fc662e;
+        font-size: 11px;
+        font-weight: bold;
+        position: absolute;
+        right: 8px;
+      }
+      span::after {
+        color: #ffffff;
+      }
+
+      .space {
+        width: 10px;
+        padding: 0;
+        margin: 0;
+        background: none;
+        box-shadow: none;
+        border: 0;
+      }
+
+      /* keys */
+      .z::before {
+        content: ":";
+        top: 6px;
+      }
+      .z::after {
+        content: "Copy";
+        bottom: 6px;
+      }
+
+      .x::before {
+        content: "£";
+        top: 6px;
+      }
+      .x::after {
+        content: "Clear";
+        bottom: 6px;
+      }
+
+      .s::before {
+        content: "Not";
+        top: 6px;
+      }
+      .s::after {
+        content: "Save";
+        bottom: 6px;
+      }
+
+      .p::before {
+        content: '"';
+        top: 6px;
+      }
+      .p::after {
+        content: "Print";
+        bottom: 6px;
+      }
+
+      .e::before {
+        content: ">=";
+        top: 6px;
+      }
+      .e::after {
+        content: "Rem";
+        bottom: 6px;
+      }
+
+      .c::before {
+        content: "?";
+        top: 6px;
+      }
+      .c::after {
+        content: "Cont";
+        bottom: 6px;
+      }
+
+      .t::before {
+        content: ">";
+        top: 6px;
+      }
+      .t::after {
+        content: "Rand";
+        bottom: 6px;
+      }
+
+      .r::before {
+        content: "<";
+        top: 6px;
+      }
+      .r::after {
+        content: "Run";
+        bottom: 6px;
+      }
+
+      .u::before {
+        content: "Or";
+        top: 6px;
+      }
+      .u::after {
+        content: "If";
+        bottom: 6px;
+      }
+
+      .m::before {
+        content: ".";
+        top: 6px;
+      }
+      .m::after {
+        content: "Pause";
+        bottom: 6px;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div>
+      <span class="z">Z</span>
+      <span class="x">X</span>
+
+      <span class="space">&nbsp;</span>
+
+      <span class="s">S</span>
+      <span class="p">P</span>
+      <span class="e">E</span>
+      <span class="c">C</span>
+      <span class="t">T</span>
+      <span class="r">R</span>
+      <span class="u">U</span>
+      <span class="m">M</span>
+
+      <span class="rainbow"></span>
+    </div>
+  </body>
+</html>
