@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Bannerzin</title>
+    <style>
+      * {
+        box-sizing: border-box;
+      }
+
+      html,
+      body {
+        height: 100%;
+        font-size: 16px;
+        font-family: Arial, Helvetica, sans-serif;
+      }
+
+      p {
+        margin: 0;
+      }
+
+      .banner {
+        position: relative;
+        overflow: hidden;
+        width: 320px;
+        padding: 15px;
+        background-color: yellow;
+      }
+
+      .banner .banner-corner {
+        position: absolute;
+        width: 320px;
+        padding: 5px;
+        top: 0;
+        right: -125px;
+        transform: rotate(45deg);
+        background-color: blue;
+        color: white;
+        text-align: center;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="banner">
+      <p>
+        Qualquer coisa aqui, imagem, texto, sei lá. Lorem ipsum dolor sit amet
+        noboco do toco loco. Lorem ipsum dolor sit amet noboco do toco loco.
+        Lorem ipsum dolor sit amet noboco do toco loco. Lorem ipsum dolor sit
+        amet noboco do toco loco. Lorem ipsum dolor sit amet noboco do toco
+        loco.
+      </p>
+      <div class="banner-corner">
+        De<br />R$ 100<br />por <strong>R$ 200</strong>
+      </div>
+    </div>
+  </body>
+</html>
