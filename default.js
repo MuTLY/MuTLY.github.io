@@ -117,7 +117,7 @@ console.image = function (url, backgroundColour, scale) {
       const dataUri = c.toDataURL("image/png");
 
       console.log(
-        `%c Image`,
+        `%c `,
         `
           font-size: 1px;
           padding: ${Math.floor((img.height * scale) / 2)}px ${Math.floor(
