@@ -151,7 +151,7 @@ const showInfo = () => {
 
   console.log("");
 
-  console.log("%cWHat I do:", c1);
+  console.log("%cWhat I do:", c1);
 
   console.log(
     "%c  ★ Front end developer;\n  ★ UX/UI;\n  ★ HTML5;\n  ★ JavaScript;\n  ★ CSS3.",
