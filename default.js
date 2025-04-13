@@ -2,82 +2,90 @@
 
 (function externalLinks() {
   if (document.querySelector) {
-    var i = document.querySelectorAll("a[rel=external]");
-    [].slice.call(i).forEach(function (i) {
-      i.target = "_blank";
+    const externalLinks = document.querySelectorAll("a[rel=external]");
+    [].slice.call(externalLinks).forEach(function (link) {
+      link.target = "_blank";
+      link.setAttribute('rel', 'noopener noreferrer'); // Security best practice
     });
   }
 })();
 
-const isMobile = {
-  Windows: function () {
-    return navigator.userAgent.match(/IEMobile/i);
+// Enhanced browser detection
+const browser = {
+  isFirefox: () => navigator.userAgent.includes('Firefox'),
+  isChrome: () => navigator.userAgent.includes('Chrome') && !navigator.userAgent.includes('Edg'),
+  isSafari: () => navigator.userAgent.includes('Safari') && !navigator.userAgent.includes('Chrome'),
+  isEdge: () => navigator.userAgent.includes('Edg'),
+  isOpera: () => navigator.userAgent.includes('OPR'),
+  isIE: () => navigator.userAgent.includes('MSIE') || navigator.userAgent.includes('Trident/')
+};
+
+// Consolidated platform and device detection
+const device = {
+  // Platform detection
+  platform: {
+    isMac: () => navigator.userAgent.includes('Mac'),
+    isWindows: () => navigator.userAgent.includes('Windows'),
+    isLinux: () => navigator.userAgent.includes('Linux')
   },
-  Android: function () {
-    return navigator.userAgent.match(/Android/i);
+  
+  // Mobile device detection
+  mobile: {
+    isWindows: () => navigator.userAgent.match(/IEMobile/i),
+    isAndroid: () => navigator.userAgent.match(/Android/i),
+    isBlackBerry: () => navigator.userAgent.match(/BlackBerry/i),
+    isIOS: () => /iPad|iPhone|iPod/.test(navigator.userAgent) && !window.MSStream,
+    isIPad: () => /iPad/.test(navigator.userAgent) && !window.MSStream,
+    isIPhone: () => /iPhone/.test(navigator.userAgent) && !window.MSStream,
+    isOpera: () => navigator.userAgent.match(/Opera Mini/i),
+    isKindle: () => navigator.userAgent.match(/Silk/i),
+    isAny: function() {
+      return (
+        this.isWindows() ||
+        this.isAndroid() ||
+        this.isBlackBerry() ||
+        this.isIOS() ||
+        this.isOpera() ||
+        this.isKindle()
+      );
+    }
   },
-  BlackBerry: function () {
-    return navigator.userAgent.match(/BlackBerry/i);
-  },
-  iOS: function () {
-    return navigator.userAgent.match(/iPhone|iPad|iPod/i);
-  },
-  iPad: function () {
-    return navigator.userAgent.match(/iPad/i);
-  },
-  iPhone: function () {
-    return navigator.userAgent.match(/iPhone/i);
-  },
-  Opera: function () {
-    return navigator.userAgent.match(/Opera Mini/i);
-  },
-  Kindle: function () {
-    return navigator.userAgent.match(/Silk/i);
-  },
-  any: function () {
-    return (
-      isMobile.Windows() ||
-      isMobile.Android() ||
-      isMobile.BlackBerry() ||
-      isMobile.iOS() ||
-      isMobile.Opera() ||
-      isMobile.Kindle()
-    );
-  },
+  
+  // Screen size detection
+  screen: {
+    isMobile: () => window.matchMedia('(max-width: 768px)').matches,
+    isTablet: () => window.matchMedia('(max-width: 1024px)').matches,
+    isDesktop: () => window.matchMedia('(min-width: 1025px)').matches
+  }
 };
 
 let str = "Leandro Rabello Barbosa";
 const vWidth = window.innerWidth;
 const d = document.querySelector("body");
 
-if (!isMobile.any()) {
-  str = "Ctrl + Shift + J";
+// Determine console command based on platform and browser
+if (!device.mobile.isAny()) {
+  if (browser.isFirefox()) {
+    str = "Ctrl + Shift + K";
+  } else if (device.platform.isMac()) {
+    if (browser.isSafari()) {
+      str = "Command + Option + I";
+    } else {
+      str = "Command + Option + J";
+    }
+  } else {
+    str = "Ctrl + Shift + J";
+  }
 }
 
-if (navigator.userAgent.indexOf("Firefox") !== -1) {
-  str = "Ctrl + Shift + K";
-}
-
-if (navigator.userAgent.indexOf("Mac OS X") !== -1 && !isMobile.iOS()) {
-  // str = "⌘ + ⌥ + J";
-  str = "Command + Option + J";
-}
-
-if (
-  navigator.userAgent.indexOf("Mac OS X") !== -1 &&
-  navigator.userAgent.indexOf("Safari") !== -1 &&
-  navigator.userAgent.indexOf("Chrome") === -1 &&
-  !isMobile.iOS()
-) {
-  str = "Command + Option + I";
-}
-
-if ((vWidth <= 1024 && isMobile.any()) || isMobile.Kindle()) {
-  d.className = d.className + " tablet";
+// Add tablet class if needed
+if ((vWidth <= 1024 && device.mobile.isAny()) || device.mobile.isKindle()) {
+  d.classList.add("tablet");
 }
 
 document.title = str;
 
+// Format command string with buttons
 str = str.replace(/ \+/g, " </button> + <button>");
 str = "<button> " + str + " </button>";
 
@@ -103,35 +111,36 @@ const weekday = function () {
  * https://github.com/adriancooney/console.image/issues/25
  */
 console.image = function (url, backgroundColour, scale) {
-  const img = new Image();
-  img.crossOrigin = "anonymous";
-  img.onload = () => {
-    const c = document.createElement("canvas");
-    const ctx = c.getContext("2d");
-    if (ctx) {
-      c.width = img.width;
-      c.height = img.height;
-      ctx.fillStyle = backgroundColour;
-      ctx.fillRect(0, 0, c.width, c.height);
-      ctx.drawImage(img, 0, 0);
-      const dataUri = c.toDataURL("image/png");
-
-      console.log(
-        `%c `,
-        `
-          font-size: 1px;
-          padding: ${Math.floor((img.height * scale) / 2)}px ${Math.floor(
-          (img.width * scale) / 2
-        )}px;
-          background-image: url(${dataUri});
-          background-repeat: no-repeat;
-          background-size: ${img.width * scale}px ${img.height * scale}px;
-          color: transparent;
-        `
-      );
-    }
-  };
-  img.src = url;
+  // Convert the URL to a base64 string to preserve animation
+  fetch(url)
+      .then(response => response.blob())
+      .then(blob => {
+          const reader = new FileReader();
+          reader.onloadend = function() {
+              const base64data = reader.result;
+              
+              // Now load the image to get dimensions
+              const img = new Image();
+              img.onload = () => {
+                  console.log(
+                      `%c Hello, my name is`,
+                      `
+                      font-size: 1px;
+                      padding: ${Math.floor((img.height * scale) / 2)}px ${Math.floor((img.width * scale) / 2)}px;
+                      background-image: url(${base64data});
+                      background-repeat: no-repeat;
+                      background-size: ${img.width * scale}px ${img.height * scale}px;
+                      color: transparent;
+                      `
+                  );
+              };
+              img.src = base64data;
+          };
+          reader.readAsDataURL(blob);
+      })
+      .catch(error => {
+          console.error("Error loading image:", error);
+      });
 };
 
 const showInfo = () => {
@@ -149,7 +158,7 @@ const showInfo = () => {
   const c1 = "color: #ff9900;";
   const c2 = "color: #666";
 
-  console.log("");
+  console.log(" ");
 
   console.log("%cWhat I do:", c1);
 
@@ -158,7 +167,7 @@ const showInfo = () => {
     c2
   );
 
-  console.log("");
+  console.log(" ");
 
   console.log("You can reach me on...");
 
@@ -167,13 +176,13 @@ const showInfo = () => {
   console.log("%cfb.com/MuTLY", css);
   console.log("%cleandro.barbosa@live.com", css);
 
-  console.log("");
+  console.log(" ");
 
   css = "color: #FF0000";
   console.log("Hope you're having a nice " + weekday() + ".");
-  console.log("%c\u2764", css, "Leandro");
+  console.log("%c❤", css, "Leandro");
 
-  console.log("");
+  console.log(" ");
 };
 
 function showImage(callback) {

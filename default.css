@@ -46,6 +46,7 @@ p {
 p,
 li {
   font-size: 2.5vw;
+  line-height: 1.65;
 }
 
 ul {
@@ -127,6 +128,7 @@ li {
   body section {
     position: static;
   }
+
   body .command {
     display: none;
   }
@@ -140,6 +142,7 @@ li {
     left: -9999px;
     overflow: hidden;
   }
+  
   body .command {
     overflow: visible;
     display: block;
@@ -149,6 +152,7 @@ li {
   body.tablet section {
     position: static;
   }
+  
   body.tablet .command {
     display: none;
   }
@@ -159,10 +163,12 @@ li {
   body {
     height: initial;
   }
+
   body img,
   body section {
     position: static;
   }
+  
   body .command {
     display: none;
   }
@@ -173,10 +179,12 @@ li {
   body {
     height: auto;
   }
+  
   body img,
   body section {
     position: static;
   }
+  
   body .command {
     display: none;
   }
