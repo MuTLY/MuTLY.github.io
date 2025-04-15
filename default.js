@@ -113,6 +113,12 @@ function getConsoleCommand() {
 
 let str = getConsoleCommand();
 
+// Format command string with buttons
+str = str.replace(/ \+/g, " </button> + <button>");
+str = "<button> " + str + " </button>";
+
+document.querySelector(".command").innerHTML = str;
+
 document.title = str
   ? "Leandro Rabello Barbosa - Press " + str
   : "Leandro Rabello Barbosa";
@@ -126,12 +132,6 @@ if (
 ) {
   b.classList.add("tablet");
 }
-
-// Format command string with buttons
-str = str.replace(/ \+/g, " </button> + <button>");
-str = "<button> " + str + " </button>";
-
-document.querySelector(".command").innerHTML = str;
 
 // Get weekday name
 const weekday = function () {
