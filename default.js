@@ -130,9 +130,9 @@ document.title = str
 
 const b = document.querySelector("body");
 
-// Add tablet class if needed
-if (device.screen.isTablet() || device.mobile.isKindle() || device.mobile.isIOS()) {
-  b.classList.add("tablet");
+// Add 'unsupported' class if needed
+if (device.screen.isTablet() || device.mobile.isKindle() || device.mobile.isIOS() || browser.isIE()) {
+  b.classList.add("unsupported");
 }
 
 // Get weekday name
