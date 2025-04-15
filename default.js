@@ -97,9 +97,11 @@ const CONSOLE_COMMANDS = {
 
 function getConsoleCommand() {
   if (device.platform.isMac()) {
-    return browser.isSafari()
-      ? CONSOLE_COMMANDS.MAC.SAFARI
-      : CONSOLE_COMMANDS.MAC.OTHER;
+    if (!device.mobile.isIOS()) {
+      return browser.isSafari()
+        ? CONSOLE_COMMANDS.MAC.SAFARI
+        : CONSOLE_COMMANDS.MAC.OTHER;
+    }
   } else if (browser.isFirefox()) {
     return CONSOLE_COMMANDS.FIREFOX;
   } else if (browser.isChrome()) {
