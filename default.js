@@ -128,7 +128,7 @@ document.title = str
 const b = document.querySelector("body");
 
 // Add tablet class if needed
-if (device.screen.isTablet() || device.mobile.isKindle()) {
+if (device.screen.isTablet() || device.mobile.isKindle() || device.mobile.isIOS()) {
   b.classList.add("tablet");
 }
 
