@@ -89,6 +89,7 @@ const device = {
 const CONSOLE_COMMANDS = {
   CHROME: "Ctrl + Shift + J",
   FIREFOX: "Ctrl + Shift + K",
+  EDGE: "Ctrl + Shift + I",
   MAC: {
     SAFARI: "Command + Option + I",
     OTHER: "Command + Option + J",
@@ -106,6 +107,8 @@ function getConsoleCommand() {
     return CONSOLE_COMMANDS.FIREFOX;
   } else if (browser.isChrome()) {
     return CONSOLE_COMMANDS.CHROME;
+  } else if (browser.isEdge()) {
+    return CONSOLE_COMMANDS.EDGE;
   } else {
     return undefined
   }
