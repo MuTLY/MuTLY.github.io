@@ -1,89 +1,129 @@
 "use strict";
 
-(function externalLinks() {
+function externalLinks() {
   if (document.querySelector) {
     const externalLinks = document.querySelectorAll("a[rel=external]");
     [].slice.call(externalLinks).forEach(function (link) {
       link.target = "_blank";
-      link.setAttribute('rel', 'noopener noreferrer'); // Security best practice
+      link.setAttribute("rel", "noopener noreferrer"); // Security best practice
     });
   }
-})();
+}
+externalLinks();
 
 // Enhanced browser detection
+const USER_AGENT = navigator.userAgent;
+
+const PLATFORMS = {
+  MAC: "Mac",
+  WINDOWS: "Windows",
+  LINUX: "Linux",
+};
+
+const BROWSERS = {
+  FIREFOX: "Firefox",
+  CHROME: "Chrome",
+  EDGE: "Edg",
+  SAFARI: "Safari",
+  OPERA: "OPR",
+  IE: "MSIE",
+  TRIDENT: "Trident",
+};
+
+const MOBILE_DEVICES = {
+  WINDOWS: /IEMobile/i,
+  ANDROID: /Android/i,
+  BLACKBERRY: /BlackBerry/i,
+  IOS: /iPad|iPhone|iPod/,
+  OPERA: /Opera Mini/i,
+  KINDLE: /Silk/i,
+};
+
+const userAgent = {
+  isPlatform: (platform) => USER_AGENT.includes(platform),
+  isBrowser: (browser) => USER_AGENT.includes(browser),
+  isMobile: (device) => device.test(USER_AGENT),
+};
+
+const platform = {
+  isMac: () => userAgent.isPlatform(PLATFORMS.MAC),
+  isWindows: () => userAgent.isPlatform(PLATFORMS.WINDOWS),
+  isLinux: () => userAgent.isPlatform(PLATFORMS.LINUX),
+};
+
 const browser = {
-  isFirefox: () => navigator.userAgent.includes('Firefox'),
-  isChrome: () => navigator.userAgent.includes('Chrome') && !navigator.userAgent.includes('Edg'),
-  isSafari: () => navigator.userAgent.includes('Safari') && !navigator.userAgent.includes('Chrome'),
-  isEdge: () => navigator.userAgent.includes('Edg'),
-  isOpera: () => navigator.userAgent.includes('OPR'),
-  isIE: () => navigator.userAgent.includes('MSIE') || navigator.userAgent.includes('Trident/')
+  isFirefox: () => userAgent.isBrowser(BROWSERS.FIREFOX),
+  isChrome: () =>
+    userAgent.isBrowser(BROWSERS.CHROME) && !userAgent.isBrowser(BROWSERS.EDGE),
+  isSafari: () =>
+    userAgent.isBrowser(BROWSERS.SAFARI) &&
+    !userAgent.isBrowser(BROWSERS.CHROME),
+  isEdge: () => userAgent.isBrowser(BROWSERS.EDGE),
+  isOpera: () => userAgent.isBrowser(BROWSERS.OPERA),
+  isIE: () =>
+    userAgent.isBrowser(BROWSERS.IE) || userAgent.isBrowser(BROWSERS.TRIDENT),
 };
 
-// Consolidated platform and device detection
 const device = {
-  // Platform detection
-  platform: {
-    isMac: () => navigator.userAgent.includes('Mac'),
-    isWindows: () => navigator.userAgent.includes('Windows'),
-    isLinux: () => navigator.userAgent.includes('Linux')
-  },
-  
-  // Mobile device detection
+  platform,
   mobile: {
-    isWindows: () => navigator.userAgent.match(/IEMobile/i),
-    isAndroid: () => navigator.userAgent.match(/Android/i),
-    isBlackBerry: () => navigator.userAgent.match(/BlackBerry/i),
-    isIOS: () => /iPad|iPhone|iPod/.test(navigator.userAgent) && !window.MSStream,
-    isIPad: () => /iPad/.test(navigator.userAgent) && !window.MSStream,
-    isIPhone: () => /iPhone/.test(navigator.userAgent) && !window.MSStream,
-    isOpera: () => navigator.userAgent.match(/Opera Mini/i),
-    isKindle: () => navigator.userAgent.match(/Silk/i),
-    isAny: function() {
-      return (
-        this.isWindows() ||
-        this.isAndroid() ||
-        this.isBlackBerry() ||
-        this.isIOS() ||
-        this.isOpera() ||
-        this.isKindle()
+    isWindows: () => userAgent.isMobile(MOBILE_DEVICES.WINDOWS),
+    isAndroid: () => userAgent.isMobile(MOBILE_DEVICES.ANDROID),
+    isBlackBerry: () => userAgent.isMobile(MOBILE_DEVICES.BLACKBERRY),
+    isIOS: () => userAgent.isMobile(MOBILE_DEVICES.IOS) && !window.MSStream,
+    isOpera: () => userAgent.isMobile(MOBILE_DEVICES.OPERA),
+    isKindle: () => userAgent.isMobile(MOBILE_DEVICES.KINDLE),
+    isAny: function () {
+      return Object.values(MOBILE_DEVICES).some((check) =>
+        userAgent.isMobile(check)
       );
-    }
+    },
   },
-  
-  // Screen size detection
   screen: {
-    isMobile: () => window.matchMedia('(max-width: 768px)').matches,
-    isTablet: () => window.matchMedia('(max-width: 1024px)').matches,
-    isDesktop: () => window.matchMedia('(min-width: 1025px)').matches
-  }
+    isMobile: () => window.matchMedia("(max-width: 768px)").matches,
+    isTablet: () => window.matchMedia("(max-width: 1024px)").matches,
+    isDesktop: () => window.matchMedia("(min-width: 1025px)").matches,
+  },
 };
 
-let str = "Leandro Rabello Barbosa";
-const vWidth = window.innerWidth;
-const d = document.querySelector("body");
+const CONSOLE_COMMANDS = {
+  CHROME: "Ctrl + Shift + J",
+  FIREFOX: "Ctrl + Shift + K",
+  MAC: {
+    SAFARI: "Command + Option + I",
+    OTHER: "Command + Option + J",
+  },
+};
 
-// Determine console command based on platform and browser
-if (!device.mobile.isAny()) {
-  if (browser.isFirefox()) {
-    str = "Ctrl + Shift + K";
-  } else if (device.platform.isMac()) {
-    if (browser.isSafari()) {
-      str = "Command + Option + I";
-    } else {
-      str = "Command + Option + J";
-    }
+function getConsoleCommand() {
+  if (device.platform.isMac()) {
+    return browser.isSafari()
+      ? CONSOLE_COMMANDS.MAC.SAFARI
+      : CONSOLE_COMMANDS.MAC.OTHER;
+  } else if (browser.isFirefox()) {
+    return CONSOLE_COMMANDS.FIREFOX;
+  } else if (browser.isChrome()) {
+    return CONSOLE_COMMANDS.CHROME;
   } else {
-    str = "Ctrl + Shift + J";
+    return undefined
   }
 }
+
+let str = getConsoleCommand();
+
+document.title = str
+  ? "Leandro Rabello Barbosa - Press " + str
+  : "Leandro Rabello Barbosa";
+
+const b = document.querySelector("body");
 
 // Add tablet class if needed
-if ((vWidth <= 1024 && device.mobile.isAny()) || device.mobile.isKindle()) {
-  d.classList.add("tablet");
+if (
+  (device.screen.isTablet() && device.mobile.isAny()) ||
+  device.mobile.isKindle()
+) {
+  b.classList.add("tablet");
 }
-
-document.title = str;
 
 // Format command string with buttons
 str = str.replace(/ \+/g, " </button> + <button>");
@@ -91,7 +131,7 @@ str = "<button> " + str + " </button>";
 
 document.querySelector(".command").innerHTML = str;
 
-// magic starts here
+// Get weekday name
 const weekday = function () {
   const dayNames = [
       "Sunday",
@@ -111,78 +151,89 @@ const weekday = function () {
  * https://github.com/adriancooney/console.image/issues/25
  */
 console.image = function (url, backgroundColour, scale) {
-  // Convert the URL to a base64 string to preserve animation
   fetch(url)
-      .then(response => response.blob())
-      .then(blob => {
-          const reader = new FileReader();
-          reader.onloadend = function() {
-              const base64data = reader.result;
-              
-              // Now load the image to get dimensions
-              const img = new Image();
-              img.onload = () => {
-                  console.log(
-                      `%c Hello, my name is`,
-                      `
-                      font-size: 1px;
-                      padding: ${Math.floor((img.height * scale) / 2)}px ${Math.floor((img.width * scale) / 2)}px;
-                      background-image: url(${base64data});
-                      background-repeat: no-repeat;
-                      background-size: ${img.width * scale}px ${img.height * scale}px;
-                      color: transparent;
-                      `
-                  );
-              };
-              img.src = base64data;
+    .then((response) => {
+      if (!response.ok) {
+        throw new Error(`HTTP error! status: ${response.status}`);
+      }
+      return response.blob();
+    })
+    .then((blob) => {
+      const reader = new FileReader();
+      reader.onloadend = function () {
+        if (reader.readyState === FileReader.DONE) {
+          const base64data = reader.result;
+          const img = new Image();
+          img.onload = () => {
+            console.log(
+              `%c Hello, my name is`,
+              `
+                font-size: 1px;
+                padding: ${Math.floor((img.height * scale) / 2)}px
+                         ${Math.floor((img.width * scale) / 2)}px;
+                background-image: url(${base64data});
+                background-repeat: no-repeat;
+                background-size: ${img.width * scale}px 
+                                 ${img.height * scale}px;
+                color: transparent;
+              `
+            );
           };
-          reader.readAsDataURL(blob);
-      })
-      .catch(error => {
-          console.error("Error loading image:", error);
-      });
+          img.onerror = () => {
+            console.error("Error loading image data");
+          };
+          img.src = base64data;
+        } else {
+          console.error("Error loading image data");
+        }
+      };
+
+      reader.onerror = () => {
+        console.error("Error reading blob data.");
+      };
+
+      reader.readAsDataURL(blob);
+    })
+    .catch((error) => {
+      console.error("Error loading or processing image:", error);
+    });
+};
+
+const cssRules = {
+  title: "font-size: 28px; color: #0055FF;",
+  body: "font-size: 12px;",
+  highlight: "color: #ff9900;",
+  muted: "color: #666;",
+  link: "color: #0000FF;",
+  heart: "color: #FF0000;",
 };
 
 const showInfo = () => {
-  let css;
-
-  css = "font-size: 28px; color: #0055FF;";
-  console.log("%cLeandro Barbosa", css);
-
-  css = "font-size: 12px;";
-  console.log(
-    "%cI'm a front end developer.\nI focus on the finished product.\nI want things done fast, with quality.\nI like communication between teams.\nI like to do new things.",
-    css
+  console.log("%cLeandro Barbosa", cssRules.title);
+  console.log(`%c  I'm a front end developer.
+  I focus on the finished product.
+  I want things done fast, with quality.
+  I like communication between teams.
+  I like to do new things.`,
+    cssRules.body
   );
-
-  const c1 = "color: #ff9900;";
-  const c2 = "color: #666";
-
-  console.log(" ");
-
-  console.log("%cWhat I do:", c1);
-
-  console.log(
-    "%c  ★ Front end developer;\n  ★ UX/UI;\n  ★ HTML5;\n  ★ JavaScript;\n  ★ CSS3.",
-    c2
+  console.log(`%cWhat I do:`, cssRules.highlight);
+  console.log(`%c  ★ Front end developer;
+  ★ UX/UI;
+  ★ HTML5;
+  ★ JavaScript;
+  ★ CSS3.`,
+    cssRules.muted
   );
-
-  console.log(" ");
-
   console.log("You can reach me on...");
-
-  css = "color: #0000FF;";
-  console.log("%ctwitter.com/MuTLY", css);
-  console.log("%cfb.com/MuTLY", css);
-  console.log("%cleandro.barbosa@live.com", css);
-
-  console.log(" ");
-
-  css = "color: #FF0000";
-  console.log("Hope you're having a nice " + weekday() + ".");
-  console.log("%c❤", css, "Leandro");
-
-  console.log(" ");
+  console.log(`%c  github.com/MuTLY
+  twitter.com/MuTLY
+  fb.com/MuTLY
+  leandro.barbosa@live.com`,
+    cssRules.link
+  );
+  console.log(`Hope you're having a nice ${weekday()}.`);
+  console.log("%c❤", cssRules.heart, "Leandro");
 };
 
 function showImage(callback) {
