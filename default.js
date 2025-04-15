@@ -70,7 +70,7 @@ const device = {
     isWindows: () => userAgent.isMobile(MOBILE_DEVICES.WINDOWS),
     isAndroid: () => userAgent.isMobile(MOBILE_DEVICES.ANDROID),
     isBlackBerry: () => userAgent.isMobile(MOBILE_DEVICES.BLACKBERRY),
-    isIOS: () => userAgent.isMobile(MOBILE_DEVICES.IOS) && !window.MSStream && navigator.maxTouchPoints && navigator.maxTouchPoints > 2,
+    isIOS: () => userAgent.isMobile(MOBILE_DEVICES.IOS) || (navigator.userAgent.match(/Mac/) && navigator.maxTouchPoints && navigator.maxTouchPoints > 2),
     isOpera: () => userAgent.isMobile(MOBILE_DEVICES.OPERA),
     isKindle: () => userAgent.isMobile(MOBILE_DEVICES.KINDLE),
     isAny: function () {
