@@ -114,10 +114,12 @@ function getConsoleCommand() {
 let str = getConsoleCommand();
 
 // Format command string with buttons
-str = str.replace(/ \+/g, " </button> + <button>");
-str = "<button> " + str + " </button>";
+if (str) {
+  str = str.replace(/ \+/g, " </button> + <button>");
+  str = "<button> " + str + " </button>";
 
-document.querySelector(".command").innerHTML = str;
+  document.querySelector(".command").innerHTML = str;
+}
 
 document.title = str
   ? "Leandro Rabello Barbosa - Press " + str
@@ -126,10 +128,7 @@ document.title = str
 const b = document.querySelector("body");
 
 // Add tablet class if needed
-if (
-  (device.screen.isTablet() && device.mobile.isAny()) ||
-  device.mobile.isKindle()
-) {
+if (device.screen.isTablet() || device.mobile.isKindle()) {
   b.classList.add("tablet");
 }
 
