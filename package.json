@@ -4,6 +4,7 @@
   "description": "My personal GitHub page. Check the logs.",
   "main": "default.js",
   "scripts": {
+    "build": "sass --watch scss:css",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -15,5 +16,8 @@
   "bugs": {
     "url": "https://github.com/MuTLY/MuTLY.github.io/issues"
   },
-  "homepage": "https://github.com/MuTLY/MuTLY.github.io#readme"
+  "homepage": "https://github.com/MuTLY/MuTLY.github.io#readme",
+  "dependencies": {
+    "sass": "^1.87.0"
+  }
 }
