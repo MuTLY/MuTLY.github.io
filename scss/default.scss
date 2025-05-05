@@ -1,0 +1,162 @@
+$white: #fff;
+$light-gray: #e0e0e0;
+$orange: #ff9900;
+$dark-gray: #666;
+$font-family_1: Arial, Helvetica, sans-serif;
+$font-family_2: Consolas, Arial, Helvetica, sans-serif;
+$background-color: #e5e5e5;
+
+* {
+	margin: 0;
+	padding: 0;
+	line-height: 1.2;
+	font-family: $font-family_1;
+	font-size: 16px;
+	box-sizing: border-box;
+}
+html {
+	height: 100%;
+}
+body {
+	height: 100%;
+	background: #1e4558;
+	color: $white;
+	position: relative;
+	font-size: 14px;
+}
+img {
+	float: right;
+	margin: 0 0 5% 5%;
+	width: 100%;
+	max-width: 35%;
+	background: #333;
+}
+a {
+	color: $light-gray;
+	text-decoration: none;
+	font-size: 2.5vw;
+}
+section {
+	max-width: 60%;
+}
+h1 {
+	margin: 0 0 10%;
+	font-size: 5vw;
+}
+p {
+	margin: 0 0 10%;
+	font-size: 5vw;
+	font-size: 2.5vw;
+	line-height: 1.65;
+}
+li {
+	font-size: 2.5vw;
+	line-height: 1.65;
+	margin: 0 0 2%;
+}
+ul {
+	display: block;
+	overflow: hidden;
+	list-style-type: none;
+	margin: 0;
+}
+.clearfix {
+	&::after {
+		display: block;
+		content: "";
+		clear: both;
+	}
+}
+.main {
+	padding: 15px;
+}
+.what {
+	clear: left;
+	float: left;
+	min-width: 60%;
+	p {
+		float: left;
+		margin-right: 2%;
+	}
+}
+.where {
+	float: right;
+	max-width: 40%;
+	p {
+		margin-bottom: 2%;
+	}
+	li {
+		margin-bottom: 1%;
+	}
+}
+.command {
+	position: absolute;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	margin: auto;
+	width: 100%;
+	height: 30px;
+	color: $orange;
+	text-align: center;
+	button {
+		display: inline-block;
+		color: $dark-gray;
+		font-family: $font-family_2;
+		font-size: 14px;
+		white-space: nowrap;
+		background-color: $background-color;
+		margin: 0 5px;
+		padding: 4px 8px;
+		border: 1px solid #c5c5c5;
+		border-radius: 3px;
+		line-height: 1;
+		text-shadow: 0 1px 0 #fff;
+		box-shadow: 0 3px 0 #999, 0 0 0 1px #ccc inset;
+	}
+}
+body.unsupported {
+	img {
+		position: static;
+	}
+	section {
+		position: static;
+	}
+	.command {
+		display: none;
+	}
+}
+@media all and (min-width: 0) and (max-width: 568px) {
+	body {
+		img {
+			position: static;
+		}
+		section {
+			position: static;
+		}
+		.command {
+			display: none;
+		}
+	}
+}
+@media all and (min-width: 569px) {
+	body {
+		img {
+			position: absolute;
+			top: -9999px;
+			left: -9999px;
+			overflow: hidden;
+		}
+		section {
+			position: absolute;
+			top: -9999px;
+			left: -9999px;
+			overflow: hidden;
+		}
+		.command {
+			overflow: visible;
+			display: block;
+		}
+	}
+}
