@@ -222,16 +222,15 @@ const showInfo = () => {
     cssRules.body
   );
   console.log(`%cWhat I do:`, cssRules.highlight);
-  console.log(`%c  ★ Front end developer;
-  ★ UX/UI;
-  ★ HTML5;
-  ★ JavaScript;
-  ★ CSS3.`,
+  console.log(`%c  ★ Front end developer
+  ★ UX/UI
+  ★ HTML5
+  ★ CSS3
+  ★ JavaScript/Frameworks`,
     cssRules.muted
   );
   console.log("You can reach me on...");
   console.log(`%c  github.com/MuTLY
-  twitter.com/MuTLY
   fb.com/MuTLY
   leandro.barbosa@live.com`,
     cssRules.link
