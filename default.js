@@ -232,7 +232,7 @@ const showInfo = () => {
   );
   console.log("You can reach me on...");
   console.log(`%c  github.com/MuTLY
-  fb.com/MuTLY
+  linkedin.com/in/leandro~barbosa
   leandro.barbosa@live.com`,
     cssRules.link
   );
