@@ -70,12 +70,16 @@ const device = {
     isWindows: () => userAgent.isMobile(MOBILE_DEVICES.WINDOWS),
     isAndroid: () => userAgent.isMobile(MOBILE_DEVICES.ANDROID),
     isBlackBerry: () => userAgent.isMobile(MOBILE_DEVICES.BLACKBERRY),
-    isIOS: () => userAgent.isMobile(MOBILE_DEVICES.IOS) || (navigator.userAgent.match(/Mac/) && navigator.maxTouchPoints && navigator.maxTouchPoints > 2),
+    isIOS: () =>
+      userAgent.isMobile(MOBILE_DEVICES.IOS) ||
+      (navigator.userAgent.match(/Mac/) &&
+        navigator.maxTouchPoints &&
+        navigator.maxTouchPoints > 2),
     isOpera: () => userAgent.isMobile(MOBILE_DEVICES.OPERA),
     isKindle: () => userAgent.isMobile(MOBILE_DEVICES.KINDLE),
     isAny: function () {
       return Object.values(MOBILE_DEVICES).some((check) =>
-        userAgent.isMobile(check)
+        userAgent.isMobile(check),
       );
     },
   },
@@ -110,7 +114,7 @@ function getConsoleCommand() {
   } else if (browser.isEdge()) {
     return CONSOLE_COMMANDS.EDGE;
   } else {
-    return undefined
+    return undefined;
   }
 }
 
@@ -132,7 +136,12 @@ if (str) {
 const b = document.querySelector("body");
 
 // Add 'unsupported' class if needed
-if (device.screen.isTablet() || device.mobile.isKindle() || device.mobile.isIOS() || browser.isIE()) {
+if (
+  device.screen.isTablet() ||
+  device.mobile.isKindle() ||
+  device.mobile.isIOS() ||
+  browser.isIE()
+) {
   b.classList.add("unsupported");
 }
 
@@ -178,10 +187,10 @@ console.image = function (url, backgroundColour, scale) {
                          ${Math.floor((img.width * scale) / 2)}px;
                 background-image: url(${base64data});
                 background-repeat: no-repeat;
-                background-size: ${img.width * scale}px 
+                background-size: ${img.width * scale}px
                                  ${img.height * scale}px;
                 color: transparent;
-              `
+              `,
             );
           };
           img.onerror = () => {
@@ -215,26 +224,29 @@ const cssRules = {
 
 const showInfo = () => {
   console.log("%cLeandro Barbosa", cssRules.title);
-  console.log(`%c  I'm a front end developer.
+  console.log(
+    `%c  I'm a front end developer.
   I focus on the finished product.
   I want things done fast, with quality.
   I like communication between teams.
   I like to do new things.`,
-    cssRules.body
+    cssRules.body,
   );
   console.log(`%cWhat I do:`, cssRules.highlight);
-  console.log(`%c  ★ Front end developer
+  console.log(
+    `%c  ★ Front end developer
   ★ UX/UI
   ★ HTML5
   ★ CSS3
   ★ JavaScript/Frameworks`,
-    cssRules.muted
+    cssRules.muted,
   );
   console.log("You can reach me on...");
-  console.log(`%c  github.com/MuTLY
+  console.log(
+    `%c  github.com/MuTLY
   linkedin.com/in/leandro~barbosa
   leandro.barbosa@live.com`,
-    cssRules.link
+    cssRules.link,
   );
   console.log(`Hope you're having a nice ${weekday()}.`);
   console.log("%c❤", cssRules.heart, "Leandro");
@@ -244,7 +256,7 @@ function showImage(callback) {
   console.image(
     "https://mutly.github.io/images/Leandro-R-Barbosa.jpg",
     "transparent",
-    0.25
+    0.25,
   );
 
   setTimeout(() => callback(), 150);
