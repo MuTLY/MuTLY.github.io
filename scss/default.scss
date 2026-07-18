@@ -14,9 +14,11 @@ $background-color: #e5e5e5;
 	font-size: 16px;
 	box-sizing: border-box;
 }
+
 html {
 	height: 100%;
 }
+
 body {
 	height: 100%;
 	background: #1e4558;
@@ -24,6 +26,7 @@ body {
 	position: relative;
 	font-size: 14px;
 }
+
 img {
 	float: right;
 	margin: 0 0 5% 5%;
@@ -31,35 +34,42 @@ img {
 	max-width: 35%;
 	background: #333;
 }
+
 a {
 	color: $light-gray;
 	text-decoration: none;
 	font-size: 2.5vw;
 }
+
 section {
 	max-width: 60%;
 }
+
 h1 {
 	margin: 0 0 10%;
 	font-size: 5vw;
 }
+
 p {
 	margin: 0 0 10%;
 	font-size: 5vw;
 	font-size: 2.5vw;
 	line-height: 1.65;
 }
+
 li {
 	font-size: 2.5vw;
 	line-height: 1.65;
 	margin: 0 0 2%;
 }
+
 ul {
 	display: block;
 	overflow: hidden;
 	list-style-type: none;
 	margin: 0;
 }
+
 .clearfix {
 	&::after {
 		display: block;
@@ -67,28 +77,35 @@ ul {
 		clear: both;
 	}
 }
+
 .main {
 	padding: 15px;
 }
+
 .what {
 	clear: left;
 	float: left;
 	min-width: 60%;
+
 	p {
 		float: left;
 		margin-right: 2%;
 	}
 }
+
 .where {
 	float: right;
 	max-width: 40%;
+
 	p {
 		margin-bottom: 2%;
 	}
+
 	li {
 		margin-bottom: 1%;
 	}
 }
+
 .command {
 	position: absolute;
 	top: 0;
@@ -100,6 +117,7 @@ ul {
 	height: 30px;
 	color: $orange;
 	text-align: center;
+
 	button {
 		display: inline-block;
 		color: $dark-gray;
@@ -116,30 +134,37 @@ ul {
 		box-shadow: 0 3px 0 #999, 0 0 0 1px #ccc inset;
 	}
 }
+
 body.unsupported {
 	img {
 		position: static;
 	}
+
 	section {
 		position: static;
 	}
+
 	.command {
 		display: none;
 	}
 }
+
 @media all and (min-width: 0) and (max-width: 568px) {
 	body {
 		img {
 			position: static;
 		}
+
 		section {
 			position: static;
 		}
+
 		.command {
 			display: none;
 		}
 	}
 }
+
 @media all and (min-width: 569px) {
 	body {
 		img {
@@ -148,12 +173,14 @@ body.unsupported {
 			left: -9999px;
 			overflow: hidden;
 		}
+
 		section {
 			position: absolute;
 			top: -9999px;
 			left: -9999px;
 			overflow: hidden;
 		}
+
 		.command {
 			overflow: visible;
 			display: block;
