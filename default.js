@@ -120,11 +120,6 @@ function getConsoleCommand() {
 
 let str = getConsoleCommand();
 
-// Set page title and command string
-document.title = str
-  ? "Leandro Rabello Barbosa - Press " + str
-  : "Leandro Rabello Barbosa";
-
 // Format command string with buttons
 if (str) {
   str = str.replace(/ \+/g, " </button> + <button>");
