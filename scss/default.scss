@@ -50,6 +50,11 @@ h1 {
 	font-size: 5vw;
 }
 
+h2 {
+	margin: 0 0 2%;
+	font-size: 2.5vw;
+}
+
 p {
 	margin: 0 0 10%;
 	font-size: 5vw;
@@ -86,18 +91,13 @@ ul {
 	clear: left;
 	float: left;
 	min-width: 60%;
-
-	p {
-		float: left;
-		margin-right: 2%;
-	}
 }
 
 .where {
 	float: right;
 	max-width: 40%;
 
-	p {
+	h2 {
 		margin-bottom: 2%;
 	}
 
@@ -107,14 +107,10 @@ ul {
 }
 
 .command {
-	position: absolute;
-	top: 0;
-	right: 0;
-	bottom: 0;
-	left: 0;
-	margin: auto;
-	width: 100%;
-	height: 30px;
+	position: static;
+	width: auto;
+	height: auto;
+	margin: 1rem 0;
 	color: $orange;
 	text-align: center;
 
@@ -166,24 +162,8 @@ body.unsupported {
 }
 
 @media all and (min-width: 569px) {
-	body {
-		img {
-			position: absolute;
-			top: -9999px;
-			left: -9999px;
-			overflow: hidden;
-		}
-
-		section {
-			position: absolute;
-			top: -9999px;
-			left: -9999px;
-			overflow: hidden;
-		}
-
-		.command {
-			overflow: visible;
-			display: block;
-		}
+	.command {
+		overflow: visible;
+		display: block;
 	}
 }
